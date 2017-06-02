@@ -6,9 +6,9 @@
 
 
 int main() {
-    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
+    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/Phones_gyroscope.csv");
     int n=1; //number of times to run the algorithm
-    printTable(t);
+//    printTable(t);
 
     float totalResult=0;
     for(int q=0 ;q<n; q++) {
@@ -16,6 +16,7 @@ int main() {
         k.run();
         auto km = k.getResult();
         float finalResult = 0;
+        cout<<km.size()<<endl;
         for (int i = 0; i < km.size(); ++i) {
 //        std::cout<<"\n\nCluster #"<<i+1<<":\n";
 //        cout<<"The center:\n";
@@ -23,7 +24,7 @@ int main() {
 //        cout<<"\nThe values are:\n";
 //        printTable(km[i]._values);
 //            cout << "cluster " << i + 1 << " error:" << km[i]._sum_squared_distances << endl;
-            finalResult += km[i]._sum_squared_distances;
+            finalResult += km[i]._sum_squared_distances+1;
         }
         totalResult+=finalResult;
     }
@@ -48,9 +49,6 @@ int main() {
         totalResult+=finalResult;
     }
     cout<<"Final Result For kmeans: "<<totalResult/n<<endl;
-
-
-
     return 0;
 }
 
