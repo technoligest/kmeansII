@@ -18,14 +18,10 @@ void Kmeans::run() {
 
 //randomly assign centres to stat the algorithm
 void Kmeans::findCentres() {
-    unsigned long size = _data.size();
+    size_t size = _data.size();
     srand((unsigned) time(NULL));
-    std::cout << endl;
     for (int i = 0; i < _k; ++i) {
         auto k = _data[rand() % size];
-        std::cout <<"The centres: "<< i + 1 << ")\t";
-        print(k);
-        std::cout << "\n";
         _result.push_back(cluster(Table(), k));
     }
 }
@@ -33,13 +29,6 @@ void Kmeans::findCentres() {
 
 void Kmeans::runItration() {
     ++_numIterations;
-    cout << "\n\nIteration " << _numIterations << ":"<<endl;
-    for (int i=0; i<_result.size(); ++i) {
-        cout << "cluster "<<i<<" center: ";
-        print(_result[i]._center);
-        cout<<endl;
-    }
-
     clearClusters();
     _prevDistance = _currDistance;
     _currDistance = 0;
@@ -47,7 +36,6 @@ void Kmeans::runItration() {
     for (auto row: _data) {
         float lowest_distance = findDistance(_result[0]._center, row);
         int temp_i = 0;
-        cout << "Num of clusters: " << _result.size() << endl;
         for (int i = 1; i < _result.size(); ++i) {
             float new_distance = findDistance(_result[i]._center, row);
             if (new_distance < lowest_distance) {
@@ -55,9 +43,6 @@ void Kmeans::runItration() {
                 temp_i = i;
             }
         }
-        cout << "adding: ";
-        print(row);
-        cout << " To cluster " << temp_i << endl;
         _currDistance += lowest_distance;
 
         //add the row back in the right cluster.
@@ -74,7 +59,7 @@ float Kmeans::findDistance(vector<float> item_1, vector<float> item_2) {
     for (int i = 0; i < size; ++i) {
         result += pow(item_1[i] - item_2[i], 2);
     }
-    return sqrt(result);
+    return result;
 }
 
 
@@ -86,10 +71,10 @@ void Kmeans::calcNewCentres() {
 }
 
 //calculates the center for the given cluster by finding the mean of each column
+//also calculates the sum of squared distances
 void Kmeans::calCenter(cluster &c) {
     Table t = c._values;
     if (t.size() < 1) {
-        cout << "cluster is empty!";
         for (auto i = c._center.begin(); i != c._center.end(); ++i) {
             *i = 0;
         }
@@ -107,6 +92,13 @@ void Kmeans::calCenter(cluster &c) {
         temp[i] = temp[i] / size;
     }
     c._center = temp;
+
+    //calculating the distances to each cluster
+    float sum_distances=0;
+    for(auto i: c._values){
+        sum_distances=findDistance(i,temp);
+    }
+    c._sum_squared_distances=sum_distances;
 }
 
 //this emties the values of all the clusters in the result.

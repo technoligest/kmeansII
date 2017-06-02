@@ -18,12 +18,13 @@ class Kmeans {
 public:
     Kmeans(const Table &_data, const int k);
 
-    void run();
+    virtual void run();
 
-    std::vector<cluster> getResult();
-    unsigned long numIterations() const;
+    virtual std::vector<cluster> getResult();
 
-private:
+    virtual unsigned long numIterations() const;
+
+protected:
     Table _data;
     std::vector<int> _centres; //stores the locations of the centres in the table.
     int _k; //this is the number of centres that we need to have.
@@ -39,7 +40,7 @@ private:
 
     void calCenter(cluster&);
 
-    void findCentres();
+    virtual void findCentres();
 
     void clearClusters();
 

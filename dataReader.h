@@ -13,7 +13,6 @@ inline Table readFile(string fileName){
     std::ifstream inputFile(fileName);
     for(CSVIterator it(inputFile); it!=CSVIterator(); ++it) {
         _data.push_back((*it).toFloat());
-        std::cout<<"added row as floats!"<<endl;
     }
     return _data;
 };

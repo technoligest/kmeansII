@@ -2,26 +2,53 @@
 #include "dataReader.h"
 #include "functions.h"
 #include "cluster.h"
-#include "Kmeans.h"
-
+#include "Kmeanspp.h"
 
 
 int main() {
-    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/testingPoints.CSV");
-
+    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
+    int n=1; //number of times to run the algorithm
     printTable(t);
-    Kmeans k(t, 2);
-    k.run();
-    auto km = k.getResult();
-    for(int i=0; i<km.size(); ++i){
-        std::cout<<"\n\nCluster #"<<i+1<<":\n";
-        cout<<"The center:\n";
-        print(km[i]._center);
-        cout<<"\nThe values are:\n";
-        printTable(km[i]._values);
+
+    float totalResult=0;
+    for(int q=0 ;q<n; q++) {
+        Kmeanspp k(t, 10);
+        k.run();
+        auto km = k.getResult();
+        float finalResult = 0;
+        for (int i = 0; i < km.size(); ++i) {
+//        std::cout<<"\n\nCluster #"<<i+1<<":\n";
+//        cout<<"The center:\n";
+//        print(km[i]._center);
+//        cout<<"\nThe values are:\n";
+//        printTable(km[i]._values);
+//            cout << "cluster " << i + 1 << " error:" << km[i]._sum_squared_distances << endl;
+            finalResult += km[i]._sum_squared_distances;
+        }
+        totalResult+=finalResult;
     }
-    cout<<"Num iterations: \t"<< k.numIterations()<<endl;
-    cout<<"Hello";
+    cout<<"Final Result For kmeans++: "<<totalResult/n<<endl;
+//    cout<<"Num iterations: \t"<< k.numIterations()<<endl;
+
+
+    for(int q=0 ;q<n; q++) {
+        Kmeans k(t, 10);
+        k.run();
+        auto km = k.getResult();
+        float finalResult = 0;
+        for (int i = 0; i < km.size(); ++i) {
+//        std::cout<<"\n\nCluster #"<<i+1<<":\n";
+//        cout<<"The center:\n";
+//        print(km[i]._center);
+//        cout<<"\nThe values are:\n";
+//        printTable(km[i]._values);
+//            cout << "cluster " << i + 1 << " error:" << km[i]._sum_squared_distances << endl;
+            finalResult += km[i]._sum_squared_distances;
+        }
+        totalResult+=finalResult;
+    }
+    cout<<"Final Result For kmeans: "<<totalResult/n<<endl;
+
 
 
     return 0;
