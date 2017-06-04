@@ -16,11 +16,11 @@
 class CSVRow {
 public:
     inline std::string const &operator[](std::size_t index) const {
-        return _data[index];
+        return (*_data)[index];
     }
 
     inline std::size_t size() const {
-        return _data.size();
+        return _data->size();
     }
 
     inline void readNextRow(std::istream &str) {
@@ -30,26 +30,26 @@ public:
         std::stringstream lineStream(line);
         std::string cell;
 
-        _data.clear();
+        _data->clear();
         while (std::getline(lineStream, cell, ',')) {
-            _data.push_back(cell);
+            _data->push_back(cell);
         }
         // This checks for a trailing comma with no data after it.
         if (!lineStream && cell.empty()) {
             // If there was a trailing comma then add an empty element.
-            _data.push_back("");
+            _data->push_back("");
         }
     }
 
-    inline std::vector<float> toFloat() const {
-        std::vector<float> result;
+    inline std::vector<float>* toFloat() const {
+        std::vector<float>* result= new std::vector<float>();
 
-        for (std::string s:_data) {
+        for (std::string s:*_data) {
             try {
-                result.push_back(std::stof(s));
+                result->push_back(std::stof(s));
             }
             catch(std::invalid_argument arg){
-                result.clear();
+                result->clear();
                 return result;
             }
         }
@@ -57,7 +57,7 @@ public:
     }
 
 private:
-    std::vector<std::string> _data;
+    std::vector<std::string>* _data = new std::vector<std::string>();
 };
 
 std::istream &operator>>(std::istream &str, CSVRow &data) {

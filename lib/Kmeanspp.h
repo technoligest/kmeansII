@@ -11,8 +11,11 @@
 class Kmeanspp : Kmeans {
 public:
     Kmeanspp(const Table &_data, const int k);
+
     void run() override;
-    vector<cluster, allocator<cluster>> getResult() override;
+
+    vector<Cluster>* getResult() override;
+
     unsigned long numIterations() const override;
 
 private:
@@ -20,7 +23,7 @@ private:
 
     void findCentres() override;
 
-    float shortestDistanceToClusterCenter(vector<float, allocator<float>> row);
+    float shortestDistanceToClusterCenter(const Row &row);
 
     float calcDX();
 

@@ -10,44 +10,34 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
-#include "functions.h"
-#include "cluster.h"
+#include "data.h"
 
 
 class Kmeans {
 public:
     Kmeans(const Table &_data, const int k);
-
     virtual void run();
-
-    virtual std::vector<cluster> getResult();
-
+    virtual std::vector<Cluster>* getResult();
     virtual unsigned long numIterations() const;
 
 protected:
-    Table _data;
-    std::vector<int> _centres; //stores the locations of the centres in the table.
+    const Table _table;
     int _k; //this is the number of centres that we need to have.
-    std::vector<cluster> _result; //These are the final cluters which shoud be of size _k
-    unsigned long long _prevDistance;
-    unsigned long long _currDistance;
+    std::vector<Cluster> _result; //These are the final cluters which shoud be of size _k
+    unsigned long long _numIterations;
 
-    void runItration();
-
-    float findDistance(vector<float>, vector<float>);
-
+    void runIterations(); //runs Lyod's iterations
+    void runIteration();  //runs one iteration
+    float findDistance(const Row&, const Row&);
     void calcNewCentres();
-
-    void calCenter(cluster&);
-
-    virtual void findCentres();
-
+    void calCenter(Cluster&);
     void clearClusters();
 
+private:
     bool stable();
-    unsigned long _numIterations;
-
-
+    float _prevDistance;
+    float _currDistance;
+    virtual void findRandomCentres();
 };
 
 

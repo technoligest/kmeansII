@@ -8,30 +8,28 @@ Kmeanspp::Kmeanspp(const Table &_data, const int k) : Kmeans(_data, k) {}
 
 void Kmeanspp::run() {
     Kmeanspp::findCentres();
-    do {
-        Kmeans::runItration();
-    } while (!stable());
+    Kmeans::runIterations();
 }
 
 void Kmeanspp::findCentres() {
-    if (_data.size() < 1 || _k < 1) {
+    if (_table.data->size() < 1 || _k < 1) {
         return;
     }
-    size_t size = _data.size();
+    size_t size = _table.data->size();
     srand((unsigned) time(NULL));
-    auto k = _data[rand() % size];
-    _result.push_back(cluster(Table(), k));
+    auto k = (*_table.data)[rand() % size];
+    _result.push_back(Cluster(Table(), k));
 
     for (int i = 1; i < _k; ++i) {
         float dx = calcDX();
         float ran = (float) rand() / RAND_MAX;
 
         float tem = 0;
-        for (auto row: _data) {
-            float distance = shortestDistanceToClusterCenter(row) / dx;
+        for (auto row: *_table.data) {
+            float distance = shortestDistanceToClusterCenter(*row) / dx;
             tem += distance;
             if (ran <= tem) {
-                _result.push_back(cluster(Table(), row));
+                _result.push_back(Cluster(Table(), row));
                 break;
             }
         }
@@ -44,19 +42,23 @@ float Kmeanspp::calcDX() {
         return -1;
     }
     float result = 0;
-    for (auto row: _data) {
-        result += shortestDistanceToClusterCenter(row);
+    for (auto row: *_table.data) {
+        result += shortestDistanceToClusterCenter(*row);
     }
     return result;
 }
 
-float Kmeanspp::shortestDistanceToClusterCenter(vector<float> row) {
-    if (_result.size() < 1)
+
+//find the shortest distance to any already chosen cluster.
+float Kmeanspp::shortestDistanceToClusterCenter(const Row &row) {
+    if (_result.empty())
         return -1;
-    float currDistance = findDistance(row, _result[0]._center);
-    float lowestDistance = currDistance;
-    for (int i = 1; i < _result.size(); ++i) {
-        float currDistance = findDistance(row, _result[i]._center);
+    float currDistance,lowestDistance;
+
+    lowestDistance = currDistance = findDistance(row, *_result[0]._center);
+
+    for (Cluster cluster: _result) {
+        float currDistance = findDistance(row, *cluster._center);
         if (currDistance < lowestDistance) {
             lowestDistance = currDistance;
         }
@@ -64,7 +66,7 @@ float Kmeanspp::shortestDistanceToClusterCenter(vector<float> row) {
     return lowestDistance;
 }
 
-vector<cluster, allocator<cluster>> Kmeanspp::getResult() {
+vector<Cluster>* Kmeanspp::getResult() {
     return Kmeans::getResult();
 }
 

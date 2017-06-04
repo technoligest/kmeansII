@@ -10,22 +10,12 @@
 #include <vector>
 #include <math.h>
 
-using Table = std::vector<std::vector<float>>;
 using namespace std;
 
 template <typename T>
 inline void print(vector<T> arr){
     for(T i: arr){
         std::cout<<i<<"\t";
-    }
-}
-
-inline void printTable(Table t){
-    for(auto i:t){
-        for(auto j: i){
-            std::cout<<j<<"\t";
-        }
-        std::cout<<endl;
     }
 }
 

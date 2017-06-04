@@ -7,14 +7,15 @@
 
 #include "functions.h"
 #include "CSV.h"
+#include "data.h"
 
-inline Table readFile(string fileName){
-    Table _data;
+inline Table readFile(string fileName) {
+    Table t ;
     std::ifstream inputFile(fileName);
-    for(CSVIterator it(inputFile); it!=CSVIterator(); ++it) {
-        _data.push_back((*it).toFloat());
+    for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
+        t.data->push_back(new Row((*it).toFloat()));
     }
-    return _data;
+    return t;
 };
 
 
