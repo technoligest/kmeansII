@@ -14,20 +14,18 @@ public:
 
     void run() override;
 
-    vector<Cluster>* getResult() override;
+    std::vector<Cluster>* getResult() override;
 
     unsigned long numIterations() const override;
 
 private:
-
-
     void findCentres() override;
 
     float shortestDistanceToClusterCenter(const Row &row);
 
     float calcDX();
 
-    vector<float> pickRowWProb(float);
+    std::vector<float> pickRowWProb(float);
 };
 
 

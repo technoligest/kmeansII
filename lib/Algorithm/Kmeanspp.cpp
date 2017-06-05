@@ -66,7 +66,7 @@ float Kmeanspp::shortestDistanceToClusterCenter(const Row &row) {
     return lowestDistance;
 }
 
-vector<Cluster>* Kmeanspp::getResult() {
+std::vector<Cluster>* Kmeanspp::getResult() {
     return Kmeans::getResult();
 }
 

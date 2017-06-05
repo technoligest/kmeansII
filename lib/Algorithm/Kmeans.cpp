@@ -8,10 +8,12 @@
 Kmeans::Kmeans(const Table &data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
                                                  _numIterations(0) {}
 
-
 void Kmeans::run() {
-    findRandomCentres();
+    findCentres();
     runIterations();
+}
+void Kmeans::findCentres(){
+    findRandomCentres();
 }
 
 //randomly assign centres to stat the algorithm

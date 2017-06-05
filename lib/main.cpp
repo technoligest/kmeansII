@@ -1,6 +1,6 @@
-#include <iostream>
-#include "dataReader.h"
-#include "Kmeans.h"
+
+#include "handlers/dataReader.h"
+#include "Algorithm/Kmeans.h"
 
 using namespace std;
 

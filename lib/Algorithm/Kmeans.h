@@ -6,11 +6,8 @@
 #define KMEANSII_KMEANS_H
 
 
-#include <vector>
-#include <string>
-#include <stdlib.h>
-#include <time.h>
-#include "data.h"
+
+#include "../handlers/data.h"
 
 
 class Kmeans {
@@ -23,7 +20,7 @@ public:
 protected:
     const Table _table;
     int _k; //this is the number of centres that we need to have.
-    std::vector<Cluster> _result; //These are the final cluters which shoud be of size _k
+    std::vector<Cluster> _result; //These are the final clusters which should be of size _k
     unsigned long long _numIterations;
 
     void runIterations(); //runs Lyod's iterations
@@ -32,6 +29,7 @@ protected:
     void calcNewCentres();
     void calCenter(Cluster&);
     void clearClusters();
+    virtual void findCentres();
 
 private:
     bool stable();
