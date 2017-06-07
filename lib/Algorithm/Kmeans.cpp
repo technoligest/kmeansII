@@ -6,13 +6,13 @@
 #include <math.h>
 
 Kmeans::Kmeans(Table &data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
-                                                 _numIterations(0), _sum_squared_distance(0) {}
+                                           _numIterations(0), _sum_squared_distance(0) {}
 
 Kmeans::~Kmeans() {}
 
 void Kmeans::run() {
     Kmeans::findCentres();
-//    runLioydIterations();
+    runLioydIterations();
 }
 
 void Kmeans::findCentres() {
@@ -21,13 +21,16 @@ void Kmeans::findCentres() {
 
 //randomly assign centres to the clusters in result
 void Kmeans::findRandomCentres() {
-    if ( _table.empty() || _k < 1) {
+    if (_table.empty() || _k < 1) {
         return;
     }
     srand((unsigned) time(NULL)); //this is not the best way to randomize numbers
     size_t size = _table.size();
     for (int i = 0; i < _k; ++i) {
         _result.push_back(Cluster(*_table[rand() % size]));
+    }
+    for (auto i:_result) {
+        std::cout << i << std::endl;
     }
 }
 
@@ -67,13 +70,13 @@ float Kmeans::findDistance(Row &r1, Row &r2) {
 }
 
 //squared euclidean distance
-float Kmeans::findDistanceSquared( Row &r1,  Row &r2) {
+float Kmeans::findDistanceSquared(Row &r1, Row &r2) {
     if (r1.size() != r2.size())
         return 0;
     float result = 0;
     size_t size = r1.size();
     for (int i = 0; i < size; ++i) {
-        result += pow( r1[i] - r2[i], 2);
+        result += pow(r1[i] - r2[i], 2);
     }
     return result;
 }
@@ -95,13 +98,12 @@ void Kmeans::calCentre(Cluster &c) {
     if (t.empty()) {
         return;
     }
-
     for (Row *row : t.data) {
         for (int i = 0; i < row->size(); ++i) {
-            c.centre[i] = c.centre[i] + (*row)[i]/ t.size();
+            c.centre[i] = c.centre[i] + (*row)[i] / t.size();
         }
     }
-
+    
     //calculating the distances to each cluster
     c.sum_squared_distances = 0;
     for (auto i: c.values.data) {

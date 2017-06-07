@@ -8,7 +8,7 @@
 
 #include "Kmeans.h"
 
-class Kmeanspp : protected Kmeans {
+class Kmeanspp : public Kmeans {
 public:
     Kmeanspp(Table &_data, const int k);
 
@@ -27,7 +27,6 @@ protected:
 
 private:
     void findCentres() override;
-
 
 };
 

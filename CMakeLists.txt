@@ -9,7 +9,7 @@ set( MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full" )
 set(SOURCE_FILES lib/Algorithm/KmeansII.cpp lib/Algorithm/KmeansII.h lib/main.cpp lib/Algorithm/Kmeans.cpp lib/Algorithm/Kmeans.h lib/Algorithm/Kmeanspp.cpp lib/Algorithm/Kmeanspp.h lib/handlers/data.h lib/handlers/dataReader.h lib/handlers/CSV.h lib/handlers/data.cpp lib/handlers/CSV.cpp)
 add_executable(kmeansII ${SOURCE_FILES})
 
-set(TESTING_SOURCES tests/test-dataReader.cpp tests/tests.cpp tests/test-CSV.cpp tests/kmeans.cpp)
+set(TESTING_SOURCES tests/test-dataReader.cpp tests/tests.cpp tests/test-CSV.cpp tests/kmeans.cpp tests/data.cpp)
 add_executable(testing ${TESTING_SOURCES})
 
 set(TRYING_SOURCES lib/trying.cpp lib/trying.h lib/handlers/data.h lib/handlers/data.cpp)

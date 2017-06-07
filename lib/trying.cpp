@@ -8,6 +8,6 @@
 using namespace std;
 int main(){
 
-    Cluster(new Row(new std::vector<float>));
+    Cluster();
     return 0;
 }

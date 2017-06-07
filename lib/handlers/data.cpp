@@ -5,9 +5,7 @@
 
 Row::Row(std::vector<dataType> &dat) : data(dat) {};
 
-Row::~Row() {
-    std::cout << "Deleting a row\n";
-}
+Row::~Row() {}
 
 dataType &Row::operator[](std::size_t i){
     return data[i];
@@ -34,7 +32,6 @@ std::ostream &operator<<(std::ostream &outStream, const Row &row) {
 Table::Table() {};
 
 Table::~Table() {
-    std::cout << "Deleteing table " << tableName << "\n";
     for (Row *row:data) {
         delete row;
     }
@@ -68,7 +65,6 @@ std::ostream &operator<<(std::ostream &outStream, const Table &data) {
 Cluster::Cluster(Row &c) : centre(c), sum_squared_distances(0) {};
 
 Cluster::~Cluster() {
-    std::cout << "Deleting a cluster\n";
     values.clear();
 }
 

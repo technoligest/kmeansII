@@ -6,13 +6,12 @@
 using namespace std;
 
 int main() {
-//    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
-//    int n=2; //number of times to run the algorithm
-//    cout<<t<<endl;
-//    Kmeans k(t, 10);
-//    k.run();
-//    auto result= k.getResult();
-//    cout<<k.sum_squared_distance();
+    Table t = readFile("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
+    int n=2; //number of times to run the algorithm
+    Kmeans k(t, 10);
+    k.run();
+    auto result= k.getResult();
+    cout<<k.sum_squared_distance();
 
 //    Cluster(new Row());
 //    auto i= Table();

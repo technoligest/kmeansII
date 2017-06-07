@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include "catch.hpp"
-#include "../CSV.h"
+#include "../lib/handlers/CSV.h"
 
 using namespace std;
 

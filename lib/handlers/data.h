@@ -41,7 +41,6 @@ struct Table {
 
     std::vector<Row *> data;
 
-    std::string tableName;
     Row* &operator[](std::size_t i);
     void clear();
     void add(Row*);
