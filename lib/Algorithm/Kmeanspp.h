@@ -8,24 +8,27 @@
 
 #include "Kmeans.h"
 
-class Kmeanspp : Kmeans {
+class Kmeanspp : protected Kmeans {
 public:
-    Kmeanspp(const Table &_data, const int k);
+    Kmeanspp(Table &_data, const int k);
+
+    ~Kmeanspp();
 
     void run() override;
 
-    std::vector<Cluster>* getResult() override;
+    std::vector<Cluster> *getResult() override;
 
     unsigned long numIterations() const override;
+
+protected:
+    float shortestDistanceToClusterCentre(const std::vector<Cluster> &, Row &);
+
+    float calcDX(const Table &, const std::vector<Cluster> &);
 
 private:
     void findCentres() override;
 
-    float shortestDistanceToClusterCenter(const Row &row);
 
-    float calcDX();
-
-    std::vector<float> pickRowWProb(float);
 };
 
 

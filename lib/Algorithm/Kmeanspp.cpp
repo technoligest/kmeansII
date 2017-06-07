@@ -4,32 +4,32 @@
 
 #include "Kmeanspp.h"
 
-Kmeanspp::Kmeanspp(const Table &_data, const int k) : Kmeans(_data, k) {}
-
+Kmeanspp::Kmeanspp(Table &_data, const int k) : Kmeans(_data, k) {}
+Kmeanspp::~Kmeanspp(){};
 void Kmeanspp::run() {
     Kmeanspp::findCentres();
-    Kmeans::runIterations();
+    Kmeans::runLioydIterations();
 }
 
 void Kmeanspp::findCentres() {
-    if (_table.data->size() < 1 || _k < 1) {
+    if ( _table.empty() || _k < 1) {
         return;
     }
-    size_t size = _table.data->size();
+    size_t size = _table.size();
     srand((unsigned) time(NULL));
-    auto k = (*_table.data)[rand() % size];
-    _result.push_back(Cluster(Table(), k));
+
+    _result.push_back(Cluster(*_table[rand() % size]));
 
     for (int i = 1; i < _k; ++i) {
-        float dx = calcDX();
+        float dx = calcDX(_table,_result);
         float ran = (float) rand() / RAND_MAX;
 
         float tem = 0;
-        for (auto row: *_table.data) {
-            float distance = shortestDistanceToClusterCenter(*row) / dx;
+        for (auto row: _table.data) {
+            float distance = shortestDistanceToClusterCentre(_result,*row) / dx;
             tem += distance;
             if (ran <= tem) {
-                _result.push_back(Cluster(Table(), row));
+                _result.push_back(Cluster(*row));
                 break;
             }
         }
@@ -37,28 +37,26 @@ void Kmeanspp::findCentres() {
 }
 
 //DX is the sum of the shortest paths from each item to the nearest cluster.
-float Kmeanspp::calcDX() {
-    if (_result.size() < 1) {
+float Kmeanspp::calcDX(const Table &t, const std::vector<Cluster> &clusters) {
+    if (clusters.size() < 1) {
         return -1;
     }
     float result = 0;
-    for (auto row: *_table.data) {
-        result += shortestDistanceToClusterCenter(*row);
+    for (auto row: t.data) {
+        result += shortestDistanceToClusterCentre(clusters, *row);
     }
     return result;
 }
 
-
-//find the shortest distance to any already chosen cluster.
-float Kmeanspp::shortestDistanceToClusterCenter(const Row &row) {
+//find the shortest distance to any already chosen cluster for the given row.
+float Kmeanspp::shortestDistanceToClusterCentre(const std::vector<Cluster> &clusters, Row &row) {
     if (_result.empty())
         return -1;
     float currDistance,lowestDistance;
-
-    lowestDistance = currDistance = findDistance(row, *_result[0]._center);
+    lowestDistance = currDistance = findDistance(row, _result[0].centre);
 
     for (Cluster cluster: _result) {
-        float currDistance = findDistance(row, *cluster._center);
+        currDistance = findDistance(row, cluster.centre);
         if (currDistance < lowestDistance) {
             lowestDistance = currDistance;
         }

@@ -7,19 +7,19 @@
 
 
 #include "Kmeans.h"
+#include "Kmeanspp.h"
 
-class KmeansII : Kmeans{
+class KmeansII : public Kmeanspp{
 public:
-    KmeansII(const Table &_data, const int k, const double l);
+    KmeansII(Table &_data, const int k, const double l);
+    ~KmeansII();
 
 private:
     void run() override;
+    void findCentres() override;
 
 private:
-    double _l;
-    Table _tempCentres;
-
-    double findCost(const Table &data, const vector<float, allocator<float>> *row);
+    const double _l; //this the the constant passed in by the user.
 };
 
 

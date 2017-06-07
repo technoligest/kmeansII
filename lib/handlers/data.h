@@ -19,27 +19,51 @@ class Table;
 class Cluster;
 
 
-class Row {
-public:
-    Row(std::vector<dataType> *dat);
-    std::vector<dataType> *data;
+struct Row {
+    Row(std::vector<dataType> &dat);
+    ~Row();
+
+    std::vector<dataType> data;
+    dataType &operator[](std::size_t i);
+    void clear();
+
+    size_t size()const;
+    bool empty() const;
+
 };
+
 std::ostream &operator<<(std::ostream &, const Row &);
 
-class Table {
-public:
+struct Table {
     Table();
-    std::vector<Row *> *data;
+
+    ~Table();
+
+    std::vector<Row *> data;
+
+    std::string tableName;
+    Row* &operator[](std::size_t i);
+    void clear();
+    void add(Row*);
+    bool empty() const;
+    size_t size()const; //number of rows
 };
+
 std::ostream &operator<<(std::ostream &, const Table &);
 
 struct Cluster {
-    Table _values;
-    Row *_center;
-    unsigned long _sum_squared_distances;
+    Table values;
+    Row centre;
+    unsigned long sum_squared_distances;
 
-    Cluster(Table, Row *);
+    Cluster(Row &);
 
+    //deleting a cluster does not delete the values in it.
+    //That is the job of wherever the values came from
+    //this is done for efficiency so no copies of the data needs to be made.
+    ~Cluster();
+
+    void resetCentre(); //sets all the centre values to zero
 };
 
 std::ostream &operator<<(std::ostream &, const Cluster &);

@@ -5,38 +5,48 @@
 #include "Kmeans.h"
 #include <math.h>
 
-Kmeans::Kmeans(const Table &data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
-                                                 _numIterations(0) {}
+Kmeans::Kmeans(Table &data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
+                                                 _numIterations(0), _sum_squared_distance(0) {}
+
+Kmeans::~Kmeans() {}
 
 void Kmeans::run() {
-    findCentres();
-    runIterations();
+    Kmeans::findCentres();
+//    runLioydIterations();
 }
-void Kmeans::findCentres(){
+
+void Kmeans::findCentres() {
     findRandomCentres();
 }
 
-//randomly assign centres to stat the algorithm
+//randomly assign centres to the clusters in result
 void Kmeans::findRandomCentres() {
-    size_t size = _table.data->size();
-    srand((unsigned) time(NULL));
+    if ( _table.empty() || _k < 1) {
+        return;
+    }
+    srand((unsigned) time(NULL)); //this is not the best way to randomize numbers
+    size_t size = _table.size();
     for (int i = 0; i < _k; ++i) {
-        auto k = (*_table.data)[rand() % size];
-        _result.push_back(Cluster(Table(), k));
+        _result.push_back(Cluster(*_table[rand() % size]));
     }
 }
 
 void Kmeans::runIteration() {
+    //if we have no cluster centres, then we can't run the iterations.
+    if (_result.size() == 0) {
+        return;
+    }
+
+    clearClusterData();
     ++_numIterations;
-    clearClusters();
     _prevDistance = _currDistance;
     _currDistance = 0;
 
-    for (Row *row: *_table.data) {
-        float lowest_distance = findDistance(*_result[0]._center, *row);
+    for (Row *row: _table.data) {
+        float lowest_distance = findDistance(_result[0].centre, *row);
         int temp_i = 0;
         for (int i = 1; i < _result.size(); ++i) {
-            float new_distance = findDistance(*_result[i]._center, *row);
+            float new_distance = findDistance(_result[i].centre, *row);
             if (new_distance < lowest_distance) {
                 lowest_distance = new_distance;
                 temp_i = i;
@@ -45,70 +55,64 @@ void Kmeans::runIteration() {
         _currDistance += lowest_distance;
 
         //add the row in the right cluster.
-        _result[temp_i]._values.data->push_back(row);
+        _result[temp_i].values.add(row);
     }
     calcNewCentres();
 }
 
 
+//euclidean distance
+float Kmeans::findDistance(Row &r1, Row &r2) {
+    return sqrt(findDistanceSquared(r1, r2));
+}
+
 //squared euclidean distance
-float Kmeans::findDistance(const Row &r1, const Row &r2) {
-    if (r1.data->size() != r2.data->size())
+float Kmeans::findDistanceSquared( Row &r1,  Row &r2) {
+    if (r1.size() != r2.size())
         return 0;
     float result = 0;
-    size_t size = r1.data->size();
+    size_t size = r1.size();
     for (int i = 0; i < size; ++i) {
-        result += pow((*r1.data)[i] - (*r2.data)[i], 2);
+        result += pow( r1[i] - r2[i], 2);
     }
     return result;
 }
 
-
 //calculates the centres for each of the clusters in the result.
 void Kmeans::calcNewCentres() {
+    _sum_squared_distance = 0;
     for (auto i: _result) {
-        calCenter(i);
+        calCentre(i);
+        _sum_squared_distance += i.sum_squared_distances;
     }
 }
 
 //calculates the center for the given cluster by finding the mean of each column
 //also calculates the sum of squared distances
-void Kmeans::calCenter(Cluster &c) {
-    if (c._center == NULL)
-        return;
-    Table t = c._values;
-    if (t.data->empty()) {
-        for (auto i = c._center->data->begin(); i != c._center->data->end(); ++i) {
-            *i = 0;
-        }
+void Kmeans::calCentre(Cluster &c) {
+    c.resetCentre();
+    Table t = c.values;
+    if (t.empty()) {
         return;
     }
-    std::vector<float> *temp = new std::vector<float>((*t.data)[0]->data->size());
 
-    for (auto row : *t.data) {
-        for (int i = 0; i < row->data->size(); ++i) {
-            (*temp)[i] += (*row->data)[i];
+    for (Row *row : t.data) {
+        for (int i = 0; i < row->size(); ++i) {
+            c.centre[i] = c.centre[i] + (*row)[i]/ t.size();
         }
     }
-    int size = t.data->size();
-    for (int i = 0; i < temp->size(); ++i) {
-        (*temp)[i] = (*temp)[i] / size;
-    }
-    c._center = new Row(temp);
 
     //calculating the distances to each cluster
-    float sum_distances = 0;
-    for (auto i: *c._values.data) {
-        sum_distances = findDistance(*i, *c._center);
+    c.sum_squared_distances = 0;
+    for (auto i: c.values.data) {
+        c.sum_squared_distances += findDistance(*i, c.centre);
     }
-    c._sum_squared_distances = sum_distances;
 }
 
-//this emties the values of all the clusters in the result.
-void Kmeans::clearClusters() {
-
-    for (auto cluster: _result) {
-        cluster._values.data->clear();
+//this empties the values of all the clusters in the result, leaving the centres intact.
+void Kmeans::clearClusterData() {
+    for (Cluster cluster: _result) {
+        cluster.values.clear();
     }
 }
 
@@ -128,7 +132,11 @@ unsigned long Kmeans::numIterations() const {
     return _numIterations;
 }
 
-void Kmeans::runIterations() {
+float Kmeans::sum_squared_distance() const {
+    return _sum_squared_distance;
+}
+
+void Kmeans::runLioydIterations() {
     _currDistance = 0;
     _prevDistance = 0;
     do {

@@ -4,13 +4,10 @@
 
 #include <iostream>
 #include "trying.h"
+#include "handlers/data.h"
 using namespace std;
 int main(){
-//    int a= b= c=10;
-//    a=b=c=10;
-//    b=20;
-//    std::cout<<"a: "<<a<<endl;
-//    std::cout<<"b: "<<b<<endl;
-//    std::cout<<"c: "<<c<<endl;
+
+    Cluster(new Row(new std::vector<float>));
     return 0;
 }
