@@ -19,7 +19,7 @@ public:
     std::string const &operator[](std::size_t)const;
     std::size_t size()const;
     void readNextRow(std::istream &);
-    std::vector<float>* toFloat() const;
+    std::vector<float> toFloat() const;
 
 private:
     std::vector<std::string>* _data;

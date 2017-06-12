@@ -5,15 +5,18 @@
 #include "Kmeans.h"
 #include <math.h>
 
-Kmeans::Kmeans(Table &data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
+Kmeans::Kmeans(Table data, const int k) : _table(data), _k(k), _prevDistance(0), _currDistance(0),
                                            _numIterations(0), _sum_squared_distance(0) {}
 
-Kmeans::~Kmeans() {}
+Kmeans::~Kmeans() {
+}
 
 void Kmeans::run() {
     Kmeans::findCentres();
-    runLioydIterations();
+//    runLioydIterations();
+//    runIteration();
 }
+
 
 void Kmeans::findCentres() {
     findRandomCentres();
@@ -29,12 +32,19 @@ void Kmeans::findRandomCentres() {
     for (int i = 0; i < _k; ++i) {
         _result.push_back(Cluster(*_table[rand() % size]));
     }
-    for (auto i:_result) {
-        std::cout << i << std::endl;
-    }
+
+}
+
+void Kmeans::runLioydIterations() {
+    _currDistance = 0;
+    _prevDistance = 0;
+    do {
+        runIteration();
+    } while (!stable());
 }
 
 void Kmeans::runIteration() {
+    std::cout<<"Started iteration"<<std::endl;
     //if we have no cluster centres, then we can't run the iterations.
     if (_result.size() == 0) {
         return;
@@ -61,6 +71,7 @@ void Kmeans::runIteration() {
         _result[temp_i].values.add(row);
     }
     calcNewCentres();
+    std::cout<<"finished the iteration."<<std::endl;
 }
 
 
@@ -83,11 +94,13 @@ float Kmeans::findDistanceSquared(Row &r1, Row &r2) {
 
 //calculates the centres for each of the clusters in the result.
 void Kmeans::calcNewCentres() {
+    std::cout<<"calculating centres"<<std::endl;
     _sum_squared_distance = 0;
     for (auto i: _result) {
         calCentre(i);
         _sum_squared_distance += i.sum_squared_distances;
     }
+    std::cout<<"finshed calculating centres"<<std::endl;
 }
 
 //calculates the center for the given cluster by finding the mean of each column
@@ -138,13 +151,6 @@ float Kmeans::sum_squared_distance() const {
     return _sum_squared_distance;
 }
 
-void Kmeans::runLioydIterations() {
-    _currDistance = 0;
-    _prevDistance = 0;
-    do {
-        runIteration();
-    } while (!stable());
-}
 
 
 

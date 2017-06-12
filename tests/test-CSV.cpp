@@ -1,9 +1,8 @@
 //
 // Created by Yaser Alkayale on 2017-05-31.
 //
-
-#include <fstream>
 #include "catch.hpp"
+#include <fstream>
 #include "../lib/handlers/CSV.h"
 
 using namespace std;
@@ -12,7 +11,7 @@ using namespace std;
 TEST_CASE("We can open the file.") {
     std::ifstream inputFile("../tests/input-files/test1.csv");
     REQUIRE(inputFile.good());
-}
+};
 
 TEST_CASE("CSVrow works properly1") {
     std::ifstream inputFile("../tests/input-files/test1.csv");
@@ -20,7 +19,7 @@ TEST_CASE("CSVrow works properly1") {
     inputFile >> row;
     string testArr[] = {"yaser", "alkayale", "is", "the", "best"};
     REQUIRE(row.size() == 5);
-}
+};
 
 TEST_CASE("CSVrow works properly2") {
     std::ifstream inputFile("../tests/input-files/test1.csv");
@@ -32,9 +31,8 @@ TEST_CASE("CSVrow works properly2") {
     REQUIRE(row.size() == 5);
     for (int i = 0; i < 5; ++i) {
         REQUIRE(testArr[i] == row[i]);
-        cout << testArr[i] << "\t" << row[i] << endl;
     }
-}
+};
 
 TEST_CASE("Empty CSV row") {
     std::ifstream inputFile("../tests/input-files/empty.csv");
@@ -43,7 +41,7 @@ TEST_CASE("Empty CSV row") {
 
     REQUIRE(row.size() == 1);
     REQUIRE(row[0] == "");
-}
+};
 
 TEST_CASE("Multiple Rows in CSV file") {
     std::ifstream inputFile("../tests/input-files/test2.csv");
@@ -60,7 +58,7 @@ TEST_CASE("Multiple Rows in CSV file") {
             REQUIRE(testArr[i][j] == row[j]);
         }
     }
-}
+};
 
 TEST_CASE("Converting a row to floats on strings.") {
     std::ifstream inputFile("../tests/input-files/test2.csv");
@@ -70,7 +68,7 @@ TEST_CASE("Converting a row to floats on strings.") {
         vector<float> temp = row.toFloat();
         REQUIRE(temp.size() == 0);
     }
-}
+};
 
 TEST_CASE("Converting a row to floats.") {
     std::ifstream inputFile("../tests/input-files/test3.csv");
@@ -87,10 +85,5 @@ TEST_CASE("Converting a row to floats.") {
             REQUIRE(testArr[i][j] == temp[j]);
         }
     }
-}
+};
 
-
-//This is for the iterator
-TEST_CASE(){
-
-}

@@ -8,6 +8,6 @@
 using namespace std;
 int main(){
 
-    Cluster();
+
     return 0;
 }

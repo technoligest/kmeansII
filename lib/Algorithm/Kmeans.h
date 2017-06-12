@@ -10,7 +10,7 @@
 
 class Kmeans {
 public:
-    Kmeans(Table &_data, const int k);
+    Kmeans(Table _data, const int k);
 
     ~Kmeans();
 
@@ -23,7 +23,7 @@ public:
     virtual float sum_squared_distance() const;
 
 protected:
-    Table &_table;
+    Table _table;
     int _k; //this is the number of centres that we need to have.
     std::vector<Cluster> _result; //These are the final clusters which should be of size _k
     unsigned long long _numIterations;
@@ -31,9 +31,9 @@ protected:
 
     void runLioydIterations(); //runs Lyod's iterations
     void runIteration();  //runs one iteration
-    float findDistance( Row &, Row &);
+    float findDistance(Row &, Row &);
 
-    float findDistanceSquared(Row &,  Row &);
+    float findDistanceSquared(Row &, Row &);
 
     void calcNewCentres();
 

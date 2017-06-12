@@ -20,9 +20,8 @@ class Cluster;
 
 
 struct Row {
-    Row(std::vector<dataType> &dat);
+    Row(std::vector<dataType> dat);
     ~Row();
-
     std::vector<dataType> data;
     dataType &operator[](std::size_t i);
     void clear();
@@ -39,10 +38,18 @@ struct Table {
 
     ~Table();
 
-    std::vector<Row *> data;
+    std::vector<Row> data;
 
     Row* &operator[](std::size_t i);
+    /*
+     * Clearing a table removes all of the rows from it; however, it does not free the memory.
+     * Once the table is cleared, it is the job of somewhere else to free all the rows.
+     */
     void clear();
+
+    /*
+     * Pushed a row to the back of the table.
+     */
     void add(Row*);
     bool empty() const;
     size_t size()const; //number of rows
@@ -53,9 +60,9 @@ std::ostream &operator<<(std::ostream &, const Table &);
 struct Cluster {
     Table values;
     Row centre;
-    unsigned long sum_squared_distances;
+    float sum_squared_distances;
 
-    Cluster(Row &);
+    Cluster(Row &); //this is the centre of the cluster
 
     //deleting a cluster does not delete the values in it.
     //That is the job of wherever the values came from

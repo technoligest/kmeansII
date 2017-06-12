@@ -3,11 +3,13 @@
 //
 #include "data.h"
 
-Row::Row(std::vector<dataType> &dat) : data(dat) {};
+Row::Row(std::vector<dataType> dat) : data(dat) {};
 
-Row::~Row() {}
+Row::~Row() {
+    std::cout << "Deleting row " << std::endl;
+}
 
-dataType &Row::operator[](std::size_t i){
+dataType &Row::operator[](std::size_t i) {
     return data[i];
 }
 
@@ -15,10 +17,11 @@ void Row::clear() {
     data.clear();
 }
 
-size_t Row::size()const {
+size_t Row::size() const {
     return data.size();
 }
-bool Row::empty()const{
+
+bool Row::empty() const {
     return data.empty();
 }
 
@@ -32,22 +35,26 @@ std::ostream &operator<<(std::ostream &outStream, const Row &row) {
 Table::Table() {};
 
 Table::~Table() {
+    std::cout << "deleting table." << std::endl;
     for (Row *row:data) {
         delete row;
     }
+    std::cout << "finished deleting table" << std::endl;
 }
 
-void Table::add(Row* r){
+void Table::add(Row *r) {
     data.push_back(r);
 }
-bool Table::empty()const{
+
+bool Table::empty() const {
     return data.empty();
 }
-size_t Table::size() const{
+
+size_t Table::size() const {
     return data.size();
 }
 
-Row* &Table::operator[](std::size_t i){
+Row *&Table::operator[](std::size_t i) {
     return data[i];
 };
 
@@ -66,6 +73,7 @@ Cluster::Cluster(Row &c) : centre(c), sum_squared_distances(0) {};
 
 Cluster::~Cluster() {
     values.clear();
+//    std::cout<<"deleting cluster"<<std::endl;
 }
 
 void Cluster::resetCentre() {

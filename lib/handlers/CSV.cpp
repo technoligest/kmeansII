@@ -35,15 +35,15 @@ void CSVRow::readNextRow(std::istream &str) {
     }
 }
 
-std::vector<float>* CSVRow::toFloat() const {
-    std::vector<float>* result= new std::vector<float>();
+std::vector<float> CSVRow::toFloat() const {
+    std::vector<float> result;
 
     for (std::string s:*_data) {
         try {
-            result->push_back(std::stof(s));
+            result.push_back(std::stof(s));
         }
         catch(std::invalid_argument arg){
-            result->clear();
+            result.clear();
             return result;
         }
     }
