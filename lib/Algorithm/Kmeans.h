@@ -19,12 +19,17 @@ public:
 
 };
 
-namespace KmeansSolver{
+namespace KmeansSolver {
  bool analyzeDataset(Dataset &d);
+
  bool setRandomCentres(Dataset &d, std::vector<Instance> &centres);
+
  double findDistanceSquared(const Instance &r1, const Instance &r2);
+
  double runLiyodIteration(Dataset &d, std::vector<Instance> &centres);
+
  double runLiyodIterations(Dataset &d, std::vector<Instance> &centres);
+
  bool prepareForClustering(Dataset &d, std::vector<Instance> &centres, ull k);
 }
 

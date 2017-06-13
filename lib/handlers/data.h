@@ -10,7 +10,7 @@
 #include <vector>
 #include <iostream>
 
-#define MAX_NUM_ITERATIONS 200
+#define MAX_NUM_ITERATIONS 1
 #define LOCAL_ITERATION_BIAS 1.5f
 
 typedef double dataType;

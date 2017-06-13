@@ -11,28 +11,25 @@
 #include "inputArguments.hh"
 #include "../pkgs/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.h"
+#include "../Algorithm/Kmeanspp.h"
 
 inline Dataset readFile(std::string fileName) {
   Dataset t;
   std::ifstream inputFile(fileName);
   for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
-        t.push_back(it->toFloat());
+    t.push_back(it->toFloat());
   }
   return t;
 };
 
 
-
-
-
 Kmeans *readArgs(KmeansArgs args) {
   if (args.algorithm == "kmeans") {
     return new Kmeans();
+  } else if (args.algorithm == "kmeans++") {
+    return new Kmeanspp();
   }
-//    else if(args.algorithm=="kmenas++"){
-//        return new Kmeanspp();
-//    }
-//    else if(args.algorithm=="kmenasII"){
+//    else if(args.algorithm=="kmeansII"){
 //        return new KmeansII(fabs(args.oversamplingFactor));
 //    }
   else {

@@ -16,9 +16,6 @@ public:
 
     double cluster(Dataset &d, std::vector<Instance> &centres, ull k) override;
 
-
-
-
 };
 
 

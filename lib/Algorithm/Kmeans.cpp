@@ -6,7 +6,7 @@
 #include <math.h>
 #include <random>
 #include <cassert>
-
+using namespace std;
 Kmeans::Kmeans() {}
 
 Kmeans::~Kmeans() {}
@@ -114,13 +114,20 @@ namespace KmeansSolver {
    if (d.empty() || centres.empty() || d.size() < centres.size()) {
      return -1;
    }
+
+
    std::vector<Instance> bestCentres;
 
    double currDistance = std::numeric_limits<double>::max();
    double bestDistance = std::numeric_limits<double>::max();
-   int iteration = 10;
+   int iteration;
    for (iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration) {
+     std::cout << "starting it:" << std::endl;
+
      double newDistance = runLiyodIteration(d, centres);
+     for (auto &i:centres) {
+       std::cout << i << std::endl;
+     }
      if (newDistance < bestDistance) {
        bestDistance = newDistance;
        bestCentres = centres;
@@ -134,7 +141,7 @@ namespace KmeansSolver {
        break;
      }
      currDistance = newDistance;
-
+     std::cout << "ending it." << std::endl;
    }
    std::cout << "numIterations: " << iteration << std::endl;
    return bestDistance;
@@ -167,8 +174,8 @@ namespace KmeansSolver {
 }
 
 
-
 using namespace KmeansSolver;
+
 //function returns the sum of squared distance of the centroids it finds.
 double Kmeans::cluster(Dataset &d, std::vector<Instance> &centres, ull k) {
   if (!prepareForClustering(d, centres, k)) {

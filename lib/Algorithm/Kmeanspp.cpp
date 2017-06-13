@@ -3,68 +3,85 @@
 //
 
 #include "Kmeanspp.h"
+#include <cassert>
+#include <random>
 
 Kmeanspp::Kmeanspp() {}
 
 Kmeanspp::~Kmeanspp() {};
 
 using namespace KmeansSolver;
-double Kmeanspp::cluster(Dataset &d, std::vector<Instance> &centres, ull k) {
-  prepareForClustering(d, centres, k);
+using namespace std;
+namespace KmeansppSolver {
+ //find the shortest distance to any already chosen cluster for the given row.
+ double shortestDistanceToClusterCentre(const std::vector<Instance> &centres, const Instance &inst) {
+   if (centres.empty())
+     return -1;
 
-  runLiyodIterations(d,centres);
-}
+   double currDistance, lowestDistance;
+   lowestDistance = currDistance = KmeansSolver::findDistanceSquared(inst, centres[0]);
 
-void Kmeanspp::findCentres() {
-  if (_table.empty() || _k < 1) {
-    return;
-  }
-  size_t size = _table.size();
-  srand((unsigned) time(NULL));
-
-  _result.push_back(Cluster(*_table[rand() % size]));
-
-  for (int i = 1; i < _k; ++i) {
-    double dx = calcDX(_table, _result);
-    double ran = (double) rand() / RAND_MAX;
-
-    double tem = 0;
-    for (auto row: _table.data) {
-      double distance = shortestDistanceToClusterCentre(_result, *row) / dx;
-      tem += distance;
-      if (ran <= tem) {
-        _result.push_back(Cluster(*row));
-        break;
-      }
-    }
-  }
-}
+   for (Instance const &centre: centres) {
+     currDistance = findDistanceSquared(inst, centre);
+     if (currDistance < lowestDistance) {
+       lowestDistance = currDistance;
+     }
+   }
+   return lowestDistance;
+ }
 
 //DX is the sum of the shortest paths from each item to the nearest cluster.
-double Kmeanspp::calcDX(const Table &t, const std::vector<Cluster> &clusters) {
-  if (clusters.size() < 1) {
-    return -1;
-  }
-  double result = 0;
-  for (auto row: t.data) {
-    result += shortestDistanceToClusterCentre(clusters, *row);
-  }
-  return result;
+ double calcDX(const Dataset &d, const std::vector<Instance> &centres) {
+   if (centres.size() < 1) {
+     return -1;
+   }
+   double result = 0;
+   for (Instance const &inst: d) {
+     result += shortestDistanceToClusterCentre(centres, inst);
+   }
+   return result;
+ }
+
+ void findCentres(Dataset &d, std::vector<Instance> &centres, ull k) {
+   assert(k > 0);
+   assert(d.size() > k);
+   centres.clear();
+
+   size_t n = d.size();
+
+   std::random_device rd;
+   std::mt19937 gen(rd());
+   std::uniform_real_distribution<> dis(0, 1);
+
+   centres.push_back(d[static_cast<int>((dis(gen) * n))]);
+   for (int i = 1; i < k; ++i) {
+
+     std::random_device rd;
+     std::mt19937 gen(rd());
+     std::uniform_real_distribution<> dis(0, 1);
+
+     double dx = calcDX(d, centres);
+     double ran = static_cast<double>(dis(gen));
+
+     double cumulativeProb = 0;
+     for (Instance inst:d) {
+       double distance = shortestDistanceToClusterCentre(centres, inst) / dx;
+       cumulativeProb += distance;
+       if (ran <= cumulativeProb) {
+         centres.push_back(inst);
+         break;
+       }
+     }
+
+   }
+   assert(centres.size()==k);
+ }
 }
 
-//find the shortest distance to any already chosen cluster for the given row.
-double Kmeanspp::shortestDistanceToClusterCentre(const std::vector<Cluster> &clusters, Row &row) {
-  if (_result.empty())
-    return -1;
-  double currDistance, lowestDistance;
-  lowestDistance = currDistance = findDistance(row, _result[0].centre);
 
-  for (Cluster cluster: _result) {
-    currDistance = findDistance(row, cluster.centre);
-    if (currDistance < lowestDistance) {
-      lowestDistance = currDistance;
-    }
-  }
-  return lowestDistance;
+double Kmeanspp::cluster(Dataset &d, std::vector<Instance> &centres, ull k) {
+  KmeansSolver::prepareForClustering(d, centres, k);
+  KmeansppSolver::findCentres(d, centres, k);
+  return KmeansSolver::runLiyodIterations(d, centres);
 }
 

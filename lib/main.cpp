@@ -16,13 +16,13 @@ int main(int argc, char **argv) {
   }
   Dataset d = readFile(args.inputFileName);
   vector<Instance> centres;
-  cout << d;
 
-
-  cout << sqrt(k->cluster(d, centres, args.k))<<endl;
   for(auto &i:centres) {
     std::cout << i<<endl;
   }
+
+  cout << sqrt(k->cluster(d, centres, args.k))<<endl;
+
   delete k;
   return 0;
 }
