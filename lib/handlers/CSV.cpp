@@ -35,8 +35,8 @@ void CSVRow::readNextRow(std::istream &str) {
     }
 }
 
-std::vector<float> CSVRow::toFloat() const {
-    std::vector<float> result;
+std::vector<double> CSVRow::toFloat() const {
+    std::vector<double> result;
 
     for (std::string s:*_data) {
         try {

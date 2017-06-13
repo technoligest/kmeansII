@@ -21,9 +21,9 @@ public:
     unsigned long numIterations() const override;
 
 protected:
-    float shortestDistanceToClusterCentre(const std::vector<Cluster> &, Row &);
+    double shortestDistanceToClusterCentre(const std::vector<Cluster> &, Row &);
 
-    float calcDX(const Table &, const std::vector<Cluster> &);
+    double calcDX(const Table &, const std::vector<Cluster> &);
 
 private:
     void findCentres() override;

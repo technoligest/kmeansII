@@ -12,7 +12,7 @@ add_executable(kmeansII ${SOURCE_FILES})
 set(TESTING_SOURCES tests/test-dataReader.cpp tests/tests.cpp tests/test-CSV.cpp tests/kmeans.cpp tests/test-data.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/data.h lib/handlers/data.cpp)
 add_executable(testing ${TESTING_SOURCES})
 
-set(TRYING_SOURCES lib/trying.cpp lib/trying.h lib/handlers/data.h lib/handlers/data.cpp)
+set(TRYING_SOURCES lib/trying.cpp lib/trying.h)
 add_executable(trying ${TRYING_SOURCES})
 
 #set(TEMP_SOURCES lib/main.cpp lib/handlers/data.h lib/Algorithm/Kmeans.h lib/Algorithm/Kmeans.cpp lib/handlers/CSV.h lib/handlers/dataReader.h lib/handlers/data.cpp)

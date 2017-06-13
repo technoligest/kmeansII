@@ -1,25 +1,32 @@
 
 #include "handlers/dataReader.h"
+#include "handlers/inputArguments.hh"
 #include "Algorithm/Kmeans.h"
 
 using namespace std;
 
-
-int main(){
-    Table t = readFile(
-            "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
-    cout<<t<<endl;
-    cout<<"The size of the table: "<<t.size()<<endl;
-    Kmeans *k= new Kmeans(t, 10);
-
-
-    cout << "This should be finished." << endl;
+int main(int argc,char** argv) {
+  KmeansArgs args;
+  if (!args.parse_args(argc, argv)){
+    cout<<"Could not parse arguments. Try again."<<endl;
+    return 1;
+  }
+  Kmeans *k = readArgs(args); 
+  if(k==NULL){
+    cout<<"Could not create Kmeans object. Try again."<<endl;
+    return 1;
+  }
+//    Table t = readFile(
+//            "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/drivPoints.CSV");
+//    cout << t << endl;
+//    cout << "The size of the table: " << t.size() << endl;
+//    Kmeans *k = new Kmeans(t, 10);
+//
+//
+//    cout << "This should be finished." << endl;
 //    cout<<t<<endl;
 //    cout<<"The size of the table: "<<t.size()<<endl;
     return 0;
-
-
-
 }
 
 

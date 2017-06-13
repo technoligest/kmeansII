@@ -8,6 +8,7 @@
 
 #include "CSV.h"
 #include "data.h"
+#include "../pkgs/macro-argparse-plain.hh"
 
 inline Table readFile(std::string fileName) {
     Table t ;
@@ -19,4 +20,18 @@ inline Table readFile(std::string fileName) {
 };
 
 
+Kmeans *readArgs(KmeansArgs args){
+    if(args.algorithm=="kmeans"){
+        return new Kmeans();
+    }
+    else if(args.algorithm=="kmenas++"){
+        return new Kmeanspp();
+    }
+    else if(args.algorithm=="kmenasII"){
+        return new KmeansII(fabs(args.oversamplingFactor));
+    }
+    else{
+        return NULL;
+    }
+}
 #endif //KMEANSII_DATAREADER_H

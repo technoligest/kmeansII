@@ -16,10 +16,10 @@ void KmeansII::findCentres() {
     _result.push_back(Cluster(*_table[rand() % size]));
     int passes = (int)calcDX(_table, _result);
     for (int i = 0; i < passes; ++i) {
-        float dx = Kmeanspp::calcDX(_table,_result);
-        float ran = (float) rand() / RAND_MAX;
+        double dx = Kmeanspp::calcDX(_table,_result);
+        double ran = (double) rand() / RAND_MAX;
         for (auto row: _table.data) {
-            float probability = _l*Kmeanspp::shortestDistanceToClusterCentre(_result,*row) / dx;
+            double probability = _l*Kmeanspp::shortestDistanceToClusterCentre(_result,*row) / dx;
             if (ran <= probability) {
                 _result.push_back(Cluster(*row));
             }

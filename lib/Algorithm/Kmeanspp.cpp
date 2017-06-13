@@ -21,12 +21,12 @@ void Kmeanspp::findCentres() {
     _result.push_back(Cluster(*_table[rand() % size]));
 
     for (int i = 1; i < _k; ++i) {
-        float dx = calcDX(_table,_result);
-        float ran = (float) rand() / RAND_MAX;
+        double dx = calcDX(_table,_result);
+        double ran = (double) rand() / RAND_MAX;
 
-        float tem = 0;
+        double tem = 0;
         for (auto row: _table.data) {
-            float distance = shortestDistanceToClusterCentre(_result,*row) / dx;
+            double distance = shortestDistanceToClusterCentre(_result,*row) / dx;
             tem += distance;
             if (ran <= tem) {
                 _result.push_back(Cluster(*row));
@@ -37,11 +37,11 @@ void Kmeanspp::findCentres() {
 }
 
 //DX is the sum of the shortest paths from each item to the nearest cluster.
-float Kmeanspp::calcDX(const Table &t, const std::vector<Cluster> &clusters) {
+double Kmeanspp::calcDX(const Table &t, const std::vector<Cluster> &clusters) {
     if (clusters.size() < 1) {
         return -1;
     }
-    float result = 0;
+    double result = 0;
     for (auto row: t.data) {
         result += shortestDistanceToClusterCentre(clusters, *row);
     }
@@ -49,10 +49,10 @@ float Kmeanspp::calcDX(const Table &t, const std::vector<Cluster> &clusters) {
 }
 
 //find the shortest distance to any already chosen cluster for the given row.
-float Kmeanspp::shortestDistanceToClusterCentre(const std::vector<Cluster> &clusters, Row &row) {
+double Kmeanspp::shortestDistanceToClusterCentre(const std::vector<Cluster> &clusters, Row &row) {
     if (_result.empty())
         return -1;
-    float currDistance,lowestDistance;
+    double currDistance,lowestDistance;
     lowestDistance = currDistance = findDistance(row, _result[0].centre);
 
     for (Cluster cluster: _result) {
