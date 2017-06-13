@@ -10,23 +10,14 @@
 
 class Kmeanspp : public Kmeans {
 public:
-    Kmeanspp(Table &_data, const int k);
+    Kmeanspp();
 
     ~Kmeanspp();
 
-    void run() override;
+    double cluster(Dataset &d, std::vector<Instance> &centres, ull k) override;
 
-    std::vector<Cluster> *getResult() override;
 
-    unsigned long numIterations() const override;
 
-protected:
-    double shortestDistanceToClusterCentre(const std::vector<Cluster> &, Row &);
-
-    double calcDX(const Table &, const std::vector<Cluster> &);
-
-private:
-    void findCentres() override;
 
 };
 

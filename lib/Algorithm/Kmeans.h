@@ -10,47 +10,23 @@
 
 class Kmeans {
 public:
-    Kmeans();
+  Kmeans();
 
-    ~Kmeans();
+  ~Kmeans();
 
-    virtual void run();
+  virtual double cluster(Dataset &d, std::vector<Instance> &centres, ull k);
 
-    virtual std::vector<Cluster> *getResult();
 
-    virtual unsigned long numIterations() const;
-
-    virtual double sum_squared_distance() const;
-
-    virtual double cluster(Dataset &d, std::vector<Instance> &centres, ull k);
-
-protected:
-    ull _numIterations;
-    double _sum_squared_distance;
-
-    void runLioydIterations(); //runs Lyod's iterations
-    void runIteration();  //runs one iteration
-    double findDistance(Row &, Row &);
-
-    double findDistanceSquared(Row &, Row &);
-
-    void calcNewCentres();
-
-    void calCentre(Cluster &);
-
-    void clearClusterData();
-
-    virtual void findCentres();
-
-private:
-    bool stable();
-
-    double _prevDistance;
-    double _currDistance;
-
-    void findRandomCentres();
 };
 
+namespace KmeansSolver{
+ bool analyzeDataset(Dataset &d);
+ bool setRandomCentres(Dataset &d, std::vector<Instance> &centres);
+ double findDistanceSquared(const Instance &r1, const Instance &r2);
+ double runLiyodIteration(Dataset &d, std::vector<Instance> &centres);
+ double runLiyodIterations(Dataset &d, std::vector<Instance> &centres);
+ bool prepareForClustering(Dataset &d, std::vector<Instance> &centres, ull k);
+}
 
 #endif //KMEANSII_KMEANS_H
 

@@ -23,4 +23,20 @@ typedef std::vector<Instance *> DatasetRefs;
 typedef unsigned long long ull;
 typedef long long ll;
 
+
+
+inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
+  for(auto k:i){
+    outStream<<k<<"\t";
+  }
+  return outStream;
+}
+
+inline std::ostream &operator<<(std::ostream &outStream, const Dataset &d) {
+  for(auto i:d){
+    outStream<<i<<std::endl;
+  }
+  return outStream;
+}
+
 #endif //KMEANSII_DATA_H

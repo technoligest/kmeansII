@@ -18,3 +18,8 @@ This folder includes files for both testing and running purposes.
 
 #### tests (folder)
 This folder includes all the files needed for unit testing the project.
+
+#### pkgs (folder)
+This folder includes all of the past packages that have been included.
+
+
