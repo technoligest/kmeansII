@@ -9,18 +9,19 @@
 #include "Kmeans.h"
 #include "Kmeanspp.h"
 
-class KmeansII : public Kmeanspp{
+class KmeansII : public Kmeans {
 public:
-    KmeansII(Table &_data, const int k, const double l);
-    ~KmeansII();
+  KmeansII(double);
+
+  ~KmeansII();
+
+  double cluster(Dataset &d, std::vector<Instance> &centres, ull k);
 
 private:
-    void run() override;
-    void findCentres() override;
-
-private:
-    const double _l; //this the the constant passed in by the user.
+  double l;
 };
 
-
+namespace KmeansIISolver{
+ void findCentres(Dataset &, std::vector<Instance> &, ull,ll);
+}
 #endif //KMEANSII_KMEANSII_H

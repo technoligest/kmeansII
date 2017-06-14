@@ -80,7 +80,9 @@ namespace KmeansppSolver {
 
 
 double Kmeanspp::cluster(Dataset &d, std::vector<Instance> &centres, ull k) {
-  KmeansSolver::prepareForClustering(d, centres, k);
+  if(!KmeansSolver::prepareForClustering(d,centres,k)){
+    return -1;
+  }
   KmeansppSolver::findCentres(d, centres, k);
   return KmeansSolver::runLiyodIterations(d, centres);
 }

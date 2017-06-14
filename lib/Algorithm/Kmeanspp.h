@@ -18,5 +18,12 @@ public:
 
 };
 
+namespace KmeansppSolver{
+ double shortestDistanceToClusterCentre(const std::vector<Instance> &, const Instance &);
+ double calcDX(const Dataset &, const std::vector<Instance> &);
+ void findCentres(Dataset &, std::vector<Instance> &, ull);
+
+}
+
 
 #endif //KMEANSII_KMEANSPP_H

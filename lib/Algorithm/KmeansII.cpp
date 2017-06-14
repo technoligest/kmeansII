@@ -2,44 +2,58 @@
 // Created by Yaser Alkayale on 2017-06-04.
 //
 
+#include <cassert>
+#include <random>
+#include <cmath>
 #include "KmeansII.h"
 
-KmeansII::KmeansII(Table &_data, const int k, const double l) : Kmeanspp(_data, k), _l(l) {}
-KmeansII::~KmeansII(){}
+KmeansII::KmeansII(double osf):l(osf) {} //osf=oversampling factor
 
-void KmeansII::findCentres() {
-    if (_table.empty() || _k < 1) {
-        return;
-    }
-    size_t size = _table.size();
-    srand((unsigned) time(NULL));
-    _result.push_back(Cluster(*_table[rand() % size]));
-    int passes = (int)calcDX(_table, _result);
-    for (int i = 0; i < passes; ++i) {
-        double dx = Kmeanspp::calcDX(_table,_result);
-        double ran = (double) rand() / RAND_MAX;
-        for (auto row: _table.data) {
-            double probability = _l*Kmeanspp::shortestDistanceToClusterCentre(_result,*row) / dx;
-            if (ran <= probability) {
-                _result.push_back(Cluster(*row));
-            }
-        }
-    }
+KmeansII::~KmeansII() {}
+
+using namespace std;
+
+namespace KmeansIISolver {
+ void findCentres(Dataset &d, std::vector<Instance> &centres, ull k,ll l) {
+   assert(k > 0);
+   assert(d.size() > k);
+   centres.clear();
+
+   size_t n = d.size();
+
+   //initializing random distribution
+   std::random_device rd;
+   std::mt19937 gen(rd());
+   std::uniform_real_distribution<> dis(0, 1);
+
+   centres.push_back(d[static_cast<int>((dis(gen) * n))]);
+   double dx = KmeansppSolver::calcDX(d, centres);
+   ll passes = static_cast<int>( log(dx)/log(2));
+   cout<<"Number of passes: "<<passes<<endl;
+   for (ll i = 0; i < passes; ++i) {
+     double dx = KmeansppSolver::calcDX(centres, centres);
+     double ran = static_cast<double>(dis(gen));
+     for (Instance &inst: d) {
+       double probability = l * KmeansppSolver::shortestDistanceToClusterCentre(centres, inst) / dx;
+       if (ran <= probability) {
+         centres.push_back(inst);
+       }
+     }
+   }
+ }
 }
 
-void KmeansII::run() {
-    KmeansII::findCentres();
-    Table temp;
-    for(Cluster c: _result){
-        temp.add(&c.centre);
-    }
-    Kmeanspp kmeans(temp,_k);
-    kmeans.run();
-    auto result = kmeans.getResult();
-    _result.clear();
-    for(auto i:*result){
-        _result.push_back(Cluster(i.centre));
-    }
-    Kmeans::runLioydIterations();
+double KmeansII::cluster(Dataset &d, std::vector<Instance> &centres, ull k) {
+
+  if (!KmeansSolver::prepareForClustering(d, centres, k)) {
+    return -1;
+  }
+  std::vector<Instance> tempCentres;
+  KmeansIISolver::findCentres(d, tempCentres, k, l);
+
+  Kmeanspp sol;
+  sol.cluster(tempCentres, centres, k);
+
+  return KmeansSolver::runLiyodIterations(d, centres);
 }
 

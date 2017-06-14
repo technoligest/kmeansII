@@ -15,5 +15,5 @@ add_executable(testing ${TESTING_SOURCES})
 set(TRYING_SOURCES lib/trying.cpp lib/trying.h)
 add_executable(trying ${TRYING_SOURCES})
 
-set(TEMP_SOURCES lib/main.cpp lib/handlers/data.h lib/Algorithm/Kmeans.h lib/Algorithm/Kmeans.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/dataReader.h lib/handlers/inputArguments.hh lib/algorithm/Kmeanspp.h lib/algorithm/Kmeanspp.cpp)
+set(TEMP_SOURCES lib/main.cpp lib/handlers/data.h lib/Algorithm/Kmeans.h lib/Algorithm/Kmeans.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/dataReader.h lib/handlers/inputArguments.hh lib/algorithm/Kmeanspp.h lib/algorithm/Kmeanspp.cpp lib/algorithm/KmeansII.cpp lib/algorithm/KmeansII.h)
 add_executable(temp ${TEMP_SOURCES})

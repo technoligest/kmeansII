@@ -8,6 +8,6 @@ DEF_ARGUMENT_CLASS(
         std::string,    outputFileName,	    "output.txt",	OPTIONAL, OPT_SLH(-o,--output, "What is the output file name?"),
         std::string,    algorithm,          "kmeans",		REQUIRED, OPT_SLH(-a,--algorithm, "What algorithm to use? (Kmeans, Kmeans++, KmeansII)"),
         int,            k,   1,              REQUIRED, OPT_SH(-k, "Number of clusters"),
-        double,          oversamplingFactor, 2,              OPTIONAL, OPT_SH(-l, "oversampling factor (only for kmeansII)")
+        double,          l, 2,              OPTIONAL, OPT_SH(-l, "oversampling factor (only for kmeansII)")
 //bool,			decorate,	false,		OPTIONAL, OPT_SLWH(-d, --decorate, true, "decoreate the output")
 );

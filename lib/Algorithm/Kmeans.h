@@ -22,15 +22,15 @@ public:
 namespace KmeansSolver {
  bool analyzeDataset(Dataset &d);
 
- bool setRandomCentres(Dataset &d, std::vector<Instance> &centres);
+ bool setRandomCentres(Dataset &, std::vector<Instance> &);
 
- double findDistanceSquared(const Instance &r1, const Instance &r2);
+ double findDistanceSquared(const Instance &, const Instance &);
 
- double runLiyodIteration(Dataset &d, std::vector<Instance> &centres);
+ double runLiyodIteration(Dataset &, std::vector<Instance> &);
 
- double runLiyodIterations(Dataset &d, std::vector<Instance> &centres);
+ double runLiyodIterations(Dataset &, std::vector<Instance> &);
 
- bool prepareForClustering(Dataset &d, std::vector<Instance> &centres, ull k);
+ bool prepareForClustering(Dataset &, std::vector<Instance> &, ull);
 }
 
 #endif //KMEANSII_KMEANS_H
