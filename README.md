@@ -23,3 +23,6 @@ This folder includes all the files needed for unit testing the project.
 This folder includes all of the past packages that have been included.
 
 
+###To run the program.
+Open the cmake-build-debug folder. Run make. Then choose the binary you would like to use.
+By default, there are 4 builds, "trying" is the one currently being used in development.
