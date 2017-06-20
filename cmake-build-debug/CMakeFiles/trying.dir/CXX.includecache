@@ -6,53 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro-argparse-plain.hh
-typecvt.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/typecvt.hh
-macro_traits.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro_traits.hh
-map
--
-cctype
--
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
 vector
 -
-string
+iostream
 -
-cassert
+
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp
+iostream
 -
 fstream
 -
 sstream
 -
-iostream
--
-algorithm
--
-stdexcept
--
-type_traits
--
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro_traits.hh
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/numcvt.hh
-string
--
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/strcvt.hh
-string
--
-cstdlib
--
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/typecvt.hh
-strcvt.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/strcvt.hh
-numcvt.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/numcvt.hh
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp
-pkgs/macro-argparse-plain.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro-argparse-plain.hh
+handlers/data.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
 

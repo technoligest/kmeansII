@@ -4,32 +4,26 @@
 CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeans.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.cpp
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeans.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.cpp
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
 CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
 CMakeFiles/temp.dir/lib/main.cpp.o
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansII.h
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeanspp.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.h
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh
  /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro-argparse-plain.hh
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/macro_traits.hh
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/numcvt.hh
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/strcvt.hh
- /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/typecvt.hh
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro_traits.hh
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/numcvt.hh
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/strcvt.hh
+ /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/typecvt.hh

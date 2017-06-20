@@ -129,61 +129,11 @@ CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides: CMakeFiles/temp.dir/lib/han
 CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides.build: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
 
 
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o: ../lib/algorithm/Kmeanspp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.cpp"
-
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.cpp" > CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.i
-
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.cpp" -o CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.s
-
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.requires:
-
-.PHONY : CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.requires
-
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.provides: CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.requires
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.provides.build
-.PHONY : CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.provides
-
-CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.provides.build: CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o
-
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o: ../lib/algorithm/KmeansII.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.cpp"
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.cpp" > CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.i
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.cpp" -o CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.s
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.requires:
-
-.PHONY : CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.requires
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.provides: CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.requires
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.provides.build
-.PHONY : CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.provides
-
-CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.provides.build: CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o
-
-
 # Object files for target temp
 temp_OBJECTS = \
 "CMakeFiles/temp.dir/lib/main.cpp.o" \
 "CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o" \
-"CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o" \
-"CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o" \
-"CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o"
+"CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o"
 
 # External object files for target temp
 temp_EXTERNAL_OBJECTS =
@@ -191,11 +141,9 @@ temp_EXTERNAL_OBJECTS =
 temp: CMakeFiles/temp.dir/lib/main.cpp.o
 temp: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o
 temp: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
-temp: CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o
-temp: CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o
 temp: CMakeFiles/temp.dir/build.make
 temp: CMakeFiles/temp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable temp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/temp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -206,8 +154,6 @@ CMakeFiles/temp.dir/build: temp
 CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/main.cpp.o.requires
 CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.requires
 CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.requires
-CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o.requires
-CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o.requires
 
 .PHONY : CMakeFiles/temp.dir/requires
 

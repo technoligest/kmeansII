@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 find_program( MEMORYCHECK_COMMAND valgrind )
 set( MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full" )
 
-set(SOURCE_FILES lib/Algorithm/KmeansII.cpp lib/Algorithm/KmeansII.h lib/main.cpp lib/Algorithm/Kmeans.cpp lib/Algorithm/Kmeans.h lib/Algorithm/Kmeanspp.cpp lib/Algorithm/Kmeanspp.h lib/handlers/data.h lib/handlers/dataReader.h lib/handlers/CSV.h lib/handlers/CSV.cpp)
+set(SOURCE_FILES lib/Algorithm/KmeansII.cpp lib/Algorithm/KmeansII.h lib/main.cpp lib/Algorithm/Kmeans.cpp lib/Algorithm/Kmeans.h lib/Algorithm/Kmeanspp.cpp lib/Algorithm/Kmeanspp.h lib/handlers/data.h lib/handlers/dataReader.h lib/handlers/CSV.h lib/handlers/CSV.cpp lib/Algorithm/KmeansBase.h  lib/Algorithm/SeedPickers.h lib/Algorithm/IterationRunners.h lib/Algorithm/KmeansHelpers.h)
 add_executable(kmeansII ${SOURCE_FILES})
 
 set(TESTING_SOURCES tests/test-dataReader.cpp tests/tests.cpp tests/test-CSV.cpp tests/kmeans.cpp tests/test-data.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/data.h)
@@ -15,5 +15,5 @@ add_executable(testing ${TESTING_SOURCES})
 set(TRYING_SOURCES lib/trying.cpp lib/trying.h)
 add_executable(trying ${TRYING_SOURCES})
 
-set(TEMP_SOURCES lib/main.cpp lib/handlers/data.h lib/Algorithm/Kmeans.h lib/Algorithm/Kmeans.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/dataReader.h lib/handlers/inputArguments.hh lib/algorithm/Kmeanspp.h lib/algorithm/Kmeanspp.cpp lib/algorithm/KmeansII.cpp lib/algorithm/KmeansII.h)
+set(TEMP_SOURCES lib/main.cpp lib/handlers/data.h lib/Algorithm/Kmeans.h lib/Algorithm/Kmeans.cpp lib/handlers/CSV.h lib/handlers/CSV.cpp lib/handlers/dataReader.h lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.h lib/Algorithm/SeedPickers.h)
 add_executable(temp ${TEMP_SOURCES})

@@ -206,12 +206,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.h">
+			<Option target="temp"/>
+			<Option target="kmeansII"/>
+		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h">
 			<Option target="temp"/>
+			<Option target="kmeansII"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h">
+			<Option target="kmeansII"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h">
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansII.cpp">
@@ -226,17 +236,9 @@
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeanspp.h">
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h">
 			<Option target="temp"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/KmeansII.h">
-			<Option target="temp"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.cpp">
-			<Option target="temp"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/Kmeanspp.h">
-			<Option target="temp"/>
+			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp">
 			<Option target="testing"/>

@@ -23,18 +23,22 @@ typedef std::vector<Instance *> DatasetRefs;
 typedef unsigned long long ull;
 typedef long long ll;
 
+typedef unsigned int weight;
+typedef std::vector<weight> Weights;
+
+typedef double dist;
 
 
 inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
-  for(auto k:i){
-    outStream<<k<<"\t";
+  for (auto k:i) {
+    outStream << k << "\t";
   }
   return outStream;
 }
 
 inline std::ostream &operator<<(std::ostream &outStream, const Dataset &d) {
-  for(auto i:d){
-    outStream<<i<<std::endl;
+  for (auto i:d) {
+    outStream << i << std::endl;
   }
   return outStream;
 }

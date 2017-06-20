@@ -6,32 +6,31 @@
 #define KMEANSII_KMEANS_H
 
 #include "../handlers/data.h"
+#include "SeedPickers.h"
+#include "KmeansBase.h"
 
-
-class Kmeans {
+template<class SeedPicker, class IterationRunner>
+class KmeansInitializer : public KmeansBase {
 public:
-  Kmeans();
+  inline KmeansInitializer(){};
+  double cluster(const Dataset &, std::vector<Instance> &, ull);
 
-  ~Kmeans();
-
-  virtual double cluster(Dataset &d, std::vector<Instance> &centres, ull k);
-
+  double cluster(const Dataset &, std::vector<Instance> &, const Weights &, ull);
 
 };
 
-namespace KmeansSolver {
- bool analyzeDataset(Dataset &d);
+//IR = iterationRunner
 
- bool setRandomCentres(Dataset &, std::vector<Instance> &);
+//template<class IR>
+//using Kmeans = KmeansInitializer<RandomSeedPicker,IR>;
+//
+//template <class IR>
+//using Kmeanspp = KmeansInitializer<KmeansppSeedPicker, IR>;
 
- double findDistanceSquared(const Instance &, const Instance &);
+//template<typename InnerIR, typename OuterIR>
+//using KmeansII = KmeansInitializer<KmeansIISeedPicker<InnerIR>,OuterIR>;
 
- double runLiyodIteration(Dataset &, std::vector<Instance> &);
 
- double runLiyodIterations(Dataset &, std::vector<Instance> &);
-
- bool prepareForClustering(Dataset &, std::vector<Instance> &, ull);
-}
 
 #endif //KMEANSII_KMEANS_H
 

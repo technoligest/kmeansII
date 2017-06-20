@@ -246,60 +246,6 @@ lib/Algorithm/Kmeanspp.cpp.s:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.s
 .PHONY : lib/Algorithm/Kmeanspp.cpp.s
 
-lib/algorithm/KmeansII.o: lib/algorithm/KmeansII.cpp.o
-
-.PHONY : lib/algorithm/KmeansII.o
-
-# target to build an object file
-lib/algorithm/KmeansII.cpp.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o
-.PHONY : lib/algorithm/KmeansII.cpp.o
-
-lib/algorithm/KmeansII.i: lib/algorithm/KmeansII.cpp.i
-
-.PHONY : lib/algorithm/KmeansII.i
-
-# target to preprocess a source file
-lib/algorithm/KmeansII.cpp.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.i
-.PHONY : lib/algorithm/KmeansII.cpp.i
-
-lib/algorithm/KmeansII.s: lib/algorithm/KmeansII.cpp.s
-
-.PHONY : lib/algorithm/KmeansII.s
-
-# target to generate assembly for a file
-lib/algorithm/KmeansII.cpp.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.s
-.PHONY : lib/algorithm/KmeansII.cpp.s
-
-lib/algorithm/Kmeanspp.o: lib/algorithm/Kmeanspp.cpp.o
-
-.PHONY : lib/algorithm/Kmeanspp.o
-
-# target to build an object file
-lib/algorithm/Kmeanspp.cpp.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o
-.PHONY : lib/algorithm/Kmeanspp.cpp.o
-
-lib/algorithm/Kmeanspp.i: lib/algorithm/Kmeanspp.cpp.i
-
-.PHONY : lib/algorithm/Kmeanspp.i
-
-# target to preprocess a source file
-lib/algorithm/Kmeanspp.cpp.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.i
-.PHONY : lib/algorithm/Kmeanspp.cpp.i
-
-lib/algorithm/Kmeanspp.s: lib/algorithm/Kmeanspp.cpp.s
-
-.PHONY : lib/algorithm/Kmeanspp.s
-
-# target to generate assembly for a file
-lib/algorithm/Kmeanspp.cpp.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.s
-.PHONY : lib/algorithm/Kmeanspp.cpp.s
-
 lib/handlers/CSV.o: lib/handlers/CSV.cpp.o
 
 .PHONY : lib/handlers/CSV.o
@@ -546,12 +492,6 @@ help:
 	@echo "... lib/Algorithm/Kmeanspp.o"
 	@echo "... lib/Algorithm/Kmeanspp.i"
 	@echo "... lib/Algorithm/Kmeanspp.s"
-	@echo "... lib/algorithm/KmeansII.o"
-	@echo "... lib/algorithm/KmeansII.i"
-	@echo "... lib/algorithm/KmeansII.s"
-	@echo "... lib/algorithm/Kmeanspp.o"
-	@echo "... lib/algorithm/Kmeanspp.i"
-	@echo "... lib/algorithm/Kmeanspp.s"
 	@echo "... lib/handlers/CSV.o"
 	@echo "... lib/handlers/CSV.i"
 	@echo "... lib/handlers/CSV.s"

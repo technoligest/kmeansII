@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/temp.dir/lib/main.cpp.o"
   "CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o"
   "CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o"
-  "CMakeFiles/temp.dir/lib/algorithm/Kmeanspp.cpp.o"
-  "CMakeFiles/temp.dir/lib/algorithm/KmeansII.cpp.o"
   "temp.pdb"
   "temp"
 )
