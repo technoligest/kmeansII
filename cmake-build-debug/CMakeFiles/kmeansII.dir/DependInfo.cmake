@@ -4,11 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cpp.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansII.cpp" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansII.cpp.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeanspp.cpp" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/handlers/CSV.cpp.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/main.cpp.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cc.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/kmeansII.dir/lib/main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

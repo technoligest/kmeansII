@@ -6,7 +6,7 @@
 #define KMEANSII_KMEANSBASE_H
 
 
-#include "../handlers/data.h"
+#include "../handlers/data.hh"
 
 class KmeansBase {
 public:

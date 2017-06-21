@@ -57,38 +57,38 @@ include CMakeFiles/trying.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/trying.dir/flags.make
 
-CMakeFiles/trying.dir/lib/trying.cpp.o: CMakeFiles/trying.dir/flags.make
-CMakeFiles/trying.dir/lib/trying.cpp.o: ../lib/trying.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trying.dir/lib/trying.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trying.dir/lib/trying.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp"
+CMakeFiles/trying.dir/lib/trying.cc.o: CMakeFiles/trying.dir/flags.make
+CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/trying.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/trying.dir/lib/trying.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/trying.dir/lib/trying.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc"
 
-CMakeFiles/trying.dir/lib/trying.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trying.dir/lib/trying.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp" > CMakeFiles/trying.dir/lib/trying.cpp.i
+CMakeFiles/trying.dir/lib/trying.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/trying.dir/lib/trying.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc" > CMakeFiles/trying.dir/lib/trying.cc.i
 
-CMakeFiles/trying.dir/lib/trying.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trying.dir/lib/trying.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp" -o CMakeFiles/trying.dir/lib/trying.cpp.s
+CMakeFiles/trying.dir/lib/trying.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/trying.dir/lib/trying.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc" -o CMakeFiles/trying.dir/lib/trying.cc.s
 
-CMakeFiles/trying.dir/lib/trying.cpp.o.requires:
+CMakeFiles/trying.dir/lib/trying.cc.o.requires:
 
-.PHONY : CMakeFiles/trying.dir/lib/trying.cpp.o.requires
+.PHONY : CMakeFiles/trying.dir/lib/trying.cc.o.requires
 
-CMakeFiles/trying.dir/lib/trying.cpp.o.provides: CMakeFiles/trying.dir/lib/trying.cpp.o.requires
-	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cpp.o.provides.build
-.PHONY : CMakeFiles/trying.dir/lib/trying.cpp.o.provides
+CMakeFiles/trying.dir/lib/trying.cc.o.provides: CMakeFiles/trying.dir/lib/trying.cc.o.requires
+	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cc.o.provides.build
+.PHONY : CMakeFiles/trying.dir/lib/trying.cc.o.provides
 
-CMakeFiles/trying.dir/lib/trying.cpp.o.provides.build: CMakeFiles/trying.dir/lib/trying.cpp.o
+CMakeFiles/trying.dir/lib/trying.cc.o.provides.build: CMakeFiles/trying.dir/lib/trying.cc.o
 
 
 # Object files for target trying
 trying_OBJECTS = \
-"CMakeFiles/trying.dir/lib/trying.cpp.o"
+"CMakeFiles/trying.dir/lib/trying.cc.o"
 
 # External object files for target trying
 trying_EXTERNAL_OBJECTS =
 
-trying: CMakeFiles/trying.dir/lib/trying.cpp.o
+trying: CMakeFiles/trying.dir/lib/trying.cc.o
 trying: CMakeFiles/trying.dir/build.make
 trying: CMakeFiles/trying.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable trying"
@@ -99,7 +99,7 @@ CMakeFiles/trying.dir/build: trying
 
 .PHONY : CMakeFiles/trying.dir/build
 
-CMakeFiles/trying.dir/requires: CMakeFiles/trying.dir/lib/trying.cpp.o.requires
+CMakeFiles/trying.dir/requires: CMakeFiles/trying.dir/lib/trying.cc.o.requires
 
 .PHONY : CMakeFiles/trying.dir/requires
 

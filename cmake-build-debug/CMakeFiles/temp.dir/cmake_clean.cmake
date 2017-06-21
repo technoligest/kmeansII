@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/temp.dir/lib/main.cpp.o"
-  "CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o"
-  "CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o"
+  "CMakeFiles/temp.dir/lib/main.cc.o"
+  "CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o"
+  "CMakeFiles/temp.dir/lib/handlers/CSV.cc.o"
+  "CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o"
   "temp.pdb"
   "temp"
 )

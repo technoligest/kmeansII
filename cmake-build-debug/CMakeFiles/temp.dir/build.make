@@ -57,93 +57,119 @@ include CMakeFiles/temp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/temp.dir/flags.make
 
-CMakeFiles/temp.dir/lib/main.cpp.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/lib/main.cpp.o: ../lib/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/temp.dir/lib/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/main.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp"
+CMakeFiles/temp.dir/lib/main.cc.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/lib/main.cc.o: ../lib/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/temp.dir/lib/main.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/main.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc"
 
-CMakeFiles/temp.dir/lib/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp" > CMakeFiles/temp.dir/lib/main.cpp.i
+CMakeFiles/temp.dir/lib/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/main.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc" > CMakeFiles/temp.dir/lib/main.cc.i
 
-CMakeFiles/temp.dir/lib/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp" -o CMakeFiles/temp.dir/lib/main.cpp.s
+CMakeFiles/temp.dir/lib/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/main.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc" -o CMakeFiles/temp.dir/lib/main.cc.s
 
-CMakeFiles/temp.dir/lib/main.cpp.o.requires:
+CMakeFiles/temp.dir/lib/main.cc.o.requires:
 
-.PHONY : CMakeFiles/temp.dir/lib/main.cpp.o.requires
+.PHONY : CMakeFiles/temp.dir/lib/main.cc.o.requires
 
-CMakeFiles/temp.dir/lib/main.cpp.o.provides: CMakeFiles/temp.dir/lib/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cpp.o.provides.build
-.PHONY : CMakeFiles/temp.dir/lib/main.cpp.o.provides
+CMakeFiles/temp.dir/lib/main.cc.o.provides: CMakeFiles/temp.dir/lib/main.cc.o.requires
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.o.provides.build
+.PHONY : CMakeFiles/temp.dir/lib/main.cc.o.provides
 
-CMakeFiles/temp.dir/lib/main.cpp.o.provides.build: CMakeFiles/temp.dir/lib/main.cpp.o
-
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o: ../lib/Algorithm/Kmeans.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp"
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp" > CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.i
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp" -o CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.s
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.requires:
-
-.PHONY : CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.requires
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.provides: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.requires
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.provides.build
-.PHONY : CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.provides
-
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.provides.build: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o
+CMakeFiles/temp.dir/lib/main.cc.o.provides.build: CMakeFiles/temp.dir/lib/main.cc.o
 
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o: ../lib/handlers/CSV.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp"
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/Kmeans.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc"
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/handlers/CSV.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp" > CMakeFiles/temp.dir/lib/handlers/CSV.cpp.i
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc" > CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.i
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/handlers/CSV.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp" -o CMakeFiles/temp.dir/lib/handlers/CSV.cpp.s
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc" -o CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.s
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.requires:
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.requires:
 
-.PHONY : CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.requires
+.PHONY : CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.requires
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.requires
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides.build
-.PHONY : CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.provides: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.requires
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.provides.build
+.PHONY : CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.provides
 
-CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.provides.build: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
+CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.provides.build: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o
+
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.o: ../lib/handlers/CSV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/temp.dir/lib/handlers/CSV.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/handlers/CSV.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc"
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/handlers/CSV.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc" > CMakeFiles/temp.dir/lib/handlers/CSV.cc.i
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/handlers/CSV.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc" -o CMakeFiles/temp.dir/lib/handlers/CSV.cc.s
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.requires:
+
+.PHONY : CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.requires
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.provides: CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.requires
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.provides.build
+.PHONY : CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.provides
+
+CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.provides.build: CMakeFiles/temp.dir/lib/handlers/CSV.cc.o
+
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/SeedPickers.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc"
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc" > CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.i
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc" -o CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.s
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.requires:
+
+.PHONY : CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.requires
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.provides: CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.requires
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.provides.build
+.PHONY : CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.provides
+
+CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.provides.build: CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o
 
 
 # Object files for target temp
 temp_OBJECTS = \
-"CMakeFiles/temp.dir/lib/main.cpp.o" \
-"CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o" \
-"CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o"
+"CMakeFiles/temp.dir/lib/main.cc.o" \
+"CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o" \
+"CMakeFiles/temp.dir/lib/handlers/CSV.cc.o" \
+"CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o"
 
 # External object files for target temp
 temp_EXTERNAL_OBJECTS =
 
-temp: CMakeFiles/temp.dir/lib/main.cpp.o
-temp: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o
-temp: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
+temp: CMakeFiles/temp.dir/lib/main.cc.o
+temp: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o
+temp: CMakeFiles/temp.dir/lib/handlers/CSV.cc.o
+temp: CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o
 temp: CMakeFiles/temp.dir/build.make
 temp: CMakeFiles/temp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable temp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/temp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -151,9 +177,10 @@ CMakeFiles/temp.dir/build: temp
 
 .PHONY : CMakeFiles/temp.dir/build
 
-CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/main.cpp.o.requires
-CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o.requires
-CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o.requires
+CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/main.cc.o.requires
+CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o.requires
+CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/handlers/CSV.cc.o.requires
+CMakeFiles/temp.dir/requires: CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o.requires
 
 .PHONY : CMakeFiles/temp.dir/requires
 

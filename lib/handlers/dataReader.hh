@@ -9,12 +9,12 @@
 #include <cmath>
 #include <sstream>
 #include <fstream>
-#include "CSV.h"
-#include "data.h"
+#include "CSV.hh"
+#include "data.hh"
 #include "inputArguments.hh"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
-#include "../Algorithm/Kmeans.h"
-#include "../Algorithm/IterationRunners.h"
+#include "../Algorithm/Kmeans.hh"
+#include "../Algorithm/IterationRunners.hh"
 
 inline Dataset readCSVFile(const std::string &fileName) {
   Dataset t;

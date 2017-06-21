@@ -6,6 +6,9 @@
 #define KMEANSII_KMEANSHELPERS_H
 
 
+#include <cmath>
+#include "../handlers/data.hh"
+
 namespace KmeansHelpers {
 //checks that all of the instances in the dataset are of teh same size
  inline bool analyzeDataset(const Dataset &d) {

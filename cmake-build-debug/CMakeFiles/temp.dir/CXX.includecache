@@ -6,39 +6,61 @@
 
 #IncludeRegexTransform: 
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
+cassert
+-
+cmath
+-
+KmeansHelpers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp
-Kmeans.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc
+Kmeans.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h
-../handlers/data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
-SeedPickers.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h
-KmeansBase.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
+KmeansBase.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh
+KmeansHelpers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
+SeedPickers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h
-../handlers/data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
+cmath
+-
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc
+SeedPickers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
+Kmeans.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
 random
 -
 cassert
 -
-../Algorithm/KmeansHelpers.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h
+KmeansHelpers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
+IterationRunners.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp
-CSV.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc
+CSV.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh
 iterator
 -
 iostream
@@ -52,39 +74,47 @@ vector
 string
 -
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 vector
 -
 iostream
 -
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.hh
 cmath
 -
 sstream
 -
 fstream
 -
-CSV.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
-data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+CSV.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh
+data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 inputArguments.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh
 ../pkgs/cmdArgsReader/macro-argparse-plain.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
-../Algorithm/Kmeans.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h
-../Algorithm/IterationRunners.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.h
+../Algorithm/Kmeans.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+../Algorithm/IterationRunners.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh
 ../pkgs/cmdArgsReader/macro-argparse-plain.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp
-handlers/dataReader.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc
+iostream
+-
+Algorithm/Kmeans.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+Algorithm/IterationRunners.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
+Algorithm/SeedPickers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
+handlers/dataReader.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
 typecvt.hh

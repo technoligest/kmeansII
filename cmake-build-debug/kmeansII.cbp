@@ -206,85 +206,76 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh">
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh">
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansII.cpp">
-			<Option target="kmeansII"/>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc">
+			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansII.h">
-			<Option target="kmeansII"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeanspp.cpp">
-			<Option target="kmeansII"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeanspp.h">
-			<Option target="kmeansII"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc">
 			<Option target="testing"/>
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh">
 			<Option target="testing"/>
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh">
 			<Option target="testing"/>
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.hh">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh">
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc">
 			<Option target="temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc">
 			<Option target="trying"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.h">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.hh">
 			<Option target="trying"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/kmeans.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cc">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cc">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cc">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeans.cc">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cpp">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc">
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/CMakeLists.txt">

@@ -162,314 +162,287 @@ kmeansII/fast:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
 .PHONY : kmeansII/fast
 
-lib/Algorithm/Kmeans.o: lib/Algorithm/Kmeans.cpp.o
+lib/Algorithm/Kmeans.o: lib/Algorithm/Kmeans.cc.o
 
 .PHONY : lib/Algorithm/Kmeans.o
 
 # target to build an object file
-lib/Algorithm/Kmeans.cpp.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.o
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cpp.o
-.PHONY : lib/Algorithm/Kmeans.cpp.o
+lib/Algorithm/Kmeans.cc.o:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cc.o
+.PHONY : lib/Algorithm/Kmeans.cc.o
 
-lib/Algorithm/Kmeans.i: lib/Algorithm/Kmeans.cpp.i
+lib/Algorithm/Kmeans.i: lib/Algorithm/Kmeans.cc.i
 
 .PHONY : lib/Algorithm/Kmeans.i
 
 # target to preprocess a source file
-lib/Algorithm/Kmeans.cpp.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.i
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cpp.i
-.PHONY : lib/Algorithm/Kmeans.cpp.i
+lib/Algorithm/Kmeans.cc.i:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.i
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cc.i
+.PHONY : lib/Algorithm/Kmeans.cc.i
 
-lib/Algorithm/Kmeans.s: lib/Algorithm/Kmeans.cpp.s
+lib/Algorithm/Kmeans.s: lib/Algorithm/Kmeans.cc.s
 
 .PHONY : lib/Algorithm/Kmeans.s
 
 # target to generate assembly for a file
-lib/Algorithm/Kmeans.cpp.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cpp.s
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cpp.s
-.PHONY : lib/Algorithm/Kmeans.cpp.s
+lib/Algorithm/Kmeans.cc.s:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.s
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cc.s
+.PHONY : lib/Algorithm/Kmeans.cc.s
 
-lib/Algorithm/KmeansII.o: lib/Algorithm/KmeansII.cpp.o
+lib/Algorithm/SeedPickers.o: lib/Algorithm/SeedPickers.cc.o
 
-.PHONY : lib/Algorithm/KmeansII.o
-
-# target to build an object file
-lib/Algorithm/KmeansII.cpp.o:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansII.cpp.o
-.PHONY : lib/Algorithm/KmeansII.cpp.o
-
-lib/Algorithm/KmeansII.i: lib/Algorithm/KmeansII.cpp.i
-
-.PHONY : lib/Algorithm/KmeansII.i
-
-# target to preprocess a source file
-lib/Algorithm/KmeansII.cpp.i:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansII.cpp.i
-.PHONY : lib/Algorithm/KmeansII.cpp.i
-
-lib/Algorithm/KmeansII.s: lib/Algorithm/KmeansII.cpp.s
-
-.PHONY : lib/Algorithm/KmeansII.s
-
-# target to generate assembly for a file
-lib/Algorithm/KmeansII.cpp.s:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansII.cpp.s
-.PHONY : lib/Algorithm/KmeansII.cpp.s
-
-lib/Algorithm/Kmeanspp.o: lib/Algorithm/Kmeanspp.cpp.o
-
-.PHONY : lib/Algorithm/Kmeanspp.o
+.PHONY : lib/Algorithm/SeedPickers.o
 
 # target to build an object file
-lib/Algorithm/Kmeanspp.cpp.o:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.o
-.PHONY : lib/Algorithm/Kmeanspp.cpp.o
+lib/Algorithm/SeedPickers.cc.o:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o
+.PHONY : lib/Algorithm/SeedPickers.cc.o
 
-lib/Algorithm/Kmeanspp.i: lib/Algorithm/Kmeanspp.cpp.i
+lib/Algorithm/SeedPickers.i: lib/Algorithm/SeedPickers.cc.i
 
-.PHONY : lib/Algorithm/Kmeanspp.i
+.PHONY : lib/Algorithm/SeedPickers.i
 
 # target to preprocess a source file
-lib/Algorithm/Kmeanspp.cpp.i:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.i
-.PHONY : lib/Algorithm/Kmeanspp.cpp.i
+lib/Algorithm/SeedPickers.cc.i:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.i
+.PHONY : lib/Algorithm/SeedPickers.cc.i
 
-lib/Algorithm/Kmeanspp.s: lib/Algorithm/Kmeanspp.cpp.s
+lib/Algorithm/SeedPickers.s: lib/Algorithm/SeedPickers.cc.s
 
-.PHONY : lib/Algorithm/Kmeanspp.s
+.PHONY : lib/Algorithm/SeedPickers.s
 
 # target to generate assembly for a file
-lib/Algorithm/Kmeanspp.cpp.s:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.s
-.PHONY : lib/Algorithm/Kmeanspp.cpp.s
+lib/Algorithm/SeedPickers.cc.s:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.s
+.PHONY : lib/Algorithm/SeedPickers.cc.s
 
-lib/handlers/CSV.o: lib/handlers/CSV.cpp.o
+lib/handlers/CSV.o: lib/handlers/CSV.cc.o
 
 .PHONY : lib/handlers/CSV.o
 
 # target to build an object file
-lib/handlers/CSV.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cpp.o
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cpp.o
-.PHONY : lib/handlers/CSV.cpp.o
+lib/handlers/CSV.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.o
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.o
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.o
+.PHONY : lib/handlers/CSV.cc.o
 
-lib/handlers/CSV.i: lib/handlers/CSV.cpp.i
+lib/handlers/CSV.i: lib/handlers/CSV.cc.i
 
 .PHONY : lib/handlers/CSV.i
 
 # target to preprocess a source file
-lib/handlers/CSV.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cpp.i
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cpp.i
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cpp.i
-.PHONY : lib/handlers/CSV.cpp.i
+lib/handlers/CSV.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.i
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.i
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.i
+.PHONY : lib/handlers/CSV.cc.i
 
-lib/handlers/CSV.s: lib/handlers/CSV.cpp.s
+lib/handlers/CSV.s: lib/handlers/CSV.cc.s
 
 .PHONY : lib/handlers/CSV.s
 
 # target to generate assembly for a file
-lib/handlers/CSV.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cpp.s
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cpp.s
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cpp.s
-.PHONY : lib/handlers/CSV.cpp.s
+lib/handlers/CSV.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.s
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.s
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.s
+.PHONY : lib/handlers/CSV.cc.s
 
-lib/main.o: lib/main.cpp.o
+lib/main.o: lib/main.cc.o
 
 .PHONY : lib/main.o
 
 # target to build an object file
-lib/main.cpp.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cpp.o
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cpp.o
-.PHONY : lib/main.cpp.o
+lib/main.cc.o:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.o
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.o
+.PHONY : lib/main.cc.o
 
-lib/main.i: lib/main.cpp.i
+lib/main.i: lib/main.cc.i
 
 .PHONY : lib/main.i
 
 # target to preprocess a source file
-lib/main.cpp.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cpp.i
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cpp.i
-.PHONY : lib/main.cpp.i
+lib/main.cc.i:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.i
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.i
+.PHONY : lib/main.cc.i
 
-lib/main.s: lib/main.cpp.s
+lib/main.s: lib/main.cc.s
 
 .PHONY : lib/main.s
 
 # target to generate assembly for a file
-lib/main.cpp.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cpp.s
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cpp.s
-.PHONY : lib/main.cpp.s
+lib/main.cc.s:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.s
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.s
+.PHONY : lib/main.cc.s
 
-lib/trying.o: lib/trying.cpp.o
+lib/trying.o: lib/trying.cc.o
 
 .PHONY : lib/trying.o
 
 # target to build an object file
-lib/trying.cpp.o:
-	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cpp.o
-.PHONY : lib/trying.cpp.o
+lib/trying.cc.o:
+	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cc.o
+.PHONY : lib/trying.cc.o
 
-lib/trying.i: lib/trying.cpp.i
+lib/trying.i: lib/trying.cc.i
 
 .PHONY : lib/trying.i
 
 # target to preprocess a source file
-lib/trying.cpp.i:
-	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cpp.i
-.PHONY : lib/trying.cpp.i
+lib/trying.cc.i:
+	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cc.i
+.PHONY : lib/trying.cc.i
 
-lib/trying.s: lib/trying.cpp.s
+lib/trying.s: lib/trying.cc.s
 
 .PHONY : lib/trying.s
 
 # target to generate assembly for a file
-lib/trying.cpp.s:
-	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cpp.s
-.PHONY : lib/trying.cpp.s
+lib/trying.cc.s:
+	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/lib/trying.cc.s
+.PHONY : lib/trying.cc.s
 
-tests/kmeans.o: tests/kmeans.cpp.o
-
-.PHONY : tests/kmeans.o
-
-# target to build an object file
-tests/kmeans.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/kmeans.cpp.o
-.PHONY : tests/kmeans.cpp.o
-
-tests/kmeans.i: tests/kmeans.cpp.i
-
-.PHONY : tests/kmeans.i
-
-# target to preprocess a source file
-tests/kmeans.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/kmeans.cpp.i
-.PHONY : tests/kmeans.cpp.i
-
-tests/kmeans.s: tests/kmeans.cpp.s
-
-.PHONY : tests/kmeans.s
-
-# target to generate assembly for a file
-tests/kmeans.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/kmeans.cpp.s
-.PHONY : tests/kmeans.cpp.s
-
-tests/test-CSV.o: tests/test-CSV.cpp.o
+tests/test-CSV.o: tests/test-CSV.cc.o
 
 .PHONY : tests/test-CSV.o
 
 # target to build an object file
-tests/test-CSV.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cpp.o
-.PHONY : tests/test-CSV.cpp.o
+tests/test-CSV.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cc.o
+.PHONY : tests/test-CSV.cc.o
 
-tests/test-CSV.i: tests/test-CSV.cpp.i
+tests/test-CSV.i: tests/test-CSV.cc.i
 
 .PHONY : tests/test-CSV.i
 
 # target to preprocess a source file
-tests/test-CSV.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cpp.i
-.PHONY : tests/test-CSV.cpp.i
+tests/test-CSV.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cc.i
+.PHONY : tests/test-CSV.cc.i
 
-tests/test-CSV.s: tests/test-CSV.cpp.s
+tests/test-CSV.s: tests/test-CSV.cc.s
 
 .PHONY : tests/test-CSV.s
 
 # target to generate assembly for a file
-tests/test-CSV.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cpp.s
-.PHONY : tests/test-CSV.cpp.s
+tests/test-CSV.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cc.s
+.PHONY : tests/test-CSV.cc.s
 
-tests/test-data.o: tests/test-data.cpp.o
+tests/test-data.o: tests/test-data.cc.o
 
 .PHONY : tests/test-data.o
 
 # target to build an object file
-tests/test-data.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cpp.o
-.PHONY : tests/test-data.cpp.o
+tests/test-data.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cc.o
+.PHONY : tests/test-data.cc.o
 
-tests/test-data.i: tests/test-data.cpp.i
+tests/test-data.i: tests/test-data.cc.i
 
 .PHONY : tests/test-data.i
 
 # target to preprocess a source file
-tests/test-data.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cpp.i
-.PHONY : tests/test-data.cpp.i
+tests/test-data.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cc.i
+.PHONY : tests/test-data.cc.i
 
-tests/test-data.s: tests/test-data.cpp.s
+tests/test-data.s: tests/test-data.cc.s
 
 .PHONY : tests/test-data.s
 
 # target to generate assembly for a file
-tests/test-data.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cpp.s
-.PHONY : tests/test-data.cpp.s
+tests/test-data.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cc.s
+.PHONY : tests/test-data.cc.s
 
-tests/test-dataReader.o: tests/test-dataReader.cpp.o
+tests/test-dataReader.o: tests/test-dataReader.cc.o
 
 .PHONY : tests/test-dataReader.o
 
 # target to build an object file
-tests/test-dataReader.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cpp.o
-.PHONY : tests/test-dataReader.cpp.o
+tests/test-dataReader.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cc.o
+.PHONY : tests/test-dataReader.cc.o
 
-tests/test-dataReader.i: tests/test-dataReader.cpp.i
+tests/test-dataReader.i: tests/test-dataReader.cc.i
 
 .PHONY : tests/test-dataReader.i
 
 # target to preprocess a source file
-tests/test-dataReader.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cpp.i
-.PHONY : tests/test-dataReader.cpp.i
+tests/test-dataReader.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cc.i
+.PHONY : tests/test-dataReader.cc.i
 
-tests/test-dataReader.s: tests/test-dataReader.cpp.s
+tests/test-dataReader.s: tests/test-dataReader.cc.s
 
 .PHONY : tests/test-dataReader.s
 
 # target to generate assembly for a file
-tests/test-dataReader.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cpp.s
-.PHONY : tests/test-dataReader.cpp.s
+tests/test-dataReader.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cc.s
+.PHONY : tests/test-dataReader.cc.s
 
-tests/tests.o: tests/tests.cpp.o
+tests/test-kmeans.o: tests/test-kmeans.cc.o
+
+.PHONY : tests/test-kmeans.o
+
+# target to build an object file
+tests/test-kmeans.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-kmeans.cc.o
+.PHONY : tests/test-kmeans.cc.o
+
+tests/test-kmeans.i: tests/test-kmeans.cc.i
+
+.PHONY : tests/test-kmeans.i
+
+# target to preprocess a source file
+tests/test-kmeans.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-kmeans.cc.i
+.PHONY : tests/test-kmeans.cc.i
+
+tests/test-kmeans.s: tests/test-kmeans.cc.s
+
+.PHONY : tests/test-kmeans.s
+
+# target to generate assembly for a file
+tests/test-kmeans.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-kmeans.cc.s
+.PHONY : tests/test-kmeans.cc.s
+
+tests/tests.o: tests/tests.cc.o
 
 .PHONY : tests/tests.o
 
 # target to build an object file
-tests/tests.cpp.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cpp.o
-.PHONY : tests/tests.cpp.o
+tests/tests.cc.o:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cc.o
+.PHONY : tests/tests.cc.o
 
-tests/tests.i: tests/tests.cpp.i
+tests/tests.i: tests/tests.cc.i
 
 .PHONY : tests/tests.i
 
 # target to preprocess a source file
-tests/tests.cpp.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cpp.i
-.PHONY : tests/tests.cpp.i
+tests/tests.cc.i:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cc.i
+.PHONY : tests/tests.cc.i
 
-tests/tests.s: tests/tests.cpp.s
+tests/tests.s: tests/tests.cc.s
 
 .PHONY : tests/tests.s
 
 # target to generate assembly for a file
-tests/tests.cpp.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cpp.s
-.PHONY : tests/tests.cpp.s
+tests/tests.cc.s:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cc.s
+.PHONY : tests/tests.cc.s
 
 # Help Target
 help:
@@ -486,12 +459,9 @@ help:
 	@echo "... lib/Algorithm/Kmeans.o"
 	@echo "... lib/Algorithm/Kmeans.i"
 	@echo "... lib/Algorithm/Kmeans.s"
-	@echo "... lib/Algorithm/KmeansII.o"
-	@echo "... lib/Algorithm/KmeansII.i"
-	@echo "... lib/Algorithm/KmeansII.s"
-	@echo "... lib/Algorithm/Kmeanspp.o"
-	@echo "... lib/Algorithm/Kmeanspp.i"
-	@echo "... lib/Algorithm/Kmeanspp.s"
+	@echo "... lib/Algorithm/SeedPickers.o"
+	@echo "... lib/Algorithm/SeedPickers.i"
+	@echo "... lib/Algorithm/SeedPickers.s"
 	@echo "... lib/handlers/CSV.o"
 	@echo "... lib/handlers/CSV.i"
 	@echo "... lib/handlers/CSV.s"
@@ -501,9 +471,6 @@ help:
 	@echo "... lib/trying.o"
 	@echo "... lib/trying.i"
 	@echo "... lib/trying.s"
-	@echo "... tests/kmeans.o"
-	@echo "... tests/kmeans.i"
-	@echo "... tests/kmeans.s"
 	@echo "... tests/test-CSV.o"
 	@echo "... tests/test-CSV.i"
 	@echo "... tests/test-CSV.s"
@@ -513,6 +480,9 @@ help:
 	@echo "... tests/test-dataReader.o"
 	@echo "... tests/test-dataReader.i"
 	@echo "... tests/test-dataReader.s"
+	@echo "... tests/test-kmeans.o"
+	@echo "... tests/test-kmeans.i"
+	@echo "... tests/test-kmeans.s"
 	@echo "... tests/tests.o"
 	@echo "... tests/tests.i"
 	@echo "... tests/tests.s"

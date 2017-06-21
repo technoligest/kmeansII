@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansII.cpp.o"
-  "CMakeFiles/kmeansII.dir/lib/main.cpp.o"
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cpp.o"
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeanspp.cpp.o"
-  "CMakeFiles/kmeansII.dir/lib/handlers/CSV.cpp.o"
+  "CMakeFiles/kmeansII.dir/lib/main.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/Kmeans.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.o"
   "kmeansII.pdb"
   "kmeansII"
 )

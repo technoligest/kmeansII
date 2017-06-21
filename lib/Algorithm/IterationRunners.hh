@@ -5,7 +5,12 @@
 #ifndef KMEANSII_ITERATIONRUNNERS_H
 #define KMEANSII_ITERATIONRUNNERS_H
 
+#include <cassert>
+#include <cmath>
+#include "KmeansHelpers.hh"
 
+
+using namespace KmeansHelpers;
 class IterationRunner {
 public:
   inline virtual dist runIterations(const Dataset &, Dataset &, const Weights &)=0;
@@ -40,10 +45,10 @@ private:
       const Instance &inst = d[instId];
       assert(centres.size() == k);
       int minDistClusterId = 0;
-      double minDist = findDistanceSquared(inst, centres[0]);
+      double minDist = KmeansHelpers::findDistanceSquared(inst, centres[0]);
       for (int i = 1; i < k; ++i) {
         Instance &centre = centres[i];
-        double newDist = findDistanceSquared(inst, centre) * weights[instId];
+        double newDist = KmeansHelpers::findDistanceSquared(inst, centre) * weights[instId];
         if (newDist < minDist) {
           minDist = newDist;
           minDistClusterId = i;
@@ -84,7 +89,7 @@ public:
     double bestDistance = std::numeric_limits<double>::max();
     int iteration;
     for (iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration) {
-      std::cout << "starting iteration " << iteration << ": " << std::endl;
+//      std::cout << "starting iteration " << iteration << ": " << std::endl;
 
       double newDistance = runLiyodIteration(d, centres, weights);
 
@@ -101,7 +106,7 @@ public:
         break;
       }
       currDistance = newDistance;
-      std::cout << "ending iteration " << iteration << "." << std::endl;
+//      std::cout << "ending iteration " << iteration << "." << std::endl;
     }
     std::cout << "numIterations: " << iteration << std::endl;
     return bestDistance;

@@ -57,168 +57,168 @@ include CMakeFiles/testing.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testing.dir/flags.make
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.o: ../tests/test-dataReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testing.dir/tests/test-dataReader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-dataReader.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cpp"
+CMakeFiles/testing.dir/tests/test-dataReader.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test-dataReader.cc.o: ../tests/test-dataReader.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testing.dir/tests/test-dataReader.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-dataReader.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cc"
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-dataReader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cpp" > CMakeFiles/testing.dir/tests/test-dataReader.cpp.i
+CMakeFiles/testing.dir/tests/test-dataReader.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-dataReader.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cc" > CMakeFiles/testing.dir/tests/test-dataReader.cc.i
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-dataReader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cpp" -o CMakeFiles/testing.dir/tests/test-dataReader.cpp.s
+CMakeFiles/testing.dir/tests/test-dataReader.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-dataReader.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cc" -o CMakeFiles/testing.dir/tests/test-dataReader.cc.s
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.requires:
+CMakeFiles/testing.dir/tests/test-dataReader.cc.o.requires:
 
-.PHONY : CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.requires
+.PHONY : CMakeFiles/testing.dir/tests/test-dataReader.cc.o.requires
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.provides: CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.provides
+CMakeFiles/testing.dir/tests/test-dataReader.cc.o.provides: CMakeFiles/testing.dir/tests/test-dataReader.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-dataReader.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/test-dataReader.cc.o.provides
 
-CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.provides.build: CMakeFiles/testing.dir/tests/test-dataReader.cpp.o
-
-
-CMakeFiles/testing.dir/tests/tests.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/tests/tests.cpp.o: ../tests/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testing.dir/tests/tests.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/tests.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cpp"
-
-CMakeFiles/testing.dir/tests/tests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/tests.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cpp" > CMakeFiles/testing.dir/tests/tests.cpp.i
-
-CMakeFiles/testing.dir/tests/tests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/tests.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cpp" -o CMakeFiles/testing.dir/tests/tests.cpp.s
-
-CMakeFiles/testing.dir/tests/tests.cpp.o.requires:
-
-.PHONY : CMakeFiles/testing.dir/tests/tests.cpp.o.requires
-
-CMakeFiles/testing.dir/tests/tests.cpp.o.provides: CMakeFiles/testing.dir/tests/tests.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/tests/tests.cpp.o.provides
-
-CMakeFiles/testing.dir/tests/tests.cpp.o.provides.build: CMakeFiles/testing.dir/tests/tests.cpp.o
+CMakeFiles/testing.dir/tests/test-dataReader.cc.o.provides.build: CMakeFiles/testing.dir/tests/test-dataReader.cc.o
 
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/tests/test-CSV.cpp.o: ../tests/test-CSV.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testing.dir/tests/test-CSV.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-CSV.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cpp"
+CMakeFiles/testing.dir/tests/tests.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/tests.cc.o: ../tests/tests.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testing.dir/tests/tests.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/tests.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc"
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-CSV.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cpp" > CMakeFiles/testing.dir/tests/test-CSV.cpp.i
+CMakeFiles/testing.dir/tests/tests.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/tests.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc" > CMakeFiles/testing.dir/tests/tests.cc.i
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-CSV.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cpp" -o CMakeFiles/testing.dir/tests/test-CSV.cpp.s
+CMakeFiles/testing.dir/tests/tests.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/tests.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc" -o CMakeFiles/testing.dir/tests/tests.cc.s
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.o.requires:
+CMakeFiles/testing.dir/tests/tests.cc.o.requires:
 
-.PHONY : CMakeFiles/testing.dir/tests/test-CSV.cpp.o.requires
+.PHONY : CMakeFiles/testing.dir/tests/tests.cc.o.requires
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.o.provides: CMakeFiles/testing.dir/tests/test-CSV.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/tests/test-CSV.cpp.o.provides
+CMakeFiles/testing.dir/tests/tests.cc.o.provides: CMakeFiles/testing.dir/tests/tests.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/tests.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/tests.cc.o.provides
 
-CMakeFiles/testing.dir/tests/test-CSV.cpp.o.provides.build: CMakeFiles/testing.dir/tests/test-CSV.cpp.o
-
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/tests/kmeans.cpp.o: ../tests/kmeans.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/testing.dir/tests/kmeans.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/kmeans.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/kmeans.cpp"
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/kmeans.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/kmeans.cpp" > CMakeFiles/testing.dir/tests/kmeans.cpp.i
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/kmeans.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/kmeans.cpp" -o CMakeFiles/testing.dir/tests/kmeans.cpp.s
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.o.requires:
-
-.PHONY : CMakeFiles/testing.dir/tests/kmeans.cpp.o.requires
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.o.provides: CMakeFiles/testing.dir/tests/kmeans.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/kmeans.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/tests/kmeans.cpp.o.provides
-
-CMakeFiles/testing.dir/tests/kmeans.cpp.o.provides.build: CMakeFiles/testing.dir/tests/kmeans.cpp.o
+CMakeFiles/testing.dir/tests/tests.cc.o.provides.build: CMakeFiles/testing.dir/tests/tests.cc.o
 
 
-CMakeFiles/testing.dir/tests/test-data.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/tests/test-data.cpp.o: ../tests/test-data.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/testing.dir/tests/test-data.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-data.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cpp"
+CMakeFiles/testing.dir/tests/test-CSV.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test-CSV.cc.o: ../tests/test-CSV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/testing.dir/tests/test-CSV.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-CSV.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cc"
 
-CMakeFiles/testing.dir/tests/test-data.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-data.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cpp" > CMakeFiles/testing.dir/tests/test-data.cpp.i
+CMakeFiles/testing.dir/tests/test-CSV.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-CSV.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cc" > CMakeFiles/testing.dir/tests/test-CSV.cc.i
 
-CMakeFiles/testing.dir/tests/test-data.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-data.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cpp" -o CMakeFiles/testing.dir/tests/test-data.cpp.s
+CMakeFiles/testing.dir/tests/test-CSV.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-CSV.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cc" -o CMakeFiles/testing.dir/tests/test-CSV.cc.s
 
-CMakeFiles/testing.dir/tests/test-data.cpp.o.requires:
+CMakeFiles/testing.dir/tests/test-CSV.cc.o.requires:
 
-.PHONY : CMakeFiles/testing.dir/tests/test-data.cpp.o.requires
+.PHONY : CMakeFiles/testing.dir/tests/test-CSV.cc.o.requires
 
-CMakeFiles/testing.dir/tests/test-data.cpp.o.provides: CMakeFiles/testing.dir/tests/test-data.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/tests/test-data.cpp.o.provides
+CMakeFiles/testing.dir/tests/test-CSV.cc.o.provides: CMakeFiles/testing.dir/tests/test-CSV.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-CSV.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/test-CSV.cc.o.provides
 
-CMakeFiles/testing.dir/tests/test-data.cpp.o.provides.build: CMakeFiles/testing.dir/tests/test-data.cpp.o
+CMakeFiles/testing.dir/tests/test-CSV.cc.o.provides.build: CMakeFiles/testing.dir/tests/test-CSV.cc.o
 
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o: ../lib/handlers/CSV.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp"
+CMakeFiles/testing.dir/tests/test-kmeans.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test-kmeans.cc.o: ../tests/test-kmeans.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/testing.dir/tests/test-kmeans.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-kmeans.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeans.cc"
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/handlers/CSV.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp" > CMakeFiles/testing.dir/lib/handlers/CSV.cpp.i
+CMakeFiles/testing.dir/tests/test-kmeans.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-kmeans.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeans.cc" > CMakeFiles/testing.dir/tests/test-kmeans.cc.i
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/handlers/CSV.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp" -o CMakeFiles/testing.dir/lib/handlers/CSV.cpp.s
+CMakeFiles/testing.dir/tests/test-kmeans.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-kmeans.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeans.cc" -o CMakeFiles/testing.dir/tests/test-kmeans.cc.s
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.requires:
+CMakeFiles/testing.dir/tests/test-kmeans.cc.o.requires:
 
-.PHONY : CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.requires
+.PHONY : CMakeFiles/testing.dir/tests/test-kmeans.cc.o.requires
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.provides: CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.provides.build
-.PHONY : CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.provides
+CMakeFiles/testing.dir/tests/test-kmeans.cc.o.provides: CMakeFiles/testing.dir/tests/test-kmeans.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-kmeans.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/test-kmeans.cc.o.provides
 
-CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.provides.build: CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o
+CMakeFiles/testing.dir/tests/test-kmeans.cc.o.provides.build: CMakeFiles/testing.dir/tests/test-kmeans.cc.o
+
+
+CMakeFiles/testing.dir/tests/test-data.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test-data.cc.o: ../tests/test-data.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/testing.dir/tests/test-data.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test-data.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cc"
+
+CMakeFiles/testing.dir/tests/test-data.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test-data.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cc" > CMakeFiles/testing.dir/tests/test-data.cc.i
+
+CMakeFiles/testing.dir/tests/test-data.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test-data.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cc" -o CMakeFiles/testing.dir/tests/test-data.cc.s
+
+CMakeFiles/testing.dir/tests/test-data.cc.o.requires:
+
+.PHONY : CMakeFiles/testing.dir/tests/test-data.cc.o.requires
+
+CMakeFiles/testing.dir/tests/test-data.cc.o.provides: CMakeFiles/testing.dir/tests/test-data.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test-data.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/test-data.cc.o.provides
+
+CMakeFiles/testing.dir/tests/test-data.cc.o.provides.build: CMakeFiles/testing.dir/tests/test-data.cc.o
+
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.o: ../lib/handlers/CSV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/testing.dir/lib/handlers/CSV.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/handlers/CSV.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc"
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/handlers/CSV.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc" > CMakeFiles/testing.dir/lib/handlers/CSV.cc.i
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/handlers/CSV.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc" -o CMakeFiles/testing.dir/lib/handlers/CSV.cc.s
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.requires:
+
+.PHONY : CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.requires
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.provides: CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.provides
+
+CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.provides.build: CMakeFiles/testing.dir/lib/handlers/CSV.cc.o
 
 
 # Object files for target testing
 testing_OBJECTS = \
-"CMakeFiles/testing.dir/tests/test-dataReader.cpp.o" \
-"CMakeFiles/testing.dir/tests/tests.cpp.o" \
-"CMakeFiles/testing.dir/tests/test-CSV.cpp.o" \
-"CMakeFiles/testing.dir/tests/kmeans.cpp.o" \
-"CMakeFiles/testing.dir/tests/test-data.cpp.o" \
-"CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o"
+"CMakeFiles/testing.dir/tests/test-dataReader.cc.o" \
+"CMakeFiles/testing.dir/tests/tests.cc.o" \
+"CMakeFiles/testing.dir/tests/test-CSV.cc.o" \
+"CMakeFiles/testing.dir/tests/test-kmeans.cc.o" \
+"CMakeFiles/testing.dir/tests/test-data.cc.o" \
+"CMakeFiles/testing.dir/lib/handlers/CSV.cc.o"
 
 # External object files for target testing
 testing_EXTERNAL_OBJECTS =
 
-testing: CMakeFiles/testing.dir/tests/test-dataReader.cpp.o
-testing: CMakeFiles/testing.dir/tests/tests.cpp.o
-testing: CMakeFiles/testing.dir/tests/test-CSV.cpp.o
-testing: CMakeFiles/testing.dir/tests/kmeans.cpp.o
-testing: CMakeFiles/testing.dir/tests/test-data.cpp.o
-testing: CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o
+testing: CMakeFiles/testing.dir/tests/test-dataReader.cc.o
+testing: CMakeFiles/testing.dir/tests/tests.cc.o
+testing: CMakeFiles/testing.dir/tests/test-CSV.cc.o
+testing: CMakeFiles/testing.dir/tests/test-kmeans.cc.o
+testing: CMakeFiles/testing.dir/tests/test-data.cc.o
+testing: CMakeFiles/testing.dir/lib/handlers/CSV.cc.o
 testing: CMakeFiles/testing.dir/build.make
 testing: CMakeFiles/testing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable testing"
@@ -229,12 +229,12 @@ CMakeFiles/testing.dir/build: testing
 
 .PHONY : CMakeFiles/testing.dir/build
 
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-dataReader.cpp.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/tests.cpp.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-CSV.cpp.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/kmeans.cpp.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-data.cpp.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/handlers/CSV.cpp.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-dataReader.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/tests.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-CSV.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-kmeans.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test-data.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/handlers/CSV.cc.o.requires
 
 .PHONY : CMakeFiles/testing.dir/requires
 
