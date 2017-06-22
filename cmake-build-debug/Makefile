@@ -162,6 +162,33 @@ kmeansII/fast:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
 .PHONY : kmeansII/fast
 
+lib/Algorithm/IterationRunners.o: lib/Algorithm/IterationRunners.cc.o
+
+.PHONY : lib/Algorithm/IterationRunners.o
+
+# target to build an object file
+lib/Algorithm/IterationRunners.cc.o:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.o
+.PHONY : lib/Algorithm/IterationRunners.cc.o
+
+lib/Algorithm/IterationRunners.i: lib/Algorithm/IterationRunners.cc.i
+
+.PHONY : lib/Algorithm/IterationRunners.i
+
+# target to preprocess a source file
+lib/Algorithm/IterationRunners.cc.i:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.i
+.PHONY : lib/Algorithm/IterationRunners.cc.i
+
+lib/Algorithm/IterationRunners.s: lib/Algorithm/IterationRunners.cc.s
+
+.PHONY : lib/Algorithm/IterationRunners.s
+
+# target to generate assembly for a file
+lib/Algorithm/IterationRunners.cc.s:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.s
+.PHONY : lib/Algorithm/IterationRunners.cc.s
+
 lib/Algorithm/Kmeans.o: lib/Algorithm/Kmeans.cc.o
 
 .PHONY : lib/Algorithm/Kmeans.o
@@ -456,6 +483,9 @@ help:
 	@echo "... temp"
 	@echo "... trying"
 	@echo "... kmeansII"
+	@echo "... lib/Algorithm/IterationRunners.o"
+	@echo "... lib/Algorithm/IterationRunners.i"
+	@echo "... lib/Algorithm/IterationRunners.s"
 	@echo "... lib/Algorithm/Kmeans.o"
 	@echo "... lib/Algorithm/Kmeans.i"
 	@echo "... lib/Algorithm/Kmeans.s"

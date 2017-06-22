@@ -2,8 +2,6 @@
 //#include "handlers/dataReader.h"
 #include <iostream>
 #include "Algorithm/Kmeans.hh"
-#include "Algorithm/IterationRunners.hh"
-#include "Algorithm/SeedPickers.hh"
 #include "handlers/dataReader.hh"
 
 
