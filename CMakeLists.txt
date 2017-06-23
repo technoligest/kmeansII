@@ -15,5 +15,5 @@ add_executable(testing ${TESTING_SOURCES})
 set(TRYING_SOURCES lib/trying.cc lib/trying.hh)
 add_executable(trying ${TRYING_SOURCES})
 
-set(TEMP_SOURCES lib/main.cc lib/handlers/data.hh lib/Algorithm/Kmeans.hh lib/Algorithm/Kmeans.cc lib/handlers/CSV.hh lib/handlers/CSV.cc lib/handlers/dataReader.hh lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.hh lib/Algorithm/SeedPickers.hh lib/Algorithm/SeedPickers.cc lib/Algorithm/IterationRunners.cc lib/Algorithm/KmeansInitializer.hh)
+set(TEMP_SOURCES lib/main.cc lib/handlers/data.hh lib/Algorithm/Kmeans.hh lib/handlers/CSV.hh lib/handlers/CSV.cc lib/handlers/dataReader.hh lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.hh lib/Algorithm/SeedPickers.hh lib/Algorithm/SeedPickers.cc lib/Algorithm/IterationRunners.cc lib/Algorithm/KmeansInitializer.hh lib/Algorithm/KmeansIIInitializer.hh)
 add_executable(temp ${TEMP_SOURCES})

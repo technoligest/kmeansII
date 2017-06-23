@@ -21,10 +21,10 @@ namespace KmeansHelpers {
  }
 
 //squared euclidean distance
- inline double findDistanceSquared(const Instance &r1, const Instance &r2) {
+ inline dist findDistanceSquared(const Instance &r1, const Instance &r2) {
    if (r1.size() != r2.size())
      return -1;
-   double result = 0;
+   dist result = 0;
    size_t size = r1.size();
    for (int i = 0; i < size; ++i) {
      result += pow(r1[i] - r2[i], 2);
@@ -33,11 +33,11 @@ namespace KmeansHelpers {
  }
 
  //find the shortest distance to any already chosen cluster for the given row.
- inline double shortestDistanceToClusterCentre(const std::vector<Instance> &centres, const Instance &inst) {
+ inline dist shortestDistanceToClusterCentre(const std::vector<Instance> &centres, const Instance &inst) {
    if (centres.empty())
      return -1;
 
-   double currDistance, lowestDistance;
+   dist currDistance, lowestDistance;
    lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
 
    for (Instance const &centre: centres) {
@@ -49,6 +49,25 @@ namespace KmeansHelpers {
    return lowestDistance;
  }
 
+ inline const Instance *closestCentre(const std::vector<Instance> &centres, const Instance &inst){
+   if (centres.empty())
+     return nullptr;
+
+   const Instance *result = &(centres[0]);
+   dist currDistance, lowestDistance;
+   lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
+
+   for (Instance const &centre: centres) {
+     currDistance = findDistanceSquared(inst, centre);
+     if (currDistance < lowestDistance) {
+       result = &centre;
+       lowestDistance = currDistance;
+     }
+   }
+   return result;
+ }
+
+
 //DX is the sum of the shortest paths from each item to the nearest cluster.
  inline double calcDX(const Dataset &d, const std::vector<Instance> &centres) {
    if (centres.size() < 1) {
@@ -57,6 +76,7 @@ namespace KmeansHelpers {
    double result = 0;
    for (Instance const &inst: d) {
      result += shortestDistanceToClusterCentre(centres, inst);
+//     std::cout<<"result: "<<result<<std::endl;
    }
    return result;
  }
@@ -90,6 +110,7 @@ namespace KmeansHelpers {
    }
    return true;
  }
+
 }
 
 

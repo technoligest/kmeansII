@@ -14,7 +14,6 @@
 #include "inputArguments.hh"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.hh"
-#include "../Algorithm/IterationRunners.hh"
 
 inline Dataset readCSVFile(const std::string &fileName) {
   Dataset t;
@@ -59,8 +58,8 @@ KmeansBase *readArgs(KmeansArgs args) {
     return new KmeansInitializer<RandomSeedPicker,IR>();
   } else if (args.algorithm == "kmeans++") {
     return new KmeansInitializer<KmeansppSeedPicker,IR>();
-//  } else if (args.algorithm == "kmeansII") {
-//    return new KmeansII(fabs(args.l));
+  } else if (args.algorithm == "kmeansII") {
+    return new KmeansII<IR,IR>(fabs(args.l));
   } else {
     return NULL;
   }

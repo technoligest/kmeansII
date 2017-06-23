@@ -4,40 +4,60 @@
 #include "Algorithm/Kmeans.hh"
 #include "handlers/dataReader.hh"
 
+#define NumIterations 100
+
 
 using namespace std;
+void startTest();
 
 int main(int argc, char **argv) {
-  Dataset d = readFile(
-          "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullData.txt");
-//  cout << d << endl;
-//  KmeansArgs args;
-//  if (!args.parse_args(argc, argv)) {
-//    cout << "Could not parse arguments. Try again." << endl;
-//    return 1;
-//  }
-//  KmeansBase *k = readArgs(args);
+  string filePath = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullData.txt";
+  Dataset d = readFile(filePath);
   Dataset centres;
-  KmeansBase *t = new KmeansInitializer<RandomSeedPicker, LiyoidsIteration>();
-  KmeansBase *t2 = new Kmeans<LiyoidsIteration>();
-  KmeansBase *k = new KmeansII<LiyoidsIteration,LiyoidsIteration>();
-  cout << k->cluster(d, centres, 10) << endl;
-
-
-//  if (k == NULL) {
-//    cout << "Could not create Kmeans object. Try again." << endl;
-//    return 1;
-//  }
-//  Dataset d = readFile(args.inputFileName);
-//  vector<Instance> centres;
-//
-//  for(auto &i:centres) {
-//    std::cout << i<<endl;
-//  }
-//
-//  cout << sqrt(k->cluster(d, centres, args.k))<<endl;
-//
-//  delete k;
-  cout << "finished" << endl;
+  ull k = 50;
+  KmeansBase *kmeans = new KmeansII<LiyoidsIteration, LiyoidsIteration>(10);
+  cout << kmeans->cluster(d, centres, k);
   return 0;
+}
+
+void startTest() {
+  string filePath = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullData.txt";
+  Dataset d = readFile(filePath);
+
+  using ResultVector = vector<tuple<Dataset, double, ull, ull >>;
+  ResultVector kmeansResults;
+  ResultVector kmeansppResults;
+  ResultVector kmeansIIResults;
+
+  Dataset centres;
+  KmeansBase *kmeans = new Kmeans<LiyoidsIteration>();
+  KmeansBase *kmeanspp = new Kmeanspp<LiyoidsIteration>();
+//  cout << k->cluster(d, centres, 100) << endl;
+  for (ull k = 10; k <= 100; k += 10) {
+    KmeansBase *kmeansII = new KmeansII<LiyoidsIteration, LiyoidsIteration>(k);
+    for (int i = 0; i < NumIterations; ++i) {
+      ull startTime = static_cast<ull>(time(nullptr));
+      double dist = kmeans->cluster(d, centres, k);
+      ull t = static_cast<ull>(time(nullptr)) - startTime;
+      kmeansResults.push_back(tuple<Dataset, double, ull, ull>(centres, dist, t, k));
+
+
+      startTime = static_cast<ull>(time(nullptr));
+      dist = kmeanspp->cluster(d, centres, k);
+      t = static_cast<ull>(time(nullptr)) - startTime;
+      kmeansppResults.push_back(tuple<Dataset, double, ull, ull>(centres, dist, t, k));
+
+      startTime = static_cast<ull>(time(nullptr));
+      dist = kmeansII->cluster(d, centres, k);
+      t = static_cast<ull>(time(nullptr)) - startTime;
+      kmeansIIResults.push_back(tuple<Dataset, double, ull, ull>(centres, dist, t, k));
+    }
+    delete kmeansII;
+  }
+
+
+  cout << "finished" << endl;
+
+  delete kmeans;
+  delete kmeanspp;
 }

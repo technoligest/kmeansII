@@ -7,7 +7,10 @@
 
 
 #include "KmeansInitializer.hh"
-
+#include "SeedPickers.hh"
+#include "IterationRunners.hh"
+#include "KmeansHelpers.hh"
+#include "KmeansIIInitializer.hh"
 
 //IR = iterationRunner
 

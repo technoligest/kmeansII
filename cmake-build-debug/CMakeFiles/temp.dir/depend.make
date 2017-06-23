@@ -6,17 +6,6 @@ CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.o: ../lib/Algorithm/Iterat
 CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.o: ../lib/Algorithm/KmeansHelpers.hh
 CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.o: ../lib/handlers/data.hh
 
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/IterationRunners.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/Kmeans.cc
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/Kmeans.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/KmeansBase.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/KmeansHelpers.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/KmeansInitializer.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/Algorithm/SeedPickers.hh
-CMakeFiles/temp.dir/lib/Algorithm/Kmeans.cc.o: ../lib/handlers/data.hh
-
-CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/IterationRunners.hh
-CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/Kmeans.hh
 CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/KmeansBase.hh
 CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/KmeansHelpers.hh
 CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o: ../lib/Algorithm/KmeansInitializer.hh
@@ -31,6 +20,7 @@ CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/IterationRunners.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/Kmeans.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/KmeansBase.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/KmeansHelpers.hh
+CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/KmeansIIInitializer.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/KmeansInitializer.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/Algorithm/SeedPickers.hh
 CMakeFiles/temp.dir/lib/main.cc.o: ../lib/handlers/CSV.hh

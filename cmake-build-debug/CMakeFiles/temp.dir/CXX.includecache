@@ -20,13 +20,17 @@ KmeansHelpers.hh
 ../handlers/data.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.cc
-Kmeans.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
-
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
 KmeansInitializer.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInitializer.hh
+SeedPickers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
+IterationRunners.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
+KmeansHelpers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
+KmeansIIInitializer.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansIIInitializer.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh
 ../handlers/data.hh
@@ -38,6 +42,10 @@ cmath
 ../handlers/data.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansIIInitializer.hh
+SeedPickers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
+
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInitializer.hh
 iostream
 -
@@ -45,10 +53,6 @@ KmeansBase.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh
 KmeansHelpers.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
-SeedPickers.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh
-IterationRunners.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
 ../handlers/data.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
@@ -61,12 +65,14 @@ random
 -
 cassert
 -
+vector
+-
 ../handlers/data.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 KmeansHelpers.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
-Kmeans.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+KmeansInitializer.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInitializer.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc
 CSV.hh
@@ -109,8 +115,6 @@ inputArguments.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
 ../Algorithm/Kmeans.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
-../Algorithm/IterationRunners.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh
 ../pkgs/cmdArgsReader/macro-argparse-plain.hh

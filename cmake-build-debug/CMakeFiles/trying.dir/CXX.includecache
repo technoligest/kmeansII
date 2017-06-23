@@ -6,19 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
-vector
--
-iostream
--
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cpp
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc
 iostream
 -
 fstream
 -
 sstream
 -
-handlers/data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+random
+-
+vector
+-
 
