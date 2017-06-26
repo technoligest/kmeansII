@@ -49,23 +49,23 @@ namespace KmeansHelpers {
    return lowestDistance;
  }
 
- inline const Instance *closestCentre(const std::vector<Instance> &centres, const Instance &inst){
-   if (centres.empty())
-     return nullptr;
-
-   const Instance *result = &(centres[0]);
-   dist currDistance, lowestDistance;
-   lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
-
-   for (Instance const &centre: centres) {
-     currDistance = findDistanceSquared(inst, centre);
-     if (currDistance < lowestDistance) {
-       result = &centre;
-       lowestDistance = currDistance;
-     }
-   }
-   return result;
- }
+// inline const Instance *closestCentre(const std::vector<Instance> &centres, const Instance &inst){
+//   if (centres.empty())
+//     return nullptr;
+//
+//   const Instance *result = &(centres[0]);
+//   dist currDistance, lowestDistance;
+//   lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
+//
+//   for (Instance const &centre: centres) {
+//     currDistance = findDistanceSquared(inst, centre);
+//     if (currDistance < lowestDistance) {
+//       result = &centre;
+//       lowestDistance = currDistance;
+//     }
+//   }
+//   return result;
+// }
 
 
 //DX is the sum of the shortest paths from each item to the nearest cluster.

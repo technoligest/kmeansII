@@ -10,7 +10,7 @@
 #include <vector>
 #include "../handlers/data.hh"
 #include "KmeansHelpers.hh"
-#include "KmeansInitializer.hh"
+#include "KmeansInstance.hh"
 
 
 class SeedPicker {
@@ -92,7 +92,7 @@ bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &d, Dataset &centres, const
 //  for (auto &weight:w) {
 //    if (weight == 0) weight = 1;
 //  }
-  KmeansBase *kmeans = new KmeansInitializer<KmeansppSeedPicker, IR>();
+  KmeansBase *kmeans = new KmeansInstance<KmeansppSeedPicker, IR>();
   kmeans->cluster(tempCentres, centres, w, k);
   std::cout << "Finished picking seeds for KmeansII" << std::endl;
   return true;

@@ -7,11 +7,11 @@
 #include "SeedPickers.hh"
 
 template<class InnerIR,class OuterIR>
-class KmeansInitializer<KmeansIISeedPicker<InnerIR>,OuterIR>: public KmeansBase{
+class KmeansInstance<KmeansIISeedPicker<InnerIR>,OuterIR>: public KmeansBase{
 private:
   double l;
 public:
-  inline KmeansInitializer(double _l):l(_l){};
+  inline KmeansInstance(double _l):l(_l){};
 
 
   inline double cluster(const Dataset &d, std::vector<Instance> &centres, const Weights &weights, ull k)  {

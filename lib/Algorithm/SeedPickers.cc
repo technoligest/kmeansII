@@ -6,7 +6,7 @@
 using namespace KmeansHelpers;
 
 bool RandomSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weights &weights, ull k) {
-  std::cout<<"Started picking random seeds for Kmeans"<<std::endl;
+  std::cout << "Started picking random seeds for Kmeans" << std::endl;
   if (d.empty() || centres.empty() || d.size() < k) {
     return false;
   }
@@ -21,11 +21,12 @@ bool RandomSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weigh
   for (int i = 0; i < k; ++i) {
     centres.push_back(d[static_cast<int>((dis(gen) * n))]);
   }
-  std::cout<<"Finished picking random seeds for Kmeans"<<std::endl;
+  std::cout << "Finished picking random seeds for Kmeans" << std::endl;
   return true;
 };
+
 bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weights &weights, ull k) {
-  std::cout<<"Started picking seeds for Kmeans++"<<std::endl;
+  std::cout << "Started picking seeds for Kmeans++" << std::endl;
   if (d.empty() || centres.empty() || d.size() < k) {
     return false;
   }
@@ -36,13 +37,9 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Wei
   std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_real_distribution<> dis(0, 1);
-  int count =0 ;
+
   centres.push_back(d[static_cast<int>((dis(gen) * n))]);
   for (int i = 1; i < k; ++i) {
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(0, 1);
 
     double dx = calcDX(d, centres);
     double ran = static_cast<double>(dis(gen));
@@ -65,7 +62,7 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Wei
     }
   }
   assert(centres.size() == k);
-  std::cout<<"Finished picking seeds for Kmeans++"<<std::endl;
+  std::cout << "Finished picking seeds for Kmeans++" << std::endl;
   return true;
 };
 

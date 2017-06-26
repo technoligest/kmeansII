@@ -6,7 +6,7 @@
 #define KMEANSII_KMEANS_H
 
 
-#include "KmeansInitializer.hh"
+#include "KmeansInstance.hh"
 #include "SeedPickers.hh"
 #include "IterationRunners.hh"
 #include "KmeansHelpers.hh"
@@ -15,13 +15,13 @@
 //IR = iterationRunner
 
 template<class IR = LiyoidsIteration>
-using Kmeans = KmeansInitializer<RandomSeedPicker,IR>;
+using Kmeans = KmeansInstance<RandomSeedPicker,IR>;
 
 template <class IR = LiyoidsIteration>
-using Kmeanspp = KmeansInitializer<KmeansppSeedPicker, IR>;
+using Kmeanspp = KmeansInstance<KmeansppSeedPicker, IR>;
 
 template<typename InnerIR = LiyoidsIteration, typename OuterIR = LiyoidsIteration>
-using KmeansII = KmeansInitializer<KmeansIISeedPicker<InnerIR>,OuterIR>;
+using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>,OuterIR>;
 
 
 

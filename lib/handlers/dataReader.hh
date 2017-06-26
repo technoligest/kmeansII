@@ -55,9 +55,9 @@ inline Dataset readFile(const std::string &fileName) {
 template<class IR = LiyoidsIteration>
 KmeansBase *readArgs(KmeansArgs args) {
   if (args.algorithm == "kmeans") {
-    return new KmeansInitializer<RandomSeedPicker,IR>();
+    return new KmeansInstance<RandomSeedPicker,IR>();
   } else if (args.algorithm == "kmeans++") {
-    return new KmeansInitializer<KmeansppSeedPicker,IR>();
+    return new KmeansInstance<KmeansppSeedPicker,IR>();
   } else if (args.algorithm == "kmeansII") {
     return new KmeansII<IR,IR>(fabs(args.l));
   } else {
