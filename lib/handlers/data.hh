@@ -31,7 +31,7 @@ typedef double dist;
 
 inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
   for (auto k:i) {
-    outStream << k << "\t";
+    outStream << k << " ";
   }
   return outStream;
 }

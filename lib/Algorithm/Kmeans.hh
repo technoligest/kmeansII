@@ -5,24 +5,23 @@
 #ifndef KMEANSII_KMEANS_H
 #define KMEANSII_KMEANS_H
 
-
+#include "KmeansBase.hh"
 #include "KmeansInstance.hh"
+#include "Kmeans2Instance.hh"
 #include "SeedPickers.hh"
 #include "IterationRunners.hh"
 #include "KmeansHelpers.hh"
-#include "KmeansIIInitializer.hh"
 
 //IR = iterationRunner
 
-template<class IR = LiyoidsIteration>
+template<class IR = LloydsIteration>
 using Kmeans = KmeansInstance<RandomSeedPicker,IR>;
 
-template <class IR = LiyoidsIteration>
+template <class IR = LloydsIteration>
 using Kmeanspp = KmeansInstance<KmeansppSeedPicker, IR>;
 
-template<typename InnerIR = LiyoidsIteration, typename OuterIR = LiyoidsIteration>
+template<typename InnerIR = LloydsIteration, typename OuterIR = LloydsIteration>
 using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>,OuterIR>;
-
 
 
 #endif //KMEANSII_KMEANS_H

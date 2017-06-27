@@ -52,7 +52,7 @@ inline Dataset readFile(const std::string &fileName) {
   return result;
 }
 
-template<class IR = LiyoidsIteration>
+template<class IR = LloydsIteration>
 KmeansBase *readArgs(KmeansArgs args) {
   if (args.algorithm == "kmeans") {
     return new KmeansInstance<RandomSeedPicker,IR>();

@@ -7,7 +7,7 @@
 #include "KmeansHelpers.hh"
 
 using namespace KmeansHelpers;
-double LiyoidsIteration::runLiyodIteration(const Dataset &d, std::vector <Instance> &centres, const Weights &weights) {
+double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights) {
   if (d.empty() || centres.empty() || d.size() < centres.size()) {
     return -1;
   }
@@ -62,7 +62,7 @@ double LiyoidsIteration::runLiyodIteration(const Dataset &d, std::vector <Instan
   return totalDistance;
 }
 
-double LiyoidsIteration::runIterations(const Dataset &d, Dataset &centres, const Weights &weights) {
+double LloydsIteration::runIterations(const Dataset &d, Dataset &centres, const Weights &weights) {
   if (d.empty() || centres.empty() || d.size() < centres.size()) {
     return -1;
   }
@@ -75,7 +75,7 @@ double LiyoidsIteration::runIterations(const Dataset &d, Dataset &centres, const
   for (iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration) {
 //      std::cout << "starting iteration " << iteration << ": " << std::endl;
 
-    double newDistance = runLiyodIteration(d, centres, weights);
+    double newDistance = runLloydIteration(d, centres, weights);
 
     if (newDistance < bestDistance) {
       bestDistance = newDistance;
@@ -93,5 +93,6 @@ double LiyoidsIteration::runIterations(const Dataset &d, Dataset &centres, const
 //      std::cout << "ending iteration " << iteration << "." << std::endl;
   }
   std::cout << "numIterations: " << iteration << std::endl;
+  _numIterations=iteration;
   return bestDistance;
 }

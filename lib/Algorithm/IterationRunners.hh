@@ -11,13 +11,17 @@
 class IterationRunner {
 public:
   inline virtual dist runIterations(const Dataset &, Dataset &, const Weights &)=0;
+
+  inline ull numIterations() { return _numIterations; };
+protected:
+  ull _numIterations = 0;
 };
 
 
-class LiyoidsIteration : public IterationRunner {
+class LloydsIteration : public IterationRunner {
 private:
   //returns the sum of squared distances of all the pointst to their nearest clsuter centre
-  dist runLiyodIteration(const Dataset &d, std::vector <Instance> &centres, const Weights &weights);
+  dist runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights);
 
 public:
   //runs all the necessary iterations to complete the clustering
