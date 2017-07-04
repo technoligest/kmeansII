@@ -8,7 +8,11 @@ CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Algorithm/KmeansBase.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Algorithm/KmeansHelpers.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Algorithm/KmeansInstance.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Algorithm/SeedPickers.hh
+CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Experiments/ExperimentAnalyzer.hh
+CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Experiments/experimentResult.hh
+CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Experiments/experimentRunner.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Experiments/experiments.hh
+CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/Experiments/experimentsReader.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/handlers/CSV.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/handlers/data.hh
 CMakeFiles/trying.dir/lib/trying.cc.o: ../lib/handlers/dataReader.hh

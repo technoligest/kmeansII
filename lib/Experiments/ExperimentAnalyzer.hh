@@ -6,12 +6,15 @@
 #define KMEANSII_EXPERIMENTANALYZER_HH
 
 #include "experiments.hh"
+#include "experimentRunner.hh"
 
 using namespace std;
 
 class ExperimentAnalyzer{
 private:
-  ExperimentRunner er;
+  vector<ExperimentResult> er;
+  Dataset d;
+
 
   /*
    * This is the total distance squared/the circumference of the tightest square around the data
@@ -29,16 +32,16 @@ private:
   double intersectionOverUnion;
 
   inline double calcDistanceOverCircumference(){
-    if(er.getExperiments().size() < 2){
+    if(er.size() < 2){
       return -1;
     }
-    assert (er.getExperiments()[0].centres.size() == 2);
+    assert (er[0].centres.size() == 2);
     Instance topPoint{std::numeric_limits<dataType>::min(), 0};
     Instance bottomPoint{std::numeric_limits<dataType>::max(), 0};
     Instance rightPoint{0, std::numeric_limits<dataType>::min()};
     Instance leftPoint{0, std::numeric_limits<dataType>::max()};
 
-    for(const auto &experiment: er.getExperiments()){
+    for(const auto &experiment: er){
       topPoint = {std::numeric_limits<dataType>::min(), 0};
       bottomPoint = {std::numeric_limits<dataType>::max(), 0};
       rightPoint = {0, std::numeric_limits<dataType>::min()};
@@ -63,17 +66,17 @@ private:
       distanceOverCircumference.push_back(circumference / experiment.distanceSquared);
     }
 
-    assert(distanceOverCircumference.size() == er.getExperiments().size());
+    assert(distanceOverCircumference.size() == er.size());
   }
 
   inline double calCintersectionOverUnion(){
-    if(er.getExperiments().size() < 2){
+    if(er.size() < 2){
       return -1;
     }
-    Dataset tempIntersectionCentres = er.getExperiments()[0].centres;
+    Dataset tempIntersectionCentres = er[0].centres;
 
-    for(int i = 1; i < er.getExperiments().size(); ++i){
-      ExperimentResult r = er.getExperiments()[i];
+    for(int i = 1; i < er.size(); ++i){
+      ExperimentResult r = er[i];
 
       /*
        * Very bad O(k^2) Implementation to find the intersection between all the centres
@@ -87,8 +90,8 @@ private:
       }
     }
     ull intersection = tempIntersectionCentres.size();
-    assert(er.getExperiments().size() > 1);
-    ull un = er.getExperiments()[0].centres.size() * er.getExperiments().size() - intersection;
+    assert(!er.empty());
+    ull un = er[0].centres.size() * er.size() - intersection;
     return intersectionOverUnion;
   };
 
@@ -102,12 +105,12 @@ private:
   }
 
   inline bool AnalyzeExperiments(){
-    if(er.getExperiments().empty()){
+    if(er.empty()){
       return true;
     }
-    size_t size = er.getExperiments()[0].centres.size();
-    for(auto i:er.getExperiments()){
-      if(!i.centres.size() == size){
+    size_t size = er[0].centres.size();
+    for(auto i:er){
+      if(i.centres.size() != size){
         return false;
       }
     }
@@ -115,7 +118,7 @@ private:
   }
 
 public:
-  inline ExperimentAnalyzer(ExperimentRunner &_er) : er(_er){}
+  inline ExperimentAnalyzer(ExperimentRunner &_er, Dataset &data) : er(_er.getExperiments()),d(data){}
 
   inline void RunAnalyzer(){
 

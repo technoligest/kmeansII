@@ -10,11 +10,9 @@
 #include <sstream>
 #include <fstream>
 #include "CSV.hh"
-#include "data.hh"
 #include "inputArguments.hh"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.hh"
-#include "../Experiments/experiments.hh"
 
 inline Dataset readCSVFile(std::istream inputFile) {
   Dataset t;
@@ -47,23 +45,6 @@ inline Dataset readFile(std::istream inputFile) {
   return result;
 }
 
-inline ExperimentResult readExperiment(std::istream istream){
-
-}
-
-//inline vector<ExperimentResult> readExperiments(std::istream& inputFile){
-//  std::string tempLine;
-//  vector<ExperimentResult> result;
-//  while(getline(inputFile, tempLine)){
-//    if(tempLine.substr(0,3)==">>>"){
-//
-//      if(readExperiment(inputFile)){
-//
-//        result.push_back();
-//      }
-//    }
-//  }
-//}
 
 template<class IR = LloydsIteration>
 KmeansBase *readArgs(KmeansArgs args) {
