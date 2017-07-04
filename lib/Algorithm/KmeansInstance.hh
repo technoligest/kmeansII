@@ -28,6 +28,7 @@ public:
     if(!KmeansHelpers::prepareForClustering(d, centres, weights, k)){
       return -1;
     }
+    clearInstance();
     SP s;
     ull startTime = static_cast<ull>(time(nullptr));
     //set random centres from the given dataset

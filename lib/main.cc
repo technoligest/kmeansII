@@ -13,11 +13,11 @@ using namespace std;
 void startTest();
 
 int main(int argc, char **argv) {
-  string filePath = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullData.txt";
+  string filePath = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullDataComplete.txt";
   Dataset d = readFile(filePath);
   ExperimentRunner e(d,50);
   e.RunExperiments(2);
-  e.printResult("hello.txt");
+  //e.printResult("test2-fullData.txt");
   return 0;
 }
 

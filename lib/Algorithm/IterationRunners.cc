@@ -7,8 +7,9 @@
 #include "KmeansHelpers.hh"
 
 using namespace KmeansHelpers;
-double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights) {
-  if (d.empty() || centres.empty() || d.size() < centres.size()) {
+
+double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights){
+  if(d.empty() || centres.empty() || d.size() < centres.size()){
     return -1;
   }
 
@@ -17,32 +18,32 @@ double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance
   size_t k = centres.size();     //the number of clusters
   size_t m = centres[0].size();  //the size of each row
 
-  std::vector <Instance> newCentres(k);
-  std::vector <size_t> newCentreSizes(k);
+  std::vector<Instance> newCentres(k);
+  std::vector<size_t> newCentreSizes(k);
 
   //resetting all the values
   std::fill(newCentreSizes.begin(), newCentreSizes.end(), 0);
-  for (auto &centre:newCentres) {
+  for(auto &centre:newCentres){
     centre.resize(m);
     std::fill(centre.begin(), centre.end(), 0);
   }
 
   //adding each instance to where it belongs
-  for (int instId = 0; instId < n; ++instId) {
+  for(int instId = 0; instId < n; ++instId){
     const Instance &inst = d[instId];
     assert(centres.size() == k);
     int minDistClusterId = 0;
     double minDist = KmeansHelpers::findDistanceSquared(inst, centres[0]);
-    for (int i = 1; i < k; ++i) {
+    for(int i = 1; i < k; ++i){
       Instance &centre = centres[i];
       double newDist = KmeansHelpers::findDistanceSquared(inst, centre) * weights[instId];
-      if (newDist < minDist) {
+      if(newDist < minDist){
         minDist = newDist;
         minDistClusterId = i;
       }
     }
     assert(newCentres[minDistClusterId].size() == m);
-    for (int i = 0; i < m; ++i) {
+    for(int i = 0; i < m; ++i){
       newCentres[minDistClusterId][i] += inst[i];
     }
     newCentreSizes[minDistClusterId] += weights[instId];
@@ -50,10 +51,10 @@ double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance
   }
 
   //recalculating the right centres
-  for (int i = 0; i < k; ++i) {
+  for(int i = 0; i < k; ++i){
     auto &centre = newCentres[i];
-    for (auto &point: centre) {
-      if (newCentreSizes[i] != 0) {
+    for(auto &point: centre){
+      if(newCentreSizes[i] != 0){
         point /= newCentreSizes[i];
       }
     }
@@ -62,37 +63,35 @@ double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance
   return totalDistance;
 }
 
-double LloydsIteration::runIterations(const Dataset &d, Dataset &centres, const Weights &weights) {
-  if (d.empty() || centres.empty() || d.size() < centres.size()) {
+double LloydsIteration::runIterations(const Dataset &d, Dataset &centres, const Weights &weights){
+  if(d.empty() || centres.empty() || d.size() < centres.size()){
     return -1;
   }
 
-  std::vector <Instance> bestCentres;
+  std::vector<Instance> bestCentres;
 
   double currDistance = std::numeric_limits<double>::max();
   double bestDistance = std::numeric_limits<double>::max();
   int iteration;
-  for (iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration) {
-//      std::cout << "starting iteration " << iteration << ": " << std::endl;
+  for(iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration){
 
     double newDistance = runLloydIteration(d, centres, weights);
-
-    if (newDistance < bestDistance) {
+    if(newDistance < bestDistance){
       bestDistance = newDistance;
       bestCentres = centres;
     }
-    if (newDistance > currDistance * LOCAL_ITERATION_BIAS) {
-      std::cout << "Terminating because iteration is exceeded local bias." << std::endl;
+    if(newDistance > currDistance * LOCAL_ITERATION_BIAS){
+      std::cout << "Terminating because iteration has exceeded local bias." << std::endl;
       break;
     }
-    if (fabs(newDistance - currDistance) < 1e-6) {
+    std::cout << "NewDist: "<< newDistance<<" CurrDist: " << currDistance << std::endl;
+    if(fabs(newDistance - currDistance) < CONVERGENCE_THREASHOLD){
       std::cout << "Terminating because iterations are stable." << std::endl;
       break;
     }
     currDistance = newDistance;
-//      std::cout << "ending iteration " << iteration << "." << std::endl;
   }
   std::cout << "numIterations: " << iteration << std::endl;
-  _numIterations=iteration;
+  _numIterations = iteration;
   return bestDistance;
 }

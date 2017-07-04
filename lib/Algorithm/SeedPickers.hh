@@ -87,20 +87,22 @@ bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &d, Dataset &centres, const
   }
   std::cout << "completed all the passes. " << std::endl;
   Weights w(tempCentres.size());
-  std::fill(w.begin(), w.end(), 1);
-  //for (auto &inst:d) {
-  //  dist minDist = std::numeric_limits<dist>::max();
-  //  int temp = 0;
-  //  for (int i = 0; i < tempCentres.size(); ++i) {
-  //    if (KmeansHelpers::shortestDistanceToClusterCentre(tempCentres, inst) < minDist) {
-  //      temp = i;
-  //    }
-  //  }
-  //  ++w[temp];
-  //}
-  //for (auto &weight:w) {
-  //  if (weight == 0) weight = 1;
-  //}
+  std::fill(w.begin(), w.end(), 0);
+  for(auto &inst:d){
+    dist minDist = std::numeric_limits<dist>::max();
+    int temp = 0;
+    for(int tempCentreId = 0; tempCentreId < tempCentres.size(); ++tempCentreId){
+      double dist = KmeansHelpers::findDistanceSquared(tempCentres[tempCentreId], inst);
+      if(dist < minDist){
+        minDist = dist;
+        temp = tempCentreId;
+      }
+    }
+    w[temp] += 1;
+  }
+  for(const auto &i: w){
+    std::cout << i << std::endl;
+  }
   KmeansBase *kmeans = new KmeansInstance<KmeansppSeedPicker, IR>();
   kmeans->cluster(tempCentres, centres, w, k);
   std::cout << "Finished picking seeds for KmeansII" << std::endl;

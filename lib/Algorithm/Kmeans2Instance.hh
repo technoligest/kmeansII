@@ -23,6 +23,7 @@ public:
     if (!KmeansHelpers::prepareForClustering(d, centres, weights, k)) {
       return -1;
     }
+    clearInstance();
     KmeansIISeedPicker<InnerIR> s(l,r);
 
     ull startTime = static_cast<ull>(time(nullptr));

@@ -12,6 +12,7 @@
 
 #define MAX_NUM_ITERATIONS 200
 #define LOCAL_ITERATION_BIAS 1.5f
+#define CONVERGENCE_THREASHOLD 1
 
 typedef double dataType;
 typedef std::string label;

@@ -14,23 +14,18 @@
 #include "inputArguments.hh"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.hh"
+#include "../Experiments/experiments.hh"
 
-inline Dataset readCSVFile(const std::string &fileName) {
+inline Dataset readCSVFile(std::istream inputFile) {
   Dataset t;
-  std::ifstream inputFile(fileName);
   for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
     t.push_back(it->toFloat());
   }
   return t;
 };
 
-inline Dataset readFile(const std::string &fileName) {
+inline Dataset readFile(std::istream inputFile) {
   Dataset result;
-  std::ifstream inputFile(fileName);
-
-  if (!inputFile.is_open()) {
-    return result;
-  }
 
   std::string tempLine;
   //gets each line
@@ -50,6 +45,24 @@ inline Dataset readFile(const std::string &fileName) {
     result.push_back(i);
   }
   return result;
+}
+
+inline ExperimentResult readExperiment(std::istream istream){
+
+}
+
+inline vector<ExperimentResult> readExperiments(std::istream inputFile){
+  std::string tempLine;
+  vector<ExperimentResult> result;
+  while(getline(inputFile, tempLine)){
+    if(tempLine.substr(0,3)==">>>"){
+      
+      if(readExperiment(inputFile)){
+
+        result.push_back();
+      }
+    }
+  }
 }
 
 template<class IR = LloydsIteration>
