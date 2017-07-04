@@ -11,6 +11,8 @@
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+KmeansBase.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh
 KmeansInstance.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInstance.hh
 Kmeans2Instance.hh
@@ -21,8 +23,6 @@ IterationRunners.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh
 KmeansHelpers.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
-KmeansInstance.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInstance.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans2Instance.hh
 SeedPickers.hh
@@ -69,10 +69,8 @@ KmeansInstance.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
 cxxabi.h
 -
-../pkgs/dlib/optimization/max_cost_assignment.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/dlib/optimization/max_cost_assignment.h
-../handlers/data.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
+fstream
+-
 ../Algorithm/Kmeans.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
 
@@ -113,6 +111,8 @@ inputArguments.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/cmdArgsReader/macro-argparse-plain.hh
 ../Algorithm/Kmeans.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+../Experiments/experiments.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh
 ../pkgs/cmdArgsReader/macro-argparse-plain.hh
@@ -1473,6 +1473,8 @@ cxxabi.h
 -
 pkgs/dlib/optimization/max_cost_assignment.h
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/dlib/optimization/max_cost_assignment.h
+Experiments/experiments.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
 Algorithm/Kmeans.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
 Experiments/experiments.hh

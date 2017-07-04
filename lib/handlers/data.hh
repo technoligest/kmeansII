@@ -30,17 +30,26 @@ typedef std::vector<weight> Weights;
 typedef double dist;
 
 
+using namespace std;
 inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
-  for (auto k:i) {
-    outStream << k << " ";
+  if(i.empty()){
+    return outStream;
   }
+  for(int k = 0; k < i.size() - 1; ++k){
+    outStream << i[k] << " ";
+  }
+  outStream << i[i.size() - 1];
   return outStream;
 }
 
 inline std::ostream &operator<<(std::ostream &outStream, const Dataset &d) {
-  for (auto i:d) {
-    outStream << i << std::endl;
+  if(d.empty()){
+    return outStream;
   }
+  for(int k = 0; k < d.size() - 1; ++k){
+    outStream << d[k] << endl;
+  }
+  outStream << d[d.size() - 1];
   return outStream;
 }
 

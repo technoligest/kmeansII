@@ -51,19 +51,19 @@ inline ExperimentResult readExperiment(std::istream istream){
 
 }
 
-inline vector<ExperimentResult> readExperiments(std::istream inputFile){
-  std::string tempLine;
-  vector<ExperimentResult> result;
-  while(getline(inputFile, tempLine)){
-    if(tempLine.substr(0,3)==">>>"){
-      
-      if(readExperiment(inputFile)){
-
-        result.push_back();
-      }
-    }
-  }
-}
+//inline vector<ExperimentResult> readExperiments(std::istream& inputFile){
+//  std::string tempLine;
+//  vector<ExperimentResult> result;
+//  while(getline(inputFile, tempLine)){
+//    if(tempLine.substr(0,3)==">>>"){
+//
+//      if(readExperiment(inputFile)){
+//
+//        result.push_back();
+//      }
+//    }
+//  }
+//}
 
 template<class IR = LloydsIteration>
 KmeansBase *readArgs(KmeansArgs args) {

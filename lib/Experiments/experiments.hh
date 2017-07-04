@@ -17,6 +17,11 @@ struct ExperimentResult{
   ull iterationTime;    //time it took to run the iterations;
 };
 
+/*
+ * Experiment has to start with >>>
+ * Every "command" has to be followed by ':'
+ * Some commands might be followed by additional information.
+ */
 inline ostream &operator<<(ostream &out, const ExperimentResult &e){
   out << ">>>Start Experiment" << endl;
   out << "Algorithm: " << e.algorithm << endl;
@@ -31,45 +36,61 @@ inline ostream &operator<<(ostream &out, const ExperimentResult &e){
   return out;
 }
 
-inline Dataset readCentres(std::istream file){
+inline Dataset readCentres(std::istream &file){
   Dataset result;
   while(file.good()){
     string line;
     std::getline(file, line);
+    std::cout << "===" << line.substr(0, 3) << endl;
     if(line.substr(0, 3) == "End"){
+      std::cout << "Returning result." << endl;
       return result;
     }
     std::stringstream lineStream(line);
     std::string item;
     Instance i;
     while(std::getline(lineStream, item, ' ')){
+      std::cout << item << endl;
       try{
+        double k = stod(item);
+        std::cout << k << endl;
         i.push_back(stod(item));
       }
       catch(std::invalid_argument e){
-        std::cout << "Invalid entry in the centres.";
+
+        std::cout << item << "---Invalid entry in the centres." << std::endl;
       }
     }
-    result.push_back(i);
+    if(!i.empty())
+      result.push_back(i);
   }
   result.clear();
   return result;
 };
 
-inline ExperimentResult readExperimentBody(std::istream file){
+inline ExperimentResult readExperimentBody(std::istream &file){
   string line;
   ExperimentResult result;
   while(file.good()){
     string delimed;
     getline(file, line, ':');
+    std::cout << line << endl;
     if(line == "Algorithm"){
       std::getline(file, line);
+      std::cout << "--" << line.substr(1) << "--" << endl;
       result.algorithm = line.substr(1);
     } else if(line == "Sum of distance squared to centre"){
       std::getline(file, line);
-      result.algorithm = line.substr(1);
+      std::cout << "--" << line.substr(1) << "--" << endl;
+      try{
+        result.distanceSquared = stod(line.substr(1));
+      }
+      catch(std::invalid_argument e){
+        std::cout << "Invalid File Input for Distance Squared." << endl;
+      }
     } else if(line == "Time to pick the seeds"){
       std::getline(file, line);
+      std::cout << "--" << line.substr(1) << "--" << endl;
       try{
         result.seedPickerTime = stoull(line.substr(1));
       }
@@ -78,6 +99,7 @@ inline ExperimentResult readExperimentBody(std::istream file){
       }
     } else if(line == "Number of iterations run"){
       std::getline(file, line);
+      std::cout << "--" << line.substr(1) << "--" << endl;
       try{
         result.numIterations = stoull(line.substr(1));
       }
@@ -86,6 +108,7 @@ inline ExperimentResult readExperimentBody(std::istream file){
       }
     } else if(line == "Time to run the iterations"){
       std::getline(file, line);
+      std::cout << "--" << line.substr(1) << "--" << endl;
       try{
         result.iterationTime = stoull(line.substr(1));
       }
@@ -94,8 +117,9 @@ inline ExperimentResult readExperimentBody(std::istream file){
       }
     } else if(line == "Start Centres"){
       std::getline(file, line);
+      std::cout << "--" << line << "--" << endl;
       result.centres = readCentres(file);
-    } else if(line.substr(0, 3) == "<<<"){
+    } else if(line.substr(0, 3) == "End"){
       return result;
     }
   }
@@ -103,22 +127,23 @@ inline ExperimentResult readExperimentBody(std::istream file){
   result.centres.clear();
   result.iterationTime = -1;
   result.numIterations = 0;
-  result.algorithm = "NOTHINg";
+  result.algorithm = "NOTHING";
   result.seedPickerTime = 0;
   return result;
 }
 
 
-inline vector<ExperimentResult> readExperiments(std::istream file){
+inline vector<ExperimentResult> readExperiments(std::istream &file){
   vector<ExperimentResult> result;
-
   while(file.good()){
     string line;
     std::getline(file,line);
+    std::cout << line << endl;
     if(line.substr(0, 3) == ">>>"){
       result.push_back(readExperimentBody(file));
     }
   }
+  return result;
 }
 
 class ExperimentRunner{
@@ -147,6 +172,8 @@ public:
   ExperimentRunner(Dataset &_d, ull _k) : d(_d), k(_k){};
 
   ExperimentRunner(Dataset &&_d, ull _k) : d(_d), k(_k){};
+
+  ExperimentRunner(vector<ExperimentResult> &r) : results(r){};
 
   inline vector<ExperimentResult> getExperiments() const{
     return results;
@@ -182,6 +209,5 @@ public:
     return true;
   }
 };
-
 
 #endif //KMEANSII_EXPERIMENTS_HH

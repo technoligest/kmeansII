@@ -5,6 +5,7 @@
 #include <random>
 #include <cxxabi.h>
 #include "pkgs/dlib/optimization/max_cost_assignment.h"
+#include "Experiments/experiments.hh"
 #include "Algorithm/Kmeans.hh"
 #include "Experiments/experiments.hh"
 #include "handlers/dataReader.hh"
@@ -49,26 +50,30 @@ int main(int argc, char **argv) {
   // person 0 will make $1 at job 0, $2 at job 1, and $6 at job 2.
 
 
-  matrix<int> cost(3, 3);
-  cost = -2, -1, -6,
-          -3, -5, -6,
-          -4, -5, -0;
-  // To find out the best assignment of people to jobs we just need to call this function.
-  std::vector<long> assignment = max_cost_assignment(cost);
+  //matrix<int> cost(3, 3);
+  //cost = -2, -1, -6,
+  //        -3, -5, -6,
+  //        -4, -5, -0;
+  //// To find out the best assignment of people to jobs we just need to call this function.
+  //std::vector<long> assignment = max_cost_assignment(cost);
+  //
+  //// This prints optimal assignments:  [2, 0, 1] which indicates that we should assign
+  //// the person from the first row of the cost matrix to job 2, the middle row person to
+  //// job 0, and the bottom row person to job 1.
+  //for (unsigned int i = 0; i < assignment.size(); i++)
+  //  cout << assignment[i] << std::endl;
+  //
+  //// This prints optimal cost:  16.0
+  //// which is correct since our optimal assignment is 6+5+5.
+  //cout << "optimal cost: " << assignment_cost(cost, assignment) << endl;
+  //matrix<int> costt(1, 1);
+  //costt(0,0) = 50;
+  //cout << costt << endl;
 
-  // This prints optimal assignments:  [2, 0, 1] which indicates that we should assign
-  // the person from the first row of the cost matrix to job 2, the middle row person to
-  // job 0, and the bottom row person to job 1.
-  for (unsigned int i = 0; i < assignment.size(); i++)
-    cout << assignment[i] << std::endl;
-
-  // This prints optimal cost:  16.0
-  // which is correct since our optimal assignment is 6+5+5.
-  cout << "optimal cost: " << assignment_cost(cost, assignment) << endl;
-  matrix<int> costt(1, 1);
-  costt(0,0) = 50;
-  cout << costt << endl;
-
-
+  ifstream inputFile;
+  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/test1-fullData.txt");
+  std::vector<ExperimentResult> exp = readExperiments(inputFile);
+  ExperimentRunner ex(exp);
+  ex.printResult("tryingSomething.txt");
   return 0;
 }
