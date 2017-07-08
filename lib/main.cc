@@ -10,14 +10,16 @@
 
 
 using namespace std;
+
 void startTest();
 
 int main(int argc, char **argv) {
-  string filePath = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimREdFullDataComplete.txt";
-  Dataset d = readFile(filePath);
+  ifstream inputFile;
+  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullData.txt");
+  KmeansData::Dataset d = readDataset(inputFile);
   ExperimentRunner e(d,50);
-  e.RunExperiments(2);
-  //e.printResult("test2-fullData.txt");
+  e.RunExperiments(1);
+  e.printResult("DimRedFullData");
   return 0;
 }
 

@@ -10,7 +10,8 @@
 
 class IterationRunner {
 public:
-  inline virtual dist runIterations(const Dataset &, Dataset &, const Weights &)=0;
+  inline virtual KmeansData::dist
+  runIterations(const KmeansData::Dataset &, KmeansData::Dataset &, const KmeansData::Weights &)=0;
 
   inline ull numIterations() { return _numIterations; };
 protected:
@@ -20,13 +21,28 @@ protected:
 
 class LloydsIteration : public IterationRunner {
 private:
+  KmeansData::Dataset dataset;
+  KmeansData::Weights weights;
+  KmeansData::Dataset centres;
+
   //returns the sum of squared distances of all the pointst to their nearest clsuter centre
-  dist runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights);
+  KmeansData::dist runLloydIteration();
+  KmeansData::dist runIterations();
+
+  void recalculateCentres(KmeansData::Dataset newCentres, const vector<size_t> newCentreSizes);
+  KmeansData::dist calculateBelongings(KmeansData::Dataset newCentres, vector<size_t> newCentreSizes);
 
 public:
   //runs all the necessary iterations to complete the clustering
   //returns the total distance squared of the best iteration
-  dist runIterations(const Dataset &d, Dataset &centres, const Weights &weights) override;
+  inline KmeansData::dist
+  runIterations(const KmeansData::Dataset &d, KmeansData::Dataset &c, const KmeansData::Weights &w) override{
+    dataset = d;
+    weights = w;
+    centres = c;
+    runIterations();
+  };
+
 };
 
 #endif //KMEANSII_ITERATIONRUNNERS_H

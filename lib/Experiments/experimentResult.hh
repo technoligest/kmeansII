@@ -10,13 +10,12 @@
 using namespace std;
 
 struct ExperimentResult{
-  string algorithm;         //name of the algorithm used for clustering
-  Dataset centres;          //The centres of the result after running the algorithm
-  vector<Dataset> clusters; //the clusters that correspond to each centre;
-  ull numIterations;        //The number of iteration it took to converge to get the centres
-  dist distanceSquared;     //total distance squared from the centres to the closest points to it
-  ull seedPickerTime;       //time it took to pick the seeds
-  ull iterationTime;        //time it took to run the iterations;
+  string algorithm;               //name of the algorithm used for clustering
+  KmeansData::Dataset centres;                //The centres of the result after running the algorithm
+  ull numIterations;              //The number of iteration it took to converge to get the centres
+  KmeansData::dist distanceSquared;           //total distance squared from the centres to the closest points to it
+  ull seedPickerTime;             //time it took to pick the seeds
+  ull iterationTime;              //time it took to run the iterations;
 };
 
 /*

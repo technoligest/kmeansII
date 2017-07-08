@@ -6,76 +6,43 @@
 #include <cmath>
 #include "KmeansHelpers.hh"
 
-using namespace KmeansHelpers;
 
-double LloydsIteration::runLloydIteration(const Dataset &d, std::vector<Instance> &centres, const Weights &weights){
-  if(d.empty() || centres.empty() || d.size() < centres.size()){
+KmeansData::dist LloydsIteration::runLloydIteration(){
+  if(dataset.empty() || centres.empty() || dataset.size() < centres.size()){
     return -1;
   }
 
-  double totalDistance = 0;
-  size_t n = d.size();           //the number of items in the dataset
-  size_t k = centres.size();     //the number of clusters
-  size_t m = centres[0].size();  //the size of each row
-
-  std::vector<Instance> newCentres(k);
-  std::vector<size_t> newCentreSizes(k);
+  KmeansData::dist totalDistance = 0;
+  std::vector<KmeansData::Instance> newCentres(centres.size());
+  std::vector<size_t> newCentreSizes(centres.size());
 
   //resetting all the values
   std::fill(newCentreSizes.begin(), newCentreSizes.end(), 0);
   for(auto &centre:newCentres){
-    centre.resize(m);
+    centre.resize(centres[0].size());
     std::fill(centre.begin(), centre.end(), 0);
   }
 
-  //adding each instance to where it belongs
-  for(int instId = 0; instId < n; ++instId){
-    const Instance &inst = d[instId];
-    assert(centres.size() == k);
-    int minDistClusterId = 0;
-    double minDist = KmeansHelpers::findDistanceSquared(inst, centres[0]);
-    for(int i = 1; i < k; ++i){
-      Instance &centre = centres[i];
-      double newDist = KmeansHelpers::findDistanceSquared(inst, centre) * weights[instId];
-      if(newDist < minDist){
-        minDist = newDist;
-        minDistClusterId = i;
-      }
-    }
-    assert(newCentres[minDistClusterId].size() == m);
-    for(int i = 0; i < m; ++i){
-      newCentres[minDistClusterId][i] += inst[i];
-    }
-    newCentreSizes[minDistClusterId] += weights[instId];
-    totalDistance += minDist;
-  }
-
-  //recalculating the right centres
-  for(int i = 0; i < k; ++i){
-    auto &centre = newCentres[i];
-    for(auto &point: centre){
-      if(newCentreSizes[i] != 0){
-        point /= newCentreSizes[i];
-      }
-    }
-  }
+  totalDistance = calculateBelongings(newCentres, newCentreSizes);
+  recalculateCentres(newCentres, newCentreSizes);
   centres = newCentres;
+
   return totalDistance;
 }
 
-double LloydsIteration::runIterations(const Dataset &d, Dataset &centres, const Weights &weights){
-  if(d.empty() || centres.empty() || d.size() < centres.size()){
+KmeansData::dist LloydsIteration::runIterations(){
+  if(dataset.empty() || centres.empty() || dataset.size() < centres.size()){
     return -1;
   }
 
-  std::vector<Instance> bestCentres;
+  std::vector<KmeansData::Instance> bestCentres;
 
   double currDistance = std::numeric_limits<double>::max();
   double bestDistance = std::numeric_limits<double>::max();
   int iteration;
   for(iteration = 0; iteration < MAX_NUM_ITERATIONS; ++iteration){
 
-    double newDistance = runLloydIteration(d, centres, weights);
+    double newDistance = runLloydIteration();
     if(newDistance < bestDistance){
       bestDistance = newDistance;
       bestCentres = centres;
@@ -94,4 +61,47 @@ double LloydsIteration::runIterations(const Dataset &d, Dataset &centres, const 
   std::cout << "numIterations: " << iteration << std::endl;
   _numIterations = iteration;
   return bestDistance;
+}
+
+void operator/=(KmeansData::Instance &v, const vector<size_t> &d){
+  assert(v.size() == d.size());
+  std::cout<<"V size: "<<v.size()<<"d size: "<<d.size()<<endl;
+  for(int i = 0; i < v.size(); ++i){
+    v[i] /= d[i];
+  }
+}
+void operator+=(KmeansData::Instance &v, const KmeansData::Instance &d){
+  assert(v.size()==d.size());
+  for(int i=0; i<v.size(); ++i){
+    v[i]+=d[i];
+  }
+}
+
+/*
+ * Here we are given a vecotor of instances
+ */
+void LloydsIteration::recalculateCentres(std::vector<KmeansData::Instance> newCentres,
+                                         const std::vector<size_t> newCentreSizes){
+  for(auto &centre: newCentres){
+    centre /= newCentreSizes;
+  }
+}
+
+
+KmeansData::dist LloydsIteration::calculateBelongings(KmeansData::Dataset newCentres, vector<size_t> newCentreSizes){
+
+  size_t m = centres[0].size();
+
+  KmeansData::dist totalDistance = 0;
+
+  //adding each instance to where it belongs
+  for(int instId = 0; instId < dataset.size(); ++instId){
+    const KmeansData::Instance &inst = dataset[instId];
+    auto minDistClusterId = KmeansHelpers::findBelongingCentrePosition(inst, centres, weights[instId]);
+    assert(newCentres[minDistClusterId].size() == m);
+    newCentres[minDistClusterId] += inst;
+    newCentreSizes[minDistClusterId] += weights[instId];
+    totalDistance += KmeansHelpers::findDistanceSquared(inst,centres[minDistClusterId]);
+  }
+  return totalDistance;
 }

@@ -10,9 +10,10 @@
 #include "../handlers/data.hh"
 
 namespace KmeansHelpers {
+
 //checks that all of the instances in the dataset are of teh same size
- inline bool analyzeDataset(const Dataset &d) {
-   for (Instance i:d) {
+ inline bool analyzeDataset(const KmeansData::Dataset &d){
+   for(KmeansData::Instance i:d){
      if (i.size() != d[0].size()) {
        return false;
      }
@@ -21,10 +22,10 @@ namespace KmeansHelpers {
  }
 
 //squared euclidean distance
- inline dist findDistanceSquared(const Instance &r1, const Instance &r2) {
+ inline KmeansData::dist findDistanceSquared(const KmeansData::Instance &r1, const KmeansData::Instance &r2){
    if (r1.size() != r2.size())
      return -1;
-   dist result = 0;
+   KmeansData::dist result = 0;
    size_t size = r1.size();
    for (int i = 0; i < size; ++i) {
      result += pow(r1[i] - r2[i], 2);
@@ -33,14 +34,15 @@ namespace KmeansHelpers {
  }
 
  //find the shortest distance to any already chosen cluster for the given row.
- inline dist shortestDistanceToClusterCentre(const std::vector<Instance> &centres, const Instance &inst) {
+ inline KmeansData::dist
+ shortestDistanceToClusterCentre(const std::vector<KmeansData::Instance> &centres, const KmeansData::Instance &inst){
    if (centres.empty())
      return -1;
 
-   dist currDistance, lowestDistance;
+   KmeansData::dist currDistance, lowestDistance;
    lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
 
-   for (Instance const &centre: centres) {
+   for(KmeansData::Instance const &centre: centres){
      currDistance = findDistanceSquared(inst, centre);
      if (currDistance < lowestDistance) {
        lowestDistance = currDistance;
@@ -49,39 +51,23 @@ namespace KmeansHelpers {
    return lowestDistance;
  }
 
-// inline const Instance *closestCentre(const std::vector<Instance> &centres, const Instance &inst){
-//   if (centres.empty())
-//     return nullptr;
-//
-//   const Instance *result = &(centres[0]);
-//   dist currDistance, lowestDistance;
-//   lowestDistance = currDistance = findDistanceSquared(inst, centres[0]);
-//
-//   for (Instance const &centre: centres) {
-//     currDistance = findDistanceSquared(inst, centre);
-//     if (currDistance < lowestDistance) {
-//       result = &centre;
-//       lowestDistance = currDistance;
-//     }
-//   }
-//   return result;
-// }
-
-
+ //ADD weights into account ??????
 //DX is the sum of the shortest paths from each item to the nearest cluster.
- inline double calcDX(const Dataset &d, const std::vector<Instance> &centres) {
+ inline double calcDX(const KmeansData::Dataset &d, const std::vector<KmeansData::Instance> &centres,
+                      const KmeansData::Weights weights){
    if (centres.size() < 1) {
      return -1;
    }
    double result = 0;
-   for (Instance const &inst: d) {
-     result += shortestDistanceToClusterCentre(centres, inst);
-//     std::cout<<"result: "<<result<<std::endl;
+   for(int i = 0; i < d.size(); ++i){
+     const KmeansData::Instance &inst = d[i];
+     result += shortestDistanceToClusterCentre(centres, inst) * weights[i];
    }
    return result;
  }
 
- inline bool prepareForClustering(const Dataset &d, std::vector<Instance> &centres, const Weights &weights, ull k) {
+ inline bool prepareForClustering(const KmeansData::Dataset &d, std::vector<KmeansData::Instance> &centres,
+                                  const KmeansData::Weights &weights, ull k){
    using namespace std;
    if (d.empty() || d.size() < k || k < 1) {
      std::cout << "Cannot cluster data with empty dataset or one with too few values of k values of less than 1."
@@ -105,12 +91,29 @@ namespace KmeansHelpers {
    centres.resize(k);
 
    //resizing all of the centres to the right size;
-   for (Instance i:centres) {
+   for(KmeansData::Instance i:centres){
      i.resize(m);
    }
    return true;
  }
 
+ inline size_t
+ findBelongingCentrePosition(const KmeansData::Instance &inst, const KmeansData::Dataset centres, KmeansData::weight w){
+   if(centres.empty()){
+     return -1;
+   }
+   size_t minDistClusterId = 0;
+   double minDist = findDistanceSquared(inst, centres[0]);
+   for(int i = 1; i < centres.size(); ++i){
+     const KmeansData::Instance &centre = centres[i];
+     double newDist = findDistanceSquared(inst, centre) * w;
+     if(newDist < minDist){
+       minDist = newDist;
+       minDistClusterId = i;
+     }
+   }
+   return minDistClusterId;
+ }
 }
 
 

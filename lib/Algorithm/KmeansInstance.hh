@@ -23,7 +23,9 @@ public:
   inline KmeansInstance(){};
 
 
-  inline dist cluster(const Dataset &d, std::vector<Instance> &centres, const Weights &weights, ull k) override{
+  inline KmeansData::dist
+  cluster(const KmeansData::Dataset &d, std::vector<KmeansData::Instance> &centres, const KmeansData::Weights &weights,
+          ull k) override{
     using namespace std;
     if(!KmeansHelpers::prepareForClustering(d, centres, weights, k)){
       return -1;
@@ -58,8 +60,9 @@ public:
     return result;
   }
 
-  inline dist cluster(const Dataset &d, std::vector<Instance> &centres, ull k) override{
-    Weights weights(d.size());
+  inline KmeansData::dist
+  cluster(const KmeansData::Dataset &d, std::vector<KmeansData::Instance> &centres, ull k) override{
+    KmeansData::Weights weights(d.size());
     std::fill(weights.begin(), weights.end(), 1);
     return cluster(d, centres, weights, k);
   };

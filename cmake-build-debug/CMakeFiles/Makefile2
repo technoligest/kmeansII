@@ -60,76 +60,113 @@ CMAKE_SOURCE_DIR = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlad
 CMAKE_BINARY_DIR = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"
 
 #=============================================================================
-# Target rules for target CMakeFiles/testing.dir
+# Target rules for target CMakeFiles/small_temp.dir
 
 # All Build rule for target.
-CMakeFiles/testing.dir/all:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/depend
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=9,10,11,12,13,14,15 "Built target testing"
-.PHONY : CMakeFiles/testing.dir/all
+CMakeFiles/small_temp.dir/all:
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/depend
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=9,10,11,12,13 "Built target small_temp"
+.PHONY : CMakeFiles/small_temp.dir/all
 
 # Include target in all.
-all: CMakeFiles/testing.dir/all
+all: CMakeFiles/small_temp.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/testing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testing.dir/all
+CMakeFiles/small_temp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/small_temp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/testing.dir/rule
+.PHONY : CMakeFiles/small_temp.dir/rule
 
 # Convenience name for target.
-testing: CMakeFiles/testing.dir/rule
+small_temp: CMakeFiles/small_temp.dir/rule
 
-.PHONY : testing
-
-# clean rule for target.
-CMakeFiles/testing.dir/clean:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/clean
-.PHONY : CMakeFiles/testing.dir/clean
+.PHONY : small_temp
 
 # clean rule for target.
-clean: CMakeFiles/testing.dir/clean
+CMakeFiles/small_temp.dir/clean:
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/clean
+.PHONY : CMakeFiles/small_temp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/small_temp.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/temp.dir
+# Target rules for target CMakeFiles/big_temp.dir
 
 # All Build rule for target.
-CMakeFiles/temp.dir/all:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/depend
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=4,5,6,7,8 "Built target temp"
-.PHONY : CMakeFiles/temp.dir/all
+CMakeFiles/big_temp.dir/all:
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/depend
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5 "Built target big_temp"
+.PHONY : CMakeFiles/big_temp.dir/all
 
 # Include target in all.
-all: CMakeFiles/temp.dir/all
+all: CMakeFiles/big_temp.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/temp.dir/rule: cmake_check_build_system
+CMakeFiles/big_temp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/temp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/big_temp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/temp.dir/rule
+.PHONY : CMakeFiles/big_temp.dir/rule
 
 # Convenience name for target.
-temp: CMakeFiles/temp.dir/rule
+big_temp: CMakeFiles/big_temp.dir/rule
 
-.PHONY : temp
-
-# clean rule for target.
-CMakeFiles/temp.dir/clean:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/clean
-.PHONY : CMakeFiles/temp.dir/clean
+.PHONY : big_temp
 
 # clean rule for target.
-clean: CMakeFiles/temp.dir/clean
+CMakeFiles/big_temp.dir/clean:
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/clean
+.PHONY : CMakeFiles/big_temp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/big_temp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/kmeansII.dir
+
+# All Build rule for target.
+CMakeFiles/kmeansII.dir/all:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/depend
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=6,7,8 "Built target kmeansII"
+.PHONY : CMakeFiles/kmeansII.dir/all
+
+# Include target in all.
+all: CMakeFiles/kmeansII.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/kmeansII.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kmeansII.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 0
+.PHONY : CMakeFiles/kmeansII.dir/rule
+
+# Convenience name for target.
+kmeansII: CMakeFiles/kmeansII.dir/rule
+
+.PHONY : kmeansII
+
+# clean rule for target.
+CMakeFiles/kmeansII.dir/clean:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/clean
+.PHONY : CMakeFiles/kmeansII.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/kmeansII.dir/clean
 
 .PHONY : clean
 
@@ -140,7 +177,7 @@ clean: CMakeFiles/temp.dir/clean
 CMakeFiles/trying.dir/all:
 	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/depend
 	$(MAKE) -f CMakeFiles/trying.dir/build.make CMakeFiles/trying.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=16,17 "Built target trying"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=21,22 "Built target trying"
 .PHONY : CMakeFiles/trying.dir/all
 
 # Include target in all.
@@ -171,39 +208,39 @@ clean: CMakeFiles/trying.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/kmeansII.dir
+# Target rules for target CMakeFiles/testing.dir
 
 # All Build rule for target.
-CMakeFiles/kmeansII.dir/all:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/depend
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target kmeansII"
-.PHONY : CMakeFiles/kmeansII.dir/all
+CMakeFiles/testing.dir/all:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/depend
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=14,15,16,17,18,19,20 "Built target testing"
+.PHONY : CMakeFiles/testing.dir/all
 
 # Include target in all.
-all: CMakeFiles/kmeansII.dir/all
+all: CMakeFiles/testing.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/kmeansII.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kmeansII.dir/all
+CMakeFiles/testing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" 0
-.PHONY : CMakeFiles/kmeansII.dir/rule
+.PHONY : CMakeFiles/testing.dir/rule
 
 # Convenience name for target.
-kmeansII: CMakeFiles/kmeansII.dir/rule
+testing: CMakeFiles/testing.dir/rule
 
-.PHONY : kmeansII
-
-# clean rule for target.
-CMakeFiles/kmeansII.dir/clean:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/clean
-.PHONY : CMakeFiles/kmeansII.dir/clean
+.PHONY : testing
 
 # clean rule for target.
-clean: CMakeFiles/kmeansII.dir/clean
+CMakeFiles/testing.dir/clean:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/clean
+.PHONY : CMakeFiles/testing.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/testing.dir/clean
 
 .PHONY : clean
 

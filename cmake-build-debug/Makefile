@@ -111,30 +111,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testing
+# Target rules for targets named small_temp
 
 # Build rule for target.
-testing: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testing
-.PHONY : testing
+small_temp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 small_temp
+.PHONY : small_temp
 
 # fast build rule for target.
-testing/fast:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
-.PHONY : testing/fast
+small_temp/fast:
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/build
+.PHONY : small_temp/fast
 
 #=============================================================================
-# Target rules for targets named temp
+# Target rules for targets named big_temp
 
 # Build rule for target.
-temp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 temp
-.PHONY : temp
+big_temp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 big_temp
+.PHONY : big_temp
 
 # fast build rule for target.
-temp/fast:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/build
-.PHONY : temp/fast
+big_temp/fast:
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/build
+.PHONY : big_temp/fast
+
+#=============================================================================
+# Target rules for targets named kmeansII
+
+# Build rule for target.
+kmeansII: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kmeansII
+.PHONY : kmeansII
+
+# fast build rule for target.
+kmeansII/fast:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
+.PHONY : kmeansII/fast
 
 #=============================================================================
 # Target rules for targets named trying
@@ -150,17 +163,17 @@ trying/fast:
 .PHONY : trying/fast
 
 #=============================================================================
-# Target rules for targets named kmeansII
+# Target rules for targets named testing
 
 # Build rule for target.
-kmeansII: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kmeansII
-.PHONY : kmeansII
+testing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testing
+.PHONY : testing
 
 # fast build rule for target.
-kmeansII/fast:
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/build
-.PHONY : kmeansII/fast
+testing/fast:
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
+.PHONY : testing/fast
 
 lib/Algorithm/IterationRunners.o: lib/Algorithm/IterationRunners.cc.o
 
@@ -168,7 +181,8 @@ lib/Algorithm/IterationRunners.o: lib/Algorithm/IterationRunners.cc.o
 
 # target to build an object file
 lib/Algorithm/IterationRunners.cc.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.o
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/IterationRunners.cc.o
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/IterationRunners.cc.o
 .PHONY : lib/Algorithm/IterationRunners.cc.o
 
 lib/Algorithm/IterationRunners.i: lib/Algorithm/IterationRunners.cc.i
@@ -177,7 +191,8 @@ lib/Algorithm/IterationRunners.i: lib/Algorithm/IterationRunners.cc.i
 
 # target to preprocess a source file
 lib/Algorithm/IterationRunners.cc.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.i
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/IterationRunners.cc.i
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/IterationRunners.cc.i
 .PHONY : lib/Algorithm/IterationRunners.cc.i
 
 lib/Algorithm/IterationRunners.s: lib/Algorithm/IterationRunners.cc.s
@@ -186,7 +201,8 @@ lib/Algorithm/IterationRunners.s: lib/Algorithm/IterationRunners.cc.s
 
 # target to generate assembly for a file
 lib/Algorithm/IterationRunners.cc.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/IterationRunners.cc.s
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/IterationRunners.cc.s
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/IterationRunners.cc.s
 .PHONY : lib/Algorithm/IterationRunners.cc.s
 
 lib/Algorithm/SeedPickers.o: lib/Algorithm/SeedPickers.cc.o
@@ -195,7 +211,8 @@ lib/Algorithm/SeedPickers.o: lib/Algorithm/SeedPickers.cc.o
 
 # target to build an object file
 lib/Algorithm/SeedPickers.cc.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/SeedPickers.cc.o
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/SeedPickers.cc.o
 .PHONY : lib/Algorithm/SeedPickers.cc.o
 
 lib/Algorithm/SeedPickers.i: lib/Algorithm/SeedPickers.cc.i
@@ -204,7 +221,8 @@ lib/Algorithm/SeedPickers.i: lib/Algorithm/SeedPickers.cc.i
 
 # target to preprocess a source file
 lib/Algorithm/SeedPickers.cc.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.i
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/SeedPickers.cc.i
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/SeedPickers.cc.i
 .PHONY : lib/Algorithm/SeedPickers.cc.i
 
 lib/Algorithm/SeedPickers.s: lib/Algorithm/SeedPickers.cc.s
@@ -213,7 +231,8 @@ lib/Algorithm/SeedPickers.s: lib/Algorithm/SeedPickers.cc.s
 
 # target to generate assembly for a file
 lib/Algorithm/SeedPickers.cc.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.s
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/Algorithm/SeedPickers.cc.s
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/Algorithm/SeedPickers.cc.s
 .PHONY : lib/Algorithm/SeedPickers.cc.s
 
 lib/handlers/CSV.o: lib/handlers/CSV.cc.o
@@ -222,9 +241,10 @@ lib/handlers/CSV.o: lib/handlers/CSV.cc.o
 
 # target to build an object file
 lib/handlers/CSV.cc.o:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.o
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.o
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/handlers/CSV.cc.o
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/handlers/CSV.cc.o
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.o
 .PHONY : lib/handlers/CSV.cc.o
 
 lib/handlers/CSV.i: lib/handlers/CSV.cc.i
@@ -233,9 +253,10 @@ lib/handlers/CSV.i: lib/handlers/CSV.cc.i
 
 # target to preprocess a source file
 lib/handlers/CSV.cc.i:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.i
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.i
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/handlers/CSV.cc.i
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/handlers/CSV.cc.i
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.i
 .PHONY : lib/handlers/CSV.cc.i
 
 lib/handlers/CSV.s: lib/handlers/CSV.cc.s
@@ -244,9 +265,10 @@ lib/handlers/CSV.s: lib/handlers/CSV.cc.s
 
 # target to generate assembly for a file
 lib/handlers/CSV.cc.s:
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.s
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/handlers/CSV.cc.s
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/handlers/CSV.cc.s
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/handlers/CSV.cc.s
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/handlers/CSV.cc.s
 .PHONY : lib/handlers/CSV.cc.s
 
 lib/main.o: lib/main.cc.o
@@ -255,7 +277,8 @@ lib/main.o: lib/main.cc.o
 
 # target to build an object file
 lib/main.cc.o:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.o
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/main.cc.o
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/main.cc.o
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.o
 .PHONY : lib/main.cc.o
 
@@ -265,7 +288,8 @@ lib/main.i: lib/main.cc.i
 
 # target to preprocess a source file
 lib/main.cc.i:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.i
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/main.cc.i
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/main.cc.i
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.i
 .PHONY : lib/main.cc.i
 
@@ -275,7 +299,8 @@ lib/main.s: lib/main.cc.s
 
 # target to generate assembly for a file
 lib/main.cc.s:
-	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/main.cc.s
+	$(MAKE) -f CMakeFiles/small_temp.dir/build.make CMakeFiles/small_temp.dir/lib/main.cc.s
+	$(MAKE) -f CMakeFiles/big_temp.dir/build.make CMakeFiles/big_temp.dir/lib/main.cc.s
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.s
 .PHONY : lib/main.cc.s
 
@@ -449,10 +474,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... testing"
-	@echo "... temp"
-	@echo "... trying"
+	@echo "... small_temp"
+	@echo "... big_temp"
 	@echo "... kmeansII"
+	@echo "... trying"
+	@echo "... testing"
 	@echo "... lib/Algorithm/IterationRunners.o"
 	@echo "... lib/Algorithm/IterationRunners.i"
 	@echo "... lib/Algorithm/IterationRunners.s"

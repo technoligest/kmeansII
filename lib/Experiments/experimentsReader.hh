@@ -12,28 +12,23 @@
 
 using namespace std;
 namespace ExperimentReaderHelpers{
- inline Dataset readCentres(std::istream &file){
-   Dataset result;
+ inline KmeansData::Dataset readCentres(std::istream &file){
+   KmeansData::Dataset result;
    while(file.good()){
      string line;
      std::getline(file, line);
-     std::cout << "===" << line.substr(0, 3) << endl;
      if(line.substr(0, 3) == "End"){
-       std::cout << "Returning result." << endl;
        return result;
      }
      std::stringstream lineStream(line);
      std::string item;
-     Instance i;
+     KmeansData::Instance i;
      while(std::getline(lineStream, item, ' ')){
-       std::cout << item << endl;
        try{
          double k = stod(item);
-         std::cout << k << endl;
          i.push_back(stod(item));
        }
        catch(std::invalid_argument e){
-
          std::cout << item << "---Invalid entry in the centres." << std::endl;
        }
      }
@@ -50,14 +45,11 @@ namespace ExperimentReaderHelpers{
    while(file.good()){
      string delimed;
      getline(file, line, ':');
-     std::cout << line << endl;
      if(line == "Algorithm"){
        std::getline(file, line);
-       std::cout << "--" << line.substr(1) << "--" << endl;
        result.algorithm = line.substr(1);
      } else if(line == "Sum of distance squared to centre"){
        std::getline(file, line);
-       std::cout << "--" << line.substr(1) << "--" << endl;
        try{
          result.distanceSquared = stod(line.substr(1));
        }
@@ -66,7 +58,6 @@ namespace ExperimentReaderHelpers{
        }
      } else if(line == "Time to pick the seeds"){
        std::getline(file, line);
-       std::cout << "--" << line.substr(1) << "--" << endl;
        try{
          result.seedPickerTime = stoull(line.substr(1));
        }
@@ -75,7 +66,6 @@ namespace ExperimentReaderHelpers{
        }
      } else if(line == "Number of iterations run"){
        std::getline(file, line);
-       std::cout << "--" << line.substr(1) << "--" << endl;
        try{
          result.numIterations = stoull(line.substr(1));
        }
@@ -84,7 +74,6 @@ namespace ExperimentReaderHelpers{
        }
      } else if(line == "Time to run the iterations"){
        std::getline(file, line);
-       std::cout << "--" << line.substr(1) << "--" << endl;
        try{
          result.iterationTime = stoull(line.substr(1));
        }
@@ -93,7 +82,6 @@ namespace ExperimentReaderHelpers{
        }
      } else if(line == "Start Centres"){
        std::getline(file, line);
-       std::cout << "--" << line << "--" << endl;
        result.centres = readCentres(file);
      } else if(line.substr(0, 3) == "End"){
        return result;
@@ -115,7 +103,6 @@ inline vector<ExperimentResult> readExperiments(std::istream &file){
   while(file.good()){
     string line;
     std::getline(file, line);
-    std::cout << line << endl;
     if(line.substr(0, 3) == ">>>"){
       result.push_back(readExperimentBody(file));
     }

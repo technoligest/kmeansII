@@ -6,8 +6,6 @@
 #include <cxxabi.h>
 #include "pkgs/dlib/optimization/max_cost_assignment.h"
 #include "Experiments/experiments.hh"
-#include "Algorithm/Kmeans.hh"
-#include "Experiments/experiments.hh"
 #include "handlers/dataReader.hh"
 
 using namespace std;
@@ -71,9 +69,16 @@ int main(int argc, char **argv) {
   //cout << costt << endl;
 
   ifstream inputFile;
-  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/test1-fullData.txt");
-  std::vector<ExperimentResult> exp = readExperiments(inputFile);
-  ExperimentRunner ex(exp);
-  ex.printResult("tryingSomething.txt");
+  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullData.txt");
+  Dataset d = readDataset(inputFile);
+  ExperimentRunner e(d,50);
+  e.RunExperiments(1);
+  e.printResult("DimRedFullData");
+
+  //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/test1-fullData.txt");
+  //std::vector<ExperimentResult> exp = readExperiments(inputFile);
+  //ExperimentRunner ex(exp);
+  //ex.printResult("FullData");
+
   return 0;
 }

@@ -13,25 +13,36 @@
 #define MAX_NUM_ITERATIONS 200
 #define LOCAL_ITERATION_BIAS 1.5f
 #define CONVERGENCE_THREASHOLD 1
-
-typedef double dataType;
-typedef std::string label;
-
-typedef std::vector<dataType> Instance;
-typedef std::vector<Instance> Dataset;
-typedef std::vector<Instance *> DatasetRefs;
+typedef std::vector<int>::size_type Index;
 
 typedef unsigned long long ull;
 typedef long long ll;
 
-typedef unsigned int weight;
-typedef std::vector<weight> Weights;
-
-typedef double dist;
+namespace KmeansData{
 
 
+ template<typename T>
+ using Matrix = std::vector<std::vector<T>>;
+
+
+ typedef double dataType;
+ typedef std::string label;
+
+ typedef std::vector<dataType> Instance;
+ typedef std::vector<Instance> Dataset;
+ typedef std::vector<Instance *> DatasetRefs;
+
+
+ typedef unsigned int weight;
+ typedef std::vector<weight> Weights;
+
+ typedef double dist;
+
+}
 using namespace std;
-inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
+
+//using namespace KmeansData;
+inline std::ostream &operator<<(std::ostream &outStream, const KmeansData::Instance &i){
   if(i.empty()){
     return outStream;
   }
@@ -42,7 +53,7 @@ inline std::ostream &operator<<(std::ostream &outStream, const Instance &i) {
   return outStream;
 }
 
-inline std::ostream &operator<<(std::ostream &outStream, const Dataset &d) {
+inline std::ostream &operator<<(std::ostream &outStream, const KmeansData::Dataset &d){
   if(d.empty()){
     return outStream;
   }

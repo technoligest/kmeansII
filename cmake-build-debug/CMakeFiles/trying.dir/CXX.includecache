@@ -83,6 +83,8 @@ experimentResult.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experimentResult.hh
 ../Algorithm/Kmeans.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
+dirent.h
+-
 
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
 ExperimentAnalyzer.hh
@@ -1497,10 +1499,6 @@ cxxabi.h
 -
 pkgs/dlib/optimization/max_cost_assignment.h
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/pkgs/dlib/optimization/max_cost_assignment.h
-Experiments/experiments.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
-Algorithm/Kmeans.hh
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh
 Experiments/experiments.hh
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh
 handlers/dataReader.hh

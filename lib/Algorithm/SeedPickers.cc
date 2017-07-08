@@ -3,11 +3,11 @@
 //
 #include "SeedPickers.hh"
 
-using namespace KmeansHelpers;
 
-bool RandomSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weights &weights, ull k) {
+bool RandomSeedPicker::pickSeeds(const KmeansData::Dataset &d, KmeansData::Dataset &centres, const KmeansData::Weights &weights, ull k) {
   std::cout << "Started picking random seeds for Kmeans" << std::endl;
   if (d.empty() || centres.empty() || d.size() < k) {
+    //why checking if centres is empty???????????
     return false;
   }
   centres.clear();
@@ -25,7 +25,7 @@ bool RandomSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weigh
   return true;
 };
 
-bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Weights &weights, ull k) {
+bool KmeansppSeedPicker::pickSeeds(const KmeansData::Dataset &d, KmeansData::Dataset &centres, const KmeansData::Weights &weights, ull k) {
   std::cout << "Started picking seeds for Kmeans++" << std::endl;
   if (d.empty() || centres.empty() || d.size() < k) {
     return false;
@@ -41,7 +41,7 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Wei
   centres.push_back(d[static_cast<int>((dis(gen) * n))]);
   for (int i = 1; i < k; ++i) {
 
-    double dx = calcDX(d, centres);
+    double dx = KmeansHelpers::calcDX(d, centres, weights);
     double ran = static_cast<double>(dis(gen));
 
     double cumulativeProb = 0;
@@ -52,8 +52,8 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Wei
      *
      * */
     for (int instId = 0; instId < d.size(); ++instId) {
-      Instance inst = d[instId];
-      double distance = shortestDistanceToClusterCentre(centres, inst) / dx * weights[instId];
+      KmeansData::Instance inst = d[instId];
+      double distance = KmeansHelpers::shortestDistanceToClusterCentre(centres, inst) / dx * weights[instId];
       cumulativeProb += distance;
       if (ran <= cumulativeProb) {
         centres.push_back(inst);
@@ -62,6 +62,10 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, Dataset &centres, const Wei
     }
   }
   assert(centres.size() == k);
+  cout<<"INSIDE KMEANSPP: The final seeds picked by kmeans+++ for Kmean||:";
+  for(const auto &i:centres){
+    std::cout<<i<<endl;
+  }
   std::cout << "Finished picking seeds for Kmeans++" << std::endl;
   return true;
 };

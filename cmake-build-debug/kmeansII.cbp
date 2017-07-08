@@ -37,8 +37,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="testing">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
+			<Target title="small_temp">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/small_temp" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +52,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 small_temp"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="testing/fast">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
+			<Target title="small_temp/fast">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/small_temp" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,14 +73,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 small_temp/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="temp">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/temp" prefix_auto="0" extension_auto="0"/>
+			<Target title="big_temp">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/big_temp" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -94,14 +94,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 temp"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 big_temp"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="temp/fast">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/temp" prefix_auto="0" extension_auto="0"/>
+			<Target title="big_temp/fast">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/big_temp" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -115,49 +115,7 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 temp/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trying">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/trying" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 trying"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="trying/fast">
-				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/trying" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 trying/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 big_temp/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -205,20 +163,108 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="trying">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/trying" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 trying"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="trying/fast">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/trying" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 trying/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testing">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testing/fast">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/testing" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 testing/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.cc">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans2Instance.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh">
 			<Option target="kmeansII"/>
@@ -227,13 +273,16 @@
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInstance.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/ExperimentAnalyzer.hh">
@@ -246,35 +295,42 @@
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experiments.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Experiments/experimentsReader.hh">
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc">
-			<Option target="testing"/>
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh">
-			<Option target="testing"/>
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh">
-			<Option target="testing"/>
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc">
-			<Option target="temp"/>
+			<Option target="small_temp"/>
+			<Option target="big_temp"/>
 			<Option target="kmeansII"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc">

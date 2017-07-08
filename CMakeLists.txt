@@ -3,6 +3,8 @@ project(kmeansII)
 
 set(CMAKE_CXX_STANDARD 14)
 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1z")
+
 find_program( MEMORYCHECK_COMMAND valgrind )
 set( MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full" )
 
@@ -15,5 +17,9 @@ add_executable(testing ${TESTING_SOURCES})
 set(TRYING_SOURCES lib/trying.cc lib/trying.hh)
 add_executable(trying ${TRYING_SOURCES})
 
-set(TEMP_SOURCES lib/main.cc lib/handlers/data.hh lib/Algorithm/Kmeans.hh lib/handlers/CSV.hh lib/handlers/CSV.cc lib/handlers/dataReader.hh lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.hh lib/Algorithm/SeedPickers.hh lib/Algorithm/SeedPickers.cc lib/Algorithm/IterationRunners.cc lib/Algorithm/KmeansInstance.hh lib/Experiments/experiments.hh lib/Algorithm/Kmeans2Instance.hh)
-add_executable(temp ${TEMP_SOURCES})
+set(BIG_TEMP_SOURCES lib/main.cc lib/handlers/data.hh lib/Algorithm/Kmeans.hh lib/handlers/CSV.hh lib/handlers/CSV.cc lib/handlers/dataReader.hh lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.hh lib/Algorithm/SeedPickers.hh lib/Algorithm/SeedPickers.cc lib/Algorithm/IterationRunners.cc lib/Algorithm/KmeansInstance.hh lib/Experiments/experiments.hh lib/Algorithm/Kmeans2Instance.hh)
+add_executable(big_temp ${BIG_TEMP_SOURCES})
+
+set(SMALL_TEMP_SOURCES lib/main.cc lib/handlers/data.hh lib/Algorithm/Kmeans.hh lib/handlers/CSV.hh lib/handlers/CSV.cc lib/handlers/dataReader.hh lib/handlers/inputArguments.hh lib/Algorithm/IterationRunners.hh lib/Algorithm/SeedPickers.hh lib/Algorithm/SeedPickers.cc lib/Algorithm/IterationRunners.cc lib/Algorithm/KmeansInstance.hh lib/Experiments/experiments.hh lib/Algorithm/Kmeans2Instance.hh)
+add_executable(small_temp ${SMALL_TEMP_SOURCES})
+

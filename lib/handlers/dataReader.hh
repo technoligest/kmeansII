@@ -14,23 +14,24 @@
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.hh"
 
-inline Dataset readCSVFile(std::istream inputFile) {
-  Dataset t;
+inline KmeansData::Dataset readCSVDataset(std::istream &inputFile) {
+  KmeansData::Dataset t;
   for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
     t.push_back(it->toFloat());
   }
   return t;
 };
 
-inline Dataset readFile(std::istream inputFile) {
-  Dataset result;
+inline KmeansData::Dataset readDataset(std::istream &inputFile) {
+  KmeansData::Dataset result;
 
   std::string tempLine;
   //gets each line
   while (getline(inputFile, tempLine)) {
     std::stringstream ss(tempLine);
     std::string tempString;
-    Instance i;
+    KmeansData::Instance i;
+
     //gets each word in the line
     while (getline(ss, tempString, ' ')) {
       try {

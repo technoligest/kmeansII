@@ -13,14 +13,14 @@ protected:
   ull _numIterations = 0;
   ull _iterationRunnerTime = 0;
   ull _seedPickerTime = 0;
-  dist _distanceSquared = 0;
+  KmeansData::dist _distanceSquared = 0;
 
 public:
   inline ~KmeansBase(){};
 
-  virtual dist cluster(const Dataset &, Dataset &, ull)=0;
+  virtual KmeansData::dist cluster(const KmeansData::Dataset &, KmeansData::Dataset &, ull)=0;
 
-  virtual dist cluster(const Dataset &, Dataset &, const Weights &, ull)=0;
+  virtual KmeansData::dist cluster(const KmeansData::Dataset &, KmeansData::Dataset &, const KmeansData::Weights &, ull)=0;
 
   inline ull numIterations(){ return _numIterations; };
 
@@ -28,7 +28,7 @@ public:
 
   inline ull seedPickerTime(){ return _seedPickerTime; };
 
-  inline dist distanceSquared(){ return _distanceSquared; };
+  inline KmeansData::dist distanceSquared(){ return _distanceSquared; };
 
   inline void clearInstance(){
     _numIterations = 0;
@@ -36,7 +36,6 @@ public:
     _seedPickerTime = 0;
     _distanceSquared = 0;
   };
-
 };
 
 

@@ -3,7 +3,7 @@
 //
 #include "catch.hpp"
 #include <fstream>
-#include "../lib/handlers/CSV.h"
+#include "../lib/handlers/CSV.hh"
 
 using namespace std;
 
