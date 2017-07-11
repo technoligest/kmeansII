@@ -5,15 +5,21 @@
 #ifndef KMEANSII_ITERATIONRUNNERBASE_HH
 #define KMEANSII_ITERATIONRUNNERBASE_HH
 
-#include "../handlers/data.hh"
+#include "data.hh"
 
-class IterationRunner {
+namespace kmeans{
+class IterationRunner{
 public:
-  inline virtual KmeansData::dist
-  runIterations(const KmeansData::Dataset &, KmeansData::Dataset &, const KmeansData::Weights &)=0;
+  virtual dist
+  runIterations(const Dataset &d, Dataset &c, const Weights &w)=0;
 
-  inline ull numIterations() { return _numIterations; };
+
+  inline ull numIterations(){ return _numIterations; };
 protected:
   ull _numIterations = 0;
+  Dataset dataset;
+  Weights weights;
+  Dataset centres;
 };
+} //namespace kmeans
 #endif //KMEANSII_ITERATIONRUNNERBASE_HH

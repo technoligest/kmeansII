@@ -8,8 +8,8 @@
 #include "experiments.hh"
 #include "experimentRunner.hh"
 
-using namespace std;
-
+namespace kmeans{
+namespace experiments{
 class ExperimentAnalyzer{
 private:
   const vector<ExperimentResult> er;  //the Experiments that were run

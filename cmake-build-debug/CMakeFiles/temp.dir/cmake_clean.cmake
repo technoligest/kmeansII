@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/temp.dir/lib/Algorithm/KmeansBase.cc.o"
   "CMakeFiles/temp.dir/lib/Algorithm/LloydIterationRunner.cc.o"
+  "CMakeFiles/temp.dir/lib/Algorithm/SeedPickerBase.cc.o"
   "CMakeFiles/temp.dir/lib/Algorithm/SeedPickers.cc.o"
   "CMakeFiles/temp.dir/lib/handlers/CSV.cc.o"
   "CMakeFiles/temp.dir/lib/main.cc.o"

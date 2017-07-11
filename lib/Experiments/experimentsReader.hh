@@ -7,10 +7,10 @@
 
 #include <istream>
 #include <sstream>
-#include "../handlers/data.hh"
+#include "../Algorithm/data.hh"
 #include "experiments.hh"
 
-using namespace std;
+
 namespace ExperimentReaderHelpers{
  inline KmeansData::Dataset readCentres(std::istream &file){
    KmeansData::Dataset result;
@@ -96,7 +96,7 @@ namespace ExperimentReaderHelpers{
    return result;
  }
 }
-using namespace ExperimentReaderHelpers;
+
 
 inline vector<ExperimentResult> readExperiments(std::istream &file){
   vector<ExperimentResult> result;

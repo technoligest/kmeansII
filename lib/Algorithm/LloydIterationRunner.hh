@@ -7,31 +7,32 @@
 
 
 #include "IterationRunnerBase.hh"
+#include <cassert>
 
-class LloydIterationRunner : public IterationRunner {
+namespace kmeans{
+class LloydIterationRunner : public IterationRunner{
 private:
-  KmeansData::Dataset dataset;
-  KmeansData::Weights weights;
-  KmeansData::Dataset centres;
 
   //returns the sum of squared distances of all the pointst to their nearest clsuter centre
-  KmeansData::dist runLloydIteration();
-  KmeansData::dist runIterations();
+  dist runLloydIteration();
+  dist runIterations();
 
-  void recalculateCentres(KmeansData::Dataset newCentres, const vector<size_t> newCentreSizes);
-  KmeansData::dist calculateBelongings(KmeansData::Dataset newCentres, vector<size_t> newCentreSizes);
+  void recalculateCentres(Dataset newCentres, const std::vector<size_t> newCentreSizes);
+  dist calculateBelongings(Dataset newCentres, std::vector<size_t> newCentreSizes);
+
+  void divideAll(Instance &, const std::vector<size_t> &);
+  void addAll(Instance &, const Instance &);
 
 public:
   //runs all the necessary iterations to complete the clustering
   //returns the total distance squared of the best iteration
-  inline KmeansData::dist
-  runIterations(const KmeansData::Dataset &d, KmeansData::Dataset &c, const KmeansData::Weights &w) override{
+  inline dist
+  runIterations(const Dataset &d, Dataset &c, const Weights &w) override{
     dataset = d;
     weights = w;
     centres = c;
     return runIterations();
   };
-
 };
-
+} // namespace kmeans
 #endif //KMEANSII_LLOYDITERATIONRUNNER_HH

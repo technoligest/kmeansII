@@ -162,6 +162,36 @@ testing/fast:
 	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/build
 .PHONY : testing/fast
 
+lib/Algorithm/KmeansBase.o: lib/Algorithm/KmeansBase.cc.o
+
+.PHONY : lib/Algorithm/KmeansBase.o
+
+# target to build an object file
+lib/Algorithm/KmeansBase.cc.o:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansBase.cc.o
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/KmeansBase.cc.o
+.PHONY : lib/Algorithm/KmeansBase.cc.o
+
+lib/Algorithm/KmeansBase.i: lib/Algorithm/KmeansBase.cc.i
+
+.PHONY : lib/Algorithm/KmeansBase.i
+
+# target to preprocess a source file
+lib/Algorithm/KmeansBase.cc.i:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansBase.cc.i
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/KmeansBase.cc.i
+.PHONY : lib/Algorithm/KmeansBase.cc.i
+
+lib/Algorithm/KmeansBase.s: lib/Algorithm/KmeansBase.cc.s
+
+.PHONY : lib/Algorithm/KmeansBase.s
+
+# target to generate assembly for a file
+lib/Algorithm/KmeansBase.cc.s:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansBase.cc.s
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/KmeansBase.cc.s
+.PHONY : lib/Algorithm/KmeansBase.cc.s
+
 lib/Algorithm/LloydIterationRunner.o: lib/Algorithm/LloydIterationRunner.cc.o
 
 .PHONY : lib/Algorithm/LloydIterationRunner.o
@@ -170,6 +200,7 @@ lib/Algorithm/LloydIterationRunner.o: lib/Algorithm/LloydIterationRunner.cc.o
 lib/Algorithm/LloydIterationRunner.cc.o:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/LloydIterationRunner.cc.o
 	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/LloydIterationRunner.cc.o
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/Algorithm/LloydIterationRunner.cc.o
 .PHONY : lib/Algorithm/LloydIterationRunner.cc.o
 
 lib/Algorithm/LloydIterationRunner.i: lib/Algorithm/LloydIterationRunner.cc.i
@@ -180,6 +211,7 @@ lib/Algorithm/LloydIterationRunner.i: lib/Algorithm/LloydIterationRunner.cc.i
 lib/Algorithm/LloydIterationRunner.cc.i:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/LloydIterationRunner.cc.i
 	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/LloydIterationRunner.cc.i
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/Algorithm/LloydIterationRunner.cc.i
 .PHONY : lib/Algorithm/LloydIterationRunner.cc.i
 
 lib/Algorithm/LloydIterationRunner.s: lib/Algorithm/LloydIterationRunner.cc.s
@@ -190,7 +222,38 @@ lib/Algorithm/LloydIterationRunner.s: lib/Algorithm/LloydIterationRunner.cc.s
 lib/Algorithm/LloydIterationRunner.cc.s:
 	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/LloydIterationRunner.cc.s
 	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/LloydIterationRunner.cc.s
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/Algorithm/LloydIterationRunner.cc.s
 .PHONY : lib/Algorithm/LloydIterationRunner.cc.s
+
+lib/Algorithm/SeedPickerBase.o: lib/Algorithm/SeedPickerBase.cc.o
+
+.PHONY : lib/Algorithm/SeedPickerBase.o
+
+# target to build an object file
+lib/Algorithm/SeedPickerBase.cc.o:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/SeedPickerBase.cc.o
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickerBase.cc.o
+.PHONY : lib/Algorithm/SeedPickerBase.cc.o
+
+lib/Algorithm/SeedPickerBase.i: lib/Algorithm/SeedPickerBase.cc.i
+
+.PHONY : lib/Algorithm/SeedPickerBase.i
+
+# target to preprocess a source file
+lib/Algorithm/SeedPickerBase.cc.i:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/SeedPickerBase.cc.i
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickerBase.cc.i
+.PHONY : lib/Algorithm/SeedPickerBase.cc.i
+
+lib/Algorithm/SeedPickerBase.s: lib/Algorithm/SeedPickerBase.cc.s
+
+.PHONY : lib/Algorithm/SeedPickerBase.s
+
+# target to generate assembly for a file
+lib/Algorithm/SeedPickerBase.cc.s:
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/SeedPickerBase.cc.s
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/lib/Algorithm/SeedPickerBase.cc.s
+.PHONY : lib/Algorithm/SeedPickerBase.cc.s
 
 lib/Algorithm/SeedPickers.o: lib/Algorithm/SeedPickers.cc.o
 
@@ -402,9 +465,15 @@ help:
 	@echo "... trying"
 	@echo "... temp"
 	@echo "... testing"
+	@echo "... lib/Algorithm/KmeansBase.o"
+	@echo "... lib/Algorithm/KmeansBase.i"
+	@echo "... lib/Algorithm/KmeansBase.s"
 	@echo "... lib/Algorithm/LloydIterationRunner.o"
 	@echo "... lib/Algorithm/LloydIterationRunner.i"
 	@echo "... lib/Algorithm/LloydIterationRunner.s"
+	@echo "... lib/Algorithm/SeedPickerBase.o"
+	@echo "... lib/Algorithm/SeedPickerBase.i"
+	@echo "... lib/Algorithm/SeedPickerBase.s"
 	@echo "... lib/Algorithm/SeedPickers.o"
 	@echo "... lib/Algorithm/SeedPickers.i"
 	@echo "... lib/Algorithm/SeedPickers.s"

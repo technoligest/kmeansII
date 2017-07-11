@@ -30,15 +30,16 @@ file(GLOB handlers "${PROJECT_SOURCE_DIR}/lib/handlers/*.hh" "${PROJECT_SOURCE_D
 file(GLOB experiments "${PROJECT_SOURCE_DIR}/lib/Experiments/*.hh" "${PROJECT_SOURCE_DIR}/lib/Experimts/*.cc")
 
 #set(kmeansII main.cc)
-set(kmeansII ${algorithm} ${handlers} lib/main.cc)
+set(kmeansII ${algorithm} ${handlers} lib/main.cc lib/Algorithm/SeedPickerBase.cc lib/Algorithm/SeedPickerBase.hh lib/Algorithm/KmeansBase.cc)
 set(temp ${algorithm} ${handlers} lib/main.cc)
 set(trying lib/trying.cc lib/trying.hh)
-set(testing tests/test-LloydIterationRunner.cc tests/tests.cc tests/test-kmeansHelpers.cc)
+set(testing tests/test-LloydIterationRunner.cc tests/tests.cc tests/test-kmeansHelpers.cc lib/Algorithm/LloydIterationRunner.cc)
 add_executable(kmeansII ${kmeansII})
 add_executable(temp ${temp})
 add_executable(trying ${trying})
 add_executable(testing ${testing})
 
+#target_compile_options(testing PUBLIC "-v")
 target_compile_options(testing PUBLIC "-Dprivate=public")
 
 #add_executable(helloworld ${kmeansII})

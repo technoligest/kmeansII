@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/testing.dir/tests/test-LloydIterationRunner.cc.o"
   "CMakeFiles/testing.dir/tests/tests.cc.o"
   "CMakeFiles/testing.dir/tests/test-kmeansHelpers.cc.o"
+  "CMakeFiles/testing.dir/lib/Algorithm/LloydIterationRunner.cc.o"
   "testing.pdb"
   "testing"
 )

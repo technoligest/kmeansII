@@ -6,21 +6,31 @@
 #define KMEANSII_KMEANSBASE_H
 
 
-#include "../handlers/data.hh"
+#include "data.hh"
+#include "SeedPickerBase.hh"
+#include "KmeansHelpers.hh"
+#include "IterationRunnerBase.hh"
 
+namespace kmeans{
 class KmeansBase{
 protected:
   ull _numIterations = 0;
   ull _iterationRunnerTime = 0;
   ull _seedPickerTime = 0;
-  KmeansData::dist _distanceSquared = 0;
+  dist _distanceSquared = 0;
+  SeedPicker *sp;
+  IterationRunner *ir;
 
 public:
-  inline ~KmeansBase(){};
+  inline ~KmeansBase(){
+    delete sp;
+    delete ir;
+  };
 
-  virtual KmeansData::dist cluster(const KmeansData::Dataset &, KmeansData::Dataset &, ull)=0;
-
-  virtual KmeansData::dist cluster(const KmeansData::Dataset &, KmeansData::Dataset &, const KmeansData::Weights &, ull)=0;
+  inline dist
+  cluster(const Dataset &d, std::vector<Instance> &centres, ull k){
+    return cluster(d, centres, Weights(d.size(), 1), k);
+  };
 
   inline ull numIterations(){ return _numIterations; };
 
@@ -28,7 +38,7 @@ public:
 
   inline ull seedPickerTime(){ return _seedPickerTime; };
 
-  inline KmeansData::dist distanceSquared(){ return _distanceSquared; };
+  inline dist distanceSquared(){ return _distanceSquared; };
 
   inline void clearInstance(){
     _numIterations = 0;
@@ -36,7 +46,11 @@ public:
     _seedPickerTime = 0;
     _distanceSquared = 0;
   };
-};
 
+  void pickSeeds(const Dataset &, std::vector<Instance> &, const Weights &, ull);
+  void runIterations(const Dataset &dataset, std::vector<Instance> &centres, const Weights &weights);
+  dist cluster(const Dataset &, std::vector<Instance> &, const Weights &, ull);
+};
+}//namespace kmeans
 
 #endif //KMEANSII_KMEANSBASE_H

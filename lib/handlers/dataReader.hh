@@ -14,23 +14,23 @@
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../Algorithm/Kmeans.hh"
 
-inline KmeansData::Dataset readCSVDataset(std::istream &inputFile) {
-  KmeansData::Dataset t;
+inline kmeans::Dataset readCSVDataset(std::istream &inputFile) {
+  kmeans::Dataset t;
   for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
     t.push_back(it->toFloat());
   }
   return t;
 };
 
-inline KmeansData::Dataset readDataset(std::istream &inputFile) {
-  KmeansData::Dataset result;
+inline kmeans::Dataset readDataset(std::istream &inputFile) {
+  kmeans::Dataset result;
 
   std::string tempLine;
   //gets each line
   while (getline(inputFile, tempLine)) {
     std::stringstream ss(tempLine);
     std::string tempString;
-    KmeansData::Instance i;
+    kmeans::Instance i;
 
     //gets each word in the line
     while (getline(ss, tempString, ' ')) {
@@ -47,14 +47,14 @@ inline KmeansData::Dataset readDataset(std::istream &inputFile) {
 }
 
 
-template<class IR = LloydIterationRunner>
-KmeansBase *readArgs(KmeansArgs args) {
+template<class IR = kmeans::LloydIterationRunner>
+kmeans::KmeansBase *readArgs(KmeansArgs args) {
   if (args.algorithm == "kmeans") {
-    return new KmeansInstance<RandomSeedPicker,IR>();
+    return new kmeans::KmeansInstance<kmeans::RandomSeedPicker,IR>();
   } else if (args.algorithm == "kmeans++") {
-    return new KmeansInstance<KmeansppSeedPicker,IR>();
+    return new kmeans::KmeansInstance<kmeans::KmeansppSeedPicker,IR>();
   } else if (args.algorithm == "kmeansII") {
-    return new KmeansII<IR,IR>(fabs(args.l));
+    return new kmeans::KmeansII<IR,IR>(fabs(args.l));
   } else {
     return NULL;
   }

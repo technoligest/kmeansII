@@ -5,7 +5,7 @@
 #ifndef KMEANSII_EXPERIMENTRUNNER_HH
 #define KMEANSII_EXPERIMENTRUNNER_HH
 
-#include "../handlers/data.hh"
+#include "../Algorithm/data.hh"
 #include "experimentResult.hh"
 #include "../Algorithm/Kmeans.hh"
 #include <dirent.h>
@@ -14,61 +14,61 @@
  * Very messy implemntation to help us find the final number of th etest ran
  * This will help us guarantee not overwriting previous tests.
  */
-namespace ExperimentRunnerHelpers{
- inline ull lastNumberedFile(const std::string directory, std::string prefix){
-   using namespace std;
-   cout << "prefix" << prefix << endl;
-   DIR *dir;
-   struct dirent *ent;
-   ull nextNum = 0;
-   if((dir = opendir(directory.c_str())) != NULL){
-     /* print all the files and directories within directory */
-     while((ent = readdir(dir)) != NULL){
-       string temp = ent->d_name;
-       cout << temp << endl;
-       ull tempNextNum = 0;
-       if(temp.substr(0, prefix.size()) == prefix){
-         if(nextNum == 0){
-           nextNum = 1;
-         }
-         string nextNumString = "";
-         for(int i = prefix.size(); i < temp.size(); ++i){
-           try{
-             stoi(string(1, ent->d_name[i]));
-             nextNumString += string(1, ent->d_name[i]);
-           }
-           catch(std::invalid_argument e){
-             break;
-           }
-         }
-         try{
-           tempNextNum = stoull(nextNumString) + 1;
-         }
-         catch(std::invalid_argument e){
-           cout << "Something went out in finding the right number of the new file. (Parsing the final num)" << endl;
-         }
-       }
-       if(tempNextNum > nextNum){
-         nextNum = tempNextNum;
-       }
-     }
-     closedir(dir);
-   } else{
-     /* could not open directory */
-     perror("");
-     return EXIT_FAILURE;
-   }
-   return nextNum;
- }
+namespace kmeans{
+namespace experiments{
+namespace helpers{
+inline ull lastNumberedFile(const std::string directory, std::string prefix){
+  cout << "prefix" << prefix << endl;
+  DIR *dir;
+  struct dirent *ent;
+  ull nextNum = 0;
+  if((dir = opendir(directory.c_str())) != NULL){
+    /* print all the files and directories within directory */
+    while((ent = readdir(dir)) != NULL){
+      string temp = ent->d_name;
+      cout << temp << endl;
+      ull tempNextNum = 0;
+      if(temp.substr(0, prefix.size()) == prefix){
+        if(nextNum == 0){
+          nextNum = 1;
+        }
+        string nextNumString = "";
+        for(int i = prefix.size(); i < temp.size(); ++i){
+          try{
+            stoi(string(1, ent->d_name[i]));
+            nextNumString += string(1, ent->d_name[i]);
+          }
+          catch(std::invalid_argument e){
+            break;
+          }
+        }
+        try{
+          tempNextNum = stoull(nextNumString) + 1;
+        }
+        catch(std::invalid_argument e){
+          cout << "Something went out in finding the right number of the new file. (Parsing the final num)" << endl;
+        }
+      }
+      if(tempNextNum > nextNum){
+        nextNum = tempNextNum;
+      }
+    }
+    closedir(dir);
+  } else{
+    /* could not open directory */
+    perror("");
+    return EXIT_FAILURE;
+  }
+  return nextNum;
 }
-
+}//namespace helpers
 
 class ExperimentRunner{
 private:
   KmeansData::Dataset d;
   ull k;
 
-  vector<ExperimentResult> results;
+  vector <ExperimentResult> results;
 
   inline void runAlg(KmeansBase *kmeans, string algName){
     KmeansData::Dataset centres;
@@ -90,9 +90,9 @@ public:
 
   ExperimentRunner(KmeansData::Dataset &&_d, ull _k) : d(_d), k(_k){};
 
-  ExperimentRunner(vector<ExperimentResult> &r) : results(r){};
+  ExperimentRunner(vector <ExperimentResult> &r) : results(r){};
 
-  inline vector<ExperimentResult> getExperiments() const{
+  inline vector <ExperimentResult> getExperiments() const{
     return results;
   }
 
@@ -135,7 +135,6 @@ public:
                                                                                                         "-test")));
 
 
-    using namespace std;
     string postFix = "-" + dataSetName + "-test" + to_string(num) + ".txt";
     ofstream kOutputFile(dir + "/kmeans" + postFix);
     ofstream kppOutputFile(dir + "/kmeans++" + postFix);
@@ -158,6 +157,7 @@ public:
     return true;
   }
 };
-
+} // namspace experiments
+} // namespace kmeans
 
 #endif //KMEANSII_EXPERIMENTRUNNER_HH

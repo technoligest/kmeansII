@@ -12,17 +12,20 @@
 #include "IterationRunners.hh"
 #include "KmeansHelpers.hh"
 
+namespace kmeans{
+
 //IR = iterationRunner
 
 template<class IR = LloydIterationRunner>
-using Kmeans = KmeansInstance<RandomSeedPicker,IR>;
+using Kmeans = KmeansInstance<RandomSeedPicker, IR>;
 
-template <class IR = LloydIterationRunner>
+template<class IR = LloydIterationRunner>
 using Kmeanspp = KmeansInstance<KmeansppSeedPicker, IR>;
 
 template<typename InnerIR = LloydIterationRunner, typename OuterIR = LloydIterationRunner>
-using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>,OuterIR>;
+using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>, OuterIR>;
 
+} //namespace kmeans
 
 #endif //KMEANSII_KMEANS_H
 

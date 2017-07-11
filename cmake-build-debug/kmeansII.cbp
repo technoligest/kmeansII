@@ -222,6 +222,10 @@
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.cc">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
@@ -237,8 +241,17 @@
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.hh">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickerBase.cc">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickerBase.hh">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
@@ -250,15 +263,15 @@
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/data.hh">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh">
-			<Option target="kmeansII"/>
-			<Option target="temp"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
