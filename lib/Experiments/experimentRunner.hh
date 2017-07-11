@@ -98,19 +98,19 @@ public:
 
   inline void RunExperiments(ull numExperiments){
     KmeansBase *kmeans;
-    kmeans = new Kmeans<LloydsIteration>();
+    kmeans = new Kmeans<LloydIterationRunner>();
     for(ull i = 0; i < numExperiments; ++i){
       runAlg(kmeans, "Kmeans");
     }
     delete kmeans;
 
-    kmeans = new Kmeanspp<LloydsIteration>();
+    kmeans = new Kmeanspp<LloydIterationRunner>();
     for(ull i = 0; i < numExperiments; ++i){
       runAlg(kmeans, "Kmeans++");
     }
     delete kmeans;
 
-    kmeans = new KmeansII<LloydsIteration, LloydsIteration>(2 * k, 5);
+    kmeans = new KmeansII<LloydIterationRunner, LloydIterationRunner>(2 * k, 5);
     for(ull i = 0; i < numExperiments; ++i){
       runAlg(kmeans, "Kmeans||");
     }

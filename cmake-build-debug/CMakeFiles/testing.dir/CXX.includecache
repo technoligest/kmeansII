@@ -6,29 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cpp
-CSV.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunnerBase.hh
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
-iterator
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
+cmath
 -
-iostream
--
-fstream
--
-sstream
--
-vector
--
-string
+../handlers/data.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
+cassert
 -
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.cpp
-data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.hh
+IterationRunnerBase.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunnerBase.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.hh
 vector
 -
 iostream
@@ -278,27 +272,19 @@ cfloat
 cstdio
 -
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/kmeans.cpp
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-LloydIterationRunner.cc
 catch.hpp
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/catch.hpp
+../lib/Algorithm/LloydIterationRunner.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-CSV.cpp
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeansHelpers.cc
 catch.hpp
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/catch.hpp
-fstream
--
-../lib/handlers/CSV.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.h
+../lib/Algorithm/KmeansHelpers.hh
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh
 
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-data.cpp
-catch.hpp
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/catch.hpp
-../lib/handlers/data.h
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data.h
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-dataReader.cpp
-
-/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cpp
+/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc
 catch.hpp
 /Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/catch.hpp
 

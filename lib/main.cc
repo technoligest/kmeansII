@@ -34,11 +34,11 @@ void startTest() {
 //  ResultVector kmeansIIResults;
 //
 //  Dataset centres;
-//  KmeansBase *kmeans = new Kmeans<LloydsIteration>();
-//  KmeansBase *kmeanspp = new Kmeanspp<LloydsIteration>();
+//  KmeansBase *kmeans = new Kmeans<LloydIterationRunner>();
+//  KmeansBase *kmeanspp = new Kmeanspp<LloydIterationRunner>();
 ////  cout << k->cluster(d, centres, 100) << endl;
 //  for (ull k = 10; k <= 100; k += 10) {
-//    KmeansBase *kmeansII = new KmeansII<LloydsIteration, LloydsIteration>(k);
+//    KmeansBase *kmeansII = new KmeansII<LloydIterationRunner, LloydIterationRunner>(k);
 //    for (int i = 0; i < NumIterations; ++i) {
 //      ull startTime = static_cast<ull>(time(nullptr));
 //      double dist = kmeans->cluster(d, centres, k);

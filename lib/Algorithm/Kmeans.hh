@@ -14,13 +14,13 @@
 
 //IR = iterationRunner
 
-template<class IR = LloydsIteration>
+template<class IR = LloydIterationRunner>
 using Kmeans = KmeansInstance<RandomSeedPicker,IR>;
 
-template <class IR = LloydsIteration>
+template <class IR = LloydIterationRunner>
 using Kmeanspp = KmeansInstance<KmeansppSeedPicker, IR>;
 
-template<typename InnerIR = LloydsIteration, typename OuterIR = LloydsIteration>
+template<typename InnerIR = LloydIterationRunner, typename OuterIR = LloydIterationRunner>
 using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>,OuterIR>;
 
 

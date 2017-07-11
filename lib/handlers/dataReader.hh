@@ -47,7 +47,7 @@ inline KmeansData::Dataset readDataset(std::istream &inputFile) {
 }
 
 
-template<class IR = LloydsIteration>
+template<class IR = LloydIterationRunner>
 KmeansBase *readArgs(KmeansArgs args) {
   if (args.algorithm == "kmeans") {
     return new KmeansInstance<RandomSeedPicker,IR>();
