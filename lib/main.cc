@@ -41,7 +41,7 @@ void startTest() {
 //    KmeansBase *kmeansII = new KmeansII<LloydIterationRunner, LloydIterationRunner>(k);
 //    for (int i = 0; i < NumIterations; ++i) {
 //      ull startTime = static_cast<ull>(time(nullptr));
-//      double dist = kmeans->cluster(d, centres, k);
+//      double Distance = kmeans->cluster(d, centres, k);
 //      ull t = static_cast<ull>(time(nullptr)) - startTime;
 //      kmeansResults.push_back(tuple<Dataset, double, ull, ull>(centres, dist, t, k));
 //

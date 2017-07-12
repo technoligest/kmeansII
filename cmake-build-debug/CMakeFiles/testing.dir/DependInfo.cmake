@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/lib/Algorithm/LloydIterationRunner.cc.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-LloydIterationRunner.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/tests/test-LloydIterationRunner.cc.o"
-  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeansHelpers.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/tests/test-kmeansHelpers.cc.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_helpers.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o"
+  "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_lloyd_iteration_runner.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/tests/test_lloyd_iteration_runner.cc.o"
   "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc" "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles/testing.dir/tests/tests.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

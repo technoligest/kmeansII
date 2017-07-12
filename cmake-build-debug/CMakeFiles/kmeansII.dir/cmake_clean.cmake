@@ -1,10 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/KmeansBase.cc.o"
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/LloydIterationRunner.cc.o"
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/SeedPickerBase.cc.o"
-  "CMakeFiles/kmeansII.dir/lib/Algorithm/SeedPickers.cc.o"
-  "CMakeFiles/kmeansII.dir/lib/handlers/CSV.cc.o"
-  "CMakeFiles/kmeansII.dir/lib/main.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o"
+  "CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o"
   "kmeansII.pdb"
   "kmeansII"
 )

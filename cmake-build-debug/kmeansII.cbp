@@ -206,97 +206,104 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunnerBase.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/iteration_runner_base.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/IterationRunners.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/iteration_runners.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/Kmeans2Instance.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_base.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_base.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansBase.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_data.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansHelpers.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_data.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/KmeansInstance.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_helpers.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_helpers.h">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_ii_instance.h">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_instance.h">
+			<Option target="kmeansII"/>
+			<Option target="temp"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/LloydIterationRunner.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickerBase.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_picker_base.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickerBase.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_picker_base.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_pickers.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/SeedPickers.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_pickers.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/data.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/csv.cc">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/csv.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/CSV.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data_reader.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/dataReader.hh">
-			<Option target="kmeansII"/>
-			<Option target="temp"/>
-		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/inputArguments.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/input_arguments.h">
 			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc">
-			<Option target="kmeansII"/>
 			<Option target="temp"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc">
 			<Option target="trying"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.hh">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.h">
 			<Option target="trying"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-LloydIterationRunner.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_helpers.cc">
 			<Option target="testing"/>
 		</Unit>
-		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test-kmeansHelpers.cc">
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_lloyd_iteration_runner.cc">
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc">
