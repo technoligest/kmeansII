@@ -57,148 +57,148 @@ include CMakeFiles/kmeansII.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/kmeansII.dir/flags.make
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o: ../lib/Algorithm/kmeans_base.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_base.cc"
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o: ../lib/algorithm/kmeans_base.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_base.cc"
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_base.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.i
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_base.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.i
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_base.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.s
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_base.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.s
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.requires:
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.requires:
 
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.requires
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.requires
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.provides
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.provides
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o
-
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o: ../lib/Algorithm/kmeans_data.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_data.cc"
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_data.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.i
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_data.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.s
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.requires:
-
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.requires
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.provides
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o
 
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o: ../lib/Algorithm/kmeans_helpers.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_helpers.cc"
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o: ../lib/algorithm/kmeans_data.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc"
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_helpers.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.i
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.i
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/kmeans_helpers.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.s
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.s
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.requires:
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.requires:
 
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.requires
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.requires
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.provides
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.provides
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o
-
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o: ../lib/Algorithm/lloyd_iteration_runner.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc"
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.i
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.s
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires:
-
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides
-
-CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o
 
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o: ../lib/Algorithm/seed_picker_base.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_picker_base.cc"
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o: ../lib/algorithm/kmeans_helpers.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc"
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_picker_base.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.i
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.i
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_picker_base.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.s
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.s
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.requires:
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.requires:
 
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.requires
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.requires
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.provides
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.provides
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o
+CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o
 
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o: CMakeFiles/kmeansII.dir/flags.make
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o: ../lib/Algorithm/seed_pickers.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_pickers.cc"
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o: ../lib/algorithm/lloyd_iteration_runner.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc"
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_pickers.cc" > CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.i
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.i
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/seed_pickers.cc" -o CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.s
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.s
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.requires:
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires:
 
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.requires
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.provides: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.requires
-	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.provides.build
-.PHONY : CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.provides
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides
 
-CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o
+CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o
+
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o: ../lib/algorithm/seed_picker_base.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_picker_base.cc"
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_picker_base.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.i
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_picker_base.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.s
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.requires:
+
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.requires
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.provides
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o
+
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o: ../lib/algorithm/seed_pickers.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_pickers.cc"
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_pickers.cc" > CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.i
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_pickers.cc" -o CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.s
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.requires:
+
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.requires
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.provides: CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.provides
+
+CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o
 
 
 CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o: CMakeFiles/kmeansII.dir/flags.make
@@ -225,29 +225,55 @@ CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o.provides: CMakeFiles/kmeansII.dir/
 CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o
 
 
+CMakeFiles/kmeansII.dir/lib/main.cc.o: CMakeFiles/kmeansII.dir/flags.make
+CMakeFiles/kmeansII.dir/lib/main.cc.o: ../lib/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/kmeansII.dir/lib/main.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kmeansII.dir/lib/main.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc"
+
+CMakeFiles/kmeansII.dir/lib/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kmeansII.dir/lib/main.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc" > CMakeFiles/kmeansII.dir/lib/main.cc.i
+
+CMakeFiles/kmeansII.dir/lib/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kmeansII.dir/lib/main.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc" -o CMakeFiles/kmeansII.dir/lib/main.cc.s
+
+CMakeFiles/kmeansII.dir/lib/main.cc.o.requires:
+
+.PHONY : CMakeFiles/kmeansII.dir/lib/main.cc.o.requires
+
+CMakeFiles/kmeansII.dir/lib/main.cc.o.provides: CMakeFiles/kmeansII.dir/lib/main.cc.o.requires
+	$(MAKE) -f CMakeFiles/kmeansII.dir/build.make CMakeFiles/kmeansII.dir/lib/main.cc.o.provides.build
+.PHONY : CMakeFiles/kmeansII.dir/lib/main.cc.o.provides
+
+CMakeFiles/kmeansII.dir/lib/main.cc.o.provides.build: CMakeFiles/kmeansII.dir/lib/main.cc.o
+
+
 # Object files for target kmeansII
 kmeansII_OBJECTS = \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o" \
-"CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o"
+"CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o" \
+"CMakeFiles/kmeansII.dir/lib/main.cc.o"
 
 # External object files for target kmeansII
 kmeansII_EXTERNAL_OBJECTS =
 
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o
-kmeansII: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o
 kmeansII: CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o
+kmeansII: CMakeFiles/kmeansII.dir/lib/main.cc.o
 kmeansII: CMakeFiles/kmeansII.dir/build.make
 kmeansII: CMakeFiles/kmeansII.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable kmeansII"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable kmeansII"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kmeansII.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -255,13 +281,14 @@ CMakeFiles/kmeansII.dir/build: kmeansII
 
 .PHONY : CMakeFiles/kmeansII.dir/build
 
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_base.cc.o.requires
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_data.cc.o.requires
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/kmeans_helpers.cc.o.requires
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_picker_base.cc.o.requires
-CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/Algorithm/seed_pickers.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_base.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_data.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/kmeans_helpers.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/seed_picker_base.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/algorithm/seed_pickers.cc.o.requires
 CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/handlers/csv.cc.o.requires
+CMakeFiles/kmeansII.dir/requires: CMakeFiles/kmeansII.dir/lib/main.cc.o.requires
 
 .PHONY : CMakeFiles/kmeansII.dir/requires
 

@@ -4,9 +4,10 @@
 #include <sstream>
 #include <random>
 #include <cxxabi.h>
-//#include "pkgs/dlib/optimization/max_cost_assignment.h"
-//#include "Experiments/experiments.hh"
-//#include "handlers/dataReader.hh"
+#include "pkgs/dlib/optimization/max_cost_assignment.h"
+#include "experiments/experiments.h"
+#include "algorithm/kmeans.h"
+#include "handlers/data_reader.h"
 
 using namespace std;
 //using namespace dlib;
@@ -68,19 +69,28 @@ int main(int argc, char **argv) {
   //costt(0,0) = 50;
   //cout << costt << endl;
 
-  //ifstream inputFile;
-  //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullData.txt");
-  //Dataset d = readDataset(inputFile);
-  //ExperimentRunner e(d,50);
-  //e.RunExperiments(1);
-  //e.printResult("DimRedFullData");
+  ifstream inputFile;
+  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullDataComplete.txt");
+  if(inputFile.good()) {
+    kmeans::Dataset d = kmeans::readDataset(inputFile);
+    //using kmeans::operator<<;
 
+    kmeans::experiments::ExperimentRunner e(d, 50);
+    std::cout << "Dataset size: " << d.size() << std::endl;
+    e.runExperiments(10);
+    e.printResult("DimRedFullData");
+  }
+  else{
+    cout<<"file not found!"<<endl;
+  }
+  //kmeans::KmeansBase *kmeans = new kmeans::KmeansII<kmeans::LloydIterationRunner, kmeans::LloydIterationRunner>(2 * 50, 5);
+  //kmeans::Dataset centres;
+
+  //kmeans->cluster(d,50,centres);
   //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/test1-fullData.txt");
-  //std::vector<ExperimentResult> exp = readExperiments(inputFile);
-  //ExperimentRunner ex(exp);
-  //ex.printResult("FullData");
-  size_t x=-1;
+  //std::vector<kmeans::experiments::ExperimentResult> exp = kmeans::experiments::readExperiments(inputFile);
+  //kmeans::experiments::ExperimentRunner ex(exp);
+  //ex.printResult("as");
 
-  std::cout<<x<<endl;
   return 0;
 }

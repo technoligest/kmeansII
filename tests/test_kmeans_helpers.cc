@@ -12,46 +12,46 @@ TEST_CASE("Checking if 2 kmeans::Instances are equal works."){
   kmeans::Instance l;
   kmeans::Instance r;
   SECTION("Empty intances are evaluated properly"){
-    REQUIRE(kmeans::helpers::equals(l, r));
-    REQUIRE(kmeans::helpers::equals(r, l));
+    REQUIRE(l==r);
+    REQUIRE(r==l);
   }
   SECTION("Different sized kmeans::Instances are evaluated properly"){
     l = {1};
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
-    REQUIRE_FALSE(kmeans::helpers::equals(r, l));
+    REQUIRE_FALSE(l==r);
+    REQUIRE_FALSE(r==l);
     r = {1, 2, 3};
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
-    REQUIRE_FALSE(kmeans::helpers::equals(r, l));
+    REQUIRE_FALSE(l==r);
+    REQUIRE_FALSE(r==l);
     l.clear();
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
-    REQUIRE_FALSE(kmeans::helpers::equals(r, l));
+    REQUIRE_FALSE(l==r);
+    REQUIRE_FALSE(r==l);
     l = {1, 2, 3, 4};
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
-    REQUIRE_FALSE(kmeans::helpers::equals(r, l));
+    REQUIRE_FALSE(l==r);
+    REQUIRE_FALSE(r==l);
   }
   SECTION("kmeans::Instances of size 1 are evaluated properly"){
     l = {1};
     r = {2};
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
-    REQUIRE_FALSE(kmeans::helpers::equals(r, l));
+    REQUIRE_FALSE(l==r);
+    REQUIRE_FALSE(r==l);
     r = {1};
-    REQUIRE(kmeans::helpers::equals(l, r));
-    REQUIRE(kmeans::helpers::equals(r, l));
+    REQUIRE(l==r);
+    REQUIRE(r==l);
     l = {-1};
     r = {-1};
-    REQUIRE(kmeans::helpers::equals(l, r));
-    REQUIRE(kmeans::helpers::equals(r, l));
+    REQUIRE(l==r);
+    REQUIRE(r==l);
   }
   SECTION("kmeans::Instances of size 2 are evaluated properly."){
     l = {1, 2};
     r = {1, 2};
-    REQUIRE(kmeans::helpers::equals(l, r));
-    REQUIRE(kmeans::helpers::equals(r, l));
+    REQUIRE(l==r);
+    REQUIRE(r==l);
     l = {1, 7};
-    REQUIRE_FALSE(kmeans::helpers::equals(l, r));
+    REQUIRE_FALSE(l==r);
     l = {-1, -17};
     r = {-1, -17};
-    REQUIRE(kmeans::helpers::equals(l, r));
+    REQUIRE(l==r);
   }
 }
 
@@ -323,12 +323,12 @@ TEST_CASE("Calculating the objective function works well"){
   kmeans::Dataset c;
   kmeans::Weights w;
   SECTION("Calculations are proper with empty centres."){
-    REQUIRE(kmeans::helpers::calcDX(d, c, w) == -1);
+    REQUIRE(kmeans::helpers::calcDX(d, w, c) == -1);
     d.push_back({1});
-    REQUIRE(kmeans::helpers::calcDX(d, c, w) == -1);
+    REQUIRE(kmeans::helpers::calcDX(d, w, c) == -1);
     w.push_back(1);
     w.push_back(2);
-    REQUIRE(kmeans::helpers::calcDX(d, c, w) == -1);
+    REQUIRE(kmeans::helpers::calcDX(d, w, c) == -1);
   }
   SECTION("Calculations works well with 1-d points."){
     c.push_back({1});
@@ -341,7 +341,7 @@ TEST_CASE("Calculating the objective function works well"){
     d.push_back({-2.5});
     d.push_back({-6});
     w = {1, 1, 1, 1, 1};
-    REQUIRE(fabs(kmeans::helpers::calcDX(d, c, w) - 9.5) < 1e-3);
+    REQUIRE(fabs(kmeans::helpers::calcDX(d, w, c) - 9.5) < 1e-3);
   }
   SECTION("Calculation works well with 2-d points "){
     c.push_back({1, 1});

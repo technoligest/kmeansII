@@ -129,28 +129,100 @@ CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o.provides: CMakeFiles/testi
 CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o.provides.build: CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o
 
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o: CMakeFiles/testing.dir/flags.make
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o: ../lib/Algorithm/lloyd_iteration_runner.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc"
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o: ../lib/algorithm/lloyd_iteration_runner.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc"
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc" > CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.i
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc" > CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.i
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/Algorithm/lloyd_iteration_runner.cc" -o CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.s
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc" -o CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.s
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires:
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires:
 
-.PHONY : CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides: CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
-	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides.build
-.PHONY : CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides: CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides
 
-CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.provides.build: CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o
+CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.provides.build: CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o
+
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o: ../lib/algorithm/kmeans_data.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc"
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc" > CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.i
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc" -o CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.s
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.requires:
+
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.requires
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.provides: CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.provides
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.provides.build: CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o
+
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o: ../lib/algorithm/kmeans_helpers.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc"
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc" > CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.i
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc" -o CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.s
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.requires:
+
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.requires
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.provides: CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.provides
+
+CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.provides.build: CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o
+
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o: CMakeFiles/testing.dir/flags.make
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o: ../tests/test_kmeans_data.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o -c "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_data.cc"
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testing.dir/tests/test_kmeans_data.cc.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_data.cc" > CMakeFiles/testing.dir/tests/test_kmeans_data.cc.i
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testing.dir/tests/test_kmeans_data.cc.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_data.cc" -o CMakeFiles/testing.dir/tests/test_kmeans_data.cc.s
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.requires:
+
+.PHONY : CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.requires
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.provides: CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.requires
+	$(MAKE) -f CMakeFiles/testing.dir/build.make CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.provides.build
+.PHONY : CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.provides
+
+CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.provides.build: CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o
 
 
 # Object files for target testing
@@ -158,7 +230,10 @@ testing_OBJECTS = \
 "CMakeFiles/testing.dir/tests/test_lloyd_iteration_runner.cc.o" \
 "CMakeFiles/testing.dir/tests/tests.cc.o" \
 "CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o" \
-"CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o"
+"CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o" \
+"CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o" \
+"CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o" \
+"CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o"
 
 # External object files for target testing
 testing_EXTERNAL_OBJECTS =
@@ -166,10 +241,13 @@ testing_EXTERNAL_OBJECTS =
 testing: CMakeFiles/testing.dir/tests/test_lloyd_iteration_runner.cc.o
 testing: CMakeFiles/testing.dir/tests/tests.cc.o
 testing: CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o
-testing: CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o
+testing: CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o
+testing: CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o
+testing: CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o
+testing: CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o
 testing: CMakeFiles/testing.dir/build.make
 testing: CMakeFiles/testing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable testing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable testing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -180,7 +258,10 @@ CMakeFiles/testing.dir/build: testing
 CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test_lloyd_iteration_runner.cc.o.requires
 CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/tests.cc.o.requires
 CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test_kmeans_helpers.cc.o.requires
-CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/Algorithm/lloyd_iteration_runner.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/algorithm/lloyd_iteration_runner.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/algorithm/kmeans_data.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/lib/algorithm/kmeans_helpers.cc.o.requires
+CMakeFiles/testing.dir/requires: CMakeFiles/testing.dir/tests/test_kmeans_data.cc.o.requires
 
 .PHONY : CMakeFiles/testing.dir/requires
 

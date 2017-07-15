@@ -9,35 +9,35 @@
 #include <cmath>
 #include <sstream>
 #include <fstream>
-#include "CSV.hh"
-#include "inputArguments.hh"
+#include "csv.h"
+#include "input_arguments.h"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
-#include "../Algorithm/Kmeans.hh"
-
-inline kmeans::Dataset readCSVDataset(std::istream &inputFile) {
-  kmeans::Dataset t;
-  for (CSVIterator it(inputFile); it != CSVIterator(); ++it) {
+#include "../algorithm/kmeans.h"
+namespace kmeans{
+inline Dataset readCSVDataset(std::istream &inputFile) {
+  Dataset t;
+  for(CSVIterator it(inputFile); it != CSVIterator(); ++it) {
     t.push_back(it->toFloat());
   }
   return t;
 };
 
-inline kmeans::Dataset readDataset(std::istream &inputFile) {
-  kmeans::Dataset result;
+inline Dataset readDataset(std::istream &inputFile) {
+  Dataset result;
 
   std::string tempLine;
   //gets each line
-  while (getline(inputFile, tempLine)) {
+  while(getline(inputFile, tempLine)) {
     std::stringstream ss(tempLine);
     std::string tempString;
-    kmeans::Instance i;
+    Instance i;
 
     //gets each word in the line
-    while (getline(ss, tempString, ' ')) {
+    while(getline(ss, tempString, ' ')) {
       try {
         i.push_back(stod(tempString));
       }
-      catch (std::invalid_argument arg) {
+      catch(std::invalid_argument arg) {
         std::cout << "Dataset is corrupt with not all numerical values";
       }
     }
@@ -47,17 +47,19 @@ inline kmeans::Dataset readDataset(std::istream &inputFile) {
 }
 
 
-template<class IR = kmeans::LloydIterationRunner>
-kmeans::KmeansBase *readArgs(KmeansArgs args) {
-  if (args.algorithm == "kmeans") {
-    return new kmeans::KmeansInstance<kmeans::RandomSeedPicker,IR>();
-  } else if (args.algorithm == "kmeans++") {
-    return new kmeans::KmeansInstance<kmeans::KmeansppSeedPicker,IR>();
-  } else if (args.algorithm == "kmeansII") {
-    return new kmeans::KmeansII<IR,IR>(fabs(args.l));
+template<class IR = LloydIterationRunner>
+KmeansBase *readArgs(KmeansArgs args) {
+  if(args.algorithm == "kmeans") {
+    return new KmeansInstance<RandomSeedPicker, IR>();
+  } else if(args.algorithm == "kmeans++") {
+    return new KmeansInstance<KmeansppSeedPicker, IR>();
+  } else if(args.algorithm == "kmeansII") {
+    return new KmeansII<IR, IR>(fabs(args.l));
   } else {
     return NULL;
   }
 }
+
+}// namespace kmeans
 
 #endif //KMEANSII_DATAREADER_H

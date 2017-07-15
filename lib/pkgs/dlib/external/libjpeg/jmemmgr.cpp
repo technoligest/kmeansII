@@ -779,7 +779,7 @@ access_virt_sarray (j_common_ptr cinfo, jvirt_sarray_ptr ptr,
       ptr->dirty = FALSE;
     }
     /* Decide what part of virtual array to access.
-     * Algorithm: if target address > current window, assume forward scan,
+     * algorithm: if target address > current window, assume forward scan,
      * load starting at target address.  If target address < current window,
      * assume backward scan, load so that target area is top of window.
      * Note that when switching from forward write to forward read, will have
@@ -864,7 +864,7 @@ access_virt_barray (j_common_ptr cinfo, jvirt_barray_ptr ptr,
       ptr->dirty = FALSE;
     }
     /* Decide what part of virtual array to access.
-     * Algorithm: if target address > current window, assume forward scan,
+     * algorithm: if target address > current window, assume forward scan,
      * load starting at target address.  If target address < current window,
      * assume backward scan, load so that target area is top of window.
      * Note that when switching from forward write to forward read, will have
