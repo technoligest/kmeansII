@@ -1,6 +1,0 @@
-Data I need from every run.
-1- Set of centres
-2- Num of iterations
-3- Distance squared
-4- Time it took to run the seedrunner
-5- Time it took to run the iterations
