@@ -13,13 +13,6 @@
 
 #ifndef KMEANSII_EXPERIMENTS_HH
 #define KMEANSII_EXPERIMENTS_HH
-namespace kmeans{
-namespace experiments{
-
-std::unordered_map<ull, Instance> pointsMap;
-
-}//experiments
-}//kmeans
 
 
 

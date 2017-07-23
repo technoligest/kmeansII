@@ -119,15 +119,9 @@ printExperiments(const std::string &dataSetName, const std::vector<ExperimentRes
    * Taking the max of the 3 prefixes for each of the algorithms.
    */
   std::string dir = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results";
-  ull num = std::max(helpers::lastNumberedFile(
-      dir, "kmeans-" + dataSetName + "-test"), std::max(helpers::lastNumberedFile(dir,
-                                                                                  "kmeans++-" +
-                                                                                  dataSetName +
-                                                                                  "-test"),
-                                                        helpers::lastNumberedFile(dir,
-                                                                                  "kmeans||-" +
-                                                                                  dataSetName +
-                                                                                  "-test")));
+  ull num = std::max(helpers::lastNumberedFile(dir, "kmeans-" + dataSetName + "-test"),
+                     std::max(helpers::lastNumberedFile(dir, "kmeans++-" + dataSetName + "-test"),
+                              helpers::lastNumberedFile(dir, "kmeans||-" + dataSetName + "-test")));
 
 
   std::string postFix = "-" + dataSetName + "-test" + std::to_string(num) + ".txt";

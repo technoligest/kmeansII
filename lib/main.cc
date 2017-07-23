@@ -1,9 +1,10 @@
 
 //#include "handlers/dataReader.h"
 #include <iostream>
-#include "Algorithm/Kmeans.hh"
-#include "handlers/dataReader.hh"
-#include "Experiments/experiments.hh"
+#include <fstream>
+#include "algorithm/kmeans.h"
+#include "experiments/experiments.h"
+#include "handlers/data_reader.h"
 
 
 #define NumIterations 100
@@ -15,11 +16,14 @@ void startTest();
 
 int main(int argc, char **argv) {
   ifstream inputFile;
-  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullData.txt");
-  KmeansData::Dataset d = readDataset(inputFile);
-  ExperimentRunner e(d,50);
-  e.RunExperiments(1);
-  e.printResult("DimRedFullData");
+  inputFile.open("../inputFiles/DimRedFullData.txt");
+  kmeans::Dataset d = kmeans::readDataset(inputFile);
+  using kmeans::operator<<;
+  std::cout << d << std::endl;
+  kmeans::experiments::ExperimentRunner e(d,50);
+  e.runExperiments(1);
+  auto result = e.getExperiments();
+  kmeans::experiments::reader::printExperiments("DimRedFullData",result);
   return 0;
 }
 

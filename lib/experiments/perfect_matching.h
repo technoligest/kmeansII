@@ -6,6 +6,7 @@
 #define KMEANSII_PERFECTMATCHING_H
 
 #include <cassert>
+#include <limits>
 #include "../algorithm/kmeans_data.h"
 
 namespace kmeans{

@@ -21,7 +21,7 @@ set(kmeansII ${algorithm} ${handlers})
 set(trying ${experiments} ${algorithm} ${handlers} lib/trying.cc lib/experiments/experiment_analyzer2.cc lib/experiments/experiment_analyzer2.h)
 set(testing ${tests} ${algorithm} ${handlers} ${experiments} )
 
-add_executable(kmeansII ${kmeansII} lib/main.cc)
+add_executable(kmeansII ${kmeansII} ${experiments} lib/main.cc)
 add_executable(trying ${trying} )
 add_executable(testing ${testing})
 

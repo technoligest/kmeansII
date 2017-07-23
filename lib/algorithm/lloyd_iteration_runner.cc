@@ -3,6 +3,7 @@
 //
 
 #include <cmath>
+#include <limits>
 #include "lloyd_iteration_runner.h"
 
 namespace kmeans{

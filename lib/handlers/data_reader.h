@@ -13,6 +13,7 @@
 #include "input_arguments.h"
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 #include "../algorithm/kmeans.h"
+
 namespace kmeans{
 inline Dataset readCSVDataset(std::istream &inputFile) {
   Dataset t;
@@ -27,6 +28,8 @@ inline Dataset readDataset(std::istream &inputFile) {
 
   std::string tempLine;
   //gets each line
+  size_t added = 0;
+  size_t notAdded = 0;
   while(getline(inputFile, tempLine)) {
     std::stringstream ss(tempLine);
     std::string tempString;
@@ -36,13 +39,17 @@ inline Dataset readDataset(std::istream &inputFile) {
     while(getline(ss, tempString, ' ')) {
       try {
         i.push_back(stod(tempString));
+        ++added;
       }
       catch(std::invalid_argument arg) {
-        std::cout << "Dataset is corrupt with not all numerical values";
+        ++notAdded;
+        std::cout << "Dataset is corrupt with not all numerical values. TempString: " << tempString << std::endl;
       }
     }
+
     result.push_back(i);
   }
+  std::cout << "Added: " << added << " NotAdded: " << notAdded << std::endl;
   return result;
 }
 
