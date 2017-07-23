@@ -13,9 +13,13 @@ template<class InnerIR, class OuterIR>
 class KmeansInstance<KmeansIISeedPicker<InnerIR>, OuterIR> : public KmeansBase{
 public:
   inline KmeansInstance(double _l, ull _r){
-    seed_picker_ = new KmeansIISeedPicker<InnerIR>(_l, _r);
-    iteration_runner_ = new OuterIR();
+    seedPicker = new KmeansIISeedPicker<InnerIR>(_l, _r);
+    iterationRunner = new OuterIR();
   };
+  inline ~KmeansInstance() {
+    delete seedPicker;
+    delete iterationRunner;
+  }
 };
 } //namespace kmeans
 #endif //KMEANSII_KMEANS2INSTANCE_HH

@@ -6,8 +6,7 @@
 #include <cxxabi.h>
 #include "pkgs/dlib/optimization/max_cost_assignment.h"
 #include "experiments/experiments.h"
-#include "algorithm/kmeans.h"
-#include "handlers/data_reader.h"
+#include "experiments/hungarian_algorithm.h"
 
 using namespace std;
 //using namespace dlib;
@@ -49,40 +48,42 @@ int main(int argc, char **argv) {
   // person 0 will make $1 at job 0, $2 at job 1, and $6 at job 2.
 
 
-  //matrix<int> cost(3, 3);
-  //cost = -2, -1, -6,
-  //        -3, -5, -6,
-  //        -4, -5, -0;
+  //dlib::matrix<double> cost(3, 3);
+  //cost = -2.5, -1.2, -6.8,
+  //    -3, -5, -6,
+  //    -4, -5, -0;
+  //std::cout << "This: " << cost(0, 2) << std::endl;
   //// To find out the best assignment of people to jobs we just need to call this function.
-  //std::vector<long> assignment = max_cost_assignment(cost);
+  //auto assignment = dlib::max_cost_assignment(cost);
   //
   //// This prints optimal assignments:  [2, 0, 1] which indicates that we should assign
   //// the person from the first row of the cost matrix to job 2, the middle row person to
   //// job 0, and the bottom row person to job 1.
-  //for (unsigned int i = 0; i < assignment.size(); i++)
+  //for(unsigned int i = 0; i < assignment.size(); i++)
   //  cout << assignment[i] << std::endl;
   //
   //// This prints optimal cost:  16.0
   //// which is correct since our optimal assignment is 6+5+5.
   //cout << "optimal cost: " << assignment_cost(cost, assignment) << endl;
-  //matrix<int> costt(1, 1);
-  //costt(0,0) = 50;
+  //dlib::matrix<int> costt(1, 1);
+  //costt(0, 0) = 50;
   //cout << costt << endl;
-
-  ifstream inputFile;
-  inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullDataComplete.txt");
-  if(inputFile.good()) {
-    kmeans::Dataset d = kmeans::readDataset(inputFile);
-    //using kmeans::operator<<;
-
-    kmeans::experiments::ExperimentRunner e(d, 50);
-    std::cout << "Dataset size: " << d.size() << std::endl;
-    e.runExperiments(10);
-    e.printResult("DimRedFullData");
-  }
-  else{
-    cout<<"file not found!"<<endl;
-  }
+  //
+  //ifstream inputFile;
+  //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullDataComplete.txt");
+  //if(inputFile.good()) {
+  //  kmeans::Dataset d = kmeans::readDataset(inputFile);
+  //  //using kmeans::operator<<;
+  //
+  //  kmeans::experiments::ExperimentRunner e(d, 50);
+  //  std::cout << "Dataset size: " << d.size() << std::endl;
+  //  e.runExperiments(10);
+  //  kmeans::experiments::printExperiments(e.getExperiments());
+  //
+  //}
+  //else{
+  //  cout<<"file not found!"<<endl;
+  //}
   //kmeans::KmeansBase *kmeans = new kmeans::KmeansII<kmeans::LloydIterationRunner, kmeans::LloydIterationRunner>(2 * 50, 5);
   //kmeans::Dataset centres;
 
@@ -91,6 +92,18 @@ int main(int argc, char **argv) {
   //std::vector<kmeans::experiments::ExperimentResult> exp = kmeans::experiments::readExperiments(inputFile);
   //kmeans::experiments::ExperimentRunner ex(exp);
   //ex.printResult("as");
+
+  std::vector<std::vector<kmeans::Distance>> matrix = {{0,0,1},
+                                                       {1,1,1},
+                                                       {0,1,1}};
+
+  std::vector<int> assignments;
+  auto result = kmeans::experiments::findMaximumNumBirpartiteMatchings(matrix, assignments);
+  std::cout << result << endl;
+  for(const auto &i: assignments) {
+    std::cout << i << " ";
+  }
+  std::cout << endl;
 
   return 0;
 }

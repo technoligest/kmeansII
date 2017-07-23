@@ -190,8 +190,7 @@ private:
   //}
 
 public:
-  inline ExperimentAnalyzer(const std::vector<ExperimentResult> &_er, const Dataset &data) : er(_er),
-                                                                                             d(data) { prepareExperiments(); }
+
 
   inline ExperimentAnalyzer(std::vector<ExperimentResult> &&_er, Dataset &&data) : er(move(_er)),
                                                                                    d(move(

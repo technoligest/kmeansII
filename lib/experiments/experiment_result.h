@@ -11,12 +11,13 @@ namespace kmeans{
 namespace experiments{
 
 struct ExperimentResult{
-  std::string algorithm;               //name of the algorithm used for clustering
-  Dataset centres;                //The centres of the result after running the algorithm
-  ull numIterations;              //The number of iteration it took to converge to get the centres
-  Distance distanceSquared;           //total distance squared from the centres to the closest points to it
-  ull seedPickerTime;             //time it took to pick the seeds
-  ull iterationTime;              //time it took to run the iterations;
+  std::string algorithm;             //name of the algorithm used for clustering
+  Dataset centres;                   //The centres of the result after running the algorithm
+  ull numIterations;                 //The number of iteration it took to converge to get the centres
+  Distance distanceSquared;          //total distance squared from the centres to the closest points to it
+  ull seedPickerTime;                //time it took to pick the seeds
+  ull iterationTime;                 //time it took to run the iterations;
+  std::vector<double> clusterAreas;  //the area of covex cull of each cluster
 };
 
 /*

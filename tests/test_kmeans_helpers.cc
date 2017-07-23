@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../lib/Algorithm/kmeans.h"
+#include "../lib/algorithm/kmeans.h"
 
 
 //using namespace std;

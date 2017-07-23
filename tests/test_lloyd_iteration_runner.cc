@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../lib/Algorithm/lloyd_iteration_runner.h"
+#include "../lib/algorithm/lloyd_iteration_runner.h"
 /*
  * VERY IMPORTANT:
  * These test cases assume that KmeansHelpers has alreayd been thoroughly tested.

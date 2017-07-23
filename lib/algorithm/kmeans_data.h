@@ -27,6 +27,7 @@ typedef std::string label; //A label for a given value in the dataset_
 
 typedef std::vector<DataType> Instance;
 typedef std::vector<Instance> Dataset;
+typedef std::vector<ull> DatasetIds;
 typedef std::vector<Instance *> DatasetRefs;
 
 

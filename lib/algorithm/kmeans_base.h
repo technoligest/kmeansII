@@ -18,13 +18,13 @@ protected:
   ull iteration_runner_time_ = 0;
   ull seed_picker_time_ = 0;
   Distance distance_squared_ = 0;
-  SeedPicker *seed_picker_;
-  IterationRunner *iteration_runner_;
+  SeedPicker *seedPicker;
+  IterationRunner *iterationRunner;
 
 public:
-  inline ~KmeansBase() {
-    delete seed_picker_;
-    delete iteration_runner_;
+  virtual inline ~KmeansBase() {
+    delete seedPicker;
+    delete iterationRunner;
   };
 
   inline Distance

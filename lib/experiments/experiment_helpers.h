@@ -11,6 +11,7 @@ namespace kmeans{
 namespace experiments{
 namespace helpers{
 
+void heapSort(std::vector<size_t> &arr);
 ull lastNumberedFile(const std::string directory, std::string prefix);
 
 }//namespace helpers

@@ -17,7 +17,7 @@ namespace kmeans{
 inline Dataset readCSVDataset(std::istream &inputFile) {
   Dataset t;
   for(CSVIterator it(inputFile); it != CSVIterator(); ++it) {
-    t.push_back(it->toFloat());
+    t.push_back(it->toDouble());
   }
   return t;
 };

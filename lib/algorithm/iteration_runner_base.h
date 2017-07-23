@@ -14,7 +14,7 @@ public:
   virtual Distance
   runIterations(const Dataset &, const Weights &, Dataset &)=0;
   inline ull numIterations(){ return num_iterations_; };
-
+  virtual inline ~IterationRunner(){}
 protected:
   ull num_iterations_ = 0;
 };

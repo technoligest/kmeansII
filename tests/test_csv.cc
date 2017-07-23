@@ -13,17 +13,17 @@ TEST_CASE("We can open the file.") {
     REQUIRE(inputFile.good());
 };
 
-TEST_CASE("CSVrow works properly1") {
+TEST_CASE("kmeans::CSVRow works properly1") {
     std::ifstream inputFile("../tests/input-files/test1.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
     inputFile >> row;
     string testArr[] = {"yaser", "alkayale", "is", "the", "best"};
     REQUIRE(row.size() == 5);
 };
 
-TEST_CASE("CSVrow works properly2") {
+TEST_CASE("kmeans::CSVRow works properly2") {
     std::ifstream inputFile("../tests/input-files/test1.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
     inputFile >> row;
     string testArr[] = {"yaser", "alkayale", "is", "the", "best"};
 
@@ -36,7 +36,7 @@ TEST_CASE("CSVrow works properly2") {
 
 TEST_CASE("Empty CSV row") {
     std::ifstream inputFile("../tests/input-files/empty.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
     inputFile >> row;
 
     REQUIRE(row.size() == 1);
@@ -45,7 +45,7 @@ TEST_CASE("Empty CSV row") {
 
 TEST_CASE("Multiple Rows in CSV file") {
     std::ifstream inputFile("../tests/input-files/test2.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
 
     string testArr[4][2] = {{"1", "a"},
                             {"2", "b"},
@@ -62,24 +62,24 @@ TEST_CASE("Multiple Rows in CSV file") {
 
 TEST_CASE("Converting a row to floats on strings.") {
     std::ifstream inputFile("../tests/input-files/test2.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
     for (int i = 0; i < 3; ++i) {
         inputFile >> row;
-        vector<float> temp = row.toFloat();
+        vector<double> temp = row.toDouble();
         REQUIRE(temp.size() == 0);
     }
 };
 
 TEST_CASE("Converting a row to floats.") {
     std::ifstream inputFile("../tests/input-files/test3.csv");
-    CSVRow row;
+    kmeans::CSVRow row;
 
     float testArr[3][3] = {{1,    2.1, 5.4},
                            {2.2,  1.4, 5.6},
                            {-2.3, -14, 11}};
     for (int i = 0; i < 3; ++i) {
         inputFile >> row;
-        vector<float> temp = row.toFloat();
+        vector<double> temp = row.toDouble();
         REQUIRE(sizeof(testArr[i]) / sizeof(testArr[i][0]) == 3);
         for (int j = 0; j < 3; ++j) {
             REQUIRE(testArr[i][j] == temp[j]);

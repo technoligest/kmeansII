@@ -18,14 +18,17 @@ file(GLOB handlers "${PROJECT_SOURCE_DIR}/lib/handlers/*.h" "${PROJECT_SOURCE_DI
 file(GLOB experiments "${PROJECT_SOURCE_DIR}/lib/experiments/*.h" "${PROJECT_SOURCE_DIR}/lib/experiments/*.cc")
 
 set(kmeansII ${algorithm} ${handlers})
-set(trying ${experiments} ${algorithm} ${handlers} lib/trying.cc lib/trying.h)
-set(testing tests/test_lloyd_iteration_runner.cc tests/tests.cc tests/test_kmeans_helpers.cc lib/algorithm/lloyd_iteration_runner.cc lib/algorithm/kmeans_data.cc lib/algorithm/kmeans_helpers.cc tests/test_kmeans_data.cc)
+set(trying ${experiments} ${algorithm} ${handlers} lib/trying.cc lib/trying.h lib/experiments/experiment_analyzer2.cc lib/experiments/experiment_analyzer2.h)
+set(testing ${tests} ${algorithm} ${handlers} ${experiments} )
 
 add_executable(kmeansII ${kmeansII} lib/main.cc)
-add_executable(trying ${trying} lib/experiments/experiment_helpers.cc lib/experiments/experiment_runner.cc)
+add_executable(trying ${trying} lib/experiments/experiment_helpers.cc lib/experiments/experiment_runner.cc lib/experiments/experiments_reader.cc)
 add_executable(testing ${testing})
 
-add_executable(fuckThis ${algorithm} ${handlers} ${experiments} lib/trying.cc)
+add_executable(fuckThis ${algorithm} ${handlers} ${experiments} lib/trying.cc lib/experiments/experiments_reader.cc)
 target_compile_options(testing PUBLIC "-Dprivate=public")
 
 
+
+file(GLOB sideHussle "${PROJECT_SOURCE_DIR}/lib/sidehussle/*.h" "${PROJECT_SOURCE_DIR}/lib/sidehussle/*.cc")
+add_executable(sideHussle ${sideHussle} lib/sidehussle/main.cc)

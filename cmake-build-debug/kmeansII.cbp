@@ -27,6 +27,48 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="sideHussle">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/sideHussle" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 sideHussle"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sideHussle/fast">
+				<Option output="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug/sideHussle" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 sideHussle/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Technoligest/Documents/Classes/Current/Norbert\ +\ Vlado/kmeansII/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/cmake-build-debug"/>
 				<Option type="4"/>
@@ -210,26 +252,31 @@
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/iteration_runners.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_base.cc">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_base.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_data.cc">
 			<Option target="fuckThis"/>
@@ -241,6 +288,7 @@
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_helpers.cc">
 			<Option target="fuckThis"/>
@@ -252,16 +300,19 @@
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_ii_instance.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/kmeans_instance.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/lloyd_iteration_runner.cc">
 			<Option target="fuckThis"/>
@@ -273,81 +324,168 @@
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_picker_base.cc">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_picker_base.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_pickers.cc">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/algorithm/seed_pickers.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/centre_intersections.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/centre_intersections.h">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/convex_hull.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/convex_hull.h">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/disjoint_set_union.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/disjoint_set_union.h">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_analyzer.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_analyzer2.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_analyzer2.h">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_helpers.cc">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_helpers.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_result.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_runner.cc">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiment_runner.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiments.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiments_reader.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/experiments_reader.h">
 			<Option target="fuckThis"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/perfect_matching.cc">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/perfect_matching.h">
+			<Option target="fuckThis"/>
+			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/csv.cc">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/csv.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/data_reader.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/handlers/input_arguments.h">
 			<Option target="fuckThis"/>
 			<Option target="kmeansII"/>
 			<Option target="trying"/>
+			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/main.cc">
 			<Option target="kmeansII"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/sidehussle/graph.cc">
+			<Option target="sideHussle"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/sidehussle/graph.h">
+			<Option target="sideHussle"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/sidehussle/hungarian.cc">
+			<Option target="sideHussle"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/sidehussle/hungarian.h">
+			<Option target="sideHussle"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/sidehussle/main.cc">
+			<Option target="sideHussle"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.cc">
 			<Option target="fuckThis"/>
@@ -356,6 +494,21 @@
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/trying.h">
 			<Option target="trying"/>
 		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_convex_hull.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_csv.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_data.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_data_reader.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans.cc">
+			<Option target="testing"/>
+		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_kmeans_data.cc">
 			<Option target="testing"/>
 		</Unit>
@@ -363,6 +516,12 @@
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_lloyd_iteration_runner.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_perfect_matching.cc">
+			<Option target="testing"/>
+		</Unit>
+		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/test_random.cc">
 			<Option target="testing"/>
 		</Unit>
 		<Unit filename="/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/tests/tests.cc">

@@ -6,44 +6,20 @@
 
 namespace kmeans{
 namespace experiments{
-bool ExperimentRunner::printResult(std::string dataSetName) {
-  /*
-   * Finding the next number to enter for the test
-   * Taking the max of the 3 prefixes for each of the algorithms.
-   */
-  std::string dir = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results";
-  ull num = std::max(helpers::lastNumberedFile(
-      dir, "kmeans-" + dataSetName + "-test"), std::max(helpers::lastNumberedFile(dir,
-                                                                                  "kmeans++-" +
-                                                                                  dataSetName +
-                                                                                  "-test"),
-                                                        helpers::lastNumberedFile(dir,
-                                                                                  "kmeans||-" +
-                                                                                  dataSetName +
-                                                                                  "-test")));
 
-
-  std::string postFix = "-" + dataSetName + "-test" + std::to_string(num) + ".txt";
-  std::ofstream kOutputFile(dir + "/kmeans" + postFix);
-  std::ofstream kppOutputFile(dir + "/kmeans++" + postFix);
-  std::ofstream k2OutputFile(dir + "/kmeans||" + postFix);
-  for(const auto &i: results) {
-    if(i.algorithm == "Kmeans") {
-      kOutputFile << i << std::endl;
-    } else if(i.algorithm == "Kmeans++") {
-      kppOutputFile << i << std::endl;
-    } else if(i.algorithm == "Kmeans||") {
-      k2OutputFile << i << std::endl;
-    }
-  }
-  kOutputFile.flush();
-  kOutputFile.close();
-  kppOutputFile.flush();
-  kppOutputFile.close();
-  k2OutputFile.flush();
-  k2OutputFile.close();
-  return true;
+void ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string& algName) {
+  Dataset centres;
+  ExperimentResult e;
+  kmeans->cluster(d, k, centres);
+  e.algorithm = algName;
+  e.centres = centres;
+  e.numIterations = kmeans->numIterations();
+  e.distanceSquared = kmeans->distanceSquared();
+  e.seedPickerTime = kmeans->seedPickerTime();
+  e.iterationTime = kmeans->iterationRunnerTime();
+  results.push_back(e);
 }
+
 void ExperimentRunner::runExperiments(ull numExperiments) {
   KmeansBase *kmeans;
   kmeans = new Kmeans<LloydIterationRunner>();

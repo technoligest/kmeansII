@@ -21,17 +21,17 @@ void
 KmeansBase::pickSeeds(const Dataset &dataset, const Weights &weights, const ull &k, std::vector<Instance> &centres) {
 //set random centres from the given dataset_
   ull startTime = static_cast<ull>(time(nullptr));
-  assert(seed_picker_->pickSeeds(dataset, weights, k, centres));
+  assert(seedPicker->pickSeeds(dataset, weights, k, centres));
   seed_picker_time_ = static_cast<ull>(time(nullptr)) - startTime;
 }
 
 void KmeansBase::runIterations(const Dataset &dataset, const Weights &weights, std::vector<Instance> &centres) {
   std::cout << "Started running iterations." << std::endl;
   ull startTime = static_cast<ull>(time(nullptr));
-  distance_squared_ = iteration_runner_->runIterations(dataset, weights, centres);
+  distance_squared_ = iterationRunner->runIterations(dataset, weights, centres);
   iteration_runner_time_ = static_cast<ull>(time(nullptr)) - startTime;
   std::cout << "ended running the iterations" << std::endl;
-  num_iterations_ = iteration_runner_->numIterations();
+  num_iterations_ = iterationRunner->numIterations();
 }
 
 }//namespace kmeans;

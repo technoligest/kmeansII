@@ -2,7 +2,7 @@
 // Created by Yaser Alkayale on 2017-07-12.
 //
 #include "catch.hpp"
-#include "../lib/Algorithm/kmeans_data.h"
+#include "../lib/algorithm/kmeans_data.h"
 
 TEST_CASE("operator/= works for instance divided by a vector of size_t") {
   kmeans::Instance instance1;
