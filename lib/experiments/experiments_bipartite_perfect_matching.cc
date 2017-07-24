@@ -9,7 +9,7 @@ namespace kmeans{
 namespace experiments{
 namespace{
 void checkValidMatrix(const Matrix<double> &matrix) {
-  size_t n = matrix.size();
+  std::size_t n = matrix.size();
   assert(n > 0);
   for(const auto &row:matrix) {
     assert(row.size() == n);

@@ -29,11 +29,11 @@ int main(int argc, char **argv) {
   //outputFile.close();
 
   ifstream inputFile;
-  inputFile.open("../inputFiles/DimRedFullData.txt");
+  inputFile.open("../inputFiles/DimRedFullDataComplete.txt");
   kmeans::Dataset d = kmeans::readDataset(inputFile);
   inputFile.close();
   kmeans::experiments::ExperimentRunner e(d, 50);
-  e.runExperiments(1);
+  e.runExperiments(2);
   auto i = e.getExperiments();
   kmeans::experiments::reader::printExperiments("DimRedFullData.txt",i);
   return 0;
