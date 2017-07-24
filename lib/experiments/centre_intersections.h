@@ -18,7 +18,6 @@ struct CentreIntersectionInstance{
 
 struct CentreIntersections{
   CentreIntersections(std::vector<CentreIntersectionInstance> &&insts) : instances(insts) {}
-
   std::vector<CentreIntersectionInstance> instances;
 };
 

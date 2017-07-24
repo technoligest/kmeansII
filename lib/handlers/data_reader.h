@@ -28,8 +28,6 @@ inline Dataset readDataset(std::istream &inputFile) {
 
   std::string tempLine;
   //gets each line
-  size_t added = 0;
-  size_t notAdded = 0;
   while(getline(inputFile, tempLine)) {
     std::stringstream ss(tempLine);
     std::string tempString;
@@ -37,19 +35,13 @@ inline Dataset readDataset(std::istream &inputFile) {
 
     //gets each word in the line
     while(getline(ss, tempString, ' ')) {
-      try {
-        i.push_back(stod(tempString));
-        ++added;
-      }
+      try { i.push_back(stod(tempString)); }
       catch(std::invalid_argument arg) {
-        ++notAdded;
         std::cout << "Dataset is corrupt with not all numerical values. TempString: " << tempString << std::endl;
       }
     }
-
     result.push_back(i);
   }
-  std::cout << "Added: " << added << " NotAdded: " << notAdded << std::endl;
   return result;
 }
 

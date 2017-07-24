@@ -33,14 +33,14 @@ void heapify(std::vector<size_t> &arr, size_t n, size_t i) {
 
 void heapSort(std::vector<size_t > &arr) {
   size_t n = arr.size();
-  for(size_t i = n / 2 - 1; i >= 0; --i){
+  for(size_t i = n / 2 - 1;; --i){
     heapify(arr, n, i);
     if(i==0){
       break;
     }
   }
 
-  for(size_t i = n - 1; i >= 0; --i) {
+  for(size_t i = n - 1; ; --i) {
     std::swap(arr[0], arr[i]);
     heapify(arr, i, 0);
     if(i==0){
@@ -98,6 +98,8 @@ ull lastNumberedFile(const std::string directory, std::string prefix) {
   }
   return nextNum;
 }
+
+
 
 
 }//namespace helpers

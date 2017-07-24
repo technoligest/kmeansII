@@ -133,16 +133,6 @@ RightVertex *Hungarian::exploreRightVertex(RightVertex &v) {
 double Hungarian::slack(const LeftVertex &leftVertex, const RightVertex &rightVertex) {
   return matrix_[leftVertex.name_][rightVertex.name_] - leftVertex.potential_ - rightVertex.potential_;
 }
-
-//std::vector<LeftVertex *> Hungarian::pathGenerator(LeftVertex *v) {
-//  std::vector<LeftVertex *> result;
-//  while(v != nullptr) {
-//    result.push_back(v);
-//    v = (v == v->parent_) ? nullptr : v->parent_;
-//  }
-//  return result;
-//}
-
 void Hungarian::augmentMatching(RightVertex *tail) {
   LeftVertex *v = tail->parent_;
   while(true) {

@@ -22,10 +22,7 @@ protected:
   IterationRunner *iterationRunner;
 
 public:
-  virtual inline ~KmeansBase() {
-    delete seedPicker;
-    delete iterationRunner;
-  };
+  virtual inline ~KmeansBase() {};
 
   inline Distance
   cluster(const Dataset &dataset, const ull &k, std::vector<Instance> &centres) {

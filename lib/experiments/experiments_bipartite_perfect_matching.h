@@ -76,7 +76,7 @@ public:
 };
 
 
-auto minimumWeightPerfectMatching(const Matrix<double> &m);
+std::vector<std::pair<std::size_t, std::size_t>> minimumWeightPerfectMatching(const Matrix<double> &m);
 
 
 }//namespace experiments

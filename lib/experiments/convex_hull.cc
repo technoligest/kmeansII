@@ -10,6 +10,7 @@ namespace kmeans{
 namespace experiments{
 
 namespace{
+
 void heapify(Dataset &d, std::vector<double> &arr, size_t n, size_t i) {
   size_t largest = i;  // Initialize largest as root
   size_t l = 2 * i + 1;  // left = 2*i + 1
@@ -30,17 +31,21 @@ void heapify(Dataset &d, std::vector<double> &arr, size_t n, size_t i) {
   heapify(d, arr, n, largest);
 }
 
+/*
+ * Sort the dataset & arr it terms of the arr provided.
+ * Sort in ascending order.
+ */
 void heapSort(Dataset &d, std::vector<double> &arr) {
   if(arr.size() == 0)return;
   size_t n = arr.size();
-  for(size_t i = n / 2 - 1; i >= 0; --i) {
+  for(size_t i = n / 2 - 1; ; --i) {
     heapify(d, arr, n, i);
     if(i == 0) {
       break;
     }
   }
 
-  for(size_t i = n - 1; i >= 0; --i) {
+  for(size_t i = n - 1; ; --i) {
     std::swap(arr[0], arr[i]);
     std::swap(d[0], d[i]);
     heapify(d, arr, i, 0);
@@ -71,15 +76,15 @@ bool isLeftTurn(const Instance &rightPoint, const Instance &origin, const Instan
   return 0 > ((origin[1] - rightPoint[1]) * (leftPoint[0] - origin[0]) -
               (origin[0] - rightPoint[0]) * (leftPoint[1] - origin[1]));
 }
-}//namespace anonymous
 
-Dataset calculateConvexHull(Dataset dataset) {
-  assert(dataset.size() > 2);
-  for(
-    const auto &instance:dataset) {
+void validateMatrix(const Matrix<double> &matrix) {
+  assert(matrix.size() > 2);
+  for(const auto &instance:matrix) {
     assert(instance.size() == 2);
   }
+}
 
+size_t findLowestLeftPointId(const Matrix<double> &dataset) {
   size_t lowestId = 0;
   for(size_t i = 1; i < dataset.size(); ++i) {
     if(dataset[i][1] < dataset[lowestId][1] ||
@@ -87,16 +92,10 @@ Dataset calculateConvexHull(Dataset dataset) {
       lowestId = i;
     }
   }
+  return lowestId;
+}
 
-  std::swap(dataset[lowestId], dataset[0]);
-
-  std::vector<double> angleToLowestPoint(dataset.size(), -1);
-  std::vector<double> lowestRight{dataset[0][0] + 10, dataset[0][1]};
-  for(size_t itemId = 1; itemId < dataset.size(); ++itemId) {
-    angleToLowestPoint[itemId] = calculateCosSquaredOfPolarAngle(dataset[0], lowestRight, dataset[itemId]);
-  }
-
-  heapSort(dataset, angleToLowestPoint);
+void removeItemsWithSameAngleToFirstPoint(Matrix<double> &dataset, std::vector<double> &angleToLowestPoint) {
   for(size_t itemId = 1; itemId < dataset.size(); ++itemId) {
     if(fabs(angleToLowestPoint[itemId] - angleToLowestPoint[itemId - 1]) < 1e-4) {
       if(helpers::findDistanceSquared(dataset[0], dataset[itemId]) <
@@ -110,6 +109,23 @@ Dataset calculateConvexHull(Dataset dataset) {
       --itemId;
     }
   }
+}
+}//namespace anonymous
+
+Matrix<double> calculateConvexHull(Matrix<double> dataset) {
+  validateMatrix(dataset);
+
+  std::swap(dataset[findLowestLeftPointId(dataset)], dataset[0]);
+
+  std::vector<double> angleToLowestPoint(dataset.size(), -1);
+  std::vector<double> lowestRight{dataset[0][0] + 10, dataset[0][1]};
+  for(size_t itemId = 1; itemId < dataset.size(); ++itemId) {
+    angleToLowestPoint[itemId] = calculateCosSquaredOfPolarAngle(dataset[0], lowestRight, dataset[itemId]);
+  }
+  //sort the dataset in terms of the angles to the lowest point.
+  heapSort(dataset, angleToLowestPoint);
+
+  removeItemsWithSameAngleToFirstPoint(dataset, angleToLowestPoint);
 
   Dataset result = {dataset[0], dataset[1], dataset[2]};
   for(size_t i = 3; i < dataset.size(); ++i) {
@@ -121,6 +137,20 @@ Dataset calculateConvexHull(Dataset dataset) {
 
   assert(result.size() > 2);
   return result;
+}
+
+double convexHullArea(const Matrix<double> &dataset) {
+  std::size_t size = dataset.size();
+  if(size < 3) return 0;
+  double result = 0;
+  assert(dataset[0].size() == 2);
+  for(std::size_t rowId = 0; rowId < size - 1; ++rowId) {
+    assert(dataset[rowId + 1].size() == 2);
+    result += dataset[rowId][0] * dataset[rowId + 1][1] - dataset[rowId][1] * dataset[rowId + 1][0];
+  }
+  result += dataset[size - 1][0] * dataset[0][1] - dataset[size - 1][1] * dataset[0][0];
+
+  return result / 2;
 }
 
 }//namespace experiments

@@ -1,28 +1,30 @@
 import matplotlib.pyplot as plt
 
+"""
+Given an iteratable, go over it and
+extract all the 2d points.
+"""
 def readCentres(content):
-  toPlotX = []
-  toPlotY = []
   for item in content:
     if item[:6]=='<<<End':
-      return [toPlotX,toPlotY]
+      return 
     temp = item.strip().split()
     if len(temp) !=2:
+      print("Inpurity in Data ignored.")
       continue
-    print(temp)
-    toPlotX.append(temp[0])
-    toPlotY.append(temp[1])
+    yield [float(temp[0]),float(temp[1])]
   return []
 
-def readExperimentCentres(content):
-  result = []
-  for item in content:
-    print(item[:3])
-    if item[:3] == '***':
-      centres = readCentres(content)
-      result.append([centres[0], centres[1]])
-  return result
 
+def readExperimentCentres(content):
+  for item in content:
+    if item[:3] == '***':
+      yield readCentres(content)
+  return []
+
+"""
+Plots the given centres
+"""
 def dotPlot(x,y):
   plt.plot(x, y, '.', label='line 1')
 
@@ -32,18 +34,9 @@ def plotCentres(centres):
 
 # print (sys.argv[0])
 def readTwoDFile(content):
-  toPlotX = []
-  toPlotY = []
   for item in content:
     temp = item.strip().split()
     if len(temp) !=2:
       continue
     print(temp)
-    toPlotX.append(temp[0])
-    toPlotY.append(temp[1])
-
-
-# print(content)
-# cnt= [[float(y) for y in x.strip().split()][0] for x in content]
-
-
+    yield([float(temp[0]),float(temp[1])])
