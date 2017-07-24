@@ -10,7 +10,7 @@
 #include "../algorithm/kmeans_data.h"
 #include "experiment_result.h"
 #include "../algorithm/kmeans_helpers.h"
-#include "perfect_matching.h"
+#include "perfect_matching_uncompleted_deprecated.h"
 #include "centre_intersections.h"
 
 namespace kmeans{

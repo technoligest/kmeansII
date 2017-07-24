@@ -3,7 +3,7 @@
 //
 
 #include "catch.hpp"
-#include "../lib/experiments/perfect_matching.h"
+#include "../lib/experiments/perfect_matching_uncompleted_deprecated.h"
 
 TEST_CASE("Perfect Matching Works") {
   //auto infinity = std::numeric_limits<kmeans::Distance>::max();

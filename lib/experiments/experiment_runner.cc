@@ -26,19 +26,19 @@ void ExperimentRunner::runExperiments(ull numExperiments) {
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans");
   }
-  delete kmeans;
+  //delete kmeans;
 
   kmeans = new Kmeanspp<LloydIterationRunner>();
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans++");
   }
-  delete kmeans;
+  //delete kmeans;
 
   kmeans = new KmeansII<LloydIterationRunner, LloydIterationRunner>(2 * k, 5);
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans||");
   }
-  delete kmeans;
+  //delete kmeans;
 }
 
 } // namspace experiments

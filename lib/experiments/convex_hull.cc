@@ -71,7 +71,7 @@ bool isLeftTurn(const Instance &rightPoint, const Instance &origin, const Instan
   return 0 > ((origin[1] - rightPoint[1]) * (leftPoint[0] - origin[0]) -
               (origin[0] - rightPoint[0]) * (leftPoint[1] - origin[1]));
 }
-}//namespace
+}//namespace anonymous
 
 Dataset calculateConvexHull(Dataset dataset) {
   assert(dataset.size() > 2);

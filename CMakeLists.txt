@@ -17,7 +17,7 @@ file(GLOB algorithm "${PROJECT_SOURCE_DIR}/lib/algorithm/*.h" "${PROJECT_SOURCE_
 file(GLOB handlers "${PROJECT_SOURCE_DIR}/lib/handlers/*.h" "${PROJECT_SOURCE_DIR}/lib/handlers/*.cc")
 file(GLOB experiments "${PROJECT_SOURCE_DIR}/lib/experiments/*.h" "${PROJECT_SOURCE_DIR}/lib/experiments/*.cc")
 
-set(kmeansII ${algorithm} ${handlers})
+set(kmeansII ${algorithm} ${handlers} lib/experiments/experiments_data.h)
 set(trying ${experiments} ${algorithm} ${handlers} lib/trying.cc lib/experiments/experiment_analyzer2.cc lib/experiments/experiment_analyzer2.h)
 set(testing ${tests} ${algorithm} ${handlers} ${experiments} )
 

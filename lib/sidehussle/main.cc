@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "hungarian.h"
+#include "../experiments/experiments_bipartite_perfect_matching.h"
 
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
   //                                    {9,  11, 13}}, [](double i)->bool { return i >= 0; });
   //graph.breadthFirstSearch([]()->bool { false; });
 
-  auto i = minimumWeightPerfectMatching({{1,2,3},{3,2,1},{1,2,3}});
+  auto i = minimumWeightPerfectMatching({{0,1,2},{1,0,2},{1,2,0}});
   for(auto k:i){
     std::cout<<k.first<<", "<<k.second<<std::endl;
   }

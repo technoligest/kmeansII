@@ -9,20 +9,26 @@
 #include <queue>
 #include <limits>
 #include <cassert>
+#include "experiments_data.h"
 
-using Matrix = std::vector<std::vector<double>>;
+
+namespace kmeans{
+namespace experiments{
 
 struct RightVertex;
+struct LeftVertex;
 
 class LeftVertex{
 public:
   std::size_t name_;
-  LeftVertex *parent_;
-  double potential;
+  RightVertex *parent_;
+  double potential_;
+  bool isExplored_ = false;
 
-  LeftVertex(std::size_t name) : name_(name), parent_(nullptr), potential(0) {}
+  LeftVertex(std::size_t name) : name_(name), parent_(nullptr), potential_(0) {}
   void reset() { parent_ = nullptr; }
-  bool isExplored() { return parent_ != nullptr; }
+
+  bool isExplored() { return parent_ != nullptr || isExplored_; }
 
 };
 
@@ -30,6 +36,7 @@ class RightVertex : public LeftVertex{
 public:
   LeftVertex *match_;
   double slack_;
+  LeftVertex *parent_;
 
   RightVertex(std::size_t name) : LeftVertex(name), match_(nullptr), slack_(0) {};
   bool isMatched() { return match_ != nullptr; }
@@ -41,42 +48,37 @@ public:
 
 class Hungarian{
 private:
-  const Matrix &matrix_;
+  const Matrix<double> &matrix_;
   std::queue<LeftVertex *> q_;
   std::vector<LeftVertex> left_;
   std::vector<RightVertex> right_;
+
 public:
-  Hungarian(const Matrix &matrix) : matrix_(matrix) {
-    std::size_t n = matrix_.size();
-    for(std::size_t i = 0; i < n; ++i) {
-      left_.push_back(LeftVertex(i));
-      right_.push_back(RightVertex(i));
-    }
-  }
+  Hungarian(const Matrix<double> &matrix);
 
   void startPhase(LeftVertex &leftVertex);
 
   double slack(const LeftVertex &leftVertex, const RightVertex &rightVertex);
 
-  LeftVertex *exploreRightVertex(RightVertex &v);
+  RightVertex *exploreRightVertex(RightVertex &v);
 
-  LeftVertex *exploreTightEdgesFrom(LeftVertex &u);
+  RightVertex *exploreTightEdgesFrom(LeftVertex &u);
 
-  LeftVertex *exploreTightEdges();
+  RightVertex *exploreTightEdges();
 
-  LeftVertex *adjustPotentials();
+  RightVertex *adjustPotentials();
 
-  std::vector<LeftVertex *> pathGenerator(LeftVertex *v);
+  RightVertex *findAugmentingPathFrom(LeftVertex &leftVertex);
 
-  std::vector<LeftVertex *> findAugmentingPathFrom(LeftVertex &leftVertex);
-
-  void augmentMatching(std::vector<LeftVertex *> &vector);
+  void augmentMatching(RightVertex *tail);
 
   std::vector<std::pair<std::size_t, std::size_t>> solve();
 };
 
-inline auto minimumWeightPerfectMatching(const Matrix &m) {
-  Hungarian h(m);
-  return h.solve();
-}
+
+auto minimumWeightPerfectMatching(const Matrix<double> &m);
+
+
+}//namespace experiments
+}//namespace kmeans
 #endif //KMEANSII_HUNGARIAN_H
