@@ -2,6 +2,8 @@
 // Created by Yaser Alkayale on 2017-06-05.
 //
 
+#include <string>
+#include <stdexcept>
 #include "csv.h"
 
 namespace kmeans{

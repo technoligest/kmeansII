@@ -5,6 +5,7 @@
 #ifndef KMEANSII_EXPERIMENT_HELPERS_H
 #define KMEANSII_EXPERIMENT_HELPERS_H
 
+#include <functional>
 #include "../algorithm/kmeans.h"
 
 namespace kmeans{
