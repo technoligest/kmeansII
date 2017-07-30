@@ -25,10 +25,14 @@ public:
   double potential_;
   bool isExplored_ = false;
 
-  LeftVertex(std::size_t name) : name_(name), parent_(nullptr), potential_(0) {}
-  void reset() { parent_ = nullptr; }
+  LeftVertex(std::size_t name) : name_(name), parent_(nullptr), potential_(0), isExplored_(false) {}
 
-  bool isExplored() { return parent_ != nullptr || isExplored_; }
+  void reset() {
+    isExplored_ = false;
+    parent_ = nullptr;
+  }
+
+  bool isExplored() { return isExplored_ || parent_ != nullptr; }
 
 };
 
@@ -37,19 +41,25 @@ public:
   LeftVertex *match_;
   double slack_;
   LeftVertex *parent_;
+  LeftVertex *potentialParent_;
 
-  RightVertex(std::size_t name) : LeftVertex(name), match_(nullptr), slack_(0) {};
+  RightVertex(std::size_t name) : LeftVertex(name), match_(nullptr), slack_(0), parent_(nullptr),
+                                  potentialParent_(nullptr) {};
   bool isMatched() { return match_ != nullptr; }
+
+  bool isExplored() { return isExplored_ || parent_ != nullptr; }
   void reset() {
     LeftVertex::reset();
+    parent_ = nullptr;
     slack_ = std::numeric_limits<double>::max();
+    potentialParent_ = nullptr;
   }
 };
 
 class Hungarian{
 private:
   const Matrix<double> &matrix_;
-  std::queue<LeftVertex *> q_;
+  std::vector<LeftVertex *> q_;
   std::vector<LeftVertex> left_;
   std::vector<RightVertex> right_;
 

@@ -3,10 +3,12 @@
 //
 
 
+#include <iostream>
 #include "experiments_bipartite_perfect_matching.h"
 
 namespace kmeans{
 namespace experiments{
+
 namespace{
 void checkValidMatrix(const Matrix<double> &matrix) {
   std::size_t n = matrix.size();
@@ -16,12 +18,6 @@ void checkValidMatrix(const Matrix<double> &matrix) {
   }
 }
 }//namespace anonymous
-
-std::vector<std::pair<std::size_t, std::size_t>> minimumWeightPerfectMatching(const Matrix<double> &m) {
-  checkValidMatrix(m);
-  Hungarian h(m);
-  return h.solve();
-}
 
 Hungarian::Hungarian(const Matrix<double> &matrix) : matrix_(matrix) {
   std::size_t n = matrix_.size();
@@ -34,7 +30,6 @@ Hungarian::Hungarian(const Matrix<double> &matrix) : matrix_(matrix) {
 std::vector<std::pair<std::size_t, std::size_t>> Hungarian::solve() {
   for(auto &u:left_) {
     RightVertex *tail = findAugmentingPathFrom(u);
-    //int i=10+2;
     augmentMatching(tail);
   }
   std::vector<std::pair<std::size_t, std::size_t>> result;
@@ -62,14 +57,15 @@ void Hungarian::startPhase(LeftVertex &leftVertex) {
   }
   leftVertex.parent_ = nullptr;//TODO:&leftVertex;
   leftVertex.isExplored_ = true;//TODO:
-  while(!q_.empty()) { q_.pop(); }
-  q_.push(&leftVertex);
+  q_.clear();
+  LeftVertex *temp = &leftVertex;
+  q_.push_back(temp);
 }
 
 RightVertex *Hungarian::exploreTightEdges() {
   while(!q_.empty()) {
     RightVertex *tail = exploreTightEdgesFrom(*q_.front());
-    q_.pop();
+    q_.erase(q_.begin());
     if(tail != nullptr) return tail;
   }
   return nullptr;
@@ -77,14 +73,17 @@ RightVertex *Hungarian::exploreTightEdges() {
 
 RightVertex *Hungarian::exploreTightEdgesFrom(LeftVertex &u) {
   for(auto &v: right_) {
-    if(v.isExplored())continue;
+    if(v.isExplored()) continue;
     auto uvSlack = slack(u, v);
     if(uvSlack == 0) {
       v.parent_ = &u;
       auto tail = exploreRightVertex(v);
       if(tail != nullptr) return tail;
     } else {
-      v.slack_ = std::min(v.slack_, uvSlack);
+      if(uvSlack < v.slack_) {
+        v.slack_ = std::min(v.slack_, uvSlack);
+        v.potentialParent_ = &u;
+      }
     }
   }
   return nullptr;
@@ -107,17 +106,19 @@ RightVertex *Hungarian::adjustPotentials() {
       v.potential_ -= minSlack;
       continue;
     }
-    v.slack_ -= minSlack;
-    if(v.slack_ != 0) { continue; }
-    for(auto &w:left_) {
-      if(w.isExplored() && slack(w, v) == 0) {
-        v.parent_ = &w;
-        break;
-      }
-    }
+    v.slack_ -= minSlack;//TODO Does this make any difference?
+    if(v.slack_ == 0) {
+      v.parent_=v.potentialParent_;
+      //for(auto &w:left_) {
+      //  if(w.isExplored() && slack(w, v) == 0) {
+      //    v.parent_ = &w;
+      //    break;
+      //  }
+      //}
 
-    auto tail = exploreRightVertex(v);
-    if(tail != nullptr) { return tail; }
+      auto tail = exploreRightVertex(v);
+      if(tail != nullptr) { return tail; }
+    }
   }
   return nullptr;
 }
@@ -126,27 +127,29 @@ RightVertex *Hungarian::exploreRightVertex(RightVertex &v) {
   if(!v.isMatched()) { return &v; }
 
   v.match_->parent_ = &v;
-  q_.push(v.match_);
+  q_.push_back(v.match_);
   return nullptr;
 }
 
 double Hungarian::slack(const LeftVertex &leftVertex, const RightVertex &rightVertex) {
   return matrix_[leftVertex.name_][rightVertex.name_] - leftVertex.potential_ - rightVertex.potential_;
 }
+
 void Hungarian::augmentMatching(RightVertex *tail) {
   LeftVertex *v = tail->parent_;
   while(true) {
     tail->match_ = v;
-
-    if(v->parent_ == nullptr || v->parent_->parent_ == nullptr) {
-      break;
-    }
+    if(v->parent_ == nullptr) { break; }
+    else { assert(v->parent_->parent_ != nullptr); }
     tail = v->parent_;
     v = tail->parent_;
   }
-  //static_cast<RightVertex *>(vector[i + 1])->match_ = vector[i];
 }
 
-
+std::vector<std::pair<std::size_t, std::size_t>> minimumWeightPerfectMatching(const Matrix<double> &m) {
+  checkValidMatrix(m);
+  Hungarian h(m);
+  return h.solve();
+}
 }//namespace experiments
 }//namespace kmeans
