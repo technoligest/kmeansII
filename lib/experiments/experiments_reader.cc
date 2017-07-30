@@ -118,7 +118,7 @@ printExperiments(const std::string &dataSetName, const std::vector<ExperimentRes
    * Finding the next number to enter for the test
    * Taking the max of the 3 prefixes for each of the algorithms.
    */
-  std::string dir = "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results";
+  std::string dir = "/home/yaser/CLionProjects/kmeansII/lib/experiments/Experiment Results";
   ull num = std::max(helpers::lastNumberedFile(dir, "kmeans-" + dataSetName + "-test"),
                      std::max(helpers::lastNumberedFile(dir, "kmeans++-" + dataSetName + "-test"),
                               helpers::lastNumberedFile(dir, "kmeans||-" + dataSetName + "-test")));

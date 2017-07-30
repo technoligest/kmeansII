@@ -7,6 +7,7 @@
 #include "experiments/convex_hull.h"
 
 using namespace std;
+
 int main(int argc, char **argv) {
   //ifstream inputFile;
   //inputFile.open("../inputFiles/DimRedFullDataComplete.txt");
@@ -33,8 +34,12 @@ int main(int argc, char **argv) {
   kmeans::Dataset d = kmeans::readDataset(inputFile);
   inputFile.close();
   kmeans::experiments::ExperimentRunner e(d, 50);
-  e.runExperiments(2);
+  e.runExperiments(1000);
   auto i = e.getExperiments();
-  kmeans::experiments::reader::printExperiments("DimRedFullData.txt",i);
+  kmeans::experiments::reader::printExperiments("DimRedFullDataComplete.txt", i);
+  //std::ofstream outPutFile("TESTING PRINT.txt");
+  //outPutFile << "Hi this is a test" << std::endl;
+  //outPutFile.flush();
+  //outPutFile.close();
   return 0;
 }
