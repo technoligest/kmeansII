@@ -5,6 +5,7 @@
 #ifndef KMEANSII_EXPERIMENT_ANALYZER2_H
 #define KMEANSII_EXPERIMENT_ANALYZER2_H
 
+#include <iostream>
 #include <unordered_map>
 #include <cassert>
 #include "../algorithm/kmeans_data.h"
@@ -75,6 +76,18 @@ private:
       for(const auto &pair:matchingPairs) {
         tempCentres[std::get<1>(pair)] = experimentResults_[experimentId].centres[std::get<0>(pair)];
       }
+
+      for(std::size_t i=0; i<tempCentres.size(); ++i){
+        for(auto k:tempCentres[i]){
+          std::cout<<k<<" ";
+        }
+        std::cout<<",";
+        for(auto k:baseCentres[i]){
+          std::cout<<k<<" ";
+        }
+        std::cout<<std::endl;
+      }
+      std::cout<<"\n\n\n";
       experimentResults_[experimentId].centres = std::move(tempCentres);
 
       //
