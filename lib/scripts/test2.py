@@ -1,21 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
-# plt.plot(range(2), c="red")
-
-# plt.figure()
-# plt.plot(range(10), c="blue")
-
-# plt.show()
-
 
 def scatterPlot(data):
     plt.figure()
     for x,y in data:
-        plt.plot(x,y,marker='o',
-            fillstyle='full',
-            markeredgecolor='red',
-            markeredgewidth=0.0)
+        plt.plot(x,y,marker='o',fillstyle='full', markeredgewidth=1.0)
 
 def readExperimentCentres(file):
     for item in file:
@@ -24,11 +14,7 @@ def readExperimentCentres(file):
 
 def plotMatchingCentres(fileName):
     with open(fileName) as file:
-        iterator = readExperimentCentres(file)
-        var =[]
-        for k in iterator:
-            var.append(k)
-        scatterPlot(var)
+        scatterPlot(readExperimentCentres(file))
         
 # plotMatchingCentres(sys.argv[1])
 # v=np.random.rand(50,2,2)
