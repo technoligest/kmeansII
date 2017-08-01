@@ -13,14 +13,14 @@ def readCentres(content):
       print("Inpurity in Data ignored.")
       continue
     yield [float(temp[0]),float(temp[1])]
-  return []
+  
 
 
 def readExperimentCentres(content):
   for item in content:
     if item[:3] == '***':
       yield readCentres(content)
-  return []
+  
 
 """
 Plots the given centres

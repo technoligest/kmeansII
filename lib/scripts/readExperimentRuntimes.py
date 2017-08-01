@@ -45,8 +45,7 @@ def readFile(i,fileName):
     # var2 =[[x,i]for x in var]
     # plotCentres(var2)
     
-
-readFile(-1, '../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test0.txt')
-readFile(0, '../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt')
-readFile(1,'../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test0.txt')
+readFile(-1, '../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt')
+readFile(0, '../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt')
+readFile(1,'../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test1.txt')
 plt.show()

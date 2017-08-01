@@ -42,47 +42,16 @@ int main(int argc, char **argv) {
       "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
 
 
-  //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullData.txt-test2.txt");
+  inputFile.open("/home/yaser/CLionProjects/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
   auto experiments = kmeans::experiments::reader::readExperiments(inputFile);
   inputFile.close();
 
   inputFile.open(
-      "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullDataComplete.txt");
+      "/home/yaser/CLionProjects/kmeansII/inputFiles/DimRedFullDataComplete.txt");
   auto dataset = kmeans::readDataset(inputFile);
   std::cout << experiments.size() << std::endl;
   kmeans::experiments::ExperimentAnalyzer2 analyzer(experiments, dataset);
 
 
-  //kmeans::Matrix<kmeans::Distance> matrix{{0, 0,  0,  0},
-  //                                        {0, 12, 15, 8},
-  //                                        {0, 15, 17, 1},
-  //                                        {0, 8,  3,  11}};
-  //matrix = {
-  //    {1,2,3},
-  //    {3,1,2},
-  //    {3,2,1}
-  //};
-  ////
-  //matrix = {
-  //    {0,0,0},
-  //    {0,1,2},
-  //    {0,3,4}
-  //};
-  //auto result = kmeans::experiments::minimumWeightPerfectMatching(matrix);
-  //
-  //for(const auto &i:result) {
-  //  std::cout << std::get<0>(i)<<", "<<std::get<1>(i) << "\t";
-  //}
-
-  //std::queue<int> testingArr;
-  //testingArr.push(1);
-  //testingArr.push(2);
-  //testingArr.push(3);
-  //std::cout<<testingArr.front()<<std::endl;
-  //testingArr.pop();
-  //std::cout<<testingArr.front()<<std::endl;
-  //testingArr.pop();
-  //std::cout<<testingArr.front()<<std::endl;
-  //testingArr.pop();
   return 0;
 }
