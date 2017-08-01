@@ -74,7 +74,6 @@ bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &dataset, const Weights &we
         tempCentres.push_back(inst);
       }
     }
-    std::cout << "size of centres: " << tempCentres.size() << std::endl;
   }
 
   std::cout << "completed all the passes. " << std::endl;

@@ -41,11 +41,14 @@ def readFile(i,fileName):
     plotY = [i for x,y in var3]
     plotAreas = [x*(var[len(var)-1]-var[0])/len(var)/numBoxes/2 for x,y in var3]
     plt.scatter(plotX,plotY,s=plotAreas, alpha = 0.5)
+    
 
     # var2 =[[x,i]for x in var]
     # plotCentres(var2)
     
-readFile(-1, '../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt')
-readFile(0, '../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt')
-readFile(1,'../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test1.txt')
+
+plt.figure()
+readFile(-1, '../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test0.txt')
+readFile(0, '../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt')
+readFile(1,'../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test0.txt')
 plt.show()
