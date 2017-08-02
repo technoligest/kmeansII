@@ -2,10 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-def scatterPlot(data):
-    plt.figure()
-    for x,y in data:
-        plt.plot(x,y,marker='o',fillstyle='full', markeredgewidth=1.0)
 
 def readExperimentCentres(file):
     for item in file:

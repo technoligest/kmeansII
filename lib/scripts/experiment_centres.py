@@ -22,15 +22,6 @@ def readExperimentCentres(content):
       yield readCentres(content)
   
 
-"""
-Plots the given centres
-"""
-def dotPlot(x,y):
-  plt.plot(x, y, '.', label='line 1')
-
-def plotCentres(centres):
-  for x,y in centres:
-    dotPlot(x,y)  
 
 # print (sys.argv[0])
 def readTwoDFile(content):

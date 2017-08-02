@@ -1,18 +1,16 @@
 # from experiment_centres import *
 import sys
 import numpy as np
-import test2 as t
+import experiment_plotters as t
+import distance as d
 import math
 from hungarian import *
 
-def convertToXY(l1):
-  x=[l[0] for l in l1]
-  y=[l[1] for l in l2]
-  return [x,y]
-def findDistannceMatrix(pointSet1, pointSet2):
+
+def findDistanceMatrix(pointSet1, pointSet2):
   if len(pointSet1) != len(pointSet2):
     return None
-  return [[findDistanceSquared(pointSet1[i],pointSet2[j]) for i in range(len(pointSet2))]for j in range(len(pointSet2))]
+  return [[d.findDistance(pointSet1[i],pointSet2[j]) for i in range(len(pointSet2))]for j in range(len(pointSet2))]
 
 """
 Splits pairs into XY
@@ -22,7 +20,7 @@ And so on.
 def splitIntoXY(list1, list2):
   return [[[list1[i][0],list2[i][0]],[list1[i][1],list2[i][1]]] for i in range(len(list1))]
 
-numPoints=5
+numPoints=25
 randomList = [x*100 for x in np.random.rand(numPoints,2)]
 randomList2= [x*100 for x in np.random.rand(numPoints,2)]
 print("randomList: ")
@@ -31,8 +29,8 @@ print("randomList2: ")
 print(randomList2)
 t.scatterPlot(splitIntoXY(randomList,randomList2))
 
-matchings = minimum_weight_perfect_matching(findDistannceMatrix(randomList,randomList2))
-print(findDistannceMatrix(randomList,randomList2))
+matchings = minimum_weight_perfect_matching(findDistanceMatrix(randomList,randomList2))
+print(findDistanceMatrix(randomList,randomList2))
 print(matchings)
 
 randomList2 = [randomList2[x] for x, y in matchings]

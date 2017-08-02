@@ -17,6 +17,5 @@ def convertToXY(l1):
   
 def scatterPlot(data):
     plt.figure()
-    print(len(data))
     for x,y in data:
         plt.plot(x,y,marker='o',fillstyle='full', markeredgewidth=1.0)
