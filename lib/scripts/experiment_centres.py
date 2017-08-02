@@ -13,24 +13,15 @@ def readCentres(content):
       print("Inpurity in Data ignored.")
       continue
     yield [float(temp[0]),float(temp[1])]
-  return []
+  
 
 
 def readExperimentCentres(content):
   for item in content:
     if item[:3] == '***':
       yield readCentres(content)
-  return []
+  
 
-"""
-Plots the given centres
-"""
-def dotPlot(x,y):
-  plt.plot(x, y, '.', label='line 1')
-
-def plotCentres(centres):
-  for x,y in centres:
-    dotPlot(x,y)  
 
 # print (sys.argv[0])
 def readTwoDFile(content):
