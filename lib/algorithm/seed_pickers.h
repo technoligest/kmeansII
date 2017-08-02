@@ -18,7 +18,7 @@ namespace kmeans{
 
 class RandomSeedPicker : public SeedPicker{
 public:
-  inline RandomSeedPicker(){}
+  inline explicit RandomSeedPicker(){}
 
   bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) override;
 };
@@ -26,7 +26,7 @@ public:
 
 class KmeansppSeedPicker : public SeedPicker{
 public:
-  inline KmeansppSeedPicker(){}
+  inline explicit KmeansppSeedPicker(){}
 
   bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) override;
 };
@@ -34,7 +34,7 @@ public:
 template<class IR>
 class KmeansIISeedPicker : public SeedPicker{
 public:
-  inline KmeansIISeedPicker(double _l, ull _r) : l_(_l), r_(_r){}
+  inline explicit KmeansIISeedPicker(double _l, ull _r) : l_(_l), r_(_r){}
 
   bool pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) override;
 
