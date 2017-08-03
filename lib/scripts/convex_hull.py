@@ -1,6 +1,6 @@
 import numpy as np
 import math
-from distance import *
+from distance import distance
 from experiment_plotters import *
 def cosSquaredOfPolarAngle(origin,p1, p2):
     if  p2==origin or p1==origin:
@@ -8,8 +8,8 @@ def cosSquaredOfPolarAngle(origin,p1, p2):
     result= (math.degrees(math.acos(((p1[0]-origin[0])*(p2[0]-origin[0])+
                                     (p1[1]-origin[1])*(p2[1]-origin[1])
                                    )/
-                                   (findDistance(origin,p1)*
-                                    findDistance(origin,p2)
+                                   (distance(origin,p1)*
+                                    distance(origin,p2)
                                    )
                                   )
                         )
@@ -21,6 +21,7 @@ def isNotLeftTurn(rightPoint, origin, leftPoint):
     return (0 <= ((origin[1] - rightPoint[1]) * (leftPoint[0] - origin[0]) -
                  (origin[0] - rightPoint[0]) * (leftPoint[1] - origin[1])))
 def check2dMatrix(matrix):
+    assert (len(matrix)>0)
     for i in matrix:
         assert (len(i)==2)
 
@@ -53,12 +54,3 @@ def calcConvexHullArea(convexHull):
     result+=(convexHull[len(convexHull)-1][0]*convexHull[0][1]-
              convexHull[len(convexHull)-1][1]*convexHull[0][0])
     return result
-
-    
-# v=[list(i) for i in np.random.rand(10000,2)]
-
-# scatterPlot([convertToXY(calcConvexHull(v))])
-# plt.show()
-# print(calcConvexHullArea(calcConvexHull(v)))
-
-# # print(math.degrees(math.acos(1)))

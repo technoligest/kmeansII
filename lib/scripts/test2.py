@@ -21,5 +21,5 @@
 # # plt.show()
 
 
-var = [[0 for _ in range(10)]for _ in range(2)]
-print(var[2][0])
+# var = [[0 for _ in range(10)]for _ in range(2)]
+# print(var[2][0])

@@ -5,8 +5,6 @@ import sys
 
 class LeftVertex:
     """A vertex on the left side of the graph"""
-
-
     def __init__(self, name):
         """
         Construct a left vertex with the given name, no parent, and potential 0.
