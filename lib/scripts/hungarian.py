@@ -370,5 +370,6 @@ import test2 as t
 randomList = np.random.rand(50,2,2)
 print(randomList)
 t.scatterPlot(randomList)
-# print(minimum_weight_perfect_matching(matrix))
+matrix=
+print(minimum_weight_perfect_matching(matrix))
 t.plt.show()

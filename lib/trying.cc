@@ -38,14 +38,14 @@ int main(int argc, char **argv) {
   //kmeans::experiments::reader::printExperiments("DimRedFullData.txt",i);
   ifstream inputFile;
   inputFile.open(
-      "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
+      "/home/technoligest/Documents/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
 
 
   //inputFile.open("/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullData.txt-test2.txt");
   auto experiments = kmeans::experiments::reader::readExperiments(inputFile);
   inputFile.close();
   inputFile.open(
-      "/Users/Technoligest/Documents/Classes/Current/Norbert + Vlado/kmeansII/inputFiles/DimRedFullDataComplete.txt");
+      "/home/technoligest/Documents/kmeansII/inputFiles/DimRedFullDataComplete.txt");
   auto dataset = kmeans::readDataset(inputFile);
   std::cout << experiments.size() << std::endl;
   kmeans::experiments::ExperimentAnalyzer2 analyzer(experiments, dataset);

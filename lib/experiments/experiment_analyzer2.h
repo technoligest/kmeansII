@@ -78,13 +78,9 @@ private:
       }
 
       for(std::size_t i=0; i<tempCentres.size(); ++i){
-        for(auto k:tempCentres[i]){
-          std::cout<<k<<" ";
-        }
+        std::cout<<tempCentres[i][0]<<" "<< baseCentres[i][0];
         std::cout<<",";
-        for(auto k:baseCentres[i]){
-          std::cout<<k<<" ";
-        }
+        std::cout<<tempCentres[i][1]<<" "<< baseCentres[i][1];
         std::cout<<std::endl;
       }
       std::cout<<"\n\n\n";
