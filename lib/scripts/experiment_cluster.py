@@ -10,7 +10,7 @@ TotalDistance to centre
 from convex_hull import calcConvexHull, calcConvexHullArea
 from distance import calcDistance
 class Cluster:
-    def __init__(self,centre, pointPositions):
+    def __init__(self, centre, pointPositions):
         assert hasattr(Cluster, 'dataset')
         assert len(centre) == 2
         self.centre=centre

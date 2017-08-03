@@ -13,8 +13,5 @@ class calcIntersections:
     self.experiments=experiments
     self.norbertArray= self.calcNorbertArray()
     
-  
-
-
 def calcIntersectionOverUnion(dataset, experiments):
   return calcIntersections(dataset,experiments).solve()
