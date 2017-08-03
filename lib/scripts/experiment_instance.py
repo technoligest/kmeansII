@@ -1,14 +1,42 @@
 #!/usr/bin/python
+"""
+clusters
+centres
+averages(distance/area)[]
+distance
+"""
 import sys
+from experiment_cluster import *
+from ditance import calcDistance
+class ExperimentInstance:
+    def calcPointPositions(self,centre):
+        result=[[]for _ in range(len(self.centres))]
+        for instId in range(len(ExperimentInstance.dataset)):
+            currCandidateCentreId = 0
+            minDistance = 0
+            for centreId in range(len(self.centres)):
+                currDistance = calcDistance(ExperimentInstance.dataset[instId], self.centres[centreId])
+                if minDistance > currDistance:
+                    minDistance=currDistance
+                    currCandidateCentreId=centreId
+            result[currCandidateCentreId].append(instId)
+        return result
 
-class ExperimentInstance: 
-    def init():
-        print("yaay")
+    def __init__(self):
+        assert hasattr(ExperimentInstance, 'dataset')
+        assert hasattr(ExperimentInstance, 'centres')
+        self.clusters=[]
+        pointPositions = self.calcPointPositions()
+        for centre, p in zip(centres,pointPositions):
+            self.clusters.append(centre,p)
+        self.averageDistanceOverArea = [c.totalDistance/c.area for c in self.clusters]
+        
+        
     def centresToString(self):
         result= ""
         for inst in self.centres:
             result+=str(inst[0])+" "+str(inst[1])+"\n"
-        return result;
+        return result
     def __str__(self):
         return (">>>Start Experiment\n"+
                 "algorithm:"+self.algorithm+"\n"

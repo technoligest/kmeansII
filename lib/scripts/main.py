@@ -6,12 +6,6 @@ import distance as d
 import math
 from hungarian import *
 
-
-def findDistanceMatrix(pointSet1, pointSet2):
-  if len(pointSet1) != len(pointSet2):
-    return None
-  return [[d.findDistance(pointSet1[i],pointSet2[j]) for i in range(len(pointSet2))]for j in range(len(pointSet2))]
-
 """
 Splits pairs into XY
 Plotting the result will allow us to view the first element in l1 be matched with first element of l2

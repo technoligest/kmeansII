@@ -20,7 +20,12 @@ def cosSquaredOfPolarAngle(origin,p1, p2):
 def isNotLeftTurn(rightPoint, origin, leftPoint):
     return (0 <= ((origin[1] - rightPoint[1]) * (leftPoint[0] - origin[0]) -
                  (origin[0] - rightPoint[0]) * (leftPoint[1] - origin[1])))
+def check2dMatrix(matrix):
+    for i in matrix:
+        assert (len(i)==2)
+
 def calcConvexHull(matrix):
+    check2dMatrix(matrix)
     matrix=sorted(matrix, key = lambda l:l[0])
     matrix=sorted(matrix, key = lambda l:l[1])
     lowestRight=[matrix[0][0]+5,matrix[0][1]]
@@ -48,11 +53,12 @@ def calcConvexHullArea(convexHull):
     result+=(convexHull[len(convexHull)-1][0]*convexHull[0][1]-
              convexHull[len(convexHull)-1][1]*convexHull[0][0])
     return result
-v=[list(i) for i in np.random.rand(10000,2)]
 
+    
+# v=[list(i) for i in np.random.rand(10000,2)]
 
-scatterPlot([convertToXY(calcConvexHull(v))])
-plt.show()
-print(calcConvexHullArea(calcConvexHull(v)))
+# scatterPlot([convertToXY(calcConvexHull(v))])
+# plt.show()
+# print(calcConvexHullArea(calcConvexHull(v)))
 
-# print(math.degrees(math.acos(1)))
+# # print(math.degrees(math.acos(1)))
