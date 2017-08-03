@@ -15,7 +15,7 @@ namespace kmeans{
 template<class SP, class IR>
 class KmeansInstance : public KmeansBase{
 public:
-  inline KmeansInstance(){
+  inline explicit KmeansInstance(){
     seedPicker = new SP();
     iterationRunner = new IR();
   };

@@ -11,8 +11,7 @@
 namespace kmeans{
 class SeedPicker{
 public:
-  virtual bool
-  pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres)=0;
+  virtual bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres)=0;
   virtual inline ~SeedPicker(){}
 };
 }//namespace kmeans
