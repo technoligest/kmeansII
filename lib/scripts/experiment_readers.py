@@ -51,11 +51,13 @@ def readExperiment(file):
         elif line[0] == "Start Centres":
             centres = readCentres(file)
         elif line[0] == "End Experiment":
-            return ExperimentInstance(centres,algorithm,distanceToCentre,timeToPickSeeds,numIterations,timeToRunIterations)
+            result=ExperimentInstance(centres,algorithm,distanceToCentres,timeToPickSeeds,numIterations,timeToRunIterations)
+            print(result)
+            return result
         elif line[0] == "algorithm":
             algorithm = line[1]
         elif line[0] == "Sum of distance squared to centre":
-            distanceToCentre = float(line[1])
+            distanceToCentres = float(line[1])
         elif line[0] == "Time to pick the seeds":
             timeToPickSeeds = float(line[1])
         elif line[0] == "Number of iterations run":

@@ -6,6 +6,7 @@ import distance as d
 import math
 import hungarian as hung
 import experiment_readers as exp
+from experiment_analyzer import ExperimentAnalyzer
 
 """
 Splits pairs into XY
@@ -39,4 +40,6 @@ def splitIntoXY(list1, list2):
 #
 experimentsFile ="../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
 datasetFile = "../../inputFiles/DimRedFullDataComplete.txt"
-exp.readExperiments(experimentsFile,datasetFile)
+experiments = exp.readExperiments(experimentsFile,datasetFile)
+dataset = exp.readTwoDFile(datasetFile)
+e = ExperimentAnalyzer(experiments,dataset)

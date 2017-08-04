@@ -7,6 +7,7 @@ distance
 """
 from experiment_cluster import *
 from distance import distance
+import sys
 
 
 class ExperimentInstance:
@@ -20,7 +21,7 @@ class ExperimentInstance:
         result = [[] for _ in range(len(self.centres))]
         for instId in range(len(ExperimentInstance.dataset)):
             currCandidateCentreId = 0
-            minDistance = 0
+            minDistance = sys.float_info.max
             for centreId in range(len(self.centres)):
                 currDistance = distance(ExperimentInstance.dataset[instId], self.centres[centreId])
                 if minDistance > currDistance:
@@ -36,12 +37,14 @@ class ExperimentInstance:
         self.distanceToCentres = distanceToCentres
         self.timeToPickSeeds = timeToPickSeeds
         self.numIterations = numIterations
-        self.timeTorunIterations = timeToRunIterations
+        self.timeToRunIterations = timeToRunIterations
         self.clusters = []
         Cluster.dataset = ExperimentInstance.dataset
-        for centre, p in zip(self.centres, self.calcPointPositions()):
+        pointPositions=self.calcPointPositions()
+        for centre, p in zip(self.centres, pointPositions):
             self.clusters.append(Cluster(centre, p))
         self.averageDistanceOverArea = [c.totalDistance / c.area for c in self.clusters]
+        print(self.averageDistanceOverArea)
 
     def centresToString(self):
         result = ""
@@ -53,7 +56,7 @@ class ExperimentInstance:
         return (">>>Start Experiment\n" +
                 "algorithm:" + self.algorithm + "\n"
                                                 "Sum of distance squared to centre:" + str(
-            self.distanceToCentre) + "\n" +
+            self.distanceToCentres) + "\n" +
                 "Time to pick the seeds:" + str(self.timeToPickSeeds) + "\n" +
                 "Number of iterations run:" + str(self.numIterations) + "\n" +
                 "Time to run the iterations:" + str(self.timeToRunIterations) + "\n" +
