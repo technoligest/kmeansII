@@ -26,13 +26,15 @@ def readExperimentCentres(content):
 
 
 def readTwoDFile(content):
-    result =[]
+    result = []
     for item in content:
         temp = item.strip().split()
         if len(temp) != 2:
             continue
-        result.append ([float(temp[0]), float(temp[1])])
+        result.append([float(temp[0]), float(temp[1])])
     return result
+
+
 def readCentres(file):
     centres = []
     for line in file:
@@ -51,7 +53,8 @@ def readExperiment(file):
         elif line[0] == "Start Centres":
             centres = readCentres(file)
         elif line[0] == "End Experiment":
-            result=ExperimentInstance(centres,algorithm,distanceToCentres,timeToPickSeeds,numIterations,timeToRunIterations)
+            result = ExperimentInstance(centres, algorithm, distanceToCentres, timeToPickSeeds, numIterations,
+                                        timeToRunIterations)
             print(result)
             return result
         elif line[0] == "algorithm":
@@ -67,15 +70,15 @@ def readExperiment(file):
     return None
 
 
-def readExperiments(fileName, dataSetFileName):
+def readExperiments(fileName, dataSetFileName, maxExperiments=10):
     with open(dataSetFileName) as file:
         ExperimentInstance.dataset = readTwoDFile(file)
     with open(fileName) as file:
         result = []
-        while True:
+        while maxExperiments > 0:
             temp = readExperiment(file)
             if temp == None:
                 return result
             result.append(temp)
+            maxExperiments -= 1
     return result
-

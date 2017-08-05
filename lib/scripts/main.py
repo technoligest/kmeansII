@@ -6,6 +6,7 @@ import distance as d
 import math
 import hungarian as hung
 import experiment_readers as exp
+from distance import findDistanceMatrix
 from experiment_analyzer import ExperimentAnalyzer
 
 """
@@ -38,8 +39,53 @@ def splitIntoXY(list1, list2):
 #
 # t.plt.show()
 #
+
+expr1id=0
+expr2id=1
+
 experimentsFile ="../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
 datasetFile = "../../inputFiles/DimRedFullDataComplete.txt"
-experiments = exp.readExperiments(experimentsFile,datasetFile)
+experiments = exp.readExperiments(experimentsFile,datasetFile,max(expr1id,expr2id)+1)
 dataset = exp.readTwoDFile(datasetFile)
-e = ExperimentAnalyzer(experiments,dataset)
+# e = ExperimentAnalyzer(experiments,dataset
+
+
+d = findDistanceMatrix(experiments[expr1id].centres, experiments[expr2id].centres)
+v = hung.minimum_weight_perfect_matching(d)
+output = [experiments[expr2id].centres[p] for p,y in v]
+t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
+
+
+print("started picking d:")
+d = [[-1*len([val for val in i1.pointPositions if val in i2.pointPositions]) for i2 in experiments[expr1id].clusters]for i1 in experiments[expr2id].clusters]
+print("calculating initial d is done.")
+min = min([min(k) for k in d])
+print("finding min is done.")
+d = [[i-min for i in k]for k in d]
+print("d:")
+for i in d:
+    print(i)
+
+v = hung.minimum_weight_perfect_matching(d)
+print("min weight is done")
+output = [experiments[expr2id].centres[p] for p,y in v]
+t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
+t.scatterPlot(dataset)
+t.plt.show()
+
+"""
+minimum weight perfect matching in terms of:
+euclidean distance in terms of clusterCentres
+max weight # common points
+max weight intersection/union
+
+
+find:
+average (intersection/union)
+(total # correctly classidied points/#points)-
+
+Google: Ways to compare k-means results/clustering results (Email Vlado)
+
+Meeting with vlado (Tuesday and Wednesday Afternoon)
+
+"""

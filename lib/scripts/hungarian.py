@@ -91,6 +91,7 @@ class HungarianAlgorithm:
         # Each iteration starts from the next vertex on the left and searches for an augmenting path starting at this
         # vertex.  It then augments the matching using this augmenting path.
         for u in self.left:
+            print("solving: ",u.name)
             path = self.find_augmenting_path_from(u)
             self.augment_matching(path)
 
