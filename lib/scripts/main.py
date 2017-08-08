@@ -39,6 +39,10 @@ def splitIntoXY(list1, list2):
 #
 # t.plt.show()
 #
+class HaltException(Exception):pass
+
+
+
 
 expr1id=0
 expr2id=1
@@ -58,20 +62,28 @@ t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
 
 print("started picking d:")
 d = [[-1*len([val for val in i1.pointPositions if val in i2.pointPositions]) for i2 in experiments[expr1id].clusters]for i1 in experiments[expr2id].clusters]
-print("calculating initial d is done.")
-min = min([min(k) for k in d])
-print("finding min is done.")
-d = [[i-min for i in k]for k in d]
-print("d:")
-for i in d:
-    print(i)
+print(d)
+# print("calculating initial d is done.")
+# minim = min([min(k) for k in d])
+# print("finding min is done.")
+# k = [[i-minim for i in k]for k in d]
+# print("d:")
+# for i in k:
+#     for j in i:
+#         if not j==3184:
+#             print(j)
+#     print()
+# # try:
+# v = hung.minimum_weight_perfect_matching(k)
+# # except HaltException as h:
+# #     print(h)
+# print("min weight is done")
+# output = [experiments[expr2id].centres[p] for p,y in v]
+# t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
+# t.scatterPlot(dataset)
+# t.plt.show()
 
-v = hung.minimum_weight_perfect_matching(d)
-print("min weight is done")
-output = [experiments[expr2id].centres[p] for p,y in v]
-t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
-t.scatterPlot(dataset)
-t.plt.show()
+# main()
 
 """
 minimum weight perfect matching in terms of:

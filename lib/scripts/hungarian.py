@@ -100,6 +100,7 @@ class HungarianAlgorithm:
 
 
     def find_augmenting_path_from(self, u):
+        print("finding augmenting path from.")
         """
         Computes an augmenting path from u to some vertex on the right side consisting of only tight edges, possibly
         after adjusting the vertex potentials to create more tight edges.
@@ -128,6 +129,7 @@ class HungarianAlgorithm:
 
 
     def start_phase(self, u):
+        print("starting phase")
         """
         Initialize the current phase.  No vertex except u has a parent.  u is its own parent, to recognize it as
         the root, and the queue contains u.  All right vertices have infinite slack for now.
@@ -141,6 +143,7 @@ class HungarianAlgorithm:
 
 
     def explore_tight_edges(self):
+        # print("explore tight edges")
         """
         Explore tight edges to discover so far unexplored vertices starting from vertices in the queue.
         :return: the tail of an augmenting path if such a path is found, None otherwise
@@ -162,18 +165,20 @@ class HungarianAlgorithm:
 
 
     def explore_tight_edges_from(self, u):
+        print("explore tight edges from Vertex =", u.name)
         """
         Explore tight edges from the given vertex
         :param u: the vertex whose incident edges are to be explored
         :return: the tail of an augmenting path if one is found.  None otherwise.
         """
 
-        print("Vertex =", u.name)
+
 
         # Iterate over all unexplored right vertices
         for v in self.right:
+            if u.name == 6:
+                print("fuck")
             if not v.is_explored:
-
                 # Compute the slack of the edge between u and v.
                 uv_slack = self.slack(u, v)
 
@@ -198,49 +203,6 @@ class HungarianAlgorithm:
         # find an augmenting path.
         return None
 
-
-    # def adjust_potentials(self):
-    #     """
-    #     Adjust vertex potentials to create at least one new tight edge while ensuring we still have a valid
-    #     potential function.
-    #     :return: The tail of an augmenting path if we find one in the process.  None otherwise.
-    #     """
-
-    #     # Find the minimum slack of all unexplored vertices on the right
-    #     min_slack = sys.float_info.max
-    #     for v in self.right:
-    #         if not v.is_explored:
-    #             min_slack = min(min_slack, v.slack)
-
-    #     # Increase the potential of every explored vertex on the left by the minimum slack
-    #     for u in self.left:
-    #         if u.is_explored:
-    #             u.potential += min_slack
-
-    #     # Decrease the potential or slack of every vertex on the right by the minimum slack, depending on whether
-    #     # the vertex is explored or not.
-    #     for v in self.right:
-
-    #         if v.is_explored:
-    #             # Explored vertices decrease their potential
-    #             v.potential -= min_slack
-    #         else:
-    #             # Unexplored vertices decrease their slack
-    #             v.slack -= min_slack
-
-    #             if v.slack == 0:
-    #                 v.parent = v.potential_parent
-
-    #                 # Next we check whether being able to reach v leads us to either discover an augmenting path,
-    #                 # whose tail we return, or to more matched vertices we can enqueue to explore more tight edges
-    #                 # in the next iteration.
-    #                 tail = self.explore_right_vertex(v)
-    #                 if tail:
-    #                     return tail
-
-    #     # No augmenting path found
-    #     return None
-    
     def adjust_potentials(self):
         """
         Adjust vertex potentials to create at least one new tight edge while ensuring we still have a valid
@@ -258,30 +220,34 @@ class HungarianAlgorithm:
         for u in self.left:
             if u.is_explored:
                 u.potential += min_slack
+
         tail = None
+
         # Decrease the potential or slack of every vertex on the right by the minimum slack, depending on whether
         # the vertex is explored or not.
         for v in self.right:
+
             if v.is_explored:
                 # Explored vertices decrease their potential
                 v.potential -= min_slack
             else:
                 # Unexplored vertices decrease their slack
                 v.slack -= min_slack
+
                 if v.slack == 0:
                     v.parent = v.potential_parent
+
                     # Next we check whether being able to reach v leads us to either discover an augmenting path,
                     # whose tail we return, or to more matched vertices we can enqueue to explore more tight edges
                     # in the next iteration.
                     tail = self.explore_right_vertex(v)
         if tail:
             return tail
-
-        # No augmenting path found
         return None
 
 
     def explore_right_vertex(self, v):
+        print("exploring right vertex")
         """
         Explore the right vertex.  If it's unmatched, all we do is return it as the tail of an augmenting path.
         If it's matched, we make it the parent of its matching partner, enqueue the matching partner, and return
@@ -298,6 +264,7 @@ class HungarianAlgorithm:
 
 
     def slack(self, u, v):
+        print("calculating slack")
         """
         Computes the slack between u and v based on the current vertex potentials.
         :param u: a left vertex
@@ -309,6 +276,7 @@ class HungarianAlgorithm:
 
     @staticmethod
     def path_generator(v):
+        print("entered path generator")
         """
         Returns an iterator over the path with tail v.
         :param v: the tail of the path

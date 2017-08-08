@@ -18,4 +18,5 @@ def convertToXY(l1):
 def scatterPlot(data):
     plt.figure()
     for x,y in data:
-        plt.plot(x,y,marker='o',fillstyle='full', markeredgewidth=1.0)
+        #plt.plot(x,y,marker='o',fillstyle='full', markeredgewidth=0)
+        plt.plot(x,y,'b-',marker='o')
