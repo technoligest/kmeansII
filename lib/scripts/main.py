@@ -2,11 +2,11 @@
 
 import numpy as np
 import experiment_plotters as t
-import distance as d
+import experiment_distances as d
 import math
-import hungarian as hung
+import experiment_perfect_matching as hung
 import experiment_readers as exp
-from distance import findDistanceMatrix
+from experiment_distances import findDistanceMatrix
 from experiment_analyzer import ExperimentAnalyzer
 
 """
@@ -18,51 +18,52 @@ def splitIntoXY(list1, list2):
     return [[[list1[i][0], list2[i][0]], [list1[i][1], list2[i][1]]] for i in range(len(list1))]
 
 
-# numPoints = 25
-# randomList = [x * 100 for x in np.random.rand(numPoints, 2)]
-# randomList2 = [x * 100 for x in np.random.rand(numPoints, 2)]
-# print("randomList: ")
-# print(randomList)
-# print("randomList2: ")
-# print(randomList2)
-# t.scatterPlot(splitIntoXY(randomList, randomList2))
-# distMat =d.findDistanceMatrix(randomList, randomList2)
-# print("Distance matrix: ")
-# print(len(distMat))
-# matchings = hung.minimum_weight_perfect_matching(distMat)
-# print(d.findDistanceMatrix(randomList, randomList2))
-# print(matchings)
+numPoints = 25
+randomList = [x * 100 for x in np.random.rand(numPoints, 2)]
+randomList2 = [x * 100 for x in np.random.rand(numPoints, 2)]
+print("randomList: ")
+print(randomList)
+print("randomList2: ")
+print(randomList2)
+t.scatterPlot(splitIntoXY(randomList, randomList2))
+distMat =d.findDistanceMatrix(randomList, randomList2)
+print("Distance matrix: ")
+print(len(distMat))
+matchings = hung.minimum_weight_perfect_matching(distMat)
+print(d.findDistanceMatrix(randomList, randomList2))
+print(matchings)
+
+randomList2 = [randomList2[x] for x, y in matchings]
+
+t.scatterPlot(splitIntoXY(randomList, randomList2))
+
+t.plt.show()
+
+
+
+
+
+# expr1id=0
+# expr2id=1
 #
-# randomList2 = [randomList2[x] for x, y in matchings]
+# experimentsFile ="../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
+# datasetFile = "../../inputFiles/DimRedFullDataComplete.txt"
+# experiments = exp.readExperiments(experimentsFile,datasetFile,max(expr1id,expr2id)+1)
+# dataset = exp.readTwoDFile(datasetFile)
+# # e = ExperimentAnalyzer(experiments,dataset
 #
-# t.scatterPlot(splitIntoXY(randomList, randomList2))
 #
-# t.plt.show()
+# d = findDistanceMatrix(experiments[expr1id].centres, experiments[expr2id].centres)
+# v = hung.minimum_weight_perfect_matching(d)
+# output = [experiments[expr2id].centres[p] for p,y in v]
+# t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
 #
-class HaltException(Exception):pass
+#
+# print("started picking d:")
+# d = [[-1*len([val for val in i1.pointPositions if val in i2.pointPositions]) for i2 in experiments[expr1id].clusters]for i1 in experiments[expr2id].clusters]
+# print(d)
 
 
-
-
-expr1id=0
-expr2id=1
-
-experimentsFile ="../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
-datasetFile = "../../inputFiles/DimRedFullDataComplete.txt"
-experiments = exp.readExperiments(experimentsFile,datasetFile,max(expr1id,expr2id)+1)
-dataset = exp.readTwoDFile(datasetFile)
-# e = ExperimentAnalyzer(experiments,dataset
-
-
-d = findDistanceMatrix(experiments[expr1id].centres, experiments[expr2id].centres)
-v = hung.minimum_weight_perfect_matching(d)
-output = [experiments[expr2id].centres[p] for p,y in v]
-t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
-
-
-print("started picking d:")
-d = [[-1*len([val for val in i1.pointPositions if val in i2.pointPositions]) for i2 in experiments[expr1id].clusters]for i1 in experiments[expr2id].clusters]
-print(d)
 # print("calculating initial d is done.")
 # minim = min([min(k) for k in d])
 # print("finding min is done.")

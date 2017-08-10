@@ -6,8 +6,8 @@ Area
 TotalDistance to centre
 
 """
-from convex_hull import calcConvexHull, calcConvexHullArea
-from distance import distance
+from experiment_convex_hull import calcConvexHull, calcConvexHullArea
+from experiment_distances import distance
 
 
 class Cluster:

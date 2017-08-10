@@ -3,11 +3,21 @@ import matplotlib.pyplot as plt
 from experiment_instance import ExperimentInstance
 
 """
+Read the experiment runtimes given the file is in the correct format
+"""
+def readExperimentRuntimes(content):
+  result = []
+  for item in content:
+    if item[:34] == 'Sum of distance squared to centre:':
+      result.append(float(item[35:]))
+  return result
+
+
+
+"""
 Given an iteratable, go over it and
 extract all the 2d points.
 """
-
-
 def readCentres(content):
     for item in content:
         if item[:6] == '<<<End':
