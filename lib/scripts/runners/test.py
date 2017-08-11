@@ -1,5 +1,3 @@
-from main import *
-
 """
 Reads the number of given centres from a file.
 The centres must be 2-d

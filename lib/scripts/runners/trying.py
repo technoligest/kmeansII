@@ -243,33 +243,41 @@ import random
 
 
 
-import experiment_runtimes as rn
+import experiment_plotters as pl
 import experiment_readers as rd
-
-experimentRunTimes = []
-
-fileName = "../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt"
-with open(fileName) as file:
-  experimentRunTimes.append(rd.readExperimentRuntimes(file))
+import numpy as np
 
 
-fileName = "../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
-with open(fileName) as file:
-  experimentRunTimes.append(rd.readExperimentRuntimes(file))
+def graphExperimentRuntimesFromFiles(list, names, numSections=10):
+  experimentRunTimes = []
+  for fileName in list:
+    with open(fileName) as file:
+      experimentRunTimes.append(rd.readExperimentRuntimes(file))
+      print(experimentRunTimes[len(experimentRunTimes)-1])
+  i = pl.Plotter(experimentRunTimes, names, numSections,xlabel="ExperimentRuntimes",ylabel="Algorithm")
+  i.comparisonBarPlot()
 
-fileName = "../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test1.txt"
-with open(fileName) as file:
-  experimentRunTimes.append(rd.readExperimentRuntimes(file))
 
-i= rn.ComparisonPlotter(experimentRunTimes,20)
-i.plot()
-i.show()
+experimentRunTimes = ["../experiments/Experiment Results/kmeans||-DimRedFullDataComplete.txt-test1.txt",
+                      "../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt",
+                      "../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt"]
+names = ["kmeans||", "kmeans++", "kmeans"]
+
+graphExperimentRuntimesFromFiles(experimentRunTimes, names, 10)
+# s=[]
+# for i in range(1):
+#   s.append(np.random.normal(10,10,10000))
+# s=[-2.9825621174896169, -2.1504072978516175, -1.8727277730207839, -1.6603279347846613, -1.5685909271939782, -1.544327908578055, -1.4143527031291994, -1.4047393535737409, -1.2739416210646886, -1.2137230359526303, -1.1854084697079725, -1.0834269550781155, -1.0479990014653133, -1.032355941694201, -0.94929098784659038, -0.91748004352606871, -0.88063560936619856, -0.83236414835002392, -0.82731357999032018, -0.7651651805885632, -0.74122848716881296, -0.71328806652837251, -0.68899435779551821, -0.62423941083094348, -0.60654211246917422, -0.59770780917852162, -0.59372225108232213, -0.56467926957575587, -0.54502280394376046, -0.5378798574265683, -0.50380382033551496, -0.49987450308544534, -0.48412514994303252, -0.46632236327835808, -0.46587499832059776, -0.4514076229809954, -0.43832261873457351, -0.43535478751595436, -0.3860419669362305, -0.29199549240518796, -0.20617690035266534, -0.20510082686588513, -0.20447440173114126, -0.20148376921380989, -0.17986159097849017, -0.17529722390069249, -0.17453939187208603, -0.13460518073918207, -0.10361121112945761, -0.06500116129841943, -0.041886146236693268, -0.025515234833910262, -0.0066973255173395363, 0.0031471030121456235, 0.01192617855519908, 0.06048545956704432, 0.086076720381265334, 0.098387936107619603, 0.12201128242638121, 0.15861231126985356, 0.16413683316115552, 0.18150604322871045, 0.18962594562018997, 0.20171773343814911, 0.2495714623108749, 0.27000723500313945, 0.27292423268454497, 0.27998632202726953, 0.33344673844647715, 0.36081701836252306, 0.39898176699788374, 0.40443585069807841, 0.412777635731717, 0.44004330188776825, 0.46935125843822378, 0.5126810028932185, 0.62837418910270459, 0.6440771819719926, 0.67850656615720151, 0.70956855209993452, 0.73640605716094953, 0.77738465732856143, 0.80057388501254856, 0.80451468583447328, 0.83344211533329604, 0.85615481146064254, 0.92252433971434511, 1.2099382387989082, 1.2373579827168568, 1.290889432400022, 1.3153722173610876, 1.356596516612631, 1.3803531034848353, 1.4518047322229708, 1.4656917810048662, 1.6103076487297532, 1.6840811302700063, 1.7966074532835101, 2.0522379723465045, 2.2004210436288565]
+
+# i= pl.Plotter(s)
+# i.comparisonBubblePlot()
+pl.Plotter.show()
 
 # # a stacked bar plot with errorbars
 # import numpy as np
 # import matplotlib.pyplot as plt
-#
-#
+
+
 # N = 5
 # menMeans = (20, 35, 30, 35, 27)
 # womenMeans = (25, 32, 34, 20, 25)
@@ -280,14 +288,15 @@ i.show()
 # # p1 = plt.bar(ind, menMeans, width, color='#d62728',)
 # # p2 = plt.bar(ind, womenMeans, width, bottom=menMeans)
 #
-# p1 = plt.barh(ind, menMeans, width, color='#d62728')
-# p2 = plt.barh(ind, womenMeans, width, menMeans)
+# p1 = plt.bar(ind, menMeans, width, color='#d62728')
+# p2 = plt.bar(ind, womenMeans, width, menMeans)
 #
 # plt.ylabel('Scores')
 # plt.title('Scores by group and gender')
 # plt.xticks(ind, ('G1', 'G2', 'G3', 'G4', 'G5'))
-# plt.yticks(np.arange(0, 81, 10))
+# plt.yticks(np.arange(-10, 81, 5))
+#
 # plt.legend((p1[0], p2[0]), ('Men', 'Women'))
 #
 # plt.show()
-rn.plt.show()
+# rn.plt.show()
