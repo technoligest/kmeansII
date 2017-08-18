@@ -4,8 +4,6 @@ import numpy as np
 """
 Plots the given centres using a dotplot
 """
-
-
 def plotCentres(centres):
   for x, y in centres:
     plt.plot(x, y, '.', label='line 1')
@@ -15,8 +13,6 @@ def plotCentres(centres):
 Given a set of [x,y] coordinate
 return 
 """
-
-
 def convertToXY(l1):
   xVals = [x for x, y in l1]
   yVals = [y for x, y in l1]
@@ -35,7 +31,6 @@ def connectedScatterPlot(data):
     plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
 
 
-@property
 def show():
   plt.show()
 
@@ -43,8 +38,6 @@ def show():
 """
 plot 1-d values
 """
-
-
 class Plotter:
   @staticmethod
   def show():
@@ -59,6 +52,7 @@ class Plotter:
     self.numSections = numSections
     self.xlabel = xlabel
     self.ylabel = ylabel
+
   def setxyticksBarPlot(self,maxY=1):
     minimum = min(x[0] for x in self.values if len(x) > 0)
     maximum = max(x[len(x) - 1] for x in self.values if len(x) > 0)
@@ -68,7 +62,6 @@ class Plotter:
       step = 10 ** (len(str(int((maximum - minimum) / 10))))
     minimum = minimum - (minimum % step)
     plt.xticks(np.arange(minimum, maximum + step, step))
-    print("maxY: ",maxY)
     y = np.arange(0, maxY, 0.05)
     self.axes.set_yticks(y)
     self.valueNames = [str(i*100)+"%" for i in y]
@@ -89,7 +82,6 @@ class Plotter:
     if self.valueNames != None:
       self.axes.set_yticklabels(self.valueNames)
     else:
-      print([str(i) for i in range(1, len(self.values))])
       self.axes.set_yticklabels(range(1, len(self.values) + 1))
     plt.ylabel(self.ylabel)
     plt.xlabel(self.xlabel)
@@ -105,7 +97,7 @@ class Plotter:
     plotX= [y for x,y in sectionedData]
     plotY=[x for x,y in sectionedData]
     barSize = 0.05 * max(plotY)
-    self.axes.bar(plotX,plotY, 10000,)
+    self.axes.bar(plotX,plotY, plotX[1]-plotX[2])
     # Adding the heatmap thing 50%, 75%, 90%
     t = self.findTuple(experimentRuntimes)
     bottom = experimentRuntimes[0]

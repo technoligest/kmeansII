@@ -1,90 +1,75 @@
-# from experiment_centres import *
+import os
 
-import numpy as np
-import experiment_plotters as t
-import experiment_distances as d
-import math
-import experiment_perfect_matching as hung
-import experiment_readers as exp
-from experiment_distances import findDistanceMatrix
-from experiment_analyzer import ExperimentAnalyzer
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print(dir_path)
+
+import lib.scripts.experiment_plotters as plotter
+import lib.scripts.experiment_perfect_matching as hung
+import lib.scripts.experiment_readers as reader
+from  lib.scripts.experiment_distances import findDistanceMatrix
+import lib.scripts.experiment_utils as utils
 
 """
 Splits pairs into XY
 Plotting the result will allow us to view the first element in l1 be matched with first element of l2
 And so on.
+
+Or split data which is of the form [[x1,y1],[x2,y2],....] to [[x1,x2,x3,...],[y1,y2,y3,....]]
 """
-def splitIntoXY(list1, list2):
-    return [[[list1[i][0], list2[i][0]], [list1[i][1], list2[i][1]]] for i in range(len(list1))]
 
+def splitIntoXY(list1, list2=None):
+  if list2 == None:
+    return [[x[0] for x in list], [x[1] for x in list]]
+  return [[[list1[i][0], list2[i][0]], [list1[i][1], list2[i][1]]] for i in range(len(list1))]
 
-numPoints = 25
-randomList = [x * 100 for x in np.random.rand(numPoints, 2)]
-randomList2 = [x * 100 for x in np.random.rand(numPoints, 2)]
-print("randomList: ")
-print(randomList)
-print("randomList2: ")
-print(randomList2)
-t.scatterPlot(splitIntoXY(randomList, randomList2))
-distMat =d.findDistanceMatrix(randomList, randomList2)
-print("Distance matrix: ")
-print(len(distMat))
-matchings = hung.minimum_weight_perfect_matching(distMat)
-print(d.findDistanceMatrix(randomList, randomList2))
-print(matchings)
+def calcOverlapMatrix(l1, l2):
+  result = []
+  for i1 in l1:
+    temp = []
+    for i2 in l2:
+      temp.append(utils.overlap(i1.pointPositions, i2.pointPositions))
+    result.append(temp)
+  return result
 
-randomList2 = [randomList2[x] for x, y in matchings]
-
-t.scatterPlot(splitIntoXY(randomList, randomList2))
-
-t.plt.show()
+# def scatterPlotMatchings(list1,list2, distanceMetric):
 
 
 
+expr1id = 3
+expr2id = 4
 
+experimentsFile = "../../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt"
+datasetFile = "../../../inputFiles/DimRedFullDataComplete.txt"
+experiments, dataset = reader.readExperiments(experimentsFile, datasetFile, max(expr1id, expr2id) + 1)
+print("done reading in first thing")
+"""
+plot in terms of euclidean distance between the points
+"""
+# scatterPlotMatchings(experiments[expr1id].centres,experiments[expr2id].centres, findDistanceMatrix)
+list1=experiments[expr1id].centres
+list2=experiments[expr2id].centres
+d = findDistanceMatrix(list1, list2)
+matchings = hung.minimum_weight_perfect_matching(d)
+reorderedList2 = [list2[p] for p, _ in matchings]
+plotter.connectedScatterPlot(splitIntoXY(list1, reorderedList2))
 
-# expr1id=0
-# expr2id=1
-#
-# experimentsFile ="../experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test1.txt"
-# datasetFile = "../../inputFiles/DimRedFullDataComplete.txt"
-# experiments = exp.readExperiments(experimentsFile,datasetFile,max(expr1id,expr2id)+1)
-# dataset = exp.readTwoDFile(datasetFile)
-# # e = ExperimentAnalyzer(experiments,dataset
-#
-#
-# d = findDistanceMatrix(experiments[expr1id].centres, experiments[expr2id].centres)
-# v = hung.minimum_weight_perfect_matching(d)
-# output = [experiments[expr2id].centres[p] for p,y in v]
-# t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
-#
-#
-# print("started picking d:")
-# d = [[-1*len([val for val in i1.pointPositions if val in i2.pointPositions]) for i2 in experiments[expr1id].clusters]for i1 in experiments[expr2id].clusters]
-# print(d)
+print("done potting first thing")
+"""
+Plot in terms of efficinet overlapping of points
+"""
+d = calcOverlapMatrix(experiments[expr2id].clusters, experiments[expr1id].clusters)
 
+maximum = max([max(k) for k in d])
+d = [[-1 * (item - maximum) for item in row] for row in d]
+matchings = hung.minimum_weight_perfect_matching(d)
+reorderedExpr2 = [experiments[expr2id].centres[p] for p, _ in matchings]
+plotter.connectedScatterPlot(splitIntoXY(experiments[expr1id].centres, reorderedExpr2))
+print("done plotting the second thing.")
 
-# print("calculating initial d is done.")
-# minim = min([min(k) for k in d])
-# print("finding min is done.")
-# k = [[i-minim for i in k]for k in d]
-# print("d:")
-# for i in k:
-#     for j in i:
-#         if not j==3184:
-#             print(j)
-#     print()
-# # try:
-# v = hung.minimum_weight_perfect_matching(k)
-# # except HaltException as h:
-# #     print(h)
-# print("min weight is done")
-# output = [experiments[expr2id].centres[p] for p,y in v]
-# t.scatterPlot(splitIntoXY(experiments[expr1id].centres, output))
-# t.scatterPlot(dataset)
-# t.plt.show()
-
-# main()
+"""
+Show everything
+"""
+plotter.plt.show()
 
 """
 minimum weight perfect matching in terms of:

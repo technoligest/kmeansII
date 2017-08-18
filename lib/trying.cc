@@ -5,6 +5,7 @@
 #include "experiments/experiments.h"
 #include "handlers/data_reader.h"
 #include "experiments/experiment_analyzer2.h"
+//#include "bigInt/big_int.h"
 
 using namespace std;
 
@@ -37,21 +38,32 @@ int main(int argc, char **argv) {
   //e.runExperiments(2);
   //auto i = e.getExperiments();
   //kmeans::experiments::reader::printExperiments("DimRedFullData.txt",i);
-  ifstream inputFile;
-  inputFile.open(
-      "/home/technoligest/Documents/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
+//  ifstream inputFile;
+//  inputFile.open(
+//      "/home/technoligest/Documents/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
+//
+//
+//  inputFile.open("/home/yaser/CLionProjects/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
+//  auto experiments = kmeans::experiments::reader::readExperiments(inputFile);
+//  inputFile.close();
+//
+//  inputFile.open("/home/technoligest/Documents/kmeansII/inputFiles/DimRedFullDataComplete.txt");
+//
+//  auto dataset = kmeans::readDataset(inputFile);
+//  std::cout << experiments.size() << std::endl;
+//  kmeans::experiments::ExperimentAnalyzer2 analyzer(experiments, dataset);
+//
+//    unsigned long long i = std::numeric_limits<unsigned long long>::max();
+//    std::cout << ~((long long) 0) << std::endl;
+//    std::cout << std::numeric_limits<long long>::max() << std::endl;
+//    bigint::BigInt b(9223372036854775807);
+//    b += 9223372036854775807;
+//    std::cout << b << endl;
 
-
-  inputFile.open("/home/yaser/CLionProjects/kmeansII/lib/experiments/Experiment Results/kmeans++-DimRedFullDataComplete.txt-test0.txt");
-  auto experiments = kmeans::experiments::reader::readExperiments(inputFile);
-  inputFile.close();
-
-  inputFile.open("/home/technoligest/Documents/kmeansII/inputFiles/DimRedFullDataComplete.txt");
-
-  auto dataset = kmeans::readDataset(inputFile);
-  std::cout << experiments.size() << std::endl;
-  kmeans::experiments::ExperimentAnalyzer2 analyzer(experiments, dataset);
-
-
+  std::cout << "hello world" << std::endl;
   return 0;
 }
+//000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000
+//000000000000000000000000000001000000000000000000000000000000000000000000000000000000000001001
+//000000000000000000000000000001111111111111111111111111111111111111111111111111111111111111110
+

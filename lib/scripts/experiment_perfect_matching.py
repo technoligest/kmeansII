@@ -85,7 +85,7 @@ class HungarianAlgorithm:
     # Each iteration starts from the next vertex on the left and searches for an augmenting path starting at this
     # vertex.  It then augments the matching using this augmenting path.
     for u in self.left:
-      print("solving: ", u.name)
+      # print("solving: ", u.name)
       path = self.find_augmenting_path_from(u)
       self.augment_matching(path)
 
@@ -93,7 +93,7 @@ class HungarianAlgorithm:
     return [(v.match.name, v.name) for v in self.right]
 
   def find_augmenting_path_from(self, u):
-    print("finding augmenting path from.")
+    # print("finding augmenting path from.")
     """
     Computes an augmenting path from u to some vertex on the right side consisting of only tight edges, possibly
     after adjusting the vertex potentials to create more tight edges.
@@ -121,7 +121,7 @@ class HungarianAlgorithm:
         return self.path_generator(tail)
 
   def start_phase(self, u):
-    print("starting phase")
+    # print("starting phase")
     """
     Initialize the current phase.  No vertex except u has a parent.  u is its own parent, to recognize it as
     the root, and the queue contains u.  All right vertices have infinite slack for now.
@@ -155,7 +155,7 @@ class HungarianAlgorithm:
     return None
 
   def explore_tight_edges_from(self, u):
-    print("explore tight edges from Vertex =", u.name)
+    # print("explore tight edges from Vertex =", u.name)
     """
     Explore tight edges from the given vertex
     :param u: the vertex whose incident edges are to be explored
@@ -164,8 +164,6 @@ class HungarianAlgorithm:
 
     # Iterate over all unexplored right vertices
     for v in self.right:
-      if u.name == 6:
-        print("fuck")
       if not v.is_explored:
         # Compute the slack of the edge between u and v.
         uv_slack = self.slack(u, v)
@@ -210,7 +208,7 @@ class HungarianAlgorithm:
         u.potential += min_slack
 
     tail = None
-
+    tempV = None
     # Decrease the potential or slack of every vertex on the right by the minimum slack, depending on whether
     # the vertex is explored or not.
     for v in self.right:
@@ -219,6 +217,7 @@ class HungarianAlgorithm:
         # Explored vertices decrease their potential
         v.potential -= min_slack
       else:
+        tempV = v
         # Unexplored vertices decrease their slack
         v.slack -= min_slack
 
@@ -229,12 +228,12 @@ class HungarianAlgorithm:
           # whose tail we return, or to more matched vertices we can enqueue to explore more tight edges
           # in the next iteration.
           tail = self.explore_right_vertex(v)
-    if tail:
-      return tail
+          if tail:
+            return tail
     return None
 
   def explore_right_vertex(self, v):
-    print("exploring right vertex")
+    # print("exploring right vertex")
     """
     Explore the right vertex.  If it's unmatched, all we do is return it as the tail of an augmenting path.
     If it's matched, we make it the parent of its matching partner, enqueue the matching partner, and return
@@ -250,7 +249,7 @@ class HungarianAlgorithm:
       return v
 
   def slack(self, u, v):
-    print("calculating slack")
+    # print("calculating slack")
     """
     Computes the slack between u and v based on the current vertex potentials.
     :param u: a left vertex
@@ -261,7 +260,7 @@ class HungarianAlgorithm:
 
   @staticmethod
   def path_generator(v):
-    print("entered path generator")
+    # print("entered path generator")
     """
     Returns an iterator over the path with tail v.
     :param v: the tail of the path
@@ -269,12 +268,12 @@ class HungarianAlgorithm:
     """
     while v:
       # Generate the current vertex
-      print("Getting vertex", v.name)
+      # print("Getting vertex", v.name)
       yield v
 
       # If the current vertex has itself as the parent, it is the root, and we exit the loop.  Otherwise,
       # we advance to v's parent.
-      if v == v.parent:
+      if v is v.parent:
         v = None
       else:
         v = v.parent
@@ -288,10 +287,10 @@ class HungarianAlgorithm:
     :param path: an iterator over an augmenting path
     """
 
-    print("Augmenting matching")
+    # print("Augmenting matching")
     for (u, v) in zip(path, path):
       u.match = v
-    print("Done augmenting")
+    # print("Done augmenting")
 
 
 def minimum_weight_perfect_matching(matrix):
