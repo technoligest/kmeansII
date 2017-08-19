@@ -7,7 +7,7 @@ TotalDistance to centre
 
 """
 from lib.scripts.experiment_convex_hull import calcConvexHull, calcConvexHullArea
-from lib.scripts.experiment_distances import distance
+from lib.scripts.experiment_utils import distance
 
 class Cluster:
   def __init__(self, centre, pointPositions):

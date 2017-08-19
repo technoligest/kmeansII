@@ -1,13 +1,8 @@
-import os
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-print(dir_path)
-
 import lib.scripts.experiment_plotters as plotter
 import lib.scripts.experiment_perfect_matching as hung
 import lib.scripts.experiment_readers as reader
-from  lib.scripts.experiment_distances import findDistanceMatrix
 import lib.scripts.experiment_utils as utils
+import lib.scripts.experiment_serializer as sr
 
 """
 Splits pairs into XY
@@ -16,7 +11,6 @@ And so on.
 
 Or split data which is of the form [[x1,y1],[x2,y2],....] to [[x1,x2,x3,...],[y1,y2,y3,....]]
 """
-
 def splitIntoXY(list1, list2=None):
   if list2 == None:
     return [[x[0] for x in list], [x[1] for x in list]]
@@ -31,44 +25,33 @@ def calcOverlapMatrix(l1, l2):
     result.append(temp)
   return result
 
-# def scatterPlotMatchings(list1,list2, distanceMetric):
+def scatterPlotMatchings(e1, e2, func):
+  d = utils.adjacencyMatrix(e1.clusters, e2.clusters, func)
+  minimum = min([min(x) for x in d])
+  if minimum < 0:
+    d = [[item - minimum for item in row] for row in d]
+  matchings = hung.minimum_weight_perfect_matching(d)
+  pairs1 = e1.centres
+  pairs2 = [e2.centres[p] for p, _ in matchings]
+  plotter.connectedScatterPlot(splitIntoXY(pairs1, pairs2))
 
 
-
-expr1id = 3
-expr2id = 4
-
+expr1id = 234
+expr2id = 22
+assert (abs(expr2id - expr1id) > 0)
 experimentsFile = "../../experiments/Experiment Results/kmeans-DimRedFullDataComplete.txt-test1.txt"
 datasetFile = "../../../inputFiles/DimRedFullDataComplete.txt"
-experiments, dataset = reader.readExperiments(experimentsFile, datasetFile, max(expr1id, expr2id) + 1)
-print("done reading in first thing")
-"""
-plot in terms of euclidean distance between the points
-"""
-# scatterPlotMatchings(experiments[expr1id].centres,experiments[expr2id].centres, findDistanceMatrix)
-list1=experiments[expr1id].centres
-list2=experiments[expr2id].centres
-d = findDistanceMatrix(list1, list2)
-matchings = hung.minimum_weight_perfect_matching(d)
-reorderedList2 = [list2[p] for p, _ in matchings]
-plotter.connectedScatterPlot(splitIntoXY(list1, reorderedList2))
+experiments = sr.deserialize("../serializedExperiments/kmeans++-DimRedFullDataComplete.txt-test1.txt")
+print("Done reading in first thing.")
 
-print("done potting first thing")
-"""
-Plot in terms of efficinet overlapping of points
-"""
-d = calcOverlapMatrix(experiments[expr2id].clusters, experiments[expr1id].clusters)
+scatterPlotMatchings(experiments[expr1id], experiments[expr2id],
+                     lambda a, b:utils.distance(a.centre, b.centre))
+scatterPlotMatchings(experiments[expr1id], experiments[expr2id],
+                     lambda l1, l2:-1 * utils.overlap(l1.pointPositions, l2.pointPositions))
+k = [sum(i.averageDistancesOverArea) / len(i.averageDistancesOverArea) for i in experiments]
+k = [i.distanceToCentres for i in experiments]
 
-maximum = max([max(k) for k in d])
-d = [[-1 * (item - maximum) for item in row] for row in d]
-matchings = hung.minimum_weight_perfect_matching(d)
-reorderedExpr2 = [experiments[expr2id].centres[p] for p, _ in matchings]
-plotter.connectedScatterPlot(splitIntoXY(experiments[expr1id].centres, reorderedExpr2))
-print("done plotting the second thing.")
-
-"""
-Show everything
-"""
+plotter.Plotter([k]).comparisonBarPlot()
 plotter.plt.show()
 
 """

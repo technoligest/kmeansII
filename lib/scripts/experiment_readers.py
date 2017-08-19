@@ -75,18 +75,21 @@ def readExperiment(file):
       timeToRunIterations = float(line[1])
   return None
 
-def readExperiments(fileName, dataSetFileName, maxExperiments=10):
-  with open(dataSetFileName) as file:
-    dataset = readTwoDFile(file)
-    ExperimentInstance.dataset = dataset
-    Cluster.dataset = dataset
-
+def readExperiments(fileName, dataset, maxExperiments=10):
+  ExperimentInstance.dataset = dataset
+  Cluster.dataset = dataset
   with open(fileName) as file:
     result = []
+    i = 0
     while maxExperiments > 0:
       temp = readExperiment(file)
       if temp == None:
         return result
-      result.append(temp)
+      print("Experiment ", i, " has been read.")
+      i = i + 1
+      if len(result) > 0 and result[0].distanceToCentres > temp.distanceToCentres:
+        result.insert(0, temp)
+      else:
+        result.append(temp)
       maxExperiments -= 1
-  return (result, ExperimentInstance.dataset)
+  return result

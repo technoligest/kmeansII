@@ -4,40 +4,38 @@ import numpy as np
 """
 Plots the given centres using a dotplot
 """
+
 def plotCentres(centres):
   for x, y in centres:
     plt.plot(x, y, '.', label='line 1')
-
 
 """
 Given a set of [x,y] coordinate
 return 
 """
+
 def convertToXY(l1):
   xVals = [x for x, y in l1]
   yVals = [y for x, y in l1]
   return (xVals, yVals)
-
 
 def scatterPlot(data):
   plt.figure()
   for x, y in data:
     plt.scatter(x, y)
 
-
 def connectedScatterPlot(data):
   plt.figure()
   for x, y in data:
     plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
 
-
 def show():
   plt.show()
-
 
 """
 plot 1-d values
 """
+
 class Plotter:
   @staticmethod
   def show():
@@ -47,13 +45,13 @@ class Plotter:
     if valueNames != None:
       assert (len(valueNames) == len(values))
     self.valueNames = valueNames
-    self.values = [sorted(value) for value in values]
+    self.values = [sorted(i) for i in values]
     self.percentageColours = ['#ffffcc', '#E8FF0C', '#FF6600', '#E82C0C', '#FF6600', '#E8FF0C', '#ffffcc']
     self.numSections = numSections
     self.xlabel = xlabel
     self.ylabel = ylabel
 
-  def setxyticksBarPlot(self,maxY=1):
+  def setxyticksBarPlot(self, maxY=1):
     minimum = min(x[0] for x in self.values if len(x) > 0)
     maximum = max(x[len(x) - 1] for x in self.values if len(x) > 0)
     if int((maximum - minimum) / 10) == 0:
@@ -64,9 +62,8 @@ class Plotter:
     plt.xticks(np.arange(minimum, maximum + step, step))
     y = np.arange(0, maxY, 0.05)
     self.axes.set_yticks(y)
-    self.valueNames = [str(i*100)+"%" for i in y]
+    self.valueNames = [str(i * 100) + "%" for i in y]
     self.axes.set_yticklabels(self.valueNames)
-
 
   def setxyticksBubblePlot(self, yValueSeparator):
     minimum = min(x[0] for x in self.values if len(x) > 0)
@@ -86,26 +83,24 @@ class Plotter:
     plt.ylabel(self.ylabel)
     plt.xlabel(self.xlabel)
 
-  # def barPlot(self, experiment ):
   def comparisonBarPlot(self):
     for experiment in self.values:
       self.fig, self.axes = plt.subplots()
       self.barPlot(experiment)
 
-  def barPlot(self,experimentRuntimes):
-    sectionedData= self.augment(experimentRuntimes)
-    plotX= [y for x,y in sectionedData]
-    plotY=[x for x,y in sectionedData]
+  def barPlot(self, experimentRuntimes):
+    sectionedData = self.augment(experimentRuntimes)
+    plotX = [y for x, y in sectionedData]
+    plotY = [x for x, y in sectionedData]
     barSize = 0.05 * max(plotY)
-    self.axes.bar(plotX,plotY, plotX[1]-plotX[2])
+    self.axes.bar(plotX, plotY, plotX[1] - plotX[2])
     # Adding the heatmap thing 50%, 75%, 90%
     t = self.findTuple(experimentRuntimes)
     bottom = experimentRuntimes[0]
     for i, colour in zip(t, self.percentageColours):
-      self.axes.barh(-2*barSize, [i], barSize , [bottom], color=colour)
+      self.axes.barh(-2 * barSize, [i], barSize, [bottom], color=colour)
       bottom = bottom + i
-    self.setxyticksBarPlot(max(plotY)*1.3)
-
+    self.setxyticksBarPlot(max(plotY) * 1.3)
 
   def comparisonBubblePlot(self):
     self.fig, self.axes = plt.subplots()
@@ -155,6 +150,7 @@ class Plotter:
   split evently according to the min and max of the items in that stream.
   the values are returned as a list of pairs. Each pair has [numOfPoints, middleOfThisSection]
   """
+
   def augment(self, arr):
     minNum = arr[0]
     maxNum = arr[len(arr) - 1]

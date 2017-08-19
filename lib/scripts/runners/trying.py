@@ -1,4 +1,4 @@
-import experiment_perfect_matching as hung
+import lib.scripts.experiment_perfect_matching as hung
 
 d = [[1.0, 1.0, 1.0, 0.3360552763819096, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
       1.0, 1.0, 0.8916457286432161, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
@@ -159,7 +159,7 @@ d = [[1.0, 1.0, 1.0, 0.3360552763819096, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
 # print(k)
 
 # d = [[1,1],[1,1]]
-print(hung.minimum_weight_perfect_matching(d))
+# print(hung.minimum_weight_perfect_matching(d))
 
 #
 #
@@ -312,3 +312,10 @@ print(hung.minimum_weight_perfect_matching(d))
 # y-value, the number of values of this point or higher
 # x-value, is the runtime value
 #
+
+import lib.scripts.experiment_serializer as ser
+
+i = ser.deserialize("/Users/yaseralkayale/Documents/classes/kmeansII/lib/scripts/serializedExperiments/kmeans++-DimRedFullDataComplete.txt-test0.txt")
+for k in i:
+  print(k)
+print(len(i))

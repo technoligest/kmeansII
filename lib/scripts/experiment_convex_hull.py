@@ -1,5 +1,5 @@
 import math
-from lib.scripts.experiment_distances import distance
+from lib.scripts.experiment_utils import distance
 
 
 def cosSquaredOfPolarAngle(origin, p1, p2):
