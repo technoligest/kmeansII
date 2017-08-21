@@ -306,16 +306,19 @@ d = [[1.0, 1.0, 1.0, 0.3360552763819096, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
 #
 #
 # """
-# Probability that I exceesd a given value
-#
-#
-# y-value, the number of values of this point or higher
-# x-value, is the runtime value
 #
 
 import lib.scripts.experiment_serializer as ser
+import lib.scripts.experiment_plotters as plt
+import numpy as np
 
-i = ser.deserialize("/Users/yaseralkayale/Documents/classes/kmeansII/lib/scripts/serializedExperiments/kmeans++-DimRedFullDataComplete.txt-test0.txt")
-for k in i:
-  print(k)
-print(len(i))
+i = np.random.normal(0,20,100)
+p = plt.Plotter([i])
+p.plotCascadingPlot()
+p.show()
+# print(i)
+
+# i = ser.deserialize("/Users/yaseralkayale/Documents/classes/kmeansII/lib/scripts/serializedExperiments/kmeans++-DimRedFullDataComplete.txt-test0.txt")
+# for k in i:
+#   print(k)
+# print(len(i))

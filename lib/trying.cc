@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
   inputFile.close();
   using kmeans::operator<<;
 
-  kmeans::experiments::ExperimentRunner e(dataset, 50);
+  kmeans::experiments::ExperimentRunner e(dataset, 100);
   e.runExperiments(1);
   auto i = e.getExperiments();
   kmeans::experiments::reader::printExperiments("DimRedFullData.txt", i, "/Users/yaseralkayale/Documents/classes/kmeansII/lib/experiments/Experiment Results");

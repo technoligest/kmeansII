@@ -37,13 +37,21 @@ plot 1-d values
 """
 
 class Plotter:
+  def plot(plotFunction):
+    def wrapper(self):
+      plotFunction
+      plt.ylabel(self.ylabel)
+      plt.xlabel(self.xlabel)
+    return wrapper
+
   @staticmethod
   def show():
     plt.show()
 
-  def __init__(self, values, valueNames=None, numSections=10, ylabel="", xlabel=""):
+  def __init__(self, values, valueNames=None, numSections=10, ylabel="", xlabel="", plotName=""):
     if valueNames != None:
       assert (len(valueNames) == len(values))
+    self.plotName = plotName
     self.valueNames = valueNames
     self.values = [sorted(i) for i in values]
     self.percentageColours = ['#ffffcc', '#E8FF0C', '#FF6600', '#E82C0C', '#FF6600', '#E8FF0C', '#ffffcc']
@@ -80,9 +88,7 @@ class Plotter:
       self.axes.set_yticklabels(self.valueNames)
     else:
       self.axes.set_yticklabels(range(1, len(self.values) + 1))
-    plt.ylabel(self.ylabel)
-    plt.xlabel(self.xlabel)
-
+  @plot
   def comparisonBarPlot(self):
     for experiment in self.values:
       self.fig, self.axes = plt.subplots()
@@ -102,6 +108,7 @@ class Plotter:
       bottom = bottom + i
     self.setxyticksBarPlot(max(plotY) * 1.3)
 
+  @plot
   def comparisonBubblePlot(self):
     self.fig, self.axes = plt.subplots()
     valueSeparator = 5
@@ -110,6 +117,24 @@ class Plotter:
       self.bubblePlotExperimentRuntimes(experiment, currYval)
       currYval = currYval + valueSeparator
     self.setxyticksBubblePlot(valueSeparator)
+
+
+  def cascadingPlot(self, l):
+    l = sorted(l)
+    cumulList = [[l[i], len(l) - i] for i in range(len(l))]
+    x, y = convertToXY(cumulList)
+    plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
+
+  # Probability that I exceesd a given value
+  #
+  #
+  # y-value, the number of values of this point or higher
+  # x-value, is the runtime value
+  def plotCascadingPlot(self):
+    for val in self.values:
+      self.fig, self.axes = plt.subplots()
+      self.cascadingPlot(val)
+
 
   def findTuple(self, items):
     size = len(items)
@@ -144,13 +169,13 @@ class Plotter:
       self.axes.barh(yVal - 2, [i], 0.35, [bottom], color=colour)
       bottom = bottom + i
 
+
   """
   Function takes a stream and number of boxes,
   it then splits the stream into that many boxes,
   split evently according to the min and max of the items in that stream.
   the values are returned as a list of pairs. Each pair has [numOfPoints, middleOfThisSection]
   """
-
   def augment(self, arr):
     minNum = arr[0]
     maxNum = arr[len(arr) - 1]
