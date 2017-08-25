@@ -28,19 +28,22 @@ class ExperimentInstance:
       result[currCandidateCentreId].append(instId)
     return result
 
-  def __init__(self, centres, algorithm, distanceToCentres, timeToPickSeeds, numIterations, timeToRunIterations):
+  def __init__(self, centres, algorithm, totalDistanceToCentres, seedPickingTime, numIterations, iterationsRuntime):
     assert hasattr(ExperimentInstance, 'dataset')
     self.centres = centres
     self.algorithm = algorithm
-    self.distanceToCentres = distanceToCentres
-    self.timeToPickSeeds = timeToPickSeeds
+    self.totalDistanceToCentres = totalDistanceToCentres
+    self.seedPickingTime = seedPickingTime
     self.numIterations = numIterations
-    self.timeToRunIterations = timeToRunIterations
+    self.iterationsRuntime = iterationsRuntime
     self.clusters = []
     pointPositions = self.calcPointPositions()
     for centre, p in zip(self.centres, pointPositions):
       self.clusters.append(Cluster(centre, p))
     self.averageDistancesOverArea = [c.totalDistance / c.area for c in self.clusters]
+
+
+
 
   def centresToString(self):
     result = ""
@@ -50,10 +53,9 @@ class ExperimentInstance:
 
   def __str__(self):
     return (">>>Start Experiment\n" +
-            "algorithm:" + self.algorithm + "\n"
-                                            "Sum of distance squared to centre:" + str(
-      self.distanceToCentres) + "\n" +
-            "Time to pick the seeds:" + str(self.timeToPickSeeds) + "\n" +
+            "algorithm:" + self.algorithm + "\n" +
+            "Sum of distance squared to centre:" + str(self.totalDistanceToCentres) + "\n" +
+            "Time to pick the seeds:" + str(self.seedPickingTime) + "\n" +
             "Number of iterations run:" + str(self.numIterations) + "\n" +
             "Time to run the iterations:" + str(self.timeToRunIterations) + "\n" +
             "Start Centres:\n" + self.centresToString() +

@@ -11,7 +11,6 @@ def cosSquaredOfPolarAngle(origin, p1, p2):
                                       distance(origin, p2)))))
     return result
 
-
 def isNotLeftTurn(rightPoint, origin, leftPoint):
     return (0 <= ((origin[1] - rightPoint[1]) * (leftPoint[0] - origin[0]) -
                   (origin[0] - rightPoint[0]) * (leftPoint[1] - origin[1])))
@@ -25,7 +24,6 @@ def check2dMatrix(matrix):
 
 def calcConvexHull(matrix):
     check2dMatrix(matrix)
-
     # The sorting makes my life easier for now, but it
     # is porbably a bad idea for the long run as it
     # is not efficient. It is used to find the lowest left point

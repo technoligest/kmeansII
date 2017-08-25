@@ -15,12 +15,13 @@ int main(int argc, char **argv) {
   kmeans::Dataset dataset = kmeans::readDataset(inputFile);
   inputFile.close();
   using kmeans::operator<<;
-
-  kmeans::experiments::ExperimentRunner e(dataset, 100);
-  e.runExperiments(1);
-  auto i = e.getExperiments();
-  kmeans::experiments::reader::printExperiments("DimRedFullData.txt", i, "/Users/yaseralkayale/Documents/classes/kmeansII/lib/experiments/Experiment Results");
-
+  for(int l =0; l <10; ++l) {
+    kmeans::experiments::ExperimentRunner e(dataset, );
+    e.runExperiments(100);
+    auto i = e.getExperiments();
+    kmeans::experiments::reader::printExperiments("DimRedFullData.txt", i,
+                                                  "/Users/yaseralkayale/Documents/classes/kmeansII/lib/experiments/Experiment Results");
+  }
   std::cout << "Done" << std::endl;
   return 0;
 }

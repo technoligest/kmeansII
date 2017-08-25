@@ -1,30 +1,27 @@
 import math
 import sys
-
-
-import operator as op
-
 import functools
-
+import operator as op
+import time
+"""
+n choose r
+"""
 def ncr(n, r):
-  r = min(r, n-r)
+  r = min(r, n - r)
   if r == 0: return 1
-  numer = functools.reduce(op.mul, range(n, n-r, -1))
-  denom = functools.reduce(op.mul, range(1, r+1))
-  return numer//denom
+  numer = functools.reduce(op.mul, range(n, n - r, -1))
+  denom = functools.reduce(op.mul, range(1, r + 1))
+  return numer // denom
 
 
 """
 calculate the union of 2 numerical lists
 """
 def overlap(l1, l2):
-  l1 = sorted(l1)
-  l2 = sorted(l2)
   l1Pos = 0
   l2Pos = 0
-  maxSize = min(len(l1), len(l2))
   result = 0
-  while l1Pos < maxSize and l2Pos < maxSize:
+  while l1Pos < len(l1) and l2Pos < len(l2):
     if l1[l1Pos] == l2[l2Pos]:
       l1Pos += 1
       l2Pos += 1
@@ -33,22 +30,6 @@ def overlap(l1, l2):
       l2Pos += 1
     else:
       l1Pos += 1
-  return result
-
-
-"""
-given 2 lists and a function. Calculate the adjavency matrix between these two lists
-by applying the function on every pair from the two
--basically creating a complete bipartite graph of the 2 sets of points
-"""
-def adjacencyMatrix(l1, l2, func):
-  result = []
-  for i2 in l2:
-    temp = []
-    for i1 in l1:
-      temp.append(func(i1, i2))
-    result.append(temp)
-
   return result
 
 
@@ -80,3 +61,66 @@ def findBelongingCentrePosition(point, centres):
       pos = i
   assert pos > -1
   return pos
+
+
+"""
+Splits pairs into XY
+Plotting the result will allow us to view the first element in l1 be matched with first element of l2
+And so on.
+
+Or split data which is of the form [[x1,y1],[x2,y2],....] to [[x1,x2,x3,...],[y1,y2,y3,....]]
+"""
+def splitIntoXY(list1, list2=None):
+  if list2 == None:
+    return [[x[0] for x in list1], [x[1] for x in list1]]
+  return [[[list1[i][0], list2[i][0]], [list1[i][1], list2[i][1]]] for i in range(len(list1))]
+
+
+"""
+Return the total number of shift for
+Two lists. Assuming that the two lists are sorted
+so that list1[0] is matched with list2[0] and so on
+"""
+def totalShiftedDistance(list1, list2):
+  result = 0
+  assert (len(list1) == len(list2))
+  for i in range(len(list1)):
+    result += distance(list1[i], list2[i])
+  return result
+
+
+def printRunningTime(func):
+  def wrapper(*args):
+    start = time.time()
+    result = func(*args)
+    print(func.__name__, " ran in: ", (time.time() - start))
+    return result
+  return wrapper
+
+"""
+given 2 lists and a function. Calculate the adjavency matrix between these two lists
+by applying the function on every pair from the two
+-basically creating a complete bipartite graph of the 2 sets of points
+"""
+def adjacencyMatrix(l1, l2, func):
+  result = []
+  for i2 in l2:
+    temp = []
+    for i1 in l1:
+      temp.append(func(i1, i2))
+    result.append(temp)
+  return result
+
+def pointsOverlapMatrix(cluster1, cluster2):
+  result = []
+  for i2 in cluster1.pointPositions:
+  return result
+
+"""
+Convert a list into its string representation concatenated
+"""
+def listToString(self, l):
+  result = ""
+  for i in l:
+    result += str(i)
+  return result

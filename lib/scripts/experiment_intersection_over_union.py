@@ -1,5 +1,5 @@
 from experiment_distances import findBelongingCentrePosition, findDistanceMatrix
-from experiment_perfect_matching import minimum_weight_perfect_matching
+from experiment_io import minimum_weight_perfect_matching
 
 
 class calcIntersections:

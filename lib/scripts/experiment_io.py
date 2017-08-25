@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-
 from lib.scripts.experiment_instance import ExperimentInstance
 from lib.scripts.experiment_cluster import Cluster
 
@@ -87,7 +85,7 @@ def readExperiments(fileName, dataset, maxExperiments=10):
         return result
       print("Experiment ", i, " has been read.")
       i = i + 1
-      if len(result) > 0 and result[0].distanceToCentres > temp.distanceToCentres:
+      if len(result) > 0 and result[0].distanceToCentres > temp.totalDistanceToCentres:
         result.insert(0, temp)
       else:
         result.append(temp)

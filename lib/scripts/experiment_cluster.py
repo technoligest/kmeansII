@@ -1,14 +1,10 @@
-"""
-centre
-pointpositions
-convexHull
-Area
-TotalDistance to centre
 
-"""
 from lib.scripts.experiment_convex_hull import calcConvexHull, calcConvexHullArea
 from lib.scripts.experiment_utils import distance
-
+"""
+A cluster is a centre, and collection of opoint positions.
+Cluster objects rely on the Cluter class for having the dataset saved in order to be able to make sense of the clusterPositions
+"""
 class Cluster:
   def __init__(self, centre, pointPositions):
     assert hasattr(Cluster, 'dataset')
@@ -21,6 +17,10 @@ class Cluster:
     for p in pointPositions:
       self.totalDistance += distance(Cluster.dataset[p], centre)
 
+
+  """
+  The convex hull of the cluster is represented as a set of points sorted counter clockwise
+  """
   @property
   def convexHull(self):
     if self._convexHull == None:

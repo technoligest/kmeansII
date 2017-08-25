@@ -1,19 +1,35 @@
+from scipy.stats import gaussian_kde
 import matplotlib.pyplot as plt
 import numpy as np
+
+import lib.scripts.experiment_perfect_matching as hung
+import lib.scripts.experiment_utils as utils
+
+def plotHeetMap(x, y):
+  # Calculate the point density
+  xy = np.vstack([x, y])
+  z = gaussian_kde(xy)(xy)
+
+  # Sort the points by density, so that the densest points are plotted last
+  idx = z.argsort()
+  x, y, z = x[idx], y[idx], z[idx]
+
+  fig, ax = plt.subplots()
+  ax.scatter(x, y, c=z, s=50, edgecolor='')
+
 
 """
 Plots the given centres using a dotplot
 """
-
 def plotCentres(centres):
   for x, y in centres:
     plt.plot(x, y, '.', label='line 1')
+
 
 """
 Given a set of [x,y] coordinate
 return 
 """
-
 def convertToXY(l1):
   xVals = [x for x, y in l1]
   yVals = [y for x, y in l1]
@@ -21,6 +37,7 @@ def convertToXY(l1):
 
 def scatterPlot(data):
   plt.figure()
+
   for x, y in data:
     plt.scatter(x, y)
 
@@ -32,18 +49,37 @@ def connectedScatterPlot(data):
 def show():
   plt.show()
 
+
+"""
+Given two experiments and a function to evaluate their 
+adjacency matrix.
+plot the matchings between these two experiment centres
+"""
+def scatterPlotMatchings(e1, e2, func):
+  d = utils.adjacencyMatrix(e1.clusters, e2.clusters, func)
+  minimum = min([min(x) for x in d])
+  if minimum < 0:
+    d = [[item - minimum for item in row] for row in d]
+  matchings = hung.minimum_weight_perfect_matching(d)
+  pairs1 = e1.centres
+  pairs2 = [e2.centres[p] for p, _ in matchings]
+  connectedScatterPlot(utils.splitIntoXY(pairs1, pairs2))
+
+
 """
 plot 1-d values
 """
-
 class Plotter:
+  """
+  Help plotting functions to set the names of the plots
+  """
   def plot(plotFunction):
-    def wrapper(self):
-      plotFunction
+    def wrapper(self,*args):
+      plotFunction(self,*args)
       plt.ylabel(self.ylabel)
       plt.xlabel(self.xlabel)
+      plt.title(self.plotName)
     return wrapper
-
   @staticmethod
   def show():
     plt.show()
@@ -88,11 +124,6 @@ class Plotter:
       self.axes.set_yticklabels(self.valueNames)
     else:
       self.axes.set_yticklabels(range(1, len(self.values) + 1))
-  @plot
-  def comparisonBarPlot(self):
-    for experiment in self.values:
-      self.fig, self.axes = plt.subplots()
-      self.barPlot(experiment)
 
   def barPlot(self, experimentRuntimes):
     sectionedData = self.augment(experimentRuntimes)
@@ -107,7 +138,11 @@ class Plotter:
       self.axes.barh(-2 * barSize, [i], barSize, [bottom], color=colour)
       bottom = bottom + i
     self.setxyticksBarPlot(max(plotY) * 1.3)
-
+  @plot
+  def comparisonBarPlot(self):
+    for experiment in self.values:
+      self.fig, self.axes = plt.subplots()
+      self.barPlot(experiment)
   @plot
   def comparisonBubblePlot(self):
     self.fig, self.axes = plt.subplots()
@@ -117,6 +152,14 @@ class Plotter:
       self.bubblePlotExperimentRuntimes(experiment, currYval)
       currYval = currYval + valueSeparator
     self.setxyticksBubblePlot(valueSeparator)
+  # Probability that I exceesd a given value
+  # y-value, the number of values of this point or higher
+  # x-value, is the runtime value
+  @plot
+  def plotCascadingPlot(self):
+    for val in self.values:
+      self.fig, self.axes = plt.subplots()
+      self.cascadingPlot(val)
 
 
   def cascadingPlot(self, l):
@@ -125,17 +168,11 @@ class Plotter:
     x, y = convertToXY(cumulList)
     plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
 
-  # Probability that I exceesd a given value
-  #
-  #
-  # y-value, the number of values of this point or higher
-  # x-value, is the runtime value
-  def plotCascadingPlot(self):
-    for val in self.values:
-      self.fig, self.axes = plt.subplots()
-      self.cascadingPlot(val)
 
-
+  """
+  Given a list of numbers, give the list of percentiles
+  This helpts us create a density concentration graph
+  """
   def findTuple(self, items):
     size = len(items)
     minimum = items[0]

@@ -2,7 +2,7 @@ import pickle
 
 import os
 
-import lib.scripts.experiment_readers as reader
+import lib.scripts.experiment_io as reader
 import lib.scripts.experiment_instance as inst
 
 
