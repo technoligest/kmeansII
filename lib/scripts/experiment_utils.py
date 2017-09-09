@@ -14,6 +14,11 @@ def ncr(n, r):
   return numer // denom
 
 
+
+
+
+
+
 """
 calculate the union of 2 numerical lists
 """
@@ -91,6 +96,7 @@ def totalShiftedDistance(list1, list2):
 
 def printRunningTime(func):
   def wrapper(*args):
+    print("started: ",func.__name__)
     start = time.time()
     result = func(*args)
     print(func.__name__, " ran in: ", (time.time() - start))
@@ -102,19 +108,31 @@ given 2 lists and a function. Calculate the adjavency matrix between these two l
 by applying the function on every pair from the two
 -basically creating a complete bipartite graph of the 2 sets of points
 """
+@printRunningTime
 def adjacencyMatrix(l1, l2, func):
   result = []
   for i2 in l2:
     temp = []
     for i1 in l1:
+      start =time.time()
       temp.append(func(i1, i2))
     result.append(temp)
   return result
 
-def pointsOverlapMatrix(cluster1, cluster2):
-  result = []
-  for i2 in cluster1.pointPositions:
-  return result
+"""
+Append a give string to a file with the given file name
+"""
+def fileAppend(fileName, str):
+  l=[]
+  with open(fileName) as f:
+    for item in f:
+      l.append(item)
+    f.closed
+  with open(fileName,"w+") as f2:
+    f2.write(str)
+    for item in l:
+      f2.write(item)
+    f2.closed
 
 """
 Convert a list into its string representation concatenated
@@ -123,4 +141,23 @@ def listToString(self, l):
   result = ""
   for i in l:
     result += str(i)
+  return result
+
+
+def fastAdjacencyMatrix(c1,c2):
+  assert(len(c1)==len(c2))
+  closestCentrePositions = []
+  for cluster in c1:
+    distances = [distance(cluster.centre,cluster2.centre) for cluster2 in c2]
+    distances = [(i,distances[i]) for i in range(len(distances))]
+    closestCentrePositions.append(sorted([x for x,y in sorted(distances,key=lambda x: x[1])[:1]]))
+  result=[]
+  for centre2Index in range(len(c1)):
+    row = []
+    for centre1Index in range(len(c2)):
+      if centre2Index in closestCentrePositions[centre1Index]:
+        row.append(overlap(c1[centre1Index].pointPositions,c2[centre2Index].pointPositions))
+      else:
+        row.append(0)
+    result.append(row)
   return result

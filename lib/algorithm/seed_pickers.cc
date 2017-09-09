@@ -2,11 +2,13 @@
 // Created by Yaser Alkayale on 2017-06-21.
 //
 #include "seed_pickers.h"
-#include "kmeans_helpers.h"
+#include "kmeans_utils.h"
 
 namespace kmeans{
 bool RandomSeedPicker::pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) {
+#ifdef DEBUG
   std::cout << "Started picking random seeds for Kmeans" << std::endl;
+#endif
   if(dataset.empty() || k<1 || dataset.size() < k ) {
     return false;
   }
@@ -21,12 +23,16 @@ bool RandomSeedPicker::pickSeeds(const Dataset &dataset, const Weights &weights,
   for(int i = 0; i < k; ++i) {
     centres.push_back(dataset[static_cast<int>((dis(gen) * n))]);
   }
+#ifdef DEBUG
   std::cout << "Finished picking random seeds for Kmeans" << std::endl;
+#endif
   return true;
 };
 
 bool KmeansppSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) {
+#ifdef DEBUG
   std::cout << "Started picking seeds for Kmeans++" << std::endl;
+#endif
   if(d.empty() || centres.empty() || d.size() < k) {
     return false;
   }
@@ -41,7 +47,7 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull
   centres.push_back(d[static_cast<int>((dis(gen) * n))]);
   for(int i = 1; i < k; ++i) {
 
-    double dx = helpers::calcDX(d, weights, centres);
+    double dx = utils::dx(d, weights, centres);
     double ran = static_cast<double>(dis(gen));
 
     /*
@@ -53,7 +59,7 @@ bool KmeansppSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull
     double cumulativeProb = 0;
     for(int instId = 0; instId < d.size(); ++instId) {
       Instance inst = d[instId];
-      double distance = helpers::shortestDistanceToClusterCentre(inst, centres) / dx * weights[instId];
+      double distance = utils::distanceToClosestCentre(inst, centres) / dx * weights[instId];
       cumulativeProb += distance;
       if(ran <= cumulativeProb) {
         centres.push_back(inst);

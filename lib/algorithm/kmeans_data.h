@@ -41,9 +41,7 @@ bool operator==(const Instance &instance1,const Instance &instance2);
 //not sure if I should add the other operators as well.
 void operator/=(Instance &, const std::vector<size_t> &);
 
-std::ostream &operator<<(std::ostream &, const Weights &);
-std::ostream &operator<<(std::ostream &, const Instance &);
-std::ostream &operator<<(std::ostream &, const Dataset &);
+
 
 void operator+=(Instance &, const Instance &);
 void operator-=(Instance &, const Instance &);

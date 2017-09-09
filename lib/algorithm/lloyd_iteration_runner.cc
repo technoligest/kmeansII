@@ -21,10 +21,10 @@ Distance LloydIterationRunner::runLloydIteration(const Dataset &dataset, const W
   //adding each instance to where it belongs
   for(int instId = 0; instId < n; ++instId) {
     const Instance &inst = dataset[instId];
-    auto minDistClusterId = helpers::findBelongingCentrePosition(inst, centres);
+    auto minDistClusterId = utils::findBelongingCentrePosition(inst, centres);
     newCentres[minDistClusterId] += inst;
     newCentreSizes[minDistClusterId] += 1;
-    totalDistance += helpers::findDistanceSquared(inst, centres[minDistClusterId]);
+    totalDistance += utils::distanceSquared(inst, centres[minDistClusterId]);
   }
   for(size_t i = 0; i < newCentres.size(); ++i) {
     if(newCentreSizes[i] > 1) {
@@ -50,16 +50,22 @@ Distance LloydIterationRunner::runLloydIterations(const Dataset &dataset, const 
       bestDistance = newDistance;
     }
     if(newDistance > currDistance * LOCAL_ITERATION_BIAS) {
+#ifdef DEBUG
       std::cout << "Terminating because iteration has exceeded local bias." << std::endl;
+#endif
       break;
     }
     if(fabs(newDistance - currDistance) < CONVERGENCE_THREASHOLD) {
+#ifdef DEBUG
       std::cout << "Terminating because iterations are stable." << std::endl;
+#endif
       break;
     }
     currDistance = newDistance;
   }
+#ifdef DEBUG
   std::cout << "numIterations: " << num_iterations_ << std::endl;
+#endif
   return bestDistance;
 }
 

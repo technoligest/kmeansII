@@ -7,7 +7,7 @@
 
 namespace kmeans{
 namespace experiments{
-namespace helpers{
+namespace utils{
 
 // To heapify a subtree rooted with node i which is
 // an index in arr[]. n is size of heap
@@ -31,19 +31,19 @@ void heapify(std::vector<size_t> &arr, size_t n, size_t i) {
 }
 
 
-void heapSort(std::vector<size_t > &arr) {
+void heapSort(std::vector<size_t> &arr) {
   size_t n = arr.size();
-  for(size_t i = n / 2 - 1;; --i){
+  for(size_t i = n / 2 - 1;; --i) {
     heapify(arr, n, i);
-    if(i==0){
+    if(i == 0) {
       break;
     }
   }
 
-  for(size_t i = n - 1; ; --i) {
+  for(size_t i = n - 1;; --i) {
     std::swap(arr[0], arr[i]);
     heapify(arr, i, 0);
-    if(i==0){
+    if(i == 0) {
       break;
     }
   }
@@ -54,7 +54,6 @@ void heapSort(std::vector<size_t > &arr) {
  * Given the prefix and the directory return the last numbered file in this directory.
  */
 ull lastNumberedFile(const std::string directory, std::string prefix) {
-  std::cout << "prefix" << prefix << std::endl;
   DIR *dir;
   struct dirent *ent;
   ull nextNum = 0;
@@ -62,7 +61,6 @@ ull lastNumberedFile(const std::string directory, std::string prefix) {
     /* print all the files and directories within directory */
     while((ent = readdir(dir)) != NULL) {
       std::string temp = ent->d_name;
-      std::cout << temp << std::endl;
       ull tempNextNum = 0;
       if(temp.substr(0, prefix.size()) == prefix) {
         if(nextNum == 0) {
@@ -99,9 +97,6 @@ ull lastNumberedFile(const std::string directory, std::string prefix) {
   return nextNum;
 }
 
-
-
-
-}//namespace helpers
+}//namespace utils
 }//namespace experiments
 }//namespace kmeans

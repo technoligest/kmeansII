@@ -109,14 +109,14 @@ class HungarianAlgorithm:
         if self.matrix[u.name][v.name] + 0.001 < u.potential + v.potential:
           print("Something's wrong")
           return
-    print("Potential ok")
+    # print("Potential ok")
 
   def check_matching(self):
     for v in self.right:
       if self.matrix[v.match.name][v.name] > v.match.potential + v.potential + 0.001:
         print("Something's wrong")
         return
-    print("Matching ok")
+    # print("Matching ok")
 
   def find_augmenting_path_from(self, u):
     """
@@ -318,7 +318,6 @@ class HungarianAlgorithm:
       s += str(x.name) + ", "
     s += "\n"
     return s
-@utils.printRunningTime
 def maximum_weight_perfect_matching(matrix):
   matrix = [[-1 * item for item in row] for row in matrix]
   minimum = min([min(row) for row in matrix])

@@ -11,27 +11,28 @@
 #include "experiment_result.h"
 #include "experiment_helpers.h"
 
-/*
- * Very messy implemntation to help us find the final number of th etest ran
- * This will help us guarantee not overwriting previous tests.
- */
 namespace kmeans{
 namespace experiments{
 
 class ExperimentRunner{
 private:
-  Dataset d;
-  ull k;
+  Dataset d_;
+  ull k_;     //number of clusters
+  int l_;     //oversampling factor for kmeans||
+  int r_;     //number of rounds for kmeans||
 
-  std::vector<ExperimentResult> results;
+  std::vector<ExperimentResult> results_;
   void runAlg(KmeansBase *kmeans, const std::string &algName);
 
-
 public:
-  ExperimentRunner(Dataset &_d, ull _k) : d(_d), k(_k) {};
-  ExperimentRunner(Dataset &&_d, ull _k) : d(_d), k(_k) {};
-  ExperimentRunner(std::vector<ExperimentResult> &r) : results(r) {};
-  inline std::vector<ExperimentResult> getExperiments() const { return results; }
+  ExperimentRunner(Dataset &d, ull k, int l, int r = 8) : d_(d), k_(k), l_(l), r_(r) {};
+
+  ExperimentRunner(Dataset &&d, ull k, int l, int r = 8) : d_(d), k_(k), l_(l), r_(r) {};
+
+  ExperimentRunner(std::vector<ExperimentResult> &r) : results_(r) {};
+
+  inline std::vector<ExperimentResult> getExperiments() const { return results_; }
+
   void runExperiments(ull numExperiments);
 };
 

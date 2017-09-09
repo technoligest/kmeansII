@@ -8,7 +8,7 @@
 
 #include "kmeans_data.h"
 #include "seed_picker_base.h"
-#include "kmeans_helpers.h"
+#include "kmeans_utils.h"
 #include "iteration_runner_base.h"
 
 namespace kmeans{
@@ -17,15 +17,14 @@ protected:
   ull num_iterations_ = 0;
   ull iteration_runner_time_ = 0;
   ull seed_picker_time_ = 0;
-  Distance distance_squared_ = 0;
+  Distance distance_squared_ = 0; //Sum of distance square of each point to its cluster Centre
   SeedPicker *seedPicker;
   IterationRunner *iterationRunner;
 
 public:
   virtual inline ~KmeansBase() {};
 
-  inline Distance
-  cluster(const Dataset &dataset, const ull &k, std::vector<Instance> &centres) {
+  inline Distance cluster(const Dataset &dataset, const ull &k, std::vector<Instance> &centres) {
     return cluster(dataset, Weights(dataset.size(), 1), k, centres);
   };
 

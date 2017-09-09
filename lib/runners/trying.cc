@@ -2,16 +2,16 @@
 #include <iostream>
 #include <fstream>
 #include <random>
-#include "experiments/experiments.h"
-#include "handlers/data_reader.h"
-#include "experiments/experiment_analyzer2.h"
-#include "experiments/convex_hull.h"
+#include "../experiments/experiments.h"
+#include "../algorithm/kmeans_io.h"
+#include "../experiments/experiment_analyzer2.h"
+#include "../experiments/convex_hull.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
   ifstream inputFile;
-  inputFile.open("../inputFiles/DimRedFullDataComplete.txt");
+  inputFile.open("");
   kmeans::Dataset dataset = kmeans::readDataset(inputFile);
   inputFile.close();
   using kmeans::operator<<;

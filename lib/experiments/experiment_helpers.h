@@ -10,7 +10,7 @@
 
 namespace kmeans{
 namespace experiments{
-namespace helpers{
+namespace utils{
 
 void heapSort(std::vector<size_t> &arr);
 
@@ -85,7 +85,7 @@ void mergeSort(std::vector<T> &arr, const std::function<double(T)> &val) {
 
 ull lastNumberedFile(const std::string directory, std::string prefix);
 
-}//namespace helpers
+}//namespace utils
 }//namespace experiments
 }//namespace kmean
 

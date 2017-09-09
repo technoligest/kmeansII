@@ -1,6 +1,7 @@
 #!/usr/bin/python
 """
 """
+import lib.scripts.strongly_connected_componenents as scc
 import time
 import math
 import lib.scripts.experiment_perfect_matching as hung
@@ -14,6 +15,9 @@ class Analyzer:
     self.matchings = None
     print("Created analyzer class")
 
+  """
+  @:return list of Normalized Information Distance which corresponds to each experiment in sorted order
+  """
   @property
   def NIDs(self):
     if self._NIDs == None:
@@ -32,6 +36,10 @@ class Analyzer:
   def numIterations(self):
     return [exp.numIterations for exp in self.experiments]
 
+
+  """
+  Information Theory entropy calculations
+  """
   def entropy(self, experiment):
     n = len(self.dataset)
     result = 0
@@ -40,7 +48,9 @@ class Analyzer:
       result += clusterSize / n * math.log((clusterSize / n), 2)
     return -1 * result
 
-
+  """
+  Information Theiry mutual information calculation
+  """
   def mutualInformation(self, mat):
     n = len(self.dataset)
     assert (n > 0)
@@ -98,18 +108,20 @@ class Analyzer:
     for a in self.experiments:
       self.MI.append((self.experiments[0], a, self.calcMutualInformation(self.experiments[0].clusters, a.clusters)))
 
+  """
+  self.matchings[expId1][expId2][k] = the matching for cluster k in sefl.experiments[expId1] with self.experiments[expId2]
+  """
   @utils.printRunningTime
   def calcMatchings(self):
-    self.matchings = [[None for _ in range(len(self.experiments))] for _ in range(len(self.experiments))]
+    self.matchings = [[[] for _ in range(len(self.experiments))] for _ in range(len(self.experiments))]
     for i in range(len(self.experiments)):
       for j in range(i + 1, len(self.experiments)):
-        start = time.time()
-        mat = utils.adjacencyMatrix(self.experiments[i].clusters, self.experiments[j].clusters,
-                                    lambda a, b:utils.overlap(a.pointPositions, b.pointPositions))
+        # mat = utils.adjacencyMatrix(self.experiments[i].clusters, self.experiments[j].clusters,
+        #                             lambda a, b:bin(a.binaryPointPositions & b.binaryPointPositions).count("1") - 1)
+        mat = utils.fastAdjacencyMatrix(self.experiments[i].clusters, self.experiments[j].clusters)
         currentMatchings = hung.maximum_weight_perfect_matching(mat)
         self.matchings[i][j] = [x for x, y in currentMatchings]
         self.matchings[j][i] = [y for x, y in sorted(currentMatchings, key=lambda x:x[0])]
-        print(" ran in: ",(time.time()-start))
     print("finished calculating matchings for the analyzer")
 
 
@@ -129,32 +141,41 @@ class Analyzer:
       self._NIDs.append(1 - self.mutualInformation(matrix) / max([exp1Entropy, self.entropy(exp2)]))
       print(self.NIDs[len(self.NIDs) - 1])
 
-
   """
-  result[i] stores the number of i-cliques
-  arr is the set of experiments that we are looking at
+  @:param arr, an array which includes all the experiments indices that 
+  are to be evaluated for the clique.
+  
+  @:return the number of cliques iof size len(arr) inside of the matches experients in arr. 
   """
-  def calcCliques(self, arr):
+  @utils.printRunningTime
+  def calcClique(self, arr):
     if self.matchings == None:
       self.calcMatchings()
-    matchingDict = dict()
-    for e1index in arr:
-      for k in range(len(self.experiments[e1index].clusters)):
-        tempArr = []
-        for e2index in arr:
-          if e1index == e2index:
-            tempArr.append(k)
-            continue
-          tempArr.append(self.matchings[e1index][e2index][k])
-        key = self.listToString(tempArr)
-        value = (e1index, k)
-        if key in matchingDict:
-          matchingDict[key].append(value)
-        else:
-          matchingDict[key] = [value]
-    cliqueSize = len(arr)
+    if not isinstance(arr, list):
+      return None
+    nodesDict = dict()
+    for eIndex in arr:
+      assert eIndex < len(self.experiments)
+      assert eIndex >= 0
+      for clusterId in range(len(self.experiments[eIndex].clusters)):
+        nodesDict[(eIndex, clusterId)] = scc.Node((eIndex, clusterId))
+
+    for eIndex, clusterId in nodesDict:
+      for k in arr:
+        if k == eIndex:
+          continue
+        assert (eIndex < len(self.matchings))
+        assert (k < len(self.matchings[eIndex]))
+        assert (clusterId < len(self.matchings[eIndex][k]))
+        key = (k, self.matchings[eIndex][k][clusterId])
+        node = nodesDict[(eIndex, clusterId)]
+        node.neighbours.append(nodesDict[key])
+    l = []
+    for key in nodesDict:
+      l.append(nodesDict[key])
+    componenets = scc.ConnectedComponents(l).calc()
     result = 0
-    for i in matchingDict:
-      if len(matchingDict[i]) == cliqueSize:
+    for component in componenets:
+      if len(component) == len(arr):
         result += 1
     return result

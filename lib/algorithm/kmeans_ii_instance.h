@@ -9,10 +9,14 @@
 #include "kmeans_base.h"
 
 namespace kmeans{
+/*
+ * This class was needed because we need 2 extra parameters to instanciate a kmeansII
+ * instance.
+ */
 template<class InnerIR, class OuterIR>
 class KmeansInstance<KmeansIISeedPicker<InnerIR>, OuterIR> : public KmeansBase{
 public:
-  inline KmeansInstance(double _l, ull _r){
+  inline explicit KmeansInstance(double _l, ull _r){
     seedPicker = new KmeansIISeedPicker<InnerIR>(_l, _r);
     iterationRunner = new OuterIR();
   };

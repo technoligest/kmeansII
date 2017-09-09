@@ -6,6 +6,7 @@
 #define KMEANSII_EXPERIMENTRESULT_HH
 
 #include "../algorithm/kmeans_data.h"
+#include "../algorithm/kmeans_io.h"
 
 namespace kmeans{
 namespace experiments{

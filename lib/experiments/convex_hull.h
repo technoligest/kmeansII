@@ -13,7 +13,7 @@
 #include <cassert>
 #include <cmath>
 #include "../algorithm/kmeans_data.h"
-#include "../algorithm/kmeans_helpers.h"
+#include "../algorithm/kmeans_utils.h"
 
 namespace kmeans{
 namespace experiments{

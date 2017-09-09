@@ -3,17 +3,18 @@ import lib.scripts.experiment_analyzer as an
 import lib.scripts.experiment_io as reader
 import lib.scripts.experiment_utils as utils
 import lib.scripts.experiment_serializer as sr
+from lib.scripts.experiment_cluster import Cluster
 
 
 
 expr1id = 0
-expr2id = 900
+expr2id = 1
 assert (abs(expr2id - expr1id) > 0)
 datasetFile = "../../../inputFiles/DimRedFullDataComplete.txt"
 with open(datasetFile) as file:
   dataset = reader.readTwoDFile(file)
-
-experiments = sorted(sr.deserialize("../serializedExperiments/kmeans||-DimRedFullDataComplete.txt-test1.txt"),key=lambda exp:exp.distanceToCentres)
+# Cluster.dataset=cluster
+experiments = sorted(sr.deserialize("../serializedExperiments/NewExperimentskmeans||.txt"),key=lambda exp:exp.distanceToCentres)
 print("Done reading in first thing.")
 
 # plotter.scatterPlotMatchings(experiments[expr1id], experiments[expr2id],
@@ -23,10 +24,21 @@ print("Done reading in first thing.")
 #
 # k = [sum(i.averageDistancesOverArea) / len(i.averageDistancesOverArea) for i in experiments]
 # k = [i.distanceToCentres for i in experiments]
-analyzer = an.Analyzer(experiments, dataset)
-print(analyzer.NIDs)
-
-# print(analyzer.calcCliques([0,1]))
+numExperiments = 150
+analyzer = an.Analyzer(experiments[:numExperiments], dataset)
+# analyzer.matchings = sr.deserialize("Matchings for 100.txt")
+analyzer.matchings = sr.deserialize("Matching for 1000kmeans||.txt")
+import sys
+sys.setrecursionlimit(10000000)
+y=[]
+x=[]
+for k in range(numExperiments):
+  print(k, " finished.")
+  y.append(analyzer.calcClique([i for i in range(k)]))
+  x.append(k)
+plotter.connectedScatterPlot([[x,y]])
+# print(analyzer.calcNorbertClique([0,1]))
+# print(analyzer.NIDs)
 
 # k = analyzer.totalDistanceToCentres
 

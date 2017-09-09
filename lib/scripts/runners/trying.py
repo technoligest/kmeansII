@@ -197,7 +197,26 @@ import lib.scripts.experiment_perfect_matching as hung
 # il[str(z)] = 20
 # print(il)
 
-num=10
-for i in range(num):
-  for j in range(i + 1, num):
-    print("i: ",i," j: ",j)
+
+import lib.scripts.experiment_serializer as sr
+import lib.scripts.experiment_io as reader
+import lib.scripts.experiment_cluster as cl
+import time
+import lib.scripts.experiment_utils as utils
+import lib.scripts.strongly_connected_componenents as scc
+experiments = sr.deserialize("../serializedExperiments/NewExperimentskmeans||.txt")
+datasetFile = "../../../inputFiles/DimRedFullDataComplete.txt"
+with open(datasetFile) as file:
+  cl.Cluster.dataset = reader.readTwoDFile(file)
+
+mat = utils.adjacencyMatrix(experiments[0].clusters,experiments[1].clusters,lambda a, b:bin(a.binaryPointPositions & b.binaryPointPositions).count("1") - 1)
+mat2 = utils.fastAdjacencyMatrix(experiments[0].clusters,experiments[1].clusters)
+
+assert(len(mat)==len(mat2))
+
+for i in range(len(mat)):
+  print(mat[i])
+  print(mat2[i])
+  print()
+
+
