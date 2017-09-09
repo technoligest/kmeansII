@@ -1,4 +1,8 @@
-
+/*
+ * Class is for trying out difference things before adding them for
+ * full productions.
+ *
+ */
 #include <iostream>
 #include <fstream>
 #include <random>

@@ -1,9 +1,14 @@
 //
 // Created by Yaser Alkayale on 2017-08-28.
 //
+
+/*
+ * Run a single kmeans instance with any given commandLine args. To know the args needed,
+ * just run the program without any args.
+ */
 #include <iostream>
 #include "../algorithm/kmeans.h"
-#define DEBUG
+
 
 int main(int argc, char **argv) {
 

@@ -10,7 +10,7 @@
 #ifndef KMEANSII_KMEANS_H
 #define KMEANSII_KMEANS_H
 
-
+#define DEBUG
 
 #include "kmeans_instance.h"
 #include "kmeans_ii_instance.h"

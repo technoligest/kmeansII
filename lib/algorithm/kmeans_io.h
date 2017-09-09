@@ -9,7 +9,7 @@
 #include <cmath>
 #include <sstream>
 #include <fstream>
-#include "../handlers/csv.h"
+#include "csv.h"
 #include "kmeans_input_arguments.h"
 #include "kmeans.h"
 
