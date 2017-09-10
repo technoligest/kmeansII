@@ -200,23 +200,100 @@ import lib.scripts.experiment_perfect_matching as hung
 
 import lib.scripts.experiment_serializer as sr
 import lib.scripts.experiment_io as reader
+import numpy as np
+import lib.scripts.experiment_convex_hull as cv
+import matplotlib.pyplot as plt
 import lib.scripts.experiment_cluster as cl
 import time
 import lib.scripts.experiment_utils as utils
 import lib.scripts.strongly_connected_componenents as scc
-experiments = sr.deserialize("../serializedExperiments/NewExperimentskmeans||.txt")
-datasetFile = "../../../inputFiles/DimRedFullDataComplete.txt"
-with open(datasetFile) as file:
-  cl.Cluster.dataset = reader.readTwoDFile(file)
+import lib.scripts.experiment_plotters as pl
+# experiments = sr.deserialize("../serializedExperiments/NewExperimentskmeans||.txt")
+# with open(datasetFile) as file:
+#   cl.Cluster.dataset = reader.readTwoDFile(file)
+#
+# mat = utils.adjacencyMatrix(experiments[0].clusters,experiments[1].clusters,lambda a, b:bin(a.binaryPointPositions & b.binaryPointPositions).count("1") - 1)
+# mat2 = utils.fastAdjacencyMatrix(experiments[0].clusters,experiments[1].clusters)
+#
+# assert(len(mat)==len(mat2))
+#
+# for i in range(len(mat)):
+#   print(mat[i])
+#   print(mat2[i])
+#   print()
 
-mat = utils.adjacencyMatrix(experiments[0].clusters,experiments[1].clusters,lambda a, b:bin(a.binaryPointPositions & b.binaryPointPositions).count("1") - 1)
-mat2 = utils.fastAdjacencyMatrix(experiments[0].clusters,experiments[1].clusters)
 
-assert(len(mat)==len(mat2))
+datasetFile = "../../../inputFiles/DimRed10000.txt"
+dataset = np.loadtxt(datasetFile).tolist()
+# print(dataset)
+#
+# pl.plotCentres(cv.calcConvexHull(dataset))
+# pl.plotCentres(dataset)
+# pl.show()
+# exps = reader.readExperiments("../script results/expr0.txt", dataset, maxExperiments=450)
+# print("#Iterations")
+# print("algorithm\tmin\tavg\tmax")
+# print(exps[0].numIterations, "\t", )
+# for i in exps:
+#   print(i)
+#
+import datetime
+def serializeExperiments():
+  res = []
+  i = 0
+  for _ in range(5):
+    algos = dict()
+    algos["Kmeans"] = None
+    algos["Kmeans++"] = None
+    algos["Kmeans||"] = None
+    for _ in range(3):
+      fileName = "../script results/expr" + str(i) + ".txt"
+      with open(fileName) as f:
+        f.readline()
+        k = float(f.readline().strip().split("=")[1])
+        l = float(f.readline().strip().split("=")[1])
+        r = float(f.readline().strip().split("=")[1])
+      exps = reader.readExperiments(fileName, dataset, maxExperiments=500)
+      res.append((exps,k,l,r))
+    sr.serialize("../script results/ExperimentsSerialized"+str(datetime.datetime.now()), res)
+    res.clear()
+serializeExperiments()
+# i = 0
+# previousK = -1
+# for _ in range(5):
+#   algos = dict()
+#   algos["Kmeans"] = None
+#   algos["Kmeans++"] = None
+#   algos["Kmeans||"] = None
+#   for _ in range(3):
+#     fileName = "../script results/expr" + str(i) + ".txt"
+#     with open(fileName) as f:
+#       f.readline()
+#       k = float(f.readline().strip().split("=")[1])
+#       l = float(f.readline().strip().split("=")[1])
+#       r = float(f.readline().strip().split("=")[1])
+#     exps = reader.readExperiments(fileName, dataset, maxExperiments=500)
+#     for key in algos:
+#       algos[key] = [i.numIterations for i in exps if i.algorithm.strip() == key]
+#     if k != previousK:
+#       # tab.header(["algorithm","min","avg","max"])
+#       print("K val: ", k)
+#       print("algorithm\t\t\t\t\tmin\t\t\tavg\t\t\tmax")
+#       previousK = k
+#     for key in algos:
+#       t = algos[key]
+#       if len(t) == 0:
+#         continue
+#       if key == "Kmeans||":
+#         key += "(l=" + str(l) + ",r=" + str(r) + ")"
+#       # tab.add_row((key, min(t), sum(t) / len(t), max(t)))
+#       print(key,"\t\t\t\t\t", min(t),"\t\t\t", sum(t) / len(t),"\t\t\t", max(t))
+#     if k != previousK:
+#       # print(tab.draw)
+#       print()
+#       print()
+#     i += 1
+#
 
-for i in range(len(mat)):
-  print(mat[i])
-  print(mat2[i])
-  print()
 
 

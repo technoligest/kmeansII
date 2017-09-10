@@ -22,8 +22,9 @@ def plotHeetMap(x, y):
 Plots the given centres using a dotplot
 """
 def plotCentres(centres):
+  plt.figure()
   for x, y in centres:
-    plt.plot(x, y, '.', label='line 1')
+    plt.plot(x, y, '.', label='line 1', c="r")
 
 
 """

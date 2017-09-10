@@ -9,6 +9,8 @@ import lib.scripts.experiment_instance as inst
 def serialize(filename, object):
   with open(filename, 'wb') as f:
     pickle.dump(object, f)
+    f.flush()
+    f.close()
 
 
 def deserialize(filename):

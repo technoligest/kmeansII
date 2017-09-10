@@ -58,8 +58,7 @@ def readExperiment(file):
     elif line[0] == "Start Centres":
       centres = readCentres(file)
     elif line[0] == "End Experiment":
-      result = ExperimentInstance(centres, algorithm, distanceToCentres, timeToPickSeeds, numIterations,
-                                  timeToRunIterations)
+      result = ExperimentInstance(centres, algorithm, distanceToCentres, timeToPickSeeds, numIterations, timeToRunIterations)
       return result
     elif line[0] == "algorithm":
       algorithm = line[1]
@@ -73,7 +72,7 @@ def readExperiment(file):
       timeToRunIterations = float(line[1])
   return None
 
-def readExperiments(fileName, dataset, maxExperiments=10):
+def readExperiments(fileName, dataset, maxExperiments=10, debug=False):
   ExperimentInstance.dataset = dataset
   Cluster.dataset = dataset
   with open(fileName) as file:
@@ -83,9 +82,10 @@ def readExperiments(fileName, dataset, maxExperiments=10):
       temp = readExperiment(file)
       if temp == None:
         return result
-      print("Experiment ", i, " has been read.")
+      if debug:
+        print("Experiment ", i, " has been read.")
       i = i + 1
-      if len(result) > 0 and result[0].distanceToCentres > temp.totalDistanceToCentres:
+      if len(result) > 0 and result[0].totalDistanceToCentres > temp.totalDistanceToCentres:
         result.insert(0, temp)
       else:
         result.append(temp)

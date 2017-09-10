@@ -57,7 +57,7 @@ class ExperimentInstance:
             "Sum of distance squared to centre:" + str(self.totalDistanceToCentres) + "\n" +
             "Time to pick the seeds:" + str(self.seedPickingTime) + "\n" +
             "Number of iterations run:" + str(self.numIterations) + "\n" +
-            "Time to run the iterations:" + str(self.timeToRunIterations) + "\n" +
+            "Time to run the iterations:" + str(self.iterationsRuntime) + "\n" +
             "Start Centres:\n" + self.centresToString() +
             "End Centres:\n" +
             "End Experiment:"
