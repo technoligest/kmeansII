@@ -73,8 +73,8 @@ private:
           leftPoint = inst;
         }
       }
-      Distance circumference = 2 * (::kmeans::helpers::findDistanceSquared(topPoint, bottomPoint) +
-                                    ::kmeans::helpers::findDistanceSquared(rightPoint, leftPoint));
+      Distance circumference = 2 * (::kmeans::utils::distanceSquared(topPoint, bottomPoint) +
+          ::kmeans::utils::distanceSquared(rightPoint, leftPoint));
       distanceOverCircumference.push_back(circumference / experiment.distanceSquared);
     }
 
@@ -141,7 +141,7 @@ private:
   //    Index rightCentreLocation = -1;
   //    Distance lowestDistance = numeric_limits<double>::max();
   //    for(Index i = 0; i < exp.centres.size(); ++i){
-  //      Distance currDistance = findDistanceSquared(exp.centres[i], inst);
+  //      Distance currDistance = distanceSquared(exp.centres[i], inst);
   //      if(currDistance < lowestDistance){
   //        lowestDistance = currDistance;
   //        rightCentreLocation = i;

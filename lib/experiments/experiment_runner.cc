@@ -7,17 +7,17 @@
 namespace kmeans{
 namespace experiments{
 
-void ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string& algName) {
+void ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string &algName) {
   Dataset centres;
   ExperimentResult e;
-  kmeans->cluster(d, k, centres);
+  kmeans->cluster(d_, k_, centres);
   e.algorithm = algName;
   e.centres = centres;
   e.numIterations = kmeans->numIterations();
   e.distanceSquared = kmeans->distanceSquared();
   e.seedPickerTime = kmeans->seedPickerTime();
   e.iterationTime = kmeans->iterationRunnerTime();
-  results.push_back(e);
+  results_.push_back(e);
 }
 
 void ExperimentRunner::runExperiments(ull numExperiments) {
@@ -26,19 +26,19 @@ void ExperimentRunner::runExperiments(ull numExperiments) {
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans");
   }
-  //delete kmeans;
+  delete kmeans;
 
   kmeans = new Kmeanspp<LloydIterationRunner>();
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans++");
   }
-  //delete kmeans;
+  delete kmeans;
 
-  kmeans = new KmeansII<LloydIterationRunner, LloydIterationRunner>(2 * k, 5);
+  kmeans = new KmeansII<LloydIterationRunner, LloydIterationRunner>(l_, r_);
   for(ull i = 0; i < numExperiments; ++i) {
     runAlg(kmeans, "Kmeans||");
   }
-  //delete kmeans;
+  delete kmeans;
 }
 
 } // namspace experiments

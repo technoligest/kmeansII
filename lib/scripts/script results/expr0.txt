@@ -1,0 +1,3455 @@
+2017-09-10 01:20:51.114825
+k = 13
+l = 0.5
+r = 8
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480523
+Time to pick the seeds: 0
+Number of iterations run: 26
+Time to run the iterations: 0
+Start Centres:
+-21.6934 -32.8247
+-20.6911 18.2636
+24.8209 -29.4014
+-10.9256 -13.2128
+21.7892 -0.87141
+20.337 -16.4118
+-6.35845 -35.6785
+-28.7149 5.62724
+6.00868 -7.03817
+-4.06807 13.8069
+-29.1985 -15.2525
+-14.0814 3.37299
+8.8555 -29.3555
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477864
+Time to pick the seeds: 0
+Number of iterations run: 35
+Time to run the iterations: 0
+Start Centres:
+-9.86031 -13.4363
+-27.7653 9.35863
+23.0254 -2.64931
+-28.9815 -14.0876
+5.24532 -1.45169
+-5.8164 -35.1871
+12.6891 -15.6381
+11.9782 -32.2407
+-18.3127 19.9824
+25.4756 -24.9572
+-21.8126 -32.6802
+-14.7775 3.27766
+-4.18654 13.8897
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 96
+Time to run the iterations: 1
+Start Centres:
+-7.00359 -35.6753
+-26.8893 12.3799
+24.1514 -30.2611
+-29.3946 -13.0479
+-16.0076 3.76435
+8.29536 -29.6964
+-10.8417 -12.8204
+22.3924 -17.2375
+-12.9154 19.7376
+21.9149 -1.03697
+-1.18562 7.42528
+8.13108 -9.99474
+-22.3704 -32.3039
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478597
+Time to pick the seeds: 0
+Number of iterations run: 45
+Time to run the iterations: 0
+Start Centres:
+-17.657 20.0649
+22.841 -2.19297
+-28.839 -13.5044
+-14.5686 3.37057
+15.2578 -16.1131
+-27.6313 9.72929
+8.15035 -31.5002
+-9.78338 -13.7433
+-7.50169 -35.8225
+24.917 -27.2793
+-3.50298 13.2705
+5.31886 -3.66889
+-22.4484 -32.2705
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485308
+Time to pick the seeds: 1
+Number of iterations run: 58
+Time to run the iterations: 0
+Start Centres:
+-3.34488 -13.1783
+-14.4369 4.3255
+-18.7684 -11.0722
+-12.0375 19.3494
+-21.6771 -32.7065
+13.3696 -13.7455
+23.0816 -2.4199
+-26.8126 11.8817
+25.2005 -25.4489
+-31.6726 -15.3209
+10.962 -31.6104
+2.50799 4.95137
+-6.21634 -35.3988
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 482828
+Time to pick the seeds: 0
+Number of iterations run: 122
+Time to run the iterations: 1
+Start Centres:
+-29.0574 -22.9989
+9.32095 -12.818
+-25.6514 14.2459
+2.93917 -33.216
+22.145 -30.7317
+-10.9188 -12.9702
+-28.4187 -5.20686
+-15.085 4.50721
+0.126922 5.20839
+-15.8877 -34.8237
+23.8052 -17.9263
+21.7821 -1.20412
+-10.9093 19.4596
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 489754
+Time to pick the seeds: 0
+Number of iterations run: 42
+Time to run the iterations: 0
+Start Centres:
+-3.75321 -14.1492
+23.8406 -3.42673
+-7.23613 17.7106
+0.420178 -35.3864
+-31.0462 -20.3873
+8.46377 -0.511175
+-28.9034 2.82242
+-23.1906 16.321
+14.7685 -17.9522
+24.0975 -28.3069
+-18.3144 -33.5706
+-19.5288 -10.8456
+-11.5891 4.23458
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 483528
+Time to pick the seeds: 0
+Number of iterations run: 45
+Time to run the iterations: 1
+Start Centres:
+22.4988 -1.80048
+-31.3732 -16.1161
+-27.7017 9.64631
+11.4213 -31.1325
+-16.5556 20.0618
+25.1311 -24.9531
+-1.47487 10.9006
+-2.56397 -10.3855
+12.8146 -12.2873
+-5.76591 -34.908
+-18.2258 -11.4772
+-21.4413 -32.892
+-14.6099 4.26634
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475025
+Time to pick the seeds: 0
+Number of iterations run: 91
+Time to run the iterations: 0
+Start Centres:
+-21.27 -33.1643
+-24.1195 15.9339
+23.1777 -2.67776
+4.1965 2.01
+-8.63982 18.3283
+-29.4084 -17.3514
+-27.8757 0.399308
+11.505 -31.8792
+-9.97064 -13.0329
+25.2056 -25.0939
+-13.2666 4.52429
+-5.69136 -35.1412
+12.2339 -14.4339
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480223
+Time to pick the seeds: 0
+Number of iterations run: 57
+Time to run the iterations: 1
+Start Centres:
+-29.6528 -17.7539
+23.734 -17.7667
+-20.3576 -33.2548
+-8.1902 18.573
+-23.8621 15.7104
+22.6122 -1.87192
+7.3413 -1.93007
+-3.20981 -35.6215
+21.983 -31.7406
+-27.1029 0.436174
+-10.9311 -12.6925
+9.29986 -20.5148
+-10.8543 4.79977
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475231
+Time to pick the seeds: 0
+Number of iterations run: 37
+Time to run the iterations: 0
+Start Centres:
+-25.1399 14.8632
+-29.5147 -19.8399
+25.1738 -25.0241
+-5.41382 -35.1583
+-28.0716 -3.28109
+-9.94154 -13.007
+11.5489 -31.8638
+-9.71955 18.8368
+3.28358 2.80561
+-14.0753 4.65687
+12.128 -14.2969
+23.0529 -2.59774
+-20.6638 -33.5746
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486011
+Time to pick the seeds: 0
+Number of iterations run: 40
+Time to run the iterations: 0
+Start Centres:
+7.10576 -2.80699
+-18.0018 -33.9842
+-15.7381 20.506
+-26.4495 12.2751
+24.1534 -27.6146
+-29.4022 -21.7089
+-2.9382 12.6744
+-9.65679 -13.559
+13.5283 -18.1853
+-13.9183 3.78754
+-27.6921 -5.61122
+23.5033 -3.18316
+0.474495 -35.0947
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479028
+Time to pick the seeds: 1
+Number of iterations run: 42
+Time to run the iterations: 0
+Start Centres:
+-17.695 20.0277
+-29.3802 -14.3661
+22.3543 -31.6847
+9.1695 -22.4805
+-3.93517 -35.8814
+6.44371 -5.34672
+-11.0631 -13.2328
+-21.0884 -32.7988
+21.8496 -1.11372
+-27.7214 9.53732
+23.4772 -17.3899
+-3.34696 12.9405
+-14.5832 3.31649
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477825
+Time to pick the seeds: 0
+Number of iterations run: 42
+Time to run the iterations: 0
+Start Centres:
+-3.94282 13.6912
+-27.7724 9.53673
+11.9463 -32.2225
+-21.8126 -32.6802
+22.7157 -2.44793
+-10.0471 -13.5526
+-5.81523 -35.2014
+12.8521 -15.7194
+-17.996 20.0131
+-14.9393 3.28397
+4.54345 -2.14048
+25.5081 -24.9956
+-29.0526 -14.1324
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479847
+Time to pick the seeds: 0
+Number of iterations run: 70
+Time to run the iterations: 1
+Start Centres:
+9.13315 -29.0157
+21.6464 -0.617531
+-26.5086 1.0284
+-9.40761 4.65559
+24.7338 -29.7443
+-23.5081 15.8569
+-10.9511 -12.8071
+-6.05155 -35.5682
+-29.6571 -17.1357
+-21.2958 -33.1453
+21.5885 -16.5445
+-7.46012 18.4315
+7.53484 -8.12869
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486013
+Time to pick the seeds: 0
+Number of iterations run: 56
+Time to run the iterations: 0
+Start Centres:
+-29.4022 -21.7089
+7.10576 -2.80699
+-18.0018 -33.9842
+24.1534 -27.6146
+0.474495 -35.0947
+-15.7381 20.506
+23.5033 -3.18316
+13.5151 -18.1868
+-13.9165 3.80729
+-27.6921 -5.61122
+-9.67531 -13.5399
+-2.92374 12.6757
+-26.4495 12.2751
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479734
+Time to pick the seeds: 0
+Number of iterations run: 51
+Time to run the iterations: 1
+Start Centres:
+-27.3792 0.900663
+23.8973 -17.9389
+-11.221 -12.8623
+-20.4319 -33.2026
+-11.8343 4.5373
+-3.3895 -35.6531
+21.918 -1.42017
+6.03762 -3.19602
+9.4394 -20.805
+-6.89207 17.5819
+-29.6795 -17.4788
+-23.4311 16.1057
+21.7417 -32.0405
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479730
+Time to pick the seeds: 0
+Number of iterations run: 51
+Time to run the iterations: 0
+Start Centres:
+22.2602 -31.6129
+-27.7845 1.00375
+-23.189 16.4228
+9.15486 -21.6183
+-12.6048 4.22074
+-20.4988 -33.1746
+-29.8082 -17.5599
+-3.57409 -35.8364
+23.5409 -17.3849
+6.01486 -3.86397
+-6.21181 16.7806
+-11.4106 -13.0166
+21.8857 -1.22309
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 490940
+Time to pick the seeds: 0
+Number of iterations run: 26
+Time to run the iterations: 0
+Start Centres:
+-15.4662 20.4161
+25.7326 -4.33779
+-7.16095 -35.1259
+24.9065 -27.4614
+15.3943 -16.2551
+-1.99831 -11.0761
+12.7249 0.365691
+-8.23997 7.75933
+-30.9795 -16.0092
+-26.2557 9.14837
+-21.7683 -32.6622
+-17.6188 -9.27642
+8.63717 -31.9651
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 491601
+Time to pick the seeds: 1
+Number of iterations run: 64
+Time to run the iterations: 0
+Start Centres:
+4.13273 -33.5709
+23.1843 -2.75488
+-29.7738 -2.68176
+-2.46458 -12.2533
+-15.6521 -34.6692
+14.0718 -15.0175
+-14.2161 4.48726
+-25.1052 14.8745
+3.53178 4.54938
+24.1829 -26.9489
+-29.6971 -23.262
+-10.2751 19.1048
+-17.4511 -12.6672
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485784
+Time to pick the seeds: 0
+Number of iterations run: 47
+Time to run the iterations: 0
+Start Centres:
+6.84332 -2.53543
+-15.925 -34.7623
+3.33449 -34.0083
+-16.7936 20.4642
+-13.9153 3.71765
+-26.6785 11.6183
+24.4135 -27.3074
+23.4691 -3.10913
+-28.9399 -23.0674
+13.8802 -17.3443
+-27.7055 -6.35746
+-9.57924 -13.6692
+-3.42409 13.2545
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 490302
+Time to pick the seeds: 1
+Number of iterations run: 56
+Time to run the iterations: 0
+Start Centres:
+-0.0994458 -35.3443
+-18.3022 -33.8715
+-10.6163 19.4113
+-29.3866 -20.939
+-10.2482 -12.8102
+25.7506 -8.48602
+10.7894 -18.0774
+-1.07136 4.83701
+-25.4972 14.5613
+23.5071 -28.2754
+15.0627 -1.01047
+-28.2907 -4.09653
+-15.2135 4.75097
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477209
+Time to pick the seeds: 0
+Number of iterations run: 33
+Time to run the iterations: 0
+Start Centres:
+-17.4966 20.0392
+21.8455 -0.948403
+-21.9204 -32.6136
+8.84367 -29.3445
+-29.3777 -14.091
+-14.5547 3.33964
+-3.04698 12.5912
+-11.1602 -13.2588
+-27.6614 9.64857
+-6.41802 -35.705
+5.96443 -7.2967
+20.3322 -16.4354
+24.8094 -29.4121
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 489126
+Time to pick the seeds: 0
+Number of iterations run: 65
+Time to run the iterations: 1
+Start Centres:
+-26.4333 10.2432
+25.148 -26.4975
+-21.5884 -32.6027
+23.9864 -3.22035
+14.4184 -15.8283
+-14.2411 20.3814
+-30.9684 -16.3307
+8.79243 0.0658042
+-8.43098 7.04752
+-4.68004 -14.2924
+9.95382 -32.0138
+-18.909 -7.11923
+-6.54885 -35.6914
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480160
+Time to pick the seeds: 0
+Number of iterations run: 57
+Time to run the iterations: 0
+Start Centres:
+24.6176 -18.6013
+-13.7709 4.57808
+-19.9086 -33.6216
+3.79769 0.0850124
+-29.6602 -20.0036
+-11.119 -13.0286
+-8.33009 18.0369
+-24.577 15.2985
+-2.96834 -35.4682
+-28.288 -2.68854
+9.69132 -18.7097
+20.9373 -32.0647
+21.4172 -2.08692
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479012
+Time to pick the seeds: 0
+Number of iterations run: 43
+Time to run the iterations: 1
+Start Centres:
+6.45343 -5.54462
+-3.98451 -35.8995
+21.8442 -1.09425
+22.4375 -31.6685
+-14.5863 3.29728
+-17.5285 20.0299
+9.18004 -22.6805
+-21.1422 -32.785
+-11.0247 -13.2426
+23.4513 -17.3769
+-3.20425 12.7935
+-29.3427 -14.2684
+-27.6695 9.63523
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485212
+Time to pick the seeds: 0
+Number of iterations run: 63
+Time to run the iterations: 0
+Start Centres:
+2.96253 4.31297
+-21.6095 -32.6767
+-11.9666 19.3799
+10.945 -31.6203
+-3.91146 -14.0319
+-19.0418 -10.2812
+-26.7143 11.7158
+23.1219 -2.44812
+25.2005 -25.4489
+13.3454 -13.8193
+-6.18217 -35.5762
+-13.7068 4.54584
+-31.614 -15.5266
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 84
+Time to run the iterations: 1
+Start Centres:
+-1.18562 7.42528
+-7.00359 -35.6753
+-29.3946 -13.0479
+24.1514 -30.2611
+-16.0076 3.76435
+-26.8893 12.3799
+22.3924 -17.2375
+21.9149 -1.03697
+-10.8417 -12.8204
+-22.3704 -32.3039
+-12.9154 19.7376
+8.29536 -29.6964
+8.13108 -9.99474
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479204
+Time to pick the seeds: 0
+Number of iterations run: 47
+Time to run the iterations: 0
+Start Centres:
+-23.0278 16.4875
+6.38644 -6.98209
+-29.6822 -16.7078
+20.3779 -16.4515
+21.796 -0.858014
+-27.2069 1.65682
+-6.3038 -35.676
+-11.5023 4.20452
+24.8141 -29.4209
+-21.5313 -32.983
+8.83052 -29.3303
+-5.93517 16.8138
+-11.172 -13.0772
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478002
+Time to pick the seeds: 0
+Number of iterations run: 40
+Time to run the iterations: 1
+Start Centres:
+24.7637 -26.0625
+6.22637 -1.51431
+-7.27601 -35.5597
+-27.733 9.39422
+-28.7813 -13.7809
+-4.00837 13.7382
+8.78422 -32.0776
+-14.4844 3.32712
+-18.1414 19.9916
+-22.2753 -32.4297
+13.1554 -15.5907
+23.4687 -2.90486
+-9.53998 -13.4666
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475391
+Time to pick the seeds: 0
+Number of iterations run: 58
+Time to run the iterations: 0
+Start Centres:
+-25.4226 14.5579
+22.8744 -2.45312
+-5.37189 -35.173
+12.0168 -31.9182
+-14.3602 4.64018
+-29.5607 -20.0558
+-10.3366 19.1345
+-9.93603 -12.9948
+2.28818 3.82248
+11.7327 -13.8943
+-20.605 -33.5746
+25.2444 -24.6797
+-27.9846 -3.83478
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485808
+Time to pick the seeds: 0
+Number of iterations run: 32
+Time to run the iterations: 0
+Start Centres:
+-3.42409 13.2545
+-9.62873 -13.6352
+3.47344 -33.8906
+23.45 -3.08527
+-27.8026 -6.40942
+-28.8997 -23.1284
+-16.7826 20.4666
+6.81679 -2.56454
+-15.8027 -34.8352
+-13.959 3.68213
+13.8503 -17.3087
+-26.6809 11.6353
+24.3969 -27.3026
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 1
+Number of iterations run: 92
+Time to run the iterations: 0
+Start Centres:
+-26.8893 12.3799
+-22.3704 -32.3039
+21.9149 -1.03697
+24.1514 -30.2611
+-29.3946 -13.0479
+-1.18562 7.42528
+8.13108 -9.99474
+-10.8417 -12.8204
+22.3924 -17.2375
+8.29536 -29.6964
+-7.00359 -35.6753
+-12.9154 19.7376
+-16.0076 3.76435
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 109
+Time to run the iterations: 1
+Start Centres:
+-16.0076 3.76435
+8.13108 -9.99474
+-7.00359 -35.6753
+-22.3704 -32.3039
+-10.8417 -12.8204
+-26.8893 12.3799
+-12.9154 19.7376
+-1.18562 7.42528
+8.29536 -29.6964
+22.3924 -17.2375
+21.9149 -1.03697
+24.1514 -30.2611
+-29.3946 -13.0479
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479207
+Time to pick the seeds: 0
+Number of iterations run: 56
+Time to run the iterations: 0
+Start Centres:
+-6.3038 -35.676
+6.43114 -6.8904
+-11.5023 4.20452
+-29.675 -16.72
+24.8025 -29.4345
+-23.0324 16.481
+-27.2062 1.64474
+-21.5269 -32.9936
+20.3305 -16.4843
+-11.172 -13.0772
+8.80199 -29.2844
+-5.93517 16.8138
+21.8996 -0.919224
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477870
+Time to pick the seeds: 0
+Number of iterations run: 35
+Time to run the iterations: 1
+Start Centres:
+25.4976 -24.9534
+-21.8447 -32.6669
+-3.86778 13.486
+23.2328 -2.81409
+12.0407 -32.3675
+12.7489 -16.1358
+-9.82469 -13.3957
+-27.6893 9.55025
+-28.9722 -14.0114
+-14.6101 3.21726
+6.37261 -1.96187
+-5.82985 -35.177
+-17.8935 19.9999
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475139
+Time to pick the seeds: 0
+Number of iterations run: 53
+Time to run the iterations: 0
+Start Centres:
+-29.4208 -18.2835
+-24.5632 15.4176
+11.505 -31.8792
+23.1777 -2.67776
+25.2056 -25.0939
+12.2086 -14.4273
+-28.0344 -1.09397
+-5.67498 -35.1316
+-9.22345 18.6807
+-13.4776 4.60032
+-10.0708 -13.0074
+-21.144 -33.3253
+3.90059 2.40635
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486018
+Time to pick the seeds: 0
+Number of iterations run: 65
+Time to run the iterations: 1
+Start Centres:
+-9.69265 -13.5232
+-15.7381 20.506
+-29.3734 -21.7556
+-27.7533 -5.67203
+-13.927 3.81647
+0.441091 -35.0915
+7.14367 -2.78978
+13.5281 -18.1722
+-2.92374 12.6757
+-18.0018 -33.9842
+24.1059 -27.6723
+23.5495 -3.22684
+-26.4495 12.2647
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477952
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+8.65733 -32.1288
+-9.45949 -13.4673
+-17.9192 20.013
+-22.3092 -32.3395
+-28.7753 -13.5992
+24.9095 -26.4158
+-7.32342 -35.5571
+23.4487 -2.96547
+-14.4903 3.31204
+-3.851 13.5337
+13.679 -16.1807
+-27.6741 9.58612
+6.62949 -2.05688
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478907
+Time to pick the seeds: 0
+Number of iterations run: 27
+Time to run the iterations: 0
+Start Centres:
+-25.3099 14.8105
+18.3804 -31.393
+-28.391 -3.35901
+1.00331 3.82071
+24.8979 -19.2647
+9.82796 -14.4558
+-19.9126 -33.6428
+21.5299 -1.48698
+-29.549 -20.0944
+-10.2566 19.1342
+-3.17479 -35.0369
+-10.7623 -12.6961
+-14.8686 4.79456
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475489
+Time to pick the seeds: 1
+Number of iterations run: 42
+Time to run the iterations: 0
+Start Centres:
+1.91297 3.78376
+-25.4353 14.567
+25.3118 -24.3601
+-20.5412 -33.597
+22.7103 -2.36367
+-10.3331 19.1225
+-14.5867 4.6338
+-28.0737 -3.90482
+-5.3026 -35.1784
+-29.5348 -20.1714
+-9.9633 -13.0576
+12.4824 -32.0801
+11.6161 -14.0121
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475393
+Time to pick the seeds: 0
+Number of iterations run: 62
+Time to run the iterations: 0
+Start Centres:
+-5.37189 -35.173
+2.24604 3.81714
+22.8638 -2.44462
+-27.9846 -3.83478
+-25.4226 14.5579
+11.7256 -13.8882
+-9.94123 -13.0075
+-20.605 -33.5746
+-29.5607 -20.0558
+-10.3321 19.1227
+12.0168 -31.9182
+25.2367 -24.6741
+-14.3782 4.62957
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 482104
+Time to pick the seeds: 0
+Number of iterations run: 35
+Time to run the iterations: 1
+Start Centres:
+-31.0319 -15.7098
+10.2268 -31.2742
+25.4085 -26.1469
+0.163174 -8.04685
+-2.34009 12.0839
+-17.0293 20.0908
+-21.6129 -32.9014
+21.9099 -1.79943
+-16.7932 -11.9003
+14.676 -15.0211
+-27.7686 9.66478
+-14.8766 4.15109
+-6.18434 -34.7692
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479182
+Time to pick the seeds: 0
+Number of iterations run: 27
+Time to run the iterations: 0
+Start Centres:
+6.39508 -6.95082
+-6.31787 -35.6465
+8.69436 -29.2907
+-11.1928 -12.9832
+-11.3197 4.29161
+-6.01309 16.9892
+20.3766 -16.4434
+21.796 -0.858014
+-29.675 -16.72
+-23.0379 16.4536
+24.6951 -29.4179
+-21.5156 -32.9835
+-27.1708 1.64861
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480015
+Time to pick the seeds: 0
+Number of iterations run: 23
+Time to run the iterations: 0
+Start Centres:
+-23.7974 16.1497
+-3.18637 -35.5187
+21.1517 -32.0649
+21.3354 -1.94389
+9.71719 -19.1095
+-13.6882 4.52325
+-7.49295 17.5371
+-11.3434 -12.8974
+-29.7608 -17.9984
+-20.3551 -33.2847
+3.72078 -0.709958
+24.5521 -18.5134
+-28.2064 0.151255
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480163
+Time to pick the seeds: 0
+Number of iterations run: 39
+Time to run the iterations: 1
+Start Centres:
+-3.3192 -35.6135
+-27.1042 0.589274
+23.92 -18.153
+-10.8704 4.68664
+-23.7601 15.8037
+7.71184 -1.83216
+-10.8174 -12.6477
+-7.92362 18.3836
+21.6409 -32.0287
+-20.3808 -33.2193
+9.36363 -20.3627
+-29.5982 -17.6086
+22.7846 -2.01986
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475393
+Time to pick the seeds: 0
+Number of iterations run: 47
+Time to run the iterations: 0
+Start Centres:
+-25.4226 14.5579
+22.8638 -2.44462
+12.0168 -31.9182
+-20.605 -33.5746
+-27.9846 -3.83478
+25.2367 -24.6741
+-9.94123 -13.0075
+2.24604 3.81714
+-5.37189 -35.173
+11.7256 -13.8882
+-29.5607 -20.0558
+-14.3782 4.62957
+-10.3321 19.1227
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475391
+Time to pick the seeds: 0
+Number of iterations run: 76
+Time to run the iterations: 1
+Start Centres:
+-25.4226 14.5579
+-14.3602 4.64018
+-10.3366 19.1345
+25.2444 -24.6797
+12.0168 -31.9182
+11.7327 -13.8943
+-27.9846 -3.83478
+-20.605 -33.5746
+-29.5607 -20.0558
+-9.93603 -12.9948
+22.8744 -2.45312
+-5.37189 -35.173
+2.28818 3.82248
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478917
+Time to pick the seeds: 0
+Number of iterations run: 40
+Time to run the iterations: 0
+Start Centres:
+-19.8888 -33.606
+-14.8533 4.80329
+18.6058 -31.5906
+9.60807 -15.2403
+1.10261 3.48102
+21.3478 -1.65123
+-25.3099 14.8105
+-28.3738 -3.37188
+-29.6593 -20.1364
+24.8702 -19.2041
+-10.2136 19.1012
+-10.94 -12.7834
+-3.2086 -35.2685
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485764
+Time to pick the seeds: 0
+Number of iterations run: 43
+Time to run the iterations: 0
+Start Centres:
+-13.9153 3.71765
+13.7297 -17.568
+-16.7936 20.4642
+-26.6785 11.6183
+-9.60244 -13.6358
+23.4576 -3.12621
+-27.7018 -6.34365
+-16.3247 -34.6293
+-29.0153 -22.8839
+24.3575 -27.3711
+6.85733 -2.55678
+-3.42409 13.2545
+2.69872 -34.328
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485582
+Time to pick the seeds: 1
+Number of iterations run: 54
+Time to run the iterations: 0
+Start Centres:
+25.1781 -25.6922
+-26.6639 13.2575
+-6.0219 -35.1803
+-3.25248 6.3668
+12.382 -15.875
+-17.8775 3.07833
+13.1115 -0.942807
+-29.466 -13.6271
+-9.39772 -12.9044
+-12.1717 19.5309
+-21.9535 -32.4772
+11.177 -32.1713
+25.8189 -4.52118
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 481493
+Time to pick the seeds: 0
+Number of iterations run: 54
+Time to run the iterations: 0
+Start Centres:
+-13.744 3.64169
+23.5247 -17.3709
+-20.8984 -32.9758
+-4.64375 14.7414
+9.17181 -22.0096
+-28.5251 4.45634
+21.8653 -1.09789
+-21.3051 17.8962
+-3.84351 -35.8115
+22.2955 -31.6653
+-11.2865 -13.0318
+6.238 -4.63342
+-29.4295 -15.8837
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478915
+Time to pick the seeds: 1
+Number of iterations run: 139
+Time to run the iterations: 0
+Start Centres:
+-25.4452 14.5989
+-10.6595 -12.7545
+21.5513 -1.51899
+-29.5653 -20.2445
+1.04678 3.86046
+-14.8354 4.77638
+-3.38572 -35.1024
+17.9557 -31.5451
+-19.9213 -33.6298
+25.1192 -19.6524
+-28.2646 -3.78835
+-10.3683 19.163
+10.0189 -14.5092
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480164
+Time to pick the seeds: 1
+Number of iterations run: 55
+Time to run the iterations: 0
+Start Centres:
+-2.00791 9.18764
+9.38807 -24.7294
+-10.2953 -12.9385
+-4.41158 -35.9817
+-15.6389 3.48289
+22.8208 -31.6803
+21.8484 -0.940536
+-15.0122 20.0364
+-21.3025 -32.6631
+8.2868 -8.15739
+-27.4247 11.035
+23.605 -17.503
+-29.2494 -13.8811
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479596
+Time to pick the seeds: 0
+Number of iterations run: 37
+Time to run the iterations: 0
+Start Centres:
+-27.2112 0.969652
+-3.62134 -35.8395
+-6.84887 17.5744
+-20.5068 -33.167
+-11.1554 -12.8069
+22.0288 -1.16869
+-23.4111 16.1011
+23.5138 -17.3725
+6.89622 -3.94696
+-29.6857 -17.4334
+9.11993 -21.8867
+22.3277 -31.6219
+-11.3915 4.42707
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486007
+Time to pick the seeds: 0
+Number of iterations run: 65
+Time to run the iterations: 1
+Start Centres:
+7.03639 -2.67712
+-18.0018 -33.9842
+-16.6765 20.457
+-27.6089 -5.95567
+13.5277 -18.1662
+-26.6707 11.7874
+24.1534 -27.6146
+0.474495 -35.0947
+-29.4175 -21.8093
+-9.6163 -13.563
+-13.8595 3.75725
+-3.40514 13.217
+23.4936 -3.18195
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 481259
+Time to pick the seeds: 0
+Number of iterations run: 23
+Time to run the iterations: 0
+Start Centres:
+25.0692 -29.0952
+-14.5579 3.99272
+-21.5793 -32.8389
+1.85527 -9.0254
+-30.9912 -15.6731
+-17.0676 20.072
+9.37016 -29.7791
+19.6851 -16.1422
+-16.4273 -11.8535
+-27.7149 9.6052
+-2.4754 12.0302
+20.8247 -1.34549
+-6.19037 -35.1244
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485481
+Time to pick the seeds: 0
+Number of iterations run: 118
+Time to run the iterations: 1
+Start Centres:
+-26.701 11.7257
+10.945 -31.6203
+25.1776 -25.4332
+-11.9814 19.4541
+-6.18217 -35.5762
+-31.5129 -16.5602
+-4.72219 -14.2169
+23.1676 -2.49029
+-20.202 -8.96619
+-13.3397 4.74093
+13.1906 -13.7378
+-21.493 -32.6701
+3.12915 4.25068
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474975
+Time to pick the seeds: 0
+Number of iterations run: 43
+Time to run the iterations: 0
+Start Centres:
+-10.1715 -13.0077
+11.9803 -14.5855
+-13.3342 4.48775
+-5.62614 -35.1417
+-24.1414 15.8774
+12.0594 -32.0863
+-8.58242 18.233
+23.1327 -2.69446
+4.23643 1.90981
+-27.8706 0.147649
+25.2806 -24.7537
+-21.2267 -33.181
+-29.5455 -17.5688
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 484907
+Time to pick the seeds: 0
+Number of iterations run: 50
+Time to run the iterations: 1
+Start Centres:
+0.714625 7.05155
+-18.4898 -11.3058
+13.1487 -13.0362
+-21.6777 -32.7105
+-27.0945 11.6511
+-6.20287 -35.2136
+-2.89666 -12.0209
+22.759 -2.07231
+25.1375 -25.3244
+10.92 -31.4386
+-31.593 -15.2719
+-14.974 4.35243
+-13.0274 19.6584
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474982
+Time to pick the seeds: 0
+Number of iterations run: 20
+Time to run the iterations: 0
+Start Centres:
+4.23643 1.90981
+-13.3419 4.47491
+11.9803 -14.5855
+23.1327 -2.69446
+-24.0946 15.9376
+-21.2596 -33.1603
+-8.54568 18.2254
+12.0594 -32.0863
+-10.1833 -12.9928
+25.2806 -24.7537
+-27.9265 0.422223
+-5.62614 -35.1417
+-29.4672 -17.3768
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477873
+Time to pick the seeds: 0
+Number of iterations run: 53
+Time to run the iterations: 0
+Start Centres:
+-21.9075 -32.6292
+-17.9892 19.991
+13.1211 -15.8693
+-9.71968 -13.4788
+-28.913 -14.0125
+-3.966 13.5902
+-6.25224 -35.4695
+25.213 -25.7158
+6.36617 -1.8254
+10.4865 -31.8354
+-14.5944 3.23027
+-27.7112 9.51116
+23.378 -2.91561
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 1
+Number of iterations run: 50
+Time to run the iterations: 0
+Start Centres:
+8.28333 -29.6971
+-26.8893 12.3799
+22.382 -17.2132
+24.1436 -30.2285
+-12.9154 19.7376
+-29.3946 -13.0479
+-22.3704 -32.3039
+-16.0076 3.76435
+-10.8417 -12.8204
+-7.00359 -35.6753
+-1.18562 7.42528
+21.9149 -1.03697
+8.13108 -9.99474
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479016
+Time to pick the seeds: 0
+Number of iterations run: 72
+Time to run the iterations: 0
+Start Centres:
+-27.7022 9.60298
+23.4672 -17.3907
+-11.103 -13.2198
+22.3472 -31.6739
+-17.5971 20.0044
+-14.5826 3.30717
+21.8366 -1.10393
+-3.26762 12.8874
+-29.4042 -14.3505
+6.4472 -5.41107
+9.07491 -22.5008
+-3.96046 -35.9231
+-21.0884 -32.7988
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 489904
+Time to pick the seeds: 1
+Number of iterations run: 40
+Time to run the iterations: 0
+Start Centres:
+-18.3235 -33.5414
+-27.7717 8.99302
+23.702 -3.29974
+0.448836 -35.4071
+-3.85718 14.0097
+14.7656 -18.0819
+-18.3974 19.949
+7.6401 -2.0437
+-21.7059 -9.52408
+-13.3968 3.86404
+24.1038 -28.3114
+-30.9948 -20.531
+-5.21392 -14.6977
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479037
+Time to pick the seeds: 0
+Number of iterations run: 40
+Time to run the iterations: 0
+Start Centres:
+1.76088 2.54101
+24.8892 -19.2123
+18.7086 -31.6535
+-10.9657 -12.887
+-9.36816 18.7061
+-24.8604 15.1501
+-29.5941 -19.9843
+21.3371 -1.72276
+-3.22437 -35.2528
+-28.3918 -2.87193
+-19.9516 -33.631
+9.69794 -15.6847
+-14.4901 4.69899
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479847
+Time to pick the seeds: 0
+Number of iterations run: 68
+Time to run the iterations: 1
+Start Centres:
+7.53484 -8.12869
+-23.5081 15.8569
+24.7252 -29.715
+-6.05155 -35.5682
+-26.5086 1.0284
+21.5838 -16.5191
+-21.2958 -33.1453
+21.6464 -0.617531
+-7.46012 18.4315
+-9.40761 4.65559
+9.13315 -29.0157
+-10.9511 -12.8071
+-29.6571 -17.1357
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 499469
+Time to pick the seeds: 0
+Number of iterations run: 34
+Time to run the iterations: 0
+Start Centres:
+23.4138 -30.7015
+-30.8485 -15.9127
+7.53819 -31.5555
+12.5596 -14.7704
+-16.2702 20.2992
+-17.1199 -8.93599
+25.2668 -17.9588
+-6.76302 8.66712
+-0.901419 -8.92122
+-25.9726 8.89507
+-7.40598 -35.0636
+20.6464 -0.765603
+-21.7997 -32.6421
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 121
+Time to run the iterations: 1
+Start Centres:
+-12.9154 19.7376
+-16.0076 3.76435
+8.29536 -29.6964
+22.3924 -17.2375
+-29.3946 -13.0479
+24.1514 -30.2611
+-1.18562 7.42528
+-22.3704 -32.3039
+-7.00359 -35.6753
+-26.8893 12.3799
+-10.8417 -12.8204
+8.13108 -9.99474
+21.9149 -1.03697
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486015
+Time to pick the seeds: 0
+Number of iterations run: 48
+Time to run the iterations: 0
+Start Centres:
+-9.65679 -13.559
+-15.7381 20.506
+24.1059 -27.6723
+-13.9183 3.78754
+-26.4495 12.2647
+-18.0018 -33.9842
+-2.9382 12.6744
+-29.4022 -21.7089
+-27.6943 -5.62626
+7.14367 -2.78978
+13.5413 -18.1706
+23.5495 -3.22684
+0.441091 -35.0915
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 495940
+Time to pick the seeds: 0
+Number of iterations run: 44
+Time to run the iterations: 1
+Start Centres:
+-30.8607 -16.5712
+-1.92896 -9.96283
+-21.1079 18.134
+9.32708 -31.44
+-24.4427 4.2936
+-21.5644 -32.9006
+-16.4995 -11.0934
+25.0799 -27.4152
+-6.9697 10.9757
+-6.51485 -35.1102
+12.8861 0.152346
+25.7811 -4.31823
+15.4981 -16.1536
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479016
+Time to pick the seeds: 0
+Number of iterations run: 52
+Time to run the iterations: 0
+Start Centres:
+21.8366 -1.10393
+-17.5971 20.0044
+-3.96046 -35.9231
+-29.4042 -14.3505
+-14.5826 3.30717
+-11.103 -13.2198
+6.4472 -5.41107
+23.4672 -17.3907
+22.3472 -31.6739
+-3.26762 12.8874
+-21.0884 -32.7988
+9.07491 -22.5008
+-27.7022 9.60298
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479028
+Time to pick the seeds: 0
+Number of iterations run: 63
+Time to run the iterations: 1
+Start Centres:
+-3.34696 12.9405
+21.8496 -1.11372
+-29.3563 -14.3611
+-21.0884 -32.7988
+22.3543 -31.6847
+9.1695 -22.4805
+-17.695 20.0277
+-14.5832 3.31649
+6.44371 -5.34672
+-11.0377 -13.235
+-3.93517 -35.8814
+-27.7214 9.53732
+23.4772 -17.3899
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 107
+Time to run the iterations: 0
+Start Centres:
+-26.8893 12.3799
+22.3924 -17.2375
+-22.3704 -32.3039
+-10.8417 -12.8204
+-12.9154 19.7376
+8.13108 -9.99474
+-29.3946 -13.0479
+21.9149 -1.03697
+8.29536 -29.6964
+-1.18562 7.42528
+-7.00359 -35.6753
+24.1514 -30.2611
+-16.0076 3.76435
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475017
+Time to pick the seeds: 1
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+-10.1574 -13.009
+-27.886 0.376584
+23.1385 -2.70741
+-5.67498 -35.1316
+12.0564 -14.519
+-21.2267 -33.181
+4.23643 1.90981
+11.5687 -31.9359
+-8.55064 18.2376
+-24.0946 15.9376
+-29.488 -17.4523
+25.1878 -25.0445
+-13.325 4.48717
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480982
+Time to pick the seeds: 0
+Number of iterations run: 32
+Time to run the iterations: 0
+Start Centres:
+22.089 -1.94596
+-28.0057 -2.14628
+-19.9306 -33.6122
+-12.458 4.40457
+21.6956 -32.0091
+24.061 -18.1356
+5.97954 -1.55357
+-7.9502 17.9076
+-10.998 -13.0139
+-24.2845 15.1586
+-3.11226 -35.6071
+-29.578 -19.6921
+9.4623 -20.1829
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475033
+Time to pick the seeds: 0
+Number of iterations run: 58
+Time to run the iterations: 1
+Start Centres:
+-9.97064 -13.0329
+25.2098 -25.1033
+-24.0946 15.9376
+23.1777 -2.67776
+-5.69136 -35.1412
+-13.325 4.48717
+-29.4084 -17.3514
+-21.27 -33.1643
+-8.55064 18.2376
+11.505 -31.8792
+12.254 -14.4428
+4.21372 1.94376
+-27.8869 0.393962
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478966
+Time to pick the seeds: 0
+Number of iterations run: 51
+Time to run the iterations: 0
+Start Centres:
+-19.9093 -33.6271
+-9.77879 18.8783
+21.3351 -1.67176
+-14.8096 4.77325
+24.8793 -19.21
+18.6151 -31.5989
+-28.3548 -3.34093
+-10.9323 -12.8368
+1.2764 2.99244
+9.64604 -15.357
+-29.5833 -20.1053
+-3.2086 -35.2685
+-25.187 14.8993
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 490715
+Time to pick the seeds: 0
+Number of iterations run: 94
+Time to run the iterations: 1
+Start Centres:
+25.5752 -4.62782
+-23.6296 15.9417
+24.0451 -28.4361
+-16.8966 -12.2992
+-10.6152 4.71545
+-27.7119 1.41117
+-18.7543 -33.5024
+14.8921 -18.206
+-1.35626 -11.3988
+-0.0471319 -34.9463
+-30.7672 -19.0737
+-7.87268 18.3774
+12.5628 0.0840987
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 111
+Time to run the iterations: 1
+Start Centres:
+-16.0076 3.76435
+-6.99046 -35.6783
+22.3924 -17.2375
+8.30389 -29.6841
+-1.18562 7.42528
+-29.3946 -13.0479
+8.13108 -9.99474
+-12.9154 19.7376
+24.1514 -30.2611
+21.9149 -1.03697
+-26.8893 12.3799
+-22.3704 -32.3039
+-10.8417 -12.8204
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475017
+Time to pick the seeds: 0
+Number of iterations run: 46
+Time to run the iterations: 0
+Start Centres:
+11.505 -31.8792
+-21.2267 -33.181
+-13.3255 4.49362
+23.1777 -2.67776
+-8.61488 18.2584
+25.2056 -25.0939
+-24.1414 15.8774
+12.2213 -14.4343
+-27.8706 0.147649
+-10.0481 -13.0201
+-29.5307 -17.5624
+-5.67498 -35.1316
+4.20729 1.99726
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477968
+Time to pick the seeds: 0
+Number of iterations run: 57
+Time to run the iterations: 0
+Start Centres:
+23.4395 -2.97106
+-28.8106 -13.5578
+-14.4964 3.33186
+-9.49447 -13.4686
+24.9188 -26.414
+8.68202 -32.1134
+-3.78167 13.4606
+6.61826 -2.07121
+-17.7663 20.0523
+-7.31115 -35.5597
+13.6658 -16.2029
+-27.6386 9.6961
+-22.3092 -32.3395
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474982
+Time to pick the seeds: 1
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+4.23643 1.90981
+-27.9265 0.422223
+-21.2596 -33.1603
+12.0594 -32.0863
+-24.0946 15.9376
+23.1327 -2.69446
+11.9803 -14.5855
+-29.4672 -17.3768
+-10.1833 -12.9928
+25.2806 -24.7537
+-8.54568 18.2254
+-5.62614 -35.1417
+-13.3419 4.47491
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 501231
+Time to pick the seeds: 0
+Number of iterations run: 26
+Time to run the iterations: 0
+Start Centres:
+9.52211 -21.6085
+-20.6099 -33.0933
+-6.72935 11.809
+-3.76891 -35.4784
+-4.8775 -7.92536
+23.757 -18.0893
+-17.6839 -12.3584
+21.9404 -32.0542
+23.4397 -2.00989
+10.1887 -2.44071
+-31.1781 -17.224
+-24.0241 4.16249
+-21.2812 18.0955
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485805
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 1
+Start Centres:
+13.8554 -17.2988
+-9.64736 -13.6011
+-15.8027 -34.8352
+-13.9191 3.73795
+6.84332 -2.53543
+-26.6785 11.6183
+23.4691 -3.10913
+-3.42409 13.2545
+24.3969 -27.3026
+-27.736 -6.37793
+3.4756 -33.8644
+-28.8997 -23.1284
+-16.7936 20.4642
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485414
+Time to pick the seeds: 0
+Number of iterations run: 69
+Time to run the iterations: 0
+Start Centres:
+-11.4932 19.2885
+-21.5734 -32.7402
+25.31 -24.8183
+-31.7446 -15.1222
+22.9115 -2.27173
+-18.8437 -10.9922
+2.13569 4.51365
+11.9313 -31.8145
+-3.74132 -13.7863
+-5.81577 -35.46
+-26.5665 12.2712
+13.0757 -13.6605
+-14.5763 4.34272
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 62
+Time to run the iterations: 1
+Start Centres:
+-22.3704 -32.3039
+21.9149 -1.03697
+8.29536 -29.6964
+-26.8893 12.3799
+-12.9154 19.7376
+-10.8417 -12.8204
+22.3924 -17.2375
+8.13108 -9.99474
+-16.0076 3.76435
+-1.18562 7.42528
+-29.3946 -13.0479
+24.1514 -30.2611
+-7.00359 -35.6753
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480172
+Time to pick the seeds: 0
+Number of iterations run: 70
+Time to run the iterations: 0
+Start Centres:
+-11.0631 -13.0165
+20.9373 -32.0647
+-24.6473 15.2528
+-19.9086 -33.6216
+24.6277 -18.6063
+3.73155 0.458495
+-29.6602 -20.0036
+-8.5603 18.1731
+-13.7674 4.58554
+9.68632 -18.6347
+-2.96834 -35.4682
+-28.2677 -2.72037
+21.4127 -2.11894
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486015
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+7.13091 -2.80091
+0.441091 -35.0915
+-29.4022 -21.7089
+-18.0018 -33.9842
+-26.4495 12.2751
+-9.65679 -13.559
+24.1059 -27.6723
+-27.6921 -5.61122
+13.5413 -18.1706
+23.54 -3.2176
+-2.9382 12.6744
+-13.9183 3.78754
+-15.7381 20.506
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475004
+Time to pick the seeds: 1
+Number of iterations run: 58
+Time to run the iterations: 0
+Start Centres:
+-27.8654 0.0370857
+25.2056 -25.0939
+11.505 -31.8792
+-21.2267 -33.181
+-29.5413 -17.6043
+-13.2958 4.53809
+12.2213 -14.4343
+-24.2859 15.7744
+4.03637 2.27797
+-10.0481 -13.0201
+-5.67498 -35.1316
+23.1777 -2.67776
+-9.00146 18.5488
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 483596
+Time to pick the seeds: 0
+Number of iterations run: 26
+Time to run the iterations: 0
+Start Centres:
+-18.2258 -11.4772
+-27.7096 9.64818
+22.41 -1.78334
+-21.4313 -32.8898
+-2.53831 -10.2291
+11.8322 -31.4062
+25.2304 -24.6663
+-31.3732 -16.1161
+-1.47487 10.9006
+12.7559 -12.5644
+-14.6171 4.27074
+-5.71714 -34.8811
+-16.5556 20.0618
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 496488
+Time to pick the seeds: 0
+Number of iterations run: 54
+Time to run the iterations: 1
+Start Centres:
+-8.38047 8.69793
+-7.34456 -35.1388
+-29.2537 -14.1145
+-16.9248 20.3162
+8.40322 -32.4322
+23.5221 -16.7406
+8.75913 -16.2683
+24.0405 -29.7161
+-25.8884 8.09379
+6.48262 -0.380942
+-11.6485 -10.8464
+-22.1612 -32.4715
+22.369 -1.81525
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 482828
+Time to pick the seeds: 0
+Number of iterations run: 143
+Time to run the iterations: 1
+Start Centres:
+-15.085 4.50721
+21.7821 -1.20412
+22.145 -30.7317
+-15.8877 -34.8237
+0.126922 5.20839
+-10.9093 19.4596
+9.32095 -12.818
+23.8052 -17.9263
+-29.0574 -22.9989
+-10.9188 -12.9702
+-28.4187 -5.20686
+-25.6514 14.2459
+2.93917 -33.216
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479048
+Time to pick the seeds: 0
+Number of iterations run: 22
+Time to run the iterations: 0
+Start Centres:
+23.2944 -17.3055
+-3.16826 12.686
+-21.2983 -32.7363
+21.8423 -0.986854
+-4.25998 -35.9363
+-17.5285 20.0299
+-10.5056 -13.3864
+9.47449 -23.983
+-29.135 -14.1631
+22.7611 -31.6468
+-14.5612 3.24257
+-27.6626 9.63
+6.71382 -6.33361
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 95
+Time to run the iterations: 1
+Start Centres:
+22.3924 -17.2375
+-12.9154 19.7376
+-10.8417 -12.8204
+24.1514 -30.2611
+21.9149 -1.03697
+-26.8893 12.3799
+8.29536 -29.6964
+-22.3704 -32.3039
+-7.00359 -35.6753
+8.13108 -9.99474
+-1.18562 7.42528
+-29.3946 -13.0479
+-16.0076 3.76435
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 491197
+Time to pick the seeds: 0
+Number of iterations run: 28
+Time to run the iterations: 0
+Start Centres:
+-17.9924 20.0278
+-2.89827 -11.0577
+-27.9113 8.97248
+-18.9075 -33.2888
+-19.1317 -10.9976
+12.1837 -1.38385
+25.261 -4.0963
+24.0721 -28.4124
+-0.0531973 -34.9135
+-3.48648 12.9824
+-14.2297 4.13146
+14.7416 -18.3372
+-31.2613 -17.9942
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485803
+Time to pick the seeds: 0
+Number of iterations run: 32
+Time to run the iterations: 0
+Start Centres:
+3.48291 -33.9038
+-27.7055 -6.35746
+23.4691 -3.10913
+-26.6785 11.6183
+13.8784 -17.3033
+-9.57924 -13.6692
+24.3969 -27.3026
+6.84332 -2.53543
+-28.9109 -23.1
+-16.7936 20.4642
+-15.8027 -34.8352
+-13.9153 3.71765
+-3.42409 13.2545
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474988
+Time to pick the seeds: 1
+Number of iterations run: 54
+Time to run the iterations: 0
+Start Centres:
+25.1901 -24.9828
+-21.2267 -33.181
+-9.08733 18.6149
+12.0312 -14.4525
+11.6333 -31.9527
+-13.3372 4.52865
+-10.1326 -13.0096
+-29.5413 -17.6043
+-24.2943 15.7737
+-5.67498 -35.1316
+-27.8654 0.0370857
+23.0982 -2.68552
+3.86817 2.44031
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486012
+Time to pick the seeds: 0
+Number of iterations run: 44
+Time to run the iterations: 0
+Start Centres:
+23.5033 -3.18316
+-9.65679 -13.559
+-2.92374 12.6757
+0.474495 -35.0947
+-15.7381 20.506
+-27.6921 -5.61122
+24.1534 -27.6146
+-26.4495 12.2751
+-18.0018 -33.9842
+-29.4022 -21.7089
+7.10576 -2.80699
+13.5283 -18.1853
+-13.9153 3.79692
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486010
+Time to pick the seeds: 0
+Number of iterations run: 28
+Time to run the iterations: 1
+Start Centres:
+-27.6361 -6.03753
+24.1512 -27.6061
+0.748715 -34.956
+-3.41312 13.2488
+13.5415 -18.0546
+-17.7025 -34.1621
+-16.6765 20.457
+-26.6799 11.779
+-29.2991 -22.0909
+6.88021 -2.60232
+23.4446 -3.18588
+-13.8983 3.76326
+-9.63138 -13.5879
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475003
+Time to pick the seeds: 0
+Number of iterations run: 69
+Time to run the iterations: 0
+Start Centres:
+-5.68447 -35.1249
+12.0384 -14.4723
+-29.4857 -17.4036
+25.1901 -24.9828
+4.1965 2.01
+-24.1226 15.9258
+-13.2666 4.52429
+23.1327 -2.69446
+11.6333 -31.9527
+-27.8763 0.36903
+-8.63982 18.3283
+-21.27 -33.1643
+-10.145 -13.0025
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477982
+Time to pick the seeds: 0
+Number of iterations run: 28
+Time to run the iterations: 0
+Start Centres:
+-17.761 20.0606
+24.9043 -26.4292
+-7.61433 -35.6974
+-28.7812 -13.478
+-9.43987 -13.5219
+-22.4663 -32.2149
+-3.78167 13.4606
+6.61258 -2.06006
+-14.4964 3.33186
+-27.6268 9.71446
+23.4487 -2.96547
+8.48758 -32.123
+13.679 -16.1807
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477884
+Time to pick the seeds: 1
+Number of iterations run: 43
+Time to run the iterations: 0
+Start Centres:
+-27.4517 11.0734
+9.02152 -29.1977
+-29.3548 -13.6646
+21.8255 -16.6801
+-1.81599 8.8874
+-15.7209 3.65821
+24.6554 -29.8395
+-10.7387 -12.689
+7.744 -9.34583
+-14.9288 20.0083
+-22.0341 -32.4261
+-6.45352 -35.674
+21.8637 -0.890394
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475447
+Time to pick the seeds: 0
+Number of iterations run: 29
+Time to run the iterations: 0
+Start Centres:
+-29.5147 -19.8399
+10.8278 -31.4858
+23.0388 -2.5346
+25.06 -25.2411
+-9.97033 18.9844
+2.7724 3.39486
+-28.062 -3.32249
+-20.8615 -33.5511
+12.1232 -13.8177
+-25.1929 14.8061
+-14.2142 4.63269
+-9.84553 -13.0327
+-5.84567 -35.2687
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478417
+Time to pick the seeds: 0
+Number of iterations run: 35
+Time to run the iterations: 0
+Start Centres:
+21.9644 -0.999657
+-16.2745 3.68289
+7.78828 -9.57103
+-10.901 -12.7778
+-22.3001 -32.345
+-12.8774 19.7064
+24.4468 -29.7547
+-26.8936 12.4727
+-6.96889 -35.6796
+8.35559 -29.7115
+-1.38869 7.39686
+21.5814 -16.815
+-29.5331 -13.2065
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477920
+Time to pick the seeds: 1
+Number of iterations run: 24
+Time to run the iterations: 0
+Start Centres:
+-27.3523 11.0505
+-1.55118 9.17028
+-6.4763 -35.6816
+-29.218 -13.5
+-15.3583 3.61085
+8.30716 -9.62948
+-14.9821 20.0049
+-10.3895 -12.7009
+24.3539 -30.3381
+22.548 -17.1265
+21.8831 -0.982835
+8.89683 -29.142
+-22.0705 -32.4033
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 490551
+Time to pick the seeds: 0
+Number of iterations run: 75
+Time to run the iterations: 0
+Start Centres:
+15.0255 -17.0623
+-29.429 0.873143
+7.13392 -0.0588713
+-23.6511 16.0109
+-16.0092 -34.6095
+-29.9204 -22.7852
+3.41457 -34.3365
+23.6163 -3.25898
+-19.2757 -11.5941
+-7.58172 17.6933
+-12.4783 4.25939
+-3.71819 -14.1992
+24.3377 -27.9763
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475025
+Time to pick the seeds: 1
+Number of iterations run: 72
+Time to run the iterations: 0
+Start Centres:
+-13.2666 4.52429
+25.2056 -25.0939
+12.2339 -14.4339
+-5.69136 -35.1412
+11.505 -31.8792
+-24.1195 15.9339
+23.1777 -2.67776
+-29.4084 -17.3514
+-8.63982 18.3283
+4.1965 2.01
+-9.97064 -13.0329
+-27.8757 0.399308
+-21.27 -33.1643
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477942
+Time to pick the seeds: 0
+Number of iterations run: 33
+Time to run the iterations: 0
+Start Centres:
+-10.3768 -12.7079
+-1.53046 9.17058
+21.914 -1.02565
+-6.96889 -35.6796
+-27.3512 11.0752
+-29.1893 -13.4072
+24.173 -30.2477
+8.25131 -9.56726
+8.3168 -29.5434
+-14.9741 20.0103
+-22.2801 -32.3407
+-15.3577 3.62223
+22.29 -17.217
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474973
+Time to pick the seeds: 0
+Number of iterations run: 62
+Time to run the iterations: 1
+Start Centres:
+25.2712 -24.7507
+-5.62614 -35.1417
+-27.8749 0.381949
+23.1327 -2.69446
+-8.63982 18.3283
+-13.2666 4.52429
+-29.488 -17.4523
+-10.1586 -12.9935
+12.0594 -32.0863
+-24.1195 15.9339
+4.1965 2.01
+11.9691 -14.5459
+-21.2267 -33.181
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486570
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+24.4544 -28.0417
+-26.4865 12.8094
+-15.8441 -34.8193
+15.2627 -17.6362
+-14.4024 3.92266
+3.35233 -33.6842
+5.68099 -5.05278
+22.7465 -2.45782
+-28.1026 -5.87348
+-14.7275 20.3636
+-29.0609 -23.0854
+-2.14357 11.7063
+-10.3805 -13.6389
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474974
+Time to pick the seeds: 0
+Number of iterations run: 63
+Time to run the iterations: 1
+Start Centres:
+-8.63982 18.3283
+11.9758 -14.5651
+-5.62614 -35.1417
+-27.8694 0.303118
+-10.1462 -13.0005
+-29.4979 -17.4799
+-21.2267 -33.181
+-13.2666 4.52429
+12.0594 -32.0863
+25.2806 -24.7537
+4.20724 1.99873
+-24.1234 15.9084
+23.1327 -2.69446
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478534
+Time to pick the seeds: 0
+Number of iterations run: 62
+Time to run the iterations: 0
+Start Centres:
+-29.3619 -12.9165
+21.9396 -1.06204
+-12.8108 19.6869
+8.40724 -10.2584
+-22.3976 -32.287
+-1.02008 7.27618
+-26.8455 12.4997
+-15.9955 3.78929
+8.28057 -29.7768
+22.5873 -17.2988
+-7.0194 -35.6653
+-10.7147 -12.7801
+24.1093 -30.2939
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475436
+Time to pick the seeds: 0
+Number of iterations run: 60
+Time to run the iterations: 1
+Start Centres:
+22.8986 -2.44871
+-5.40173 -35.1932
+-10.3321 19.1227
+-27.97 -3.84337
+11.8344 -13.8003
+2.27582 3.81199
+-14.3696 4.62269
+25.1334 -24.9424
+-29.5607 -20.0558
+11.52 -31.7471
+-20.605 -33.5746
+-9.86869 -13.0449
+-25.4226 14.5579
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 491070
+Time to pick the seeds: 0
+Number of iterations run: 32
+Time to run the iterations: 0
+Start Centres:
+4.2783 -33.8171
+23.2085 -2.77605
+-29.8182 -23.0248
+-18.6842 -12.0119
+24.18 -26.8551
+-3.63859 -13.7282
+-30.1146 -0.766659
+3.82657 3.0671
+-15.6766 -34.6748
+-24.4284 15.5037
+-13.941 4.36143
+13.824 -15.0244
+-9.2834 18.6886
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480510
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+-4.06153 13.974
+-29.2439 -15.3425
+20.3642 -16.4359
+-21.6934 -32.8247
+8.83188 -29.3302
+-20.7666 18.2168
+24.8025 -29.4345
+-10.9458 -13.2006
+21.7758 -0.86566
+-28.4817 5.29439
+6.12954 -7.1247
+-13.6986 3.42802
+-6.35845 -35.6785
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478432
+Time to pick the seeds: 1
+Number of iterations run: 49
+Time to run the iterations: 0
+Start Centres:
+-12.8774 19.7064
+-6.48664 -35.6786
+21.8958 -1.00722
+24.3375 -30.3722
+-29.5382 -13.2227
+-26.8876 12.4684
+8.12628 -9.90259
+8.90893 -29.1705
+-10.901 -12.7778
+-1.31964 7.37264
+22.5802 -17.15
+-16.2441 3.68403
+-22.1259 -32.3773
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477851
+Time to pick the seeds: 0
+Number of iterations run: 39
+Time to run the iterations: 0
+Start Centres:
+22.7951 -2.41117
+-27.7678 9.56215
+-10.0215 -13.594
+-3.94282 13.6912
+25.2381 -25.5925
+4.52301 -2.12102
+-21.9239 -32.612
+-6.27165 -35.4652
+10.4993 -31.8102
+13.0775 -15.4917
+-14.9236 3.30325
+-17.9829 20.0141
+-29.0218 -14.0605
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477982
+Time to pick the seeds: 0
+Number of iterations run: 33
+Time to run the iterations: 1
+Start Centres:
+-3.78167 13.4606
+-27.6268 9.71446
+-22.4663 -32.2149
+13.7754 -16.1628
+-14.4964 3.33186
+8.48486 -32.1078
+24.9088 -26.4607
+-9.43987 -13.5219
+-17.761 20.0606
+-7.61433 -35.6974
+23.4621 -2.92576
+6.61258 -2.08804
+-28.7812 -13.478
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475017
+Time to pick the seeds: 0
+Number of iterations run: 46
+Time to run the iterations: 0
+Start Centres:
+-29.5307 -17.5624
+-8.61488 18.2584
+4.20729 1.99726
+11.505 -31.8792
+25.2056 -25.0939
+12.2213 -14.4343
+-10.0481 -13.0201
+-24.1414 15.8774
+-27.8706 0.147649
+23.1777 -2.67776
+-13.3255 4.49362
+-21.2267 -33.181
+-5.67498 -35.1316
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479871
+Time to pick the seeds: 0
+Number of iterations run: 33
+Time to run the iterations: 0
+Start Centres:
+-7.46122 18.4419
+24.6268 -29.5967
+-23.5061 15.8641
+-21.4385 -33.0602
+7.37062 -8.19261
+8.79895 -29.2112
+-29.8263 -17.1244
+-11.3742 -12.6759
+21.3256 -16.5284
+-9.38434 4.69691
+-26.5706 1.14962
+21.6699 -0.627658
+-6.32189 -35.6145
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475014
+Time to pick the seeds: 0
+Number of iterations run: 52
+Time to run the iterations: 1
+Start Centres:
+-10.0481 -13.0201
+23.1777 -2.67776
+-24.1654 15.8684
+-8.6728 18.3299
+-13.2847 4.52389
+-5.67498 -35.1316
+-21.2267 -33.181
+25.2056 -25.0939
+4.1965 2.01
+-27.8706 0.147649
+11.505 -31.8792
+-29.5307 -17.5624
+12.2213 -14.4343
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 137
+Time to run the iterations: 1
+Start Centres:
+-26.8893 12.3799
+-22.3704 -32.3039
+24.1514 -30.2611
+-12.9154 19.7376
+-16.0076 3.76435
+22.3924 -17.2375
+8.29536 -29.6964
+-29.3946 -13.0479
+-10.8417 -12.8204
+-1.18562 7.42528
+-7.00359 -35.6753
+21.9149 -1.03697
+8.13108 -9.99474
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475393
+Time to pick the seeds: 0
+Number of iterations run: 69
+Time to run the iterations: 0
+Start Centres:
+25.2367 -24.6741
+-10.3321 19.1227
+12.0168 -31.9182
+-5.37189 -35.173
+-25.4226 14.5579
+11.7256 -13.8882
+-29.5607 -20.0558
+-9.94123 -13.0075
+-14.3782 4.62957
+2.24604 3.81714
+-27.9846 -3.83478
+-20.605 -33.5746
+22.8638 -2.44462
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474960
+Time to pick the seeds: 0
+Number of iterations run: 39
+Time to run the iterations: 1
+Start Centres:
+11.9427 -14.5085
+23.0609 -2.65137
+-10.1591 -13.0012
+25.2685 -24.7101
+-9.08733 18.6149
+-27.8791 0.0669103
+3.83733 2.44439
+-5.62614 -35.1417
+-13.3372 4.52865
+-24.2774 15.7877
+-29.5563 -17.6108
+-21.2267 -33.181
+12.0617 -32.0722
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 88
+Time to run the iterations: 0
+Start Centres:
+-29.3946 -13.0479
+8.29536 -29.6964
+-26.8893 12.3799
+21.9149 -1.03697
+-16.0076 3.76435
+22.3924 -17.2375
+8.13108 -9.99474
+-7.00359 -35.6753
+-10.8417 -12.8204
+-12.9154 19.7376
+-22.3704 -32.3039
+24.1514 -30.2611
+-1.18562 7.42528
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 491080
+Time to pick the seeds: 0
+Number of iterations run: 64
+Time to run the iterations: 1
+Start Centres:
+-19.5624 -33.1393
+-14.5525 4.18049
+13.5371 -18.7459
+-17.8418 20.0652
+-31.2167 -17.0969
+-2.39157 -10.0569
+13.8447 -0.946201
+-3.39623 12.8309
+23.8538 -28.3455
+-1.02844 -35.0935
+-27.9296 9.15205
+-18.371 -11.4298
+26.0687 -5.9603
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 54
+Time to run the iterations: 0
+Start Centres:
+21.9149 -1.03697
+-7.00359 -35.6753
+8.28333 -29.6971
+-10.8417 -12.8204
+-29.3946 -13.0479
+-1.18562 7.42528
+22.382 -17.2132
+-16.0076 3.76435
+-22.3704 -32.3039
+24.1436 -30.2285
+8.13108 -9.99474
+-12.9154 19.7376
+-26.8893 12.3799
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478325
+Time to pick the seeds: 0
+Number of iterations run: 61
+Time to run the iterations: 1
+Start Centres:
+8.79478 -29.1748
+-13.5949 19.9071
+-22.1259 -32.3773
+-27.0319 12.1218
+-10.8677 -12.7583
+8.105 -9.81252
+22.5206 -17.0813
+-6.48664 -35.6786
+-16.021 3.71382
+-1.45183 8.05371
+-29.4931 -13.2434
+21.8813 -1.00139
+24.2519 -30.2532
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475090
+Time to pick the seeds: 0
+Number of iterations run: 51
+Time to run the iterations: 0
+Start Centres:
+25.273 -24.7027
+-10.1621 -12.9756
+-9.28855 18.7228
+22.9997 -2.60251
+3.40395 2.69669
+-21.1149 -33.3242
+-29.4123 -18.2338
+-13.7387 4.5606
+-5.59486 -35.1369
+-24.5469 15.4696
+-28.1918 -0.994829
+11.9251 -14.3664
+12.0314 -31.9889
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 474978
+Time to pick the seeds: 0
+Number of iterations run: 54
+Time to run the iterations: 1
+Start Centres:
+11.9803 -14.5855
+-27.9017 0.424665
+4.22887 1.94626
+23.1327 -2.69446
+-5.62614 -35.1417
+-10.1833 -12.9928
+-24.1195 15.9339
+25.2806 -24.7537
+-8.63136 18.3167
+-29.4672 -17.3768
+-13.2666 4.52429
+-21.2596 -33.1603
+12.0594 -32.0863
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478903
+Time to pick the seeds: 0
+Number of iterations run: 49
+Time to run the iterations: 0
+Start Centres:
+-25.3099 14.8105
+-19.9126 -33.6428
+24.9753 -19.3027
+21.5299 -1.48698
+1.00331 3.82071
+-28.3763 -3.35733
+9.89933 -14.4873
+-10.7484 -12.6929
+-29.549 -20.0944
+18.3586 -31.4005
+-3.17479 -35.0369
+-10.2566 19.1342
+-14.8628 4.80302
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475139
+Time to pick the seeds: 0
+Number of iterations run: 52
+Time to run the iterations: 1
+Start Centres:
+-28.0344 -1.09397
+23.1777 -2.67776
+-29.4208 -18.2835
+-9.22345 18.6807
+25.2056 -25.0939
+-21.144 -33.3253
+12.2086 -14.4273
+-10.0708 -13.0074
+-5.67498 -35.1316
+3.90059 2.40635
+-13.4776 4.60032
+11.505 -31.8792
+-24.5632 15.4176
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480012
+Time to pick the seeds: 0
+Number of iterations run: 53
+Time to run the iterations: 0
+Start Centres:
+24.6109 -18.5872
+-29.783 -17.5445
+-12.3353 4.61429
+21.7304 -1.91252
+-23.5143 16.1702
+-11.3606 -12.8253
+-7.12813 17.6482
+-3.24234 -35.5305
+21.0479 -32.1314
+5.13654 -1.5894
+-27.5 0.882279
+9.78939 -19.3012
+-20.4143 -33.2216
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477207
+Time to pick the seeds: 0
+Number of iterations run: 36
+Time to run the iterations: 0
+Start Centres:
+-21.9204 -32.6136
+-14.5525 3.34009
+24.8094 -29.4121
+-29.3777 -14.091
+20.3322 -16.4354
+-11.1794 -13.2501
+-17.3887 19.9905
+-6.41802 -35.705
+5.95372 -7.30278
+21.8455 -0.948403
+-2.95555 12.5538
+-27.6552 9.67807
+8.84367 -29.3445
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479853
+Time to pick the seeds: 0
+Number of iterations run: 42
+Time to run the iterations: 1
+Start Centres:
+-11.2928 -12.7188
+-21.4523 -33.0415
+-7.47158 18.4535
+21.5847 -16.5414
+-29.7807 -17.0283
+-6.27607 -35.6581
+21.6464 -0.617531
+8.97879 -29.0075
+-26.5139 1.17594
+-23.5099 15.8725
+24.675 -29.7591
+7.41328 -8.29571
+-9.3199 4.71144
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 499475
+Time to pick the seeds: 0
+Number of iterations run: 35
+Time to run the iterations: 0
+Start Centres:
+20.6309 -0.760284
+-26.0537 8.94132
+7.53504 -31.5703
+-7.40598 -35.0636
+-21.7997 -32.6421
+-6.88173 8.50698
+-0.885648 -8.972
+-30.8523 -15.9329
+-16.1474 20.2989
+23.4189 -30.6917
+-17.1488 -8.96614
+25.2348 -17.9341
+12.5277 -14.7802
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 490893
+Time to pick the seeds: 0
+Number of iterations run: 25
+Time to run the iterations: 0
+Start Centres:
+14.156 -16.0767
+3.96013 -34.1175
+-15.9559 -34.6535
+-12.9226 4.34674
+-23.4813 16.399
+-29.9087 -22.5018
+23.5303 -3.11749
+-7.61451 17.7707
+6.06331 0.753017
+-20.0008 -10.8258
+-29.7307 2.29985
+24.3172 -27.1703
+-4.29286 -14.3837
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 486014
+Time to pick the seeds: 1
+Number of iterations run: 44
+Time to run the iterations: 0
+Start Centres:
+24.1059 -27.6723
+-29.4022 -21.7089
+-15.7381 20.506
+-27.6943 -5.62626
+7.13091 -2.80091
+0.441091 -35.0915
+-2.9382 12.6744
+23.54 -3.2176
+-13.9183 3.78754
+-9.65679 -13.559
+-26.4495 12.2647
+-18.0018 -33.9842
+13.5413 -18.1706
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 480425
+Time to pick the seeds: 0
+Number of iterations run: 30
+Time to run the iterations: 0
+Start Centres:
+-10.8781 4.79891
+20.1997 -32.2027
+-20.3766 -33.2172
+22.8156 -2.34496
+-23.8518 15.7327
+-29.6234 -17.5905
+9.81579 -18.543
+-8.20885 18.5816
+-3.23417 -35.4873
+-27.1102 0.567281
+24.7249 -19.2302
+7.43642 -0.965471
+-10.8367 -12.6447
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 55
+Time to run the iterations: 1
+Start Centres:
+-29.3946 -13.0479
+-26.8893 12.3799
+21.9149 -1.03697
+-22.3704 -32.3039
+22.3924 -17.2375
+8.13108 -9.99474
+-1.18562 7.42528
+-12.9154 19.7376
+-10.8417 -12.8204
+24.1514 -30.2611
+-16.0076 3.76435
+-7.00359 -35.6753
+8.29536 -29.6964
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 478450
+Time to pick the seeds: 0
+Number of iterations run: 67
+Time to run the iterations: 0
+Start Centres:
+-29.3946 -13.0479
+24.1514 -30.2611
+-1.18562 7.42528
+-22.3704 -32.3039
+-12.9154 19.7376
+-26.8893 12.3799
+22.3924 -17.2375
+-7.00359 -35.6753
+8.29536 -29.6964
+-10.8417 -12.8204
+8.13108 -9.99474
+21.9149 -1.03697
+-16.0076 3.76435
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 491095
+Time to pick the seeds: 0
+Number of iterations run: 47
+Time to run the iterations: 1
+Start Centres:
+-30.0344 -1.10031
+23.2085 -2.77605
+-29.8182 -23.0248
+-9.34302 18.7119
+-15.6794 -34.6864
+24.1883 -26.8582
+4.2783 -33.8171
+3.83001 3.09096
+-13.9514 4.37613
+-3.54279 -13.7438
+13.8458 -15.0322
+-18.4627 -12.127
+-24.5038 15.4258
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 484884
+Time to pick the seeds: 0
+Number of iterations run: 68
+Time to run the iterations: 0
+Start Centres:
+-2.9278 -12.0878
+-13.1299 19.6821
+22.6718 -1.98845
+11.9016 -31.6153
+12.8722 -12.8671
+-18.4716 -11.3312
+0.433176 7.3072
+25.2338 -24.7171
+-21.6418 -32.7291
+-5.92452 -35.1592
+-27.1005 11.6553
+-31.582 -15.2678
+-15.0183 4.32133
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475003
+Time to pick the seeds: 0
+Number of iterations run: 67
+Time to run the iterations: 1
+Start Centres:
+12.0384 -14.4723
+-24.1226 15.9258
+11.6333 -31.9527
+-27.8763 0.36903
+-21.27 -33.1643
+25.1901 -24.9828
+-10.145 -13.0025
+-29.4857 -17.4036
+-5.68447 -35.1249
+4.1965 2.01
+23.1327 -2.69446
+-13.2666 4.52429
+-8.63982 18.3283
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 485607
+Time to pick the seeds: 0
+Number of iterations run: 41
+Time to run the iterations: 0
+Start Centres:
+-26.6064 13.4766
+25.7936 -4.56059
+-6.01089 -35.1777
+-29.5796 -13.7221
+-12.0997 19.5208
+-9.4403 -12.9007
+-3.27277 6.36183
+12.2982 -15.8937
+-18.1104 3.03433
+11.1948 -32.1781
+-21.913 -32.5091
+25.1674 -25.6391
+13.1168 -0.954415
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 477873
+Time to pick the seeds: 0
+Number of iterations run: 25
+Time to run the iterations: 0
+Start Centres:
+12.0435 -32.2777
+-18.1327 19.9701
+-28.9726 -14.0762
+23.2849 -2.85551
+6.42812 -1.74415
+-14.6125 3.23121
+-9.81825 -13.3819
+-5.80394 -35.1912
+-4.02851 13.6198
+25.4885 -24.9714
+-21.8126 -32.6802
+12.6968 -16.0337
+-27.754 9.40706
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 479733
+Time to pick the seeds: 0
+Number of iterations run: 69
+Time to run the iterations: 1
+Start Centres:
+9.41093 -20.7564
+-6.87731 17.5144
+-27.4645 0.888126
+-20.4143 -33.2216
+-12.0687 4.48539
+-29.7579 -17.5207
+22.0424 -31.7091
+23.7603 -17.5833
+-11.2993 -12.899
+-23.4459 16.1367
+5.85007 -3.04969
+-3.22683 -35.6375
+21.8601 -1.37563
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 483524
+Time to pick the seeds: 0
+Number of iterations run: 50
+Time to run the iterations: 0
+Start Centres:
+-21.4313 -32.8898
+25.1238 -25.0528
+-14.613 4.25651
+-2.54823 -10.2043
+-31.3732 -16.1161
+12.8469 -12.378
+-27.7017 9.64631
+-18.2258 -11.4772
+-1.48239 10.9171
+22.5012 -1.8138
+-5.7564 -34.9129
+-16.55 20.0526
+11.2741 -31.0417
+End Centres:
+End Experiment:
+
+>>>Start Experiment
+algorithm: Kmeans||
+Sum of distance squared to centre: 475207
+Time to pick the seeds: 0
+Number of iterations run: 21
+Time to run the iterations: 1
+Start Centres:
+-5.32474 -35.1694
+22.9387 -2.52583
+-25.0126 14.9491
+11.9022 -14.4194
+12.4195 -32.138
+-28.0994 -3.25627
+-9.48648 18.7887
+-29.5355 -19.837
+-14.0825 4.64785
+-20.6424 -33.5614
+25.354 -24.4874
+3.14628 2.64795
+-10.0948 -13.0788
+End Centres:
+End Experiment:
+
