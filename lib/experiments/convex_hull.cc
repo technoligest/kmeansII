@@ -4,7 +4,7 @@
 
 #include <cassert>
 #include <cmath>
-#include "../algorithm/kmeans_helpers.h"
+#include "../algorithm/kmeans_utils.h"
 
 namespace kmeans{
 namespace experiments{
@@ -64,8 +64,8 @@ double calculateCosSquaredOfPolarAngle(const Instance &origin, const Instance &i
 
   return acos(((instance1[0] - origin[0]) * (instance2[0] - origin[0]) +
                ((instance1[1] - origin[1]) * (instance2[1] - origin[1]))) /
-              (std::sqrt(helpers::findDistanceSquared(origin, instance2)) *
-               std::sqrt(helpers::findDistanceSquared(origin, instance1)))) / 3.14159 * 180;
+              (std::sqrt(utils::distanceSquared(origin, instance2)) *
+               std::sqrt(utils::distanceSquared(origin, instance1)))) / 3.14159 * 180;
 }
 
 bool isLeftTurn(const Instance &rightPoint, const Instance &origin, const Instance &leftPoint) {
@@ -98,8 +98,8 @@ size_t findLowestLeftPointId(const Matrix<double> &dataset) {
 void removeItemsWithSameAngleToFirstPoint(Matrix<double> &dataset, std::vector<double> &angleToLowestPoint) {
   for(size_t itemId = 1; itemId < dataset.size(); ++itemId) {
     if(fabs(angleToLowestPoint[itemId] - angleToLowestPoint[itemId - 1]) < 1e-4) {
-      if(helpers::findDistanceSquared(dataset[0], dataset[itemId]) <
-         helpers::findDistanceSquared(dataset[0], dataset[itemId - 1])) {
+      if(utils::distanceSquared(dataset[0], dataset[itemId]) <
+          utils::distanceSquared(dataset[0], dataset[itemId - 1])) {
         dataset.erase(dataset.begin() + itemId);
         angleToLowestPoint.erase(angleToLowestPoint.begin() + itemId);
       } else {

@@ -10,7 +10,7 @@
 #include <vector>
 #include "kmeans_data.h"
 #include "seed_picker_base.h"
-#include "kmeans_helpers.h"
+#include "kmeans_utils.h"
 #include "kmeans_base.h"
 #include "kmeans_instance.h"
 
@@ -46,7 +46,9 @@ private:
 //definition of this class is included here because it is mandatory since it is a templated class.
 template<class IR>
 bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) {
+#ifdef DEBUG
   std::cout << "Started picking seeds for KmeansII" << std::endl;
+#endif
   if(dataset.empty() || dataset.size() < k) {
     return false;
   }
@@ -60,28 +62,30 @@ bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &dataset, const Weights &we
 
   std::vector<Instance> tempCentres;
   tempCentres.push_back(dataset[static_cast<int>((dis(gen) * n))]);
-  double dx = helpers::calcDX(dataset, weights, tempCentres);
+  double dx = utils::dx(dataset, weights, tempCentres);
 
   ll passes = (r_ == -1) ? (static_cast<int>( log(dx) / log(2))) : r_;
   for(ll i = 0; i < passes; ++i){
-    dx = helpers::calcDX(dataset, weights, tempCentres);
+    dx = utils::dx(dataset, weights, tempCentres);
     for(int instId = 0; instId < dataset.size(); ++instId) {
       Instance inst = dataset[instId];
-      size_t belongingCentreId = helpers::findBelongingCentrePosition(inst, tempCentres);
-      double probability = l_ * helpers::findDistanceSquared(tempCentres[belongingCentreId], inst) / dx * weights[instId];
+      size_t belongingCentreId = utils::findBelongingCentrePosition(inst, tempCentres);
+      double probability = l_ * utils::distanceSquared(tempCentres[belongingCentreId], inst) / dx * weights[instId];
       double ran = static_cast<double>(dis(gen));
       if(ran <= probability){
         tempCentres.push_back(inst);
       }
     }
   }
-
+#ifdef DEBUG
   std::cout << "completed all the passes. " << std::endl;
+#endif //DEBUG
   Weights tempWeights(tempCentres.size(), 0);
   for(size_t instId = 0; instId < dataset.size(); ++instId) {
-    tempWeights[helpers::findBelongingCentrePosition(dataset[instId], tempCentres)] += weights[instId];
+    tempWeights[utils::findBelongingCentrePosition(dataset[instId], tempCentres)] += weights[instId];
   }
 
+  assert(tempCentres.size()>=k);
   KmeansBase *kmeans = new KmeansInstance<KmeansppSeedPicker, IR>();
   kmeans->cluster(tempCentres, tempWeights, k, centres);
   delete kmeans;

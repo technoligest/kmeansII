@@ -6,7 +6,7 @@
 #include "../lib/experiments/experiment_helpers.h"
 
 TEST_CASE("mergeSort with given function works properly") {
-  using namespace kmeans::experiments::helpers;
+  using namespace kmeans::experiments::utils;
   using std::vector;
   vector<double> inputVector{};
   std::function<double(double)> valueFunc = [&](size_t l)->double { return l; };

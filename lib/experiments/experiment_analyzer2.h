@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <cassert>
 #include "../algorithm/kmeans_data.h"
-#include "../algorithm/kmeans_helpers.h"
+#include "../algorithm/kmeans_utils.h"
 #include "experiment_result.h"
 #include "centre_intersections.h"
 #include "experiments_bipartite_perfect_matching.h"
@@ -44,7 +44,7 @@ private:
     Matrix<Distance> result{dataset1.size(), std::vector<Distance>(dataset2.size(), 0)};
     for(size_t dataset1InstanceId = 0; dataset1InstanceId < dataset1.size(); ++dataset1InstanceId) {
       for(size_t dataset2InstanceId = 0; dataset2InstanceId < dataset2.size(); ++dataset2InstanceId) {
-        result[dataset1InstanceId][dataset2InstanceId] = ::kmeans::helpers::findDistanceSquared(
+        result[dataset1InstanceId][dataset2InstanceId] = ::kmeans::utils::distanceSquared(
             dataset1[dataset1InstanceId],
             dataset2[dataset2InstanceId]);
       }
@@ -89,7 +89,7 @@ private:
       for(size_t instanceId = 0; instanceId < dataset_.size(); ++instanceId) {
         assert(experimentId < pointPositions_.size());
         assert(instanceId < pointPositions_[experimentId].size());
-        pointPositions_[experimentId][instanceId] = ::kmeans::helpers::findBelongingCentrePosition(dataset_[instanceId],
+        pointPositions_[experimentId][instanceId] = ::kmeans::utils::findBelongingCentrePosition(dataset_[instanceId],
                                                                                                    experimentResults_[experimentId].centres);
       }
       std::cout << "finished points for experiment " << experimentId << std::endl;

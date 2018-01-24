@@ -8,7 +8,7 @@
 
 #include <cassert>
 #include "iteration_runner_base.h"
-#include "kmeans_helpers.h"
+#include "kmeans_utils.h"
 
 namespace kmeans{
 class LloydIterationRunner : public IterationRunner{
@@ -22,7 +22,7 @@ public:
   //returns the total distance squared of the best iteration
   //assumes the centres given are of the right size (i.e. k)
   inline Distance runIterations(const Dataset &dataset, const Weights &weights, Dataset &centres) override {
-    if(!helpers::analyzeDataset(dataset) || !helpers::analyzeDataset(centres)) { return -1; }
+    if(!utils::analyzeDataset(dataset) || !utils::analyzeDataset(centres)) { return -1; }
     num_iterations_ = 0;
     return runLloydIterations(dataset, weights, centres);
   };

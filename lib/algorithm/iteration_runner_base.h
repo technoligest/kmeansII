@@ -11,8 +11,7 @@ namespace kmeans{
 
 class IterationRunner{
 public:
-  virtual Distance
-  runIterations(const Dataset &, const Weights &, Dataset &)=0;
+  virtual Distance runIterations(const Dataset &, const Weights &, Dataset &)=0;
   inline ull numIterations(){ return num_iterations_; };
   virtual inline ~IterationRunner(){}
 protected:
