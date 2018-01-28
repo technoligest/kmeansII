@@ -15,7 +15,7 @@ typedef long long ll;
 
 namespace kmeans{
 
-#define MAX_NUM_ITERATIONS 200
+
 #define LOCAL_ITERATION_BIAS 1.5f
 #define CONVERGENCE_THREASHOLD 1
 template<typename T>
@@ -42,7 +42,7 @@ bool operator==(const Instance &instance1,const Instance &instance2);
 void operator/=(Instance &, const std::vector<size_t> &);
 
 
-
+//pairwise operators
 void operator+=(Instance &, const Instance &);
 void operator-=(Instance &, const Instance &);
 void operator*=(Instance &, const Instance &);

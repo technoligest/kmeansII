@@ -22,9 +22,12 @@ private:
   int r_;     //number of rounds for kmeans||
 
   std::vector<ExperimentResult> results_;
-  void runAlg(KmeansBase *kmeans, const std::string &algName);
 
 public:
+  static ExperimentResult runAlg(KmeansBase *kmeans, const std::string &algName);
+
+  ExperimentRunner(Dataset &d, ull k){}
+
   ExperimentRunner(Dataset &d, ull k, int l, int r = 8) : d_(d), k_(k), l_(l), r_(r) {};
 
   ExperimentRunner(Dataset &&d, ull k, int l, int r = 8) : d_(d), k_(k), l_(l), r_(r) {};
@@ -33,6 +36,8 @@ public:
 
   inline std::vector<ExperimentResult> getExperiments() const { return results_; }
 
+
+  //Helper methon to run all algprithms at the same time.
   void runExperiments(ull numExperiments);
 };
 

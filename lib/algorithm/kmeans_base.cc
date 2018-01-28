@@ -2,6 +2,7 @@
 // Created by Yaser Alkayale on 2017-07-11.
 //
 #include "kmeans_base.h"
+#include "kmeans_io.h"
 #include <cassert>
 
 namespace kmeans{
@@ -20,29 +21,43 @@ KmeansBase::cluster(const Dataset &dataset, const Weights &weights, const ull &k
 }
 
 /*
- * Pick seeds using the already passed seedPicker. The seedPicker is a attribute of the class.
+ * Pick seeds using the already passed seedPicker_. The seedPicker_ is a attribute of the class.
  */
 void
 KmeansBase::pickSeeds(const Dataset &dataset, const Weights &weights, const ull &k, std::vector<Instance> &centres) {
   ull startTime = static_cast<ull>(time(nullptr));
-  assert(seedPicker->pickSeeds(dataset, weights, k, centres));
+  assert(seedPicker_->pickSeeds(dataset, weights, k, centres));
   seed_picker_time_ = static_cast<ull>(time(nullptr)) - startTime;
 }
 
 /*
- * Run the iterations using the iterationRunner provided in the class.
+ * Run the iterations using the iterationRunner_ provided in the class.
  */
 void KmeansBase::runIterations(const Dataset &dataset, const Weights &weights, std::vector<Instance> &centres) {
 #ifdef DEBUG
   std::cout << "Started running iterations." << std::endl;
 #endif
   ull startTime = static_cast<ull>(time(nullptr));
-  distance_squared_ = iterationRunner->runIterations(dataset, weights, centres);
+  distance_squared_ = iterationRunner_->runIterations(dataset, weights, centres);
   iteration_runner_time_ = static_cast<ull>(time(nullptr)) - startTime;
-  num_iterations_ = iterationRunner->numIterations();
+  num_iterations_ = iterationRunner_->numIterations();
 #ifdef DEBUG
   std::cout << "ended running the iterations" << std::endl;
 #endif
 }
 
+void KmeansBase::print(std::ostream &out){
+  assert (seed_picker_time_>0);
+  out << ">>>Start Experiment" << std::endl;
+  out << "Seed Picker: " << seedPicker_->name() << std::endl;
+  out << "Iteration runne: "<< iterationRunner_->name() << std::endl;
+  out << "Sum of distance squared to centre: " << distance_squared_ << std::endl;
+  out << "Time to pick the seeds: " << seed_picker_time_ << std::endl;
+  out << "Number of iterations run: " << num_iterations_ << std::endl;
+  out << "Time to run the iterations: " << iteration_runner_time_ << std::endl;
+  out << "Start Centres:" << std::endl;
+  out << centres_ << std::endl;
+  out << "End Centres:" << std::endl;
+  out << "End Experiment:" << std::endl;
+}
 }//namespace kmeans;

@@ -7,6 +7,8 @@
 #include "lloyd_iteration_runner.h"
 
 namespace kmeans{
+
+const std::string LloydIterationRunner::name_ = std::string("Lloyd iteration runner.");
 /*
  * Returns the sum distance squared of each point to its cluster centre of the PREVIOUS iteration
  */
@@ -44,7 +46,7 @@ Distance LloydIterationRunner::runLloydIterations(const Dataset &dataset, const 
   }
   double currDistance = std::numeric_limits<double>::max();
   double bestDistance = std::numeric_limits<double>::max();
-  for(ull i = 0; i < MAX_NUM_ITERATIONS; ++i) {
+  for(ull i = 0; i < maxNumIterations_; ++i) {
     double newDistance = runLloydIteration(dataset, weights, centres);
     if(newDistance < bestDistance) {
       bestDistance = newDistance;

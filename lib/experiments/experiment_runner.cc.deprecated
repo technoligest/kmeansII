@@ -2,12 +2,12 @@
 // Created by Yaser Alkayale on 2017-07-14.
 //
 #include <fstream>
-#include "experiment_runner.h"
+#include "experiment_runner.h.depricated"
 
 namespace kmeans{
 namespace experiments{
 
-void ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string &algName) {
+ExperimentResult ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string &algName) {
   Dataset centres;
   ExperimentResult e;
   kmeans->cluster(d_, k_, centres);
@@ -17,26 +17,26 @@ void ExperimentRunner::runAlg(KmeansBase *kmeans, const std::string &algName) {
   e.distanceSquared = kmeans->distanceSquared();
   e.seedPickerTime = kmeans->seedPickerTime();
   e.iterationTime = kmeans->iterationRunnerTime();
-  results_.push_back(e);
+  return e;
 }
 
 void ExperimentRunner::runExperiments(ull numExperiments) {
   KmeansBase *kmeans;
   kmeans = new Kmeans<LloydIterationRunner>();
   for(ull i = 0; i < numExperiments; ++i) {
-    runAlg(kmeans, "Kmeans");
+    results_.push_back(runAlg(kmeans, "Kmeans"));
   }
   delete kmeans;
 
   kmeans = new Kmeanspp<LloydIterationRunner>();
   for(ull i = 0; i < numExperiments; ++i) {
-    runAlg(kmeans, "Kmeans++");
+    results_.push_back(runAlg(kmeans, "Kmeans++"));
   }
   delete kmeans;
 
   kmeans = new KmeansII<LloydIterationRunner, LloydIterationRunner>(l_, r_);
   for(ull i = 0; i < numExperiments; ++i) {
-    runAlg(kmeans, "Kmeans||");
+    results_.push_back(runAlg(kmeans, "Kmeans||"));
   }
   delete kmeans;
 }

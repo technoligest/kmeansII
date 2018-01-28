@@ -16,32 +16,52 @@
 
 namespace kmeans{
 
+class NewSeedPicker : public SeedPicker{
+public:
+  inline explicit NewSeedPicker(ull runs, ull iterations):runs_(runs),iterations_(iterations){}
+  inline std::string name()override{return name_;}
+  bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) override;
+
+private:
+  ull runs_;
+  ull iterations_;
+  const static std::string name_;
+};
+
 class RandomSeedPicker : public SeedPicker{
 public:
   inline explicit RandomSeedPicker(){}
-
+  inline std::string name()override{return name_;}
   bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) override;
+private:
+  const static std::string name_;
 };
 
 
 class KmeansppSeedPicker : public SeedPicker{
 public:
   inline explicit KmeansppSeedPicker(){}
-
+  inline std::string name()override{return name_;}
   bool pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) override;
+private:
+  const static std::string name_;
 };
 
 template<class IR>
 class KmeansIISeedPicker : public SeedPicker{
 public:
   inline explicit KmeansIISeedPicker(double _l, ull _r) : l_(_l), r_(_r){}
-
+  inline std::string name(){return name_;}
   bool pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) override;
 
 private:
   double l_;  //input parameter as per the algorithm
   ull r_;     //input parameter as per the algorithm
+  const static std::string name_;
 };
+
+template<class IR>
+const std::string KmeansIISeedPicker<IR>::name_ = std::string("Kmeans|| Seed Picker");
 
 //definition of this class is included here because it is mandatory since it is a templated class.
 template<class IR>

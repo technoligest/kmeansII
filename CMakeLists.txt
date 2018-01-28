@@ -20,10 +20,10 @@ file(GLOB bigint "lib/sidehussle/bigInt/*.cpp" "lib/sidehussle/bigInt/*.h")
 set(kmeansII ${algorithm} ${handlers})
 
 set(trying ${experiments} ${algorithm} ${handlers})
-set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc)
+set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h)
 
 add_executable(kmeans ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline
-add_executable(trying ${trying} ${bigint} lib/runners/trying.cc) #this executable is temporary for development only
+add_executable(trying ${trying} lib/runners/trying.cc) #this executable is temporary for development only
 add_executable(testing ${testing}) #This executable includes all the testing scripts
 add_executable(experiments ${kmeansII} ${experiments} lib/runners/experiment.cc) #this executable helps us run experiments from the commandline
 

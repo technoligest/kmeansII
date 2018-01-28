@@ -16,6 +16,8 @@ private:
   //returns the sum of squared distances of all the pointst to their nearest clsuter centre
   Distance runLloydIteration(const Dataset &dataset, const Weights &weights, Dataset &centres);
   Distance runLloydIterations(const Dataset &dataset, const Weights &weights, Dataset &centres);
+  ull maxNumIterations_;
+  const static std::string name_;
 
 public:
   //runs all the necessary iterations to complete the clustering
@@ -26,6 +28,8 @@ public:
     num_iterations_ = 0;
     return runLloydIterations(dataset, weights, centres);
   };
+  inline explicit LloydIterationRunner(ull maxNumIterations = 200):maxNumIterations_(maxNumIterations){}
+  inline std::string name() override {return name_;}
 };
 } // namespace kmeans
 #endif //KMEANSII_LLOYDITERATIONRUNNER_HH

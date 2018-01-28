@@ -14,7 +14,7 @@
     still exist but they don't do anything.
 
     Also note that when the stack trace is enabled it changes the DLIB_ASSERT
-    and DLIB_CASSERT macros so that they print stack traces when 
+    and DLIB_CASSERT macros so that they Rprint stack traces when
     an assert fails.
 
     See the following example program for details:

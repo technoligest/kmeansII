@@ -2,7 +2,6 @@
  * Created by Yaser Alkayale on 2017-06-22.
  *
  *
- *
  */
 
 #ifndef KMEANSII_KMEANSINSTANCE_HH
@@ -15,15 +14,11 @@ namespace kmeans{
 template<class SP, class IR>
 class KmeansInstance : public KmeansBase{
 public:
-  inline explicit KmeansInstance(){
-    seedPicker = new SP();
-    iterationRunner = new IR();
-  };
+  //TODO: Remove the pointer implementation for a reference one
+  inline explicit KmeansInstance(IterationRunner *iterationRunner = new IR(), SeedPicker *seedPicker= new SP()):
+      KmeansBase(iterationRunner,seedPicker){};
 
-  inline ~KmeansInstance() {
-    delete seedPicker;
-    delete iterationRunner;
-  }
+  inline ~KmeansInstance() {}
 };
 } //namespace kmeans
 
