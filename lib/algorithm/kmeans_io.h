@@ -12,6 +12,7 @@
 #include "csv.h"
 #include "kmeans_input_arguments.h"
 #include "kmeans.h"
+#include "globals.h"
 
 namespace kmeans{
 /*

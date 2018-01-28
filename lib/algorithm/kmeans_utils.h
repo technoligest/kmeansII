@@ -6,6 +6,7 @@
 #define KMEANSII_KMEANSHELPERS_H
 
 #include "kmeans_data.h"
+#include "globals.h"
 
 
 namespace kmeans{

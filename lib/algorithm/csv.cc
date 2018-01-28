@@ -3,8 +3,8 @@
 //
 
 #include <string>
-#include <stdexcept>
 #include "csv.h"
+#include "globals.h"
 
 namespace kmeans{
 //CSVRow stuff

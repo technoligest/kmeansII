@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include "kmeans_base.h"
+#include "globals.h"
 
 namespace kmeans{
 template<class SP, class IR>

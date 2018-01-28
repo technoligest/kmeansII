@@ -11,14 +11,15 @@
 #include "seed_picker_base.h"
 #include "kmeans_utils.h"
 #include "iteration_runner_base.h"
+#include "globals.h"
 
 namespace kmeans{
 class KmeansBase{
 protected:
   //Variables specific per clustering run. Need to be reset every clustering.
   ull num_iterations_ = 0;
-  ull iteration_runner_time_ = 0;
-  ull seed_picker_time_ = 0;
+  int iteration_runner_time_ = -1;
+  int  seed_picker_time_ = -1;
   Distance distance_squared_ = 0; //Sum of distance square of each point to its cluster Centre
   Dataset centres_;
 

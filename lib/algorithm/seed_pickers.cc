@@ -8,32 +8,34 @@
 
 namespace kmeans{
 const std::string NewSeedPicker::name_ = "Yaser's Seed Picker";
+const std::string KmeansppSeedPicker::name_ = "Kmeans++ Seed Picker";
+const std::string RandomSeedPicker::name_ = "Random Seed Picker";
+
+
 bool NewSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) {
 
   KmeansppSeedPicker seedPicker;
   LloydIterationRunner iterationRunner(iterations_);
 
-  KmeansInstance  <LloydIterationRunner, KmeansppSeedPicker>instance (&iterationRunner, &seedPicker);
+  KmeansInstance<LloydIterationRunner, KmeansppSeedPicker> instance(&iterationRunner, &seedPicker);
   Dataset runsCentres;
   for(ull i = 0; i < runs_; ++i) {
     Dataset tempCentres;
-    instance.cluster(d,weights,k,tempCentres);
+    instance.cluster(d, weights, k, tempCentres);
     runsCentres.insert(runsCentres.end(), tempCentres.begin(), tempCentres.end());
   }
 
   KmeansppSeedPicker seedPicker2;
   LloydIterationRunner iterationRunner2;
 
-  KmeansInstance  <LloydIterationRunner, KmeansppSeedPicker> instance2(&iterationRunner2, &seedPicker2);
-  instance2.cluster(runsCentres,Weights(runsCentres.size(),1),k,centres);
+  KmeansInstance<LloydIterationRunner, KmeansppSeedPicker> instance2(&iterationRunner2, &seedPicker2);
+  instance2.cluster(runsCentres, Weights(runsCentres.size(), 1), k, centres);
   return true;
 }
 
-const std::string RandomSeedPicker::name_ = "Random Seed Picker";
+
 bool RandomSeedPicker::pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) {
-#ifdef DEBUG
-  std::cout << "Started picking random seeds for Kmeans" << std::endl;
-#endif
+
   if(dataset.empty() || k < 1 || dataset.size() < k) {
     return false;
   }
@@ -48,17 +50,12 @@ bool RandomSeedPicker::pickSeeds(const Dataset &dataset, const Weights &weights,
   for(int i = 0; i < k; ++i) {
     centres.push_back(dataset[static_cast<int>((dis(gen) * n))]);
   }
-#ifdef DEBUG
-  std::cout << "Finished picking random seeds for Kmeans" << std::endl;
-#endif
   return true;
 };
 
-const std::string KmeansppSeedPicker::name_="Kmeans++ Seed Picker";
+
 bool KmeansppSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) {
-#ifdef DEBUG
-  std::cout << "Started picking seeds for Kmeans++" << std::endl;
-#endif
+
   if(d.empty() || centres.empty() || d.size() < k) {
     return false;
   }

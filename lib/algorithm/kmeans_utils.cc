@@ -101,5 +101,6 @@ bool prepareForClustering(const Dataset &dataset, const Weights &weights, const 
   }
   return true;
 }
+
 }//namespace utils
 }//namespace kmeans

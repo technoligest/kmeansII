@@ -10,6 +10,6 @@
 #define KMEANSII_ITERATIONRUNNERS_H
 
 #include "lloyd_iteration_runner.h"
-
+#include "globals.h"
 
 #endif //KMEANSII_ITERATIONRUNNERS_H

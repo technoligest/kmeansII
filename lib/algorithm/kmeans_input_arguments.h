@@ -1,6 +1,14 @@
+
+
+
+
+#ifndef KMEANS_INPUT_ARGUMENTS_HH
+#define KMEANS_INPUT_ARGUMENTS_HH
+
 #include "../pkgs/cmdArgsReader/macro-argparse-plain.hh"
 
-#pragma once
+#include "globals.h"
+
 namespace kmeans{
 
 DEF_ARGUMENT_CLASS(
@@ -15,3 +23,5 @@ DEF_ARGUMENT_CLASS(
 );
 
 }// namespace kmean
+
+#endif //KMEANS_INPUT_ARGUMENTS_HH

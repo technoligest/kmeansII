@@ -9,6 +9,7 @@
 #include <cassert>
 #include "iteration_runner_base.h"
 #include "kmeans_utils.h"
+#include "globals.h"
 
 namespace kmeans{
 class LloydIterationRunner : public IterationRunner{

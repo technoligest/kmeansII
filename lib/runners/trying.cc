@@ -33,6 +33,8 @@ int main(int argc, char **argv) {
   kmeans::Dataset centres;
   inst.cluster(dataset,10,centres);
   inst.print(std::cout);
+
+
   //
   ////kmeans::KmeansBase *kmeans = new kmeans::KmeansInstance<kmeans::NewSeedPicker, kmeans::LloydIterationRunner>(&ir,&sp);
   ////kmeans->cluster(dataset,10,)

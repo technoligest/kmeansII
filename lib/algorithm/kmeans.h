@@ -19,6 +19,7 @@
 #include "kmeans_utils.h"
 #include "kmeans_io.h"
 #include "kmeans_input_arguments.h"
+#include "globals.h"
 
 namespace kmeans{
 

@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <iostream>
+#include "globals.h"
 
 typedef unsigned long long ull;
 typedef long long ll;

@@ -13,6 +13,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
+
 namespace kmeans{
 class CSVRow{
 public:

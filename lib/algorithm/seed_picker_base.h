@@ -7,6 +7,7 @@
 
 
 #include "kmeans_data.h"
+#include "globals.h"
 
 namespace kmeans{
 class SeedPicker{

@@ -13,6 +13,7 @@
 #include "kmeans_utils.h"
 #include "kmeans_base.h"
 #include "kmeans_instance.h"
+#include "globals.h"
 
 namespace kmeans{
 

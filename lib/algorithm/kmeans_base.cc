@@ -3,6 +3,7 @@
 //
 #include "kmeans_base.h"
 #include "kmeans_io.h"
+#include "globals.h"
 #include <cassert>
 
 namespace kmeans{
@@ -17,6 +18,9 @@ KmeansBase::cluster(const Dataset &dataset, const Weights &weights, const ull &k
   clearInstance();
   pickSeeds(dataset, weights, k, centres);
   runIterations(dataset, weights, centres);
+#ifdef DEBUG_KMEANS
+  std::cout << "Done clustering." << std::endl << std::endl << std::endl;
+#endif
   return distance_squared_;
 }
 
@@ -25,32 +29,38 @@ KmeansBase::cluster(const Dataset &dataset, const Weights &weights, const ull &k
  */
 void
 KmeansBase::pickSeeds(const Dataset &dataset, const Weights &weights, const ull &k, std::vector<Instance> &centres) {
+#ifdef DEBUG_KMEANS
+  std::cout << "Started picking seeds using " << seedPicker_->name() << std::endl;
+#endif
   ull startTime = static_cast<ull>(time(nullptr));
   assert(seedPicker_->pickSeeds(dataset, weights, k, centres));
   seed_picker_time_ = static_cast<ull>(time(nullptr)) - startTime;
+#ifdef DEBUG_KMEANS
+  std::cout << "Finished picking seeds using " << seedPicker_->name() << std::endl;
+#endif
 }
 
 /*
  * Run the iterations using the iterationRunner_ provided in the class.
  */
 void KmeansBase::runIterations(const Dataset &dataset, const Weights &weights, std::vector<Instance> &centres) {
-#ifdef DEBUG
-  std::cout << "Started running iterations." << std::endl;
+#ifdef DEBUG_KMEANS
+  std::cout << "Started running iterations using " << iterationRunner_->name() << std::endl;
 #endif
   ull startTime = static_cast<ull>(time(nullptr));
   distance_squared_ = iterationRunner_->runIterations(dataset, weights, centres);
   iteration_runner_time_ = static_cast<ull>(time(nullptr)) - startTime;
   num_iterations_ = iterationRunner_->numIterations();
-#ifdef DEBUG
-  std::cout << "ended running the iterations" << std::endl;
+#ifdef DEBUG_KMEANS
+  std::cout << "ended running the iterations" << iterationRunner_->name() << std::endl;
 #endif
 }
 
-void KmeansBase::print(std::ostream &out){
-  assert (seed_picker_time_>0);
+void KmeansBase::print(std::ostream &out) {
+  assert (seed_picker_time_ >= 0);
   out << ">>>Start Experiment" << std::endl;
   out << "Seed Picker: " << seedPicker_->name() << std::endl;
-  out << "Iteration runne: "<< iterationRunner_->name() << std::endl;
+  out << "Iteration runne: " << iterationRunner_->name() << std::endl;
   out << "Sum of distance squared to centre: " << distance_squared_ << std::endl;
   out << "Time to pick the seeds: " << seed_picker_time_ << std::endl;
   out << "Number of iterations run: " << num_iterations_ << std::endl;
@@ -60,4 +70,5 @@ void KmeansBase::print(std::ostream &out){
   out << "End Centres:" << std::endl;
   out << "End Experiment:" << std::endl;
 }
+
 }//namespace kmeans;
