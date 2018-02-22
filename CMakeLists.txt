@@ -3,7 +3,7 @@ project(kmeansII)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -O3")
 
 find_program(MEMORYCHECK_COMMAND valgrind)
 set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
@@ -19,7 +19,7 @@ file(GLOB bigint "lib/sidehussle/bigInt/*.cpp" "lib/sidehussle/bigInt/*.h")
 
 set(kmeansII ${algorithm} ${handlers})
 
-set(trying ${experiments} ${algorithm} ${handlers})
+set(trying ${algorithm} ${handlers})
 set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h)
 
 add_executable(kmeans ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline

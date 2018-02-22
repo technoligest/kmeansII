@@ -14,21 +14,18 @@ const std::string RandomSeedPicker::name_ = "Random Seed Picker";
 
 bool NewSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) {
 
-  KmeansppSeedPicker seedPicker;
+
   LloydIterationRunner iterationRunner(iterations_);
 
-  KmeansInstance<LloydIterationRunner, KmeansppSeedPicker> instance(&iterationRunner, &seedPicker);
+  Kmeans <>instance(&iterationRunner);
   Dataset runsCentres;
+  Dataset tempCentres;
   for(ull i = 0; i < runs_; ++i) {
-    Dataset tempCentres;
+    tempCentres.clear();
     instance.cluster(d, weights, k, tempCentres);
     runsCentres.insert(runsCentres.end(), tempCentres.begin(), tempCentres.end());
   }
-
-  KmeansppSeedPicker seedPicker2;
-  LloydIterationRunner iterationRunner2;
-
-  KmeansInstance<LloydIterationRunner, KmeansppSeedPicker> instance2(&iterationRunner2, &seedPicker2);
+  Kmeans<> instance2;
   instance2.cluster(runsCentres, Weights(runsCentres.size(), 1), k, centres);
   return true;
 }

@@ -27,7 +27,6 @@ Dataset readCentres(std::istream &file) {
     Instance i;
     while(std::getline(lineStream, item, ' ')) {
       try {
-        double k = stod(item);
         i.push_back(stod(item));
       }
       catch(std::invalid_argument e) {

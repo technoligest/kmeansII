@@ -25,7 +25,7 @@ std::ostream &operator<<(std::ostream &out_stream, const Instance &instance) {
   }
   size_t size_less_one = instance.size()-1;
   for(size_t i = 0; i < size_less_one; ++i) {
-    out_stream <<instance[i] << " ";
+    out_stream <<instance[i] << ",";
   }
   out_stream << instance[size_less_one];
   return out_stream;

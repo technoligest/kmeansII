@@ -4,12 +4,13 @@
 
 
 #include <iostream>
-#include "experiments_bipartite_perfect_matching.h"
+#include "hungarian.h"
 
 namespace kmeans{
 namespace experiments{
 
 namespace{
+//Validates that the matrix is good for processing
 void checkValidMatrix(const Matrix<double> &matrix) {
   std::size_t n = matrix.size();
   assert(n > 0);
@@ -18,6 +19,7 @@ void checkValidMatrix(const Matrix<double> &matrix) {
   }
 }
 }//namespace anonymous
+
 
 Hungarian::Hungarian(const Matrix<double> &matrix) : matrix_(matrix) {
   std::size_t n = matrix_.size();
@@ -29,9 +31,10 @@ Hungarian::Hungarian(const Matrix<double> &matrix) : matrix_(matrix) {
 
 std::vector<std::pair<std::size_t, std::size_t>> Hungarian::solve() {
   for(auto &u:left_) {
-    RightVertex *tail = findAugmentingPathFrom(u);
+    RightVertex *tail = findAugmentingPathFrom(&u);
     augmentMatching(tail);
   }
+
   std::vector<std::pair<std::size_t, std::size_t>> result;
   for(const auto &item:right_) {
     result.push_back({item.match_->name_, item.name_});
@@ -39,7 +42,8 @@ std::vector<std::pair<std::size_t, std::size_t>> Hungarian::solve() {
   return result;
 }
 
-RightVertex *Hungarian::findAugmentingPathFrom(LeftVertex &leftVertex) {
+
+RightVertex *Hungarian::findAugmentingPathFrom(LeftVertex *leftVertex) {
   startPhase(leftVertex);
   while(true) {
     auto tail = exploreTightEdges();
@@ -48,41 +52,44 @@ RightVertex *Hungarian::findAugmentingPathFrom(LeftVertex &leftVertex) {
   }
 }
 
-void Hungarian::startPhase(LeftVertex &leftVertex) {
+
+void Hungarian::startPhase(LeftVertex *leftVertex) {
   for(auto &vertex:left_) {
     vertex.reset();
   }
   for(auto &vertex:right_) {
     vertex.reset();
   }
-  leftVertex.parent_ = nullptr;//TODO:&leftVertex;
-  leftVertex.isExplored_ = true;//TODO:
+  leftVertex->isExplored_ = true;//TODO:
   q_.clear();
-  LeftVertex *temp = &leftVertex;
-  q_.push_back(temp);
+  q_.push_back(leftVertex);
 }
 
 RightVertex *Hungarian::exploreTightEdges() {
   while(!q_.empty()) {
-    RightVertex *tail = exploreTightEdgesFrom(*q_.front());
-    q_.erase(q_.begin());
+    auto k = q_[q_.size() - 1];
+    q_.pop_back();
+
+    RightVertex *tail = exploreTightEdgesFrom(k);
+
     if(tail != nullptr) return tail;
   }
   return nullptr;
 }
 
-RightVertex *Hungarian::exploreTightEdgesFrom(LeftVertex &u) {
+RightVertex *Hungarian::exploreTightEdgesFrom(LeftVertex *u) {
   for(auto &v: right_) {
-    if(v.isExplored()) continue;
-    auto uvSlack = slack(u, v);
-    if(uvSlack == 0) {
-      v.parent_ = &u;
-      auto tail = exploreRightVertex(v);
-      if(tail != nullptr) return tail;
-    } else {
-      if(uvSlack < v.slack_) {
-        v.slack_ = std::min(v.slack_, uvSlack);
-        v.potentialParent_ = &u;
+    if(!v.isExplored()) {
+      auto uvSlack = slack(*u, v);
+      if(uvSlack == 0) {
+        v.parent_ = u;
+        auto tail = exploreRightVertex(&v);
+        if(tail != nullptr) return tail;
+      } else {
+        if(uvSlack < v.slack_) {
+          v.slack_ = uvSlack;
+          v.potentialParent_ = u;
+        }
       }
     }
   }
@@ -101,33 +108,26 @@ RightVertex *Hungarian::adjustPotentials() {
       u.potential_ += minSlack;
     }
   }
+  RightVertex *tail = nullptr;
   for(auto &v:right_) {
     if(v.isExplored()) {
       v.potential_ -= minSlack;
       continue;
     }
-    v.slack_ -= minSlack;//TODO Does this make any difference?
-    if(v.slack_ == 0) {
-      v.parent_=v.potentialParent_;
-      //for(auto &w:left_) {
-      //  if(w.isExplored() && slack(w, v) == 0) {
-      //    v.parent_ = &w;
-      //    break;
-      //  }
-      //}
-
-      auto tail = exploreRightVertex(v);
-      if(tail != nullptr) { return tail; }
+    v.slack_ -= minSlack;
+    if(v.slack_ == 0 && tail == nullptr) {
+      v.parent_ = v.potentialParent_;
+      tail = exploreRightVertex(&v);
     }
   }
-  return nullptr;
+  return tail;
 }
 
-RightVertex *Hungarian::exploreRightVertex(RightVertex &v) {
-  if(!v.isMatched()) { return &v; }
+RightVertex *Hungarian::exploreRightVertex(RightVertex *v) {
+  if(!v->isMatched()) { return v; }
 
-  v.match_->parent_ = &v;
-  q_.push_back(v.match_);
+  v->match_->parent_ = v;
+  q_.push_back(v->match_);
   return nullptr;
 }
 
@@ -140,7 +140,9 @@ void Hungarian::augmentMatching(RightVertex *tail) {
   while(true) {
     tail->match_ = v;
     if(v->parent_ == nullptr) { break; }
-    else { assert(v->parent_->parent_ != nullptr); }
+    else {
+      assert(v->parent_->parent_ != nullptr);
+    }
     tail = v->parent_;
     v = tail->parent_;
   }
@@ -150,6 +152,31 @@ std::vector<std::pair<std::size_t, std::size_t>> minimumWeightPerfectMatching(co
   checkValidMatrix(m);
   Hungarian h(m);
   return h.solve();
+}
+
+
+bool RightVertex::isMatched() {
+  return match_ != nullptr;
+}
+
+bool RightVertex::isExplored() {
+  return isExplored_ || parent_ != nullptr;
+}
+
+void RightVertex::reset() {
+  isExplored_ = false;
+  parent_ = nullptr;
+  slack_ = std::numeric_limits<double>::max();
+  potentialParent_ = nullptr;
+}
+
+void LeftVertex::reset() {
+  isExplored_ = false;
+  parent_ = nullptr;
+}
+
+bool LeftVertex::isExplored() {
+  return isExplored_ || parent_ != nullptr;
 }
 }//namespace experiments
 }//namespace kmeans

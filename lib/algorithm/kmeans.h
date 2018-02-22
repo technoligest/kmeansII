@@ -23,7 +23,6 @@
 
 namespace kmeans{
 
-
 template<class IterationRunner = LloydIterationRunner>
 using Kmeans = KmeansInstance<RandomSeedPicker, IterationRunner>;
 
@@ -32,6 +31,9 @@ using Kmeanspp = KmeansInstance<KmeansppSeedPicker, IterationRunner>;
 
 template<typename InnerIR = LloydIterationRunner, typename OuterIR = LloydIterationRunner>
 using KmeansII = KmeansInstance<KmeansIISeedPicker<InnerIR>, OuterIR>;
+
+template<typename IterationRunner = LloydIterationRunner>
+using KmeansConsensus = KmeansInstance<NewSeedPicker, IterationRunner>;
 
 } //namespace kmeans
 

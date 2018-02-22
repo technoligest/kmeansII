@@ -20,7 +20,7 @@ one of the special makefiles in win32/ or contrib/vstudio/ .  For VMS, use
 make_vms.com.
 
 Questions about zlib should be sent to <zlib@gzip.org>, or to Gilles Vollant
-<info@winimage.com> for the Windows DLL version.  The zlib home page is
+<info@winimage.com> for the Windows DLL version.  The zlib HOME page is
 http://zlib.net/ .  Before reporting a problem, please check this site to
 verify that you have the latest version of zlib; otherwise get the latest
 version and check whether the problem still exists or not.

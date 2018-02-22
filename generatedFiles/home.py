@@ -1,0 +1,1 @@
+HOME = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII"

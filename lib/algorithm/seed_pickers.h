@@ -52,7 +52,7 @@ template<class IR>
 class KmeansIISeedPicker : public SeedPicker{
 public:
   inline explicit KmeansIISeedPicker(double _l, ull _r) : l_(_l), r_(_r){}
-  inline std::string name(){return name_;}
+  inline std::string name()override{return name_;}
   bool pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) override;
 
 private:
@@ -67,7 +67,7 @@ const std::string KmeansIISeedPicker<IR>::name_ = std::string("Kmeans|| Seed Pic
 //definition of this class is included here because it is mandatory since it is a templated class.
 template<class IR>
 bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &dataset, const Weights &weights, ull k, Dataset &centres) {
-#ifdef DEBUG
+#ifdef DEBUG_KMEANS
   std::cout << "Started picking seeds for KmeansII" << std::endl;
 #endif
   if(dataset.empty() || dataset.size() < k) {
@@ -98,7 +98,7 @@ bool KmeansIISeedPicker<IR>::pickSeeds(const Dataset &dataset, const Weights &we
       }
     }
   }
-#ifdef DEBUG
+#ifdef DEBUG_KMEANS
   std::cout << "completed all the passes. " << std::endl;
 #endif //DEBUG
   Weights tempWeights(tempCentres.size(), 0);

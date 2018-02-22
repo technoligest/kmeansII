@@ -19,7 +19,7 @@ protected:
   //Variables specific per clustering run. Need to be reset every clustering.
   ull num_iterations_ = 0;
   int iteration_runner_time_ = -1;
-  int  seed_picker_time_ = -1;
+  int seed_picker_time_ = -1;
   Distance distance_squared_ = 0; //Sum of distance square of each point to its cluster Centre
   Dataset centres_;
 
@@ -30,7 +30,8 @@ protected:
 public:
   inline KmeansBase(IterationRunner *iterationRunner, SeedPicker *seedPicker) :
       seedPicker_(seedPicker), iterationRunner_(iterationRunner) {}
-  virtual inline ~KmeansBase(){}
+
+  virtual inline ~KmeansBase() {}
 
   inline Distance cluster(const Dataset &dataset, const ull &k, std::vector<Instance> &centres) {
     auto result = cluster(dataset, Weights(dataset.size(), 1), k, centres);
@@ -45,6 +46,8 @@ public:
   inline ull seedPickerTime() { return seed_picker_time_; }
 
   inline Distance distanceSquared() { return distance_squared_; }
+
+  inline Dataset centres() { return centres_; }
 
   inline void clearInstance() {
     num_iterations_ = 0;

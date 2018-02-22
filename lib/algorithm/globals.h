@@ -8,6 +8,6 @@
 //The globals that we will need to include in EVERY file.
 //Things that might not be needed in some files should NOT be here.
 
-#define DEBUG_KMEANS
+//#define DEBUG_KMEANS
 
 #endif //KMEANSII_GLOBALS_H

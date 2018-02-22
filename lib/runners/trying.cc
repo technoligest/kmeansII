@@ -16,40 +16,55 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-  //input data
-  ifstream inputFile;
-  inputFile.open(home + "/inputFiles/DimRed10000.txt");
-  if(!inputFile.good()){
-    std::cout<< home << "/inputFiles/DimRed10000" << std::endl;
-  }
-  kmeans::Dataset dataset = kmeans::readDataset(inputFile);
-  inputFile.close();
-
   using kmeans::operator<<;
-  kmeans::NewSeedPicker sp(5,5);
-  kmeans::LloydIterationRunner ir;
 
-  kmeans::KmeansInstance <kmeans::NewSeedPicker, kmeans::LloydIterationRunner>inst(&ir,&sp);
+  //input data
+  std::string filename(HOME + "/generatedFiles/dataset4.csv");
+  ifstream inputFile;
+  inputFile.open(filename);
+  if(!inputFile.good()) {
+    std::cout << HOME << "/generatedFiles/dataset4.csv" << std::endl;
+  }
+  kmeans::Dataset dataset = kmeans::readCSVDataset(inputFile);
+  inputFile.close();
+  //std::cout << dataset << std::endl;
+  //std::cout << dataset.size() << std::endl;
+  //std::cout << dataset[0].size() << std::endl;
+
+
+  kmeans::NewSeedPicker newSeedPicker(5, 5);
+  kmeans::LloydIterationRunner lloydIterationRunner(175);
+  kmeans::KmeansConsensus<> newAlgo(&lloydIterationRunner, &newSeedPicker);
+  kmeans::Kmeanspp<> kmeanspp;
+  kmeans::Kmeans<> kmeans;
+
+  std::vector<double> newKmeansResult;
+  std::vector<unsigned long long> kmeansppResults;
+  std::vector<unsigned long long> kmeansResults;
+
+  int max = 4;
+  int k = 4;
   kmeans::Dataset centres;
-  inst.cluster(dataset,10,centres);
-  inst.print(std::cout);
+  for(int i = 0; i < max; ++i) {
+    newAlgo.cluster(dataset, k, centres);
+    kmeans.cluster(dataset, k, centres);
+    kmeanspp.cluster(dataset, k, centres);
+    std::cout << newAlgo.distanceSquared() << std::endl<<std::endl;
+
+    newKmeansResult.push_back(newAlgo.distanceSquared());
+    kmeansResults.push_back(kmeans.distanceSquared());
+    kmeansppResults.push_back(kmeanspp.distanceSquared());
+  }
+  for(auto i:newKmeansResult)
+    std::cout<<i<<std::endl;
+  std::cout << "kmeans: " << std::accumulate(kmeansResults.begin(), kmeansResults.end(), 0) << std::endl;
+  std::cout << "kmeanspp: " << std::accumulate(kmeansppResults.begin(), kmeansppResults.end(), 0) << std::endl;
+  std::cout << "kmeansnew: " << std::accumulate(newKmeansResult.begin(), newKmeansResult.end(), 0)  << std::endl;
 
 
-  //
-  ////kmeans::KmeansBase *kmeans = new kmeans::KmeansInstance<kmeans::NewSeedPicker, kmeans::LloydIterationRunner>(&ir,&sp);
-  ////kmeans->cluster(dataset,10,)
-  //
-  //
-  //
-  //for(int l =0; l <10; ++l) {
-  //
-  //
-  //  kmeans::experiments::ExperimentRunner e(dataset,);
-  //  e.runExperiments(100);
-  //  auto i = e.getExperiments();
-  //  kmeans::experiments::reader::printExperiments("DimRedFullData.txt", i,
-  //                                                "/Users/yaseralkayale/Documents/classes/kmeansII/lib/experiments/Experiment Results");
-  //}
-  //std::cout << "Done" << std::endl;
+
+  std::cout << "Done" << std::endl;
+  std::cout<<std::numeric_limits<unsigned long long>::max();
+  std::cout<<std::numeric_limits<unsigned long long>::min();
   return 0;
 }
