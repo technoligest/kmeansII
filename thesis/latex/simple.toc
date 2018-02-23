@@ -1,14 +1,53 @@
 \baselineskip =0.7\baselineskip 
-\contentsline {chapter}{Abstract}{iv}
-\contentsline {chapter}{Acknowledgements}{v}
+\contentsline {chapter}{List of Figures}{iv}
+\contentsline {chapter}{Abstract}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {chapter}{Acknowledgements}{vi}
+\contentsline {paragraph}{}{vi}
 \contentsline {chapter}{\numberline {Chapter 1}Introduction}{1}
 \addvspace {10\p@ }
-\contentsline {chapter}{\numberline {Chapter 2}Doing It}{4}
+\contentsline {paragraph}{}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {chapter}{\numberline {Chapter 2}Background}{2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {section}{\numberline {2.1}Getting Ready}{4}
+\contentsline {section}{\numberline {2.1}Seeding Process}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {subsection}{\numberline {2.1.1}K-means++}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {subsection}{\numberline {2.1.2}K-means|| (parallel)}{2}
 \addvspace {10\p@ }
-\contentsline {section}{\numberline {2.2}Next Step}{4}
-\contentsline {chapter}{\numberline {Chapter 3}Conclusion}{5}
+\contentsline {section}{\numberline {2.2}Iterations}{2}
+\contentsline {paragraph}{}{2}
 \addvspace {10\p@ }
-\contentsline {chapter}{Bibliography}{6}
+\contentsline {section}{\numberline {2.3}Objective Function}{3}
+\contentsline {paragraph}{}{3}
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {2.4}Difficulties}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {chapter}{\numberline {Chapter 3}Minimum Weight Perfect Matching on Bipartite Graphs}{4}
+\addvspace {10\p@ }
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {chapter}{\numberline {Chapter 4}Datasets}{5}
+\addvspace {10\p@ }
+\contentsline {paragraph}{}{5}
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {4.1}Generated Artificial Datasets}{5}
+\contentsline {paragraph}{}{5}
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {4.2}Real World Datasets}{5}
+\contentsline {chapter}{\numberline {Chapter 5}Future work}{6}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {5.1}Moving On}{6}
+\contentsline {chapter}{\numberline {Chapter 6}Conclusion}{7}
+\addvspace {10\p@ }
+\contentsline {chapter}{\numberline {Chapter 7}Extras}{8}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {7.1}Getting Ready}{8}
+\addvspace {10\p@ }
+\contentsline {section}{\numberline {7.2}Next Step}{8}
+\contentsline {chapter}{Bibliography}{9}

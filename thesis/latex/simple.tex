@@ -2,14 +2,38 @@
 %   dalthesis.cls class file
 \documentclass[12pt]{dalthesis}
 
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\DeclareMathOperator*{\argmin}{argmin}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+
 \begin{document}
 
-\title{Kmeans Clustering}
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+\newcommand*{\Value}{\frac{1}{2}x^2}%
+
+
+\title{K-means Clustering, An Improved Seeding Process }
 \author{Yaser Alkayale}
 
 % The following degrees are included in the current dalthesis.cls
 % class file:
-\mcs  % options are \mcs, \macs, \mec, \mhi, \phd, and \bcshon
+\bcshon  % options are \mcs, \macs, \mec, \mhi, \phd, and \bcshon
 
 % If you degree is not included, you can set several options manually.
 % The following example shows the parameters for the \mcs degree.
@@ -31,103 +55,88 @@
 % This sample thesis contains no tables nor figures, so there is no
 % need to include lists of tables and figures in the front matter:
 \nolistoftables
-\nolistoffigures
+
 
 \frontmatter
 
 \begin{abstract}
+  \paragraph{}
   Clustering is a well-known task that has been studied and used for decades. The idea is to take a set of items and group them into a number of clusters based on a similarity measure. K-means proposed in 1957 by Stuart Lloyd is one of the most widely used clustering algorithm and is still used today for its reasonably fast heuristic to find the clusters based on the Lloyd algorithm and more recent developments in that area. K-means has two main parts to clustering, the initial seeding process and the iteration process. The seeding process picks k initial seeds as cluster centres, and highly affects the accuracy of the final result in the algorithm. The iteration process dominates running time to move the centres around until it converges to an optimum. In this paper, we discuss a new method of the seeding process that gives us more accurate seeds to start the algorithm. We also discuss a novel approach to find an approximation of the correct number of clusters for a given dataset.
 \end{abstract}
 
 \begin{acknowledgements}
-Thanks to all the little people who make me look tall.
+  \paragraph{}
+  Big thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the day of light. Thank you to Dr. Vlado Keselj who made himself available when we needed to consult with him. Also big thank you to Arazoo who was with me from the beginning, and went through my ideas with me.
 \end{acknowledgements}
 
 \mainmatter
 
+
 \chapter{Introduction}
+\paragraph{}
+Clustering problems arise in many domains like
+natural language processing\cite{ravichandran2005randomized},
+crash report analysis\cite{soto2016machine}, 
+and vehicle navigation\cite{maio1996dynamic}.
+The notion of what is a good cluster highly depends on the domain and application at hand. Many clustering techniques like hierarchical clustering\cite{corpet1988multiple}
+and graph-based techniques\cite{schaeffer2007graph}, each serving a different purpose. K-means clustering continues to be one of the most clustering algorithms for it's simplicity of implementation and relative efficiency\cite{jain2010data}.
+\paragraph{}
+Formally, K-means is the problem where we are given a set of n points in d-dimensional space and a number k, where we are asked to split n points into k clusters while minimizing the total sum of distances from points to their cluster centres. K-means does especially well on convex shaped clusters as it minimizes the sum of distances of all points to their belonging cluster centres.
 
-Get it done!  Use reference material by Limpet~\cite{latex-by-lamport} or
-Gooses, Mittelback, and Samarin~\cite{latex-companion}.
-
-To test if the margins are satisfactory, let us generate a lot of
-garbage text:
-This sentence goes on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and
-and here we should be around top of the page~2, and we go on, and on, and on, and on, and on.
-This following line \rule{5cm}{1pt} should be exactly 5cm long.  It
-can be used to check the typesetting process.
-And now we go on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on, and on, and on, and on, and on, and on, and on, and on, and on,
-and on.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{image1}
+\caption{Example of a parametric plot }
+\end{figure}
 
 
-\chapter{Doing It}
+\chapter{Background}
+
+\section{Seeding Process}
+\paragraph{}
+The seeding process of the k-means algorithm is crucial to the accuracy of the result because while the iterations converge the centres to an optimum, it is mostly localized to the regions constrained by the initial seeds\cite{arthur2007k}.
+Many new approaches have been introduced like K-means++\cite{arthur2007k},
+\subsection{K-means++}
+\paragraph{}
+K-means++ uses an intuitive way to seed the initial clusters of the algorithm by trying to pick seeds that are as far apart as possible. This is done by giving a higher probability for points that are further away from the ones already picked. The way it works is that we pick a random initial point, and then given a probability of picking a point proportional to the seeds already picked, until k seeds are picked. 
+\paragraph{}
+K-means++ works very well because it about evenly distributes the initial seeds in the dataset. Also, because a probablistic model is used, then a higher concentration of points get a high probability of getting at least one point in them.
+\subsection{K-means|| (parallel)}
+\section{Iterations}
+\paragraph{}
+The iteration process of the k-means clustering algorithm dominates the running time of the algorithm 
+
+\section{Objective Function}
+\paragraph{}
+The objective function of the clustering task determines what we are trying to group points based on. In most tasks, including in everything discussed in this paper, the objective function is the sum of squared distances\footnote{Note: Here we used squared distance because we are merely comparing the distances to each other and do not care what the actual values are. Keeping them squared allows us to same on the computational cost of taking the square root of all the distances before summing.}
+of all the points to their cluster centres. More formally expressed as:
+$$\argmin\limits_r\sum_{i=1}^{k}\sum_{x\in S_i}\norm{ x-u_i}^2$$
+
+
+\section{Difficulties}
+\paragraph{}
+K-means clustering is very good at clustering well-separated convex clustered where k the number of clusters in known or accurately measured in advance. However, this is very rarely the case.
+\chapter{Minimum Weight Perfect Matching on Bipartite Graphs}
+\paragraph{}
+Perfect matching is the problem where a graph is partitioned into pairs based on a heuristic. Minimum weight perfect matching is where the total costs of the edges connecting the pairs in the graph are minimized. The is an NP-hard problem on a general graph; however, it can be solved in $O(n^3)$. The Hungarian algorithm is one of the best known problems to solve the assignment problem, the more widely used name of the minimum weight perfect matching problem.
+\paragraph{}
+The assignment problem is where given a set of w workers and t tasks, we are asked to find the
+
+\chapter{Datasets}
+\paragraph{}
+To test how effective our new techniques are, we 
+\section{Generated Artificial Datasets}
+\paragraph{}
+The datasets were generated using 
+\section{Real World Datasets}
+\chapter{Future work}
+\section{Moving On}
+While k-means is a great clustering method for it's efficiency and simplicity, it is definitely not the greatest algorithm to be used for every single clustering task. 
+
+\chapter{Conclusion}
+
+
+\chapter{Extras}
 
 \section{Getting Ready}
 
@@ -142,18 +151,20 @@ as examples for me to use in the future.
 \section{Next Step}
 
 Do it!
-
+\cite{latex-by-lamport}
 Of course, you have to have pictures to show how you did it to make people
 understand things better.
+Get it done!  Use reference material by Limpet~\cite{latex-by-lamport} or
+Gooses, Mittelback, and Samarin~\cite{latex-companion}.
 
-\chapter{Conclusion}
+This following line \rule{5cm}{3pt} should be exactly 5cm long.  It
+can be used to check the typesetting process.
 
-Did it!\cite{latex-by-lamport}
+Did it!\cite{latex-companion2}
 
 \bibliographystyle{plain}
 \bibliography{simple}
 
 \end{document}
 
-% You may ignore or delete these two lines of comments.
-% $Id: simple.tex 386 2012-11-12 15:11:16Z vlado $
+
