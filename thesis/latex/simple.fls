@@ -101,9 +101,6 @@ OUTPUT simple.toc
 INPUT simple.lof
 INPUT simple.lof
 OUTPUT simple.lof
-INPUT images/image1.jpg
-INPUT ./images/image1.jpg
-INPUT ./images/image1.jpg
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm

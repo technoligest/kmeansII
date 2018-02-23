@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex simple"] 1519355447 "simple.aux" "simple.bbl" "simple" 1519355448
+["bibtex simple"] 1519429062 "simple.aux" "simple.bbl" "simple" 1519429326
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/plain.bst" 1480098433 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "simple.aux" 1519355447 4505 d66cab8d3cacae422afea130700b1aaa ""
-  "simple.bib" 1519347474 2679 a9d1364bf94b37b7ae312acca0c55fee ""
+  "simple.aux" 1519429326 4311 e019371e846725bfb168524ca123f98e ""
+  "simple.bib" 1519422462 2484 de49988f2d0a462f4d47ae4cc9119e66 ""
   (generated)
   "simple.blg"
   "simple.bbl"
-["pdflatex"] 1519355447 "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/thesis/latex/simple.tex" "simple.pdf" "simple" 1519355448
-  "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/thesis/latex/simple.tex" 1519355445 8318 e8ee4da11dc565e28af26e538962f94d ""
+["pdflatex"] 1519429326 "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/thesis/latex/simple.tex" "simple.pdf" "simple" 1519429326
+  "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/thesis/latex/simple.tex" 1519429326 9655 e33a6db8f5e33cc55903e47c89544707 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1480098666 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1480098696 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -87,15 +87,14 @@
   "/usr/local/texlive/2017/texmf.cnf" 1517635034 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "afterpage.sty" 1352770124 3899 95f3b7191c81616e83626f7fc4d3497e ""
   "dalthesis.cls" 1502816950 38664 980b1f4116220bb4a9d546af1926b570 ""
-  "images/image1.jpg" 1518306626 349169 754be3d9835a801908a0d328c1215a68 ""
-  "simple.aux" 1519355447 4505 d66cab8d3cacae422afea130700b1aaa ""
-  "simple.bbl" 1519355447 2145 730d49291d58474aee0f4eae457f9769 "bibtex simple"
-  "simple.lof" 1519355447 319 1dc3f08b83b8e752b81144072add144e ""
-  "simple.tex" 1519355445 8318 e8ee4da11dc565e28af26e538962f94d ""
-  "simple.toc" 1519355447 2108 20ed4d9d9d7669636ab1c5f5e5426a21 ""
+  "simple.aux" 1519429326 4311 e019371e846725bfb168524ca123f98e ""
+  "simple.bbl" 1519429063 1664 8bc8f66dd2c7851385042c20d673d277 "bibtex simple"
+  "simple.lof" 1519429326 222 16220dd9158e7d223b7fe9a066d7cc49 ""
+  "simple.tex" 1519429326 9655 e33a6db8f5e33cc55903e47c89544707 ""
+  "simple.toc" 1519429326 2170 6040be74e04df2eaa796d719f8e005f9 ""
   (generated)
   "simple.aux"
   "simple.lof"
-  "simple.log"
   "simple.toc"
   "simple.pdf"
+  "simple.log"

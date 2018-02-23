@@ -55,7 +55,7 @@
 % This sample thesis contains no tables nor figures, so there is no
 % need to include lists of tables and figures in the front matter:
 \nolistoftables
-
+% \nolistoffigures
 
 \frontmatter
 
@@ -83,11 +83,12 @@ and graph-based techniques\cite{schaeffer2007graph}, each serving a different pu
 \paragraph{}
 Formally, K-means is the problem where we are given a set of n points in d-dimensional space and a number k, where we are asked to split n points into k clusters while minimizing the total sum of distances from points to their cluster centres. K-means does especially well on convex shaped clusters as it minimizes the sum of distances of all points to their belonging cluster centres.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{image1}
-\caption{Example of a parametric plot }
-\end{figure}
+\paragraph{}
+While K-means is widely used for its efficiency and simplicity of implementation, it is not perfect for many use cases. The algorithm can give highly inaccurate clusters if the number k is not known in advance. This is due to the nature of the algorithm forcing all the points into k clusters. Another problem with the algorithm is that it works best on convex shaped clusters, and struggles when there is a lot of noise\footnote{Note: Noise in this context is referring to the overlap of multiple clusters, where it becomes difficult to separate points if they are at the edges of two or more clusters.} in the data. Having noisy data or the incorrect number of clusters k, the K-means algorithm struggles with running time, as it requires a large number of iterations and sometimes never converges to an optimum.
+
+\paragraph{}
+In this paper, we will introduce a new way to seed the K-means algorithm that gives us better initial seeds to help converge the algorithm with fewer iterations and a lower objective function.
+
 
 
 \chapter{Background}
@@ -95,7 +96,7 @@ Formally, K-means is the problem where we are given a set of n points in d-dimen
 \section{Seeding Process}
 \paragraph{}
 The seeding process of the k-means algorithm is crucial to the accuracy of the result because while the iterations converge the centres to an optimum, it is mostly localized to the regions constrained by the initial seeds\cite{arthur2007k}.
-Many new approaches have been introduced like K-means++\cite{arthur2007k},
+Many new approaches have been introduced like K-means++\cite{arthur2007k}, and Kmeans||. It has been experimentally proven that having a better seeding process improves the algorithm by both lowering the objective function of the algorithm, and allowing it to converge faster with less iterations and running time.
 \subsection{K-means++}
 \paragraph{}
 K-means++ uses an intuitive way to seed the initial clusters of the algorithm by trying to pick seeds that are as far apart as possible. This is done by giving a higher probability for points that are further away from the ones already picked. The way it works is that we pick a random initial point, and then given a probability of picking a point proportional to the seeds already picked, until k seeds are picked. 
@@ -144,27 +145,38 @@ Get all the parts that I need.  I can throw in a whole pile of terms like
 preparation,
 methodology,
 forethought,
-and
+andd
 analysis
 as examples for me to use in the future.
 
 \section{Next Step}
 
 Do it!
-\cite{latex-by-lamport}
-Of course, you have to have pictures to show how you did it to make people
+
+Of course, you have to have pictures to show how you did it to make peoplee
 understand things better.
-Get it done!  Use reference material by Limpet~\cite{latex-by-lamport} or
-Gooses, Mittelback, and Samarin~\cite{latex-companion}.
+Get it done!  Use reference material by Limpet~ \cite{jain2010data} or
+Gooses, Mittelback, and Samarin~.
 
 This following line \rule{5cm}{3pt} should be exactly 5cm long.  It
 can be used to check the typesetting process.
 
-Did it!\cite{latex-companion2}
-
+Did it!!
 \bibliographystyle{plain}
 \bibliography{simple}
 
 \end{document}
 
 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extra latex code that can be reused later.
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.5\textwidth]{image1}
+% \caption{Example of a parametric plot }
+% \end{figure}

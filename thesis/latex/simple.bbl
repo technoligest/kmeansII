@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{arthur2007k}
 David Arthur and Sergei Vassilvitskii.
@@ -12,26 +12,10 @@ Florence Corpet.
 \newblock Multiple sequence alignment with hierarchical clustering.
 \newblock {\em Nucleic acids research}, 16(22):10881--10890, 1988.
 
-\bibitem{latex-companion}
-Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-\newblock {\em The {LaTeX} Companion}.
-\newblock Addison-Wesley, 1994.
-
-\bibitem{latex-companion2}
-Michel Goossens, Frank Mittelbach, and Alexander Samarin.
-\newblock {\em The {LaTeX} Companion}.
-\newblock Addison-Wesley, 1994.
-
 \bibitem{jain2010data}
 Anil~K Jain.
 \newblock Data clustering: 50 years beyond k-means.
 \newblock {\em Pattern recognition letters}, 31(8):651--666, 2010.
-
-\bibitem{latex-by-lamport}
-Leslie Lamport.
-\newblock {\em A Document Preparation System {Latex} User's Guide and Reference
-  Manual}.
-\newblock Addison-Wesley, 1986.
 
 \bibitem{maio1996dynamic}
 Dario Maio, Davide Maltoni, and Stefano Rizzi.
