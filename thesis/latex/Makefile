@@ -8,6 +8,8 @@ help:
 
 .PHONY: all
 
+pdf: all clean
+
 all:
 	latex $(THESIS_NAME).tex
 	latex $(THESIS_NAME).tex
@@ -28,7 +30,7 @@ bibliography:
 	bibtex $(THESIS_NAME)
 
 clean:
-	-rm *.dvi *.aux *.bbl *.blg *.log *.toc *.lof *.lot *.glo *.gls *.ist *.ilg
+	-rm *.dvi *.aux *.bbl *.blg *.log *.toc *.lof *.lot *.glo *.gls *.ist *.ilg *.fls *.ps .DS_Store
 
 spotless: clean
 	-rm *.pdf
