@@ -1,19 +1,50 @@
-% simple.tex -- a very simple thesis document for demonstrating
-%   dalthesis.cls class file
-\documentclass[12pt]{dalthesis}
 
+
+% simple.tex -- Yaser Alkayale Thesis Taken From Vlado Keslj
+
+\documentclass[12pt]{dalthesis}
 \usepackage{mathtools}
 \usepackage[T1]{fontenc}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+% Plots
+\usepackage{siunitx}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize{simple}
+\usepackage{filecontents}
+\pgfplotsset{compat=newest} % Allows to place the legend below plot
+% \usepgfplotslibrary{units} % Allows to enter the units nicely
+\sisetup{
+  round-mode          = places,
+  round-precision     = 2,
+}
+
+
+% \usepackage{epstopdf} % to turn my eps files into pdf
+% \usepackage{tikz}
+% \usepgfplotslibrary{external}
+% \tikzexternalize{main}
+
+
+\begin{filecontents*}{table.csv}
+  column 1,column 2,c,d
+  1,4,5,1
+  2,3,1,5
+  3,5,6,1
+  4,1,4,9
+  5,3,4,7
+\end{filecontents*}
+
+% These will help for absolute value math operators
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
 \DeclareMathOperator*{\argmin}{argmin}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-
-
 \begin{document}
-
 
 % Swap the definition of \abs* and \norm*, so that \abs
 % and \norm resizes the size of the brackets, and the 
@@ -21,26 +52,18 @@
 \makeatletter
 \let\oldabs\abs
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
-%
 \let\oldnorm\norm
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
-\newcommand*{\Value}{\frac{1}{2}x^2}%
+\newcommand*{\Value}{\frac{1}{2}x^2}
 
 
-\title{K-means Clustering, An Improved Seeding Process & Method to Detect Best Number of Clusters }
+\title{K-means Clustering, An Improved Seeding Process \& Method to Detect Best Number of Clusters }
 \author{Yaser Alkayale}
 
-% The following degrees are included in the current dalthesis.cls
-% class file:
+
 \bcshon  % options are \mcs, \macs, \mec, \mhi, \phd, and \bcshon
 
-% If you degree is not included, you can set several options manually.
-% The following example shows the parameters for the \mcs degree.
-% However, if you need to set these parameters manually, please check
-% the correct names with the Faculty of Graduate Studies, and let the
-% maintainer of this class file know (Vlado Keselj, vlado@cs.dal.ca).
-% MCS Example:
 
 \degree{Bachelor's of Computer Science, Honours}
 \degreeinitial{B.C.Sc.}
@@ -52,8 +75,6 @@
 
 \dedicate{This thesis is in dedication to my grandfather whom I was named after.}
 
-% This sample thesis contains no tables nor figures, so there is no
-% need to include lists of tables and figures in the front matter:
 \nolistoftables
 % \nolistoffigures
 
@@ -64,7 +85,15 @@
   Clustering is a well-known task that has been studied and used for decades. The idea is to take a set of items and group them into a number of clusters based on a similarity measure. K-means proposed in 1957 by Stuart Lloyd is one of the most widely used clustering algorithm and is still used today for its reasonably fast heuristic to find the clusters based on the Lloyd algorithm and more recent developments in that area. K-means has two main parts to clustering, the initial seeding process and the iteration process. The seeding process picks k initial seeds as cluster centres, and highly affects the accuracy of the final result in the algorithm. The iteration process dominates running time to move the centres around until it converges to an optimum. In this paper, we discuss a new method of the seeding process that gives us more accurate seeds to start the algorithm. We also discuss a novel approach to find an approximation of the correct number of clusters for a given dataset.
 \end{abstract}
 
-\begin{acknowledgements}
+
+
+
+
+
+
+
+
+\begin{acknowledgements} 
   \paragraph{}
   Big thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the day of light. Thank you to Dr. Vlado Keselj who made himself available when we needed to consult with him. Also big thank you to Arazoo who was with me from the beginning, and went through my ideas with me.
 \end{acknowledgements}
@@ -79,15 +108,15 @@ natural language processing\cite{ravichandran2005randomized},
 crash report analysis\cite{soto2016machine}, 
 and vehicle navigation\cite{maio1996dynamic}.
 The notion of what is a good cluster highly depends on the domain and application at hand. Many clustering techniques like hierarchical clustering\cite{corpet1988multiple}
-and graph-based techniques\cite{schaeffer2007graph}, each serving a different purpose. K-means clustering continues to be one of the most clustering algorithms for it's simplicity of implementation and relative efficiency\cite{jain2010data}.
+and graph-based techniques\cite{schaeffer2007graph} exist, each serving a different purpose and are practical for different clustering tasks. K-means clustering continues to be one of the most popular clustering algorithms for it's simplicity of implementation and relative efficiency\cite{jain2010data}.
 \paragraph{}
-Formally, K-means is the problem where we are given a set of n points in d-dimensional space and a number k, where we are asked to split n points into k clusters while minimizing the total sum of distances from points to their cluster centres. K-means does especially well on convex shaped clusters as it minimizes the sum of distances of all points to their belonging cluster centres.
+Formally, K-means is the problem where we are given a set of n points in d-dimensional space and a number k, where we are asked to split n points into k clusters while minimizing the total sum of distances from points to their cluster centres. K-means does especially well, it terms of speed and accuracy, on convex shaped clusters as it minimizes the sum of distances of all points to their belonging cluster centres. 
 
 \paragraph{}
-While K-means is widely used for its efficiency and simplicity of implementation, it is not perfect for many use cases. The algorithm can give highly inaccurate clusters if the number k is not known in advance. This is due to the nature of the algorithm forcing all the points into k clusters. Another problem with the algorithm is that it works best on convex shaped clusters, and struggles when there is a lot of noise\footnote{Note: Noise in this context is referring to the overlap of multiple clusters, where it becomes difficult to separate points if they are at the edges of two or more clusters.} in the data. Having noisy data or the incorrect number of clusters k, the K-means algorithm struggles with running time, as it requires a large number of iterations and sometimes never converges to an optimum.
+While K-means is widely used for its proven practical performance, it is not perfect for many use cases. The algorithm can give highly inaccurate clusters if the number k is not known in advance. This is due to the nature of the algorithm forcing all the points into k clusters. Another problem with the algorithm is that it works best on convex shaped clusters, and struggles when there is a lot of noise\footnote{Note: Noise in this context is referring to the overlap of multiple clusters, where it becomes difficult to separate points if they are at the edges of two or more clusters.} in the data. Having noisy data or the incorrect number of clusters k, the K-means algorithm struggles with running time, as it requires a large number of iterations and sometimes never converges to an optimum. 
 
 \paragraph{}
-In this paper, we will introduce a new way to seed the K-means algorithm that gives us better initial seeds to help converge the algorithm with fewer iterations and a lower objective function.
+In this paper, we will introduce a new way to seed the K-means algorithm that gives us better initial seeds to help converge the algorithm with fewer iterations and a lower objective function. The seeding process uses multiple runs of the randomized seeding process, and then clusters these to get a more accurate result. 
 
 
 
@@ -117,51 +146,38 @@ $$\argmin\limits_r\sum_{i=1}^{k}\sum_{x\in S_i}\norm{ x-u_i}^2$$
 \section{Difficulties}
 \paragraph{}
 K-means clustering is very good at clustering well-separated convex clustered where k the number of clusters in known or accurately measured in advance. However, this is very rarely the case.
-\chapter{Minimum Weight Perfect Matching on Bipartite Graphs}
+
+\chapter{Analyzing Algorithm Performance}
+\section{Normalized Information Distance}
+\section{Minimum Weight Perfect Matching on Bipartite Graphs}
 \paragraph{}
 Perfect matching is the problem where a graph is partitioned into pairs based on a heuristic. Minimum weight perfect matching is where the total costs of the edges connecting the pairs in the graph are minimized. The is an NP-hard problem on a general graph; however, it can be solved in $O(n^3)$. The Hungarian algorithm is one of the best known problems to solve the assignment problem, the more widely used name of the minimum weight perfect matching problem.
 \paragraph{}
 The assignment problem is where given a set of w workers and t tasks, we are asked to find the
+\subsection{Choosing the Correct Matching Function}
 
-\chapter{Datasets}
+
+\chapter{Experimental Evaluation}
+\paragraph
+In this section we show how 
+\section{Datasets}
 \paragraph{}
 To test how effective our new techniques are, we 
-\section{Generated Artificial Datasets}
+\subsection{Generated Artificial Datasets}
 \paragraph{}
 The datasets were generated using 
-\section{Real World Datasets}
+\subsection{Real World Datasets}
+
+
 \chapter{Future work}
 \section{Moving On}
 While k-means is a great clustering method for it's efficiency and simplicity, it is definitely not the greatest algorithm to be used for every single clustering task. 
 
 \chapter{Conclusion}
+K-means clustering continues to be one of the most highly used clustering algorithm around the world.
 
 
-\chapter{Extras}
 
-\section{Getting Ready}
-
-Get all the parts that I need.  I can throw in a whole pile of terms like
-preparation,
-methodology,
-forethought,
-andd
-analysis
-as examples for me to use in the future.
-
-\section{Next Step}
-
-Do it!
-
-Of course, you have to have pictures to show how you did it to make peoplee
-understand things better.
-Get it done!  Use reference material by Limpet~ \cite{jain2010data} or
-Gooses, Mittelback, and Samarin~.
-
-This following line \rule{5cm}{3pt} should be exactly 5cm long.  It
-can be used to check the typesetting process.
-
-Did it!!
 \bibliographystyle{plain}
 \bibliography{simple}
 
@@ -175,8 +191,58 @@ Did it!!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Extra latex code that can be reused later.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[h]
 % \centering
 % \includegraphics[width=0.5\textwidth]{image1}
 % \caption{Example of a parametric plot }
+% \end{figure}
+
+
+
+% \begin{figure}[h!]
+%   \begin{minipage}{0.48\textwidth}
+%   \begin{center}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         width=\linewidth, % Scale the plot to \linewidth
+%         grid=major, % Display a grid
+%         grid style={dashed,gray!30}, % Set the style
+%         xlabel=X Axis, % Set the labels
+%         ylabel=Y Axis,
+%         legend style={at={(0.5,-0.3)},anchor=north} % Put the legend below the plot
+%         % x tick label style={rotate=90,anchor=east} % Display labels sideways
+%       ]
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-0.csv};
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-1.csv};
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-2.csv};
+%       \addplot+[mark options={scale=0.1}] table [only marks,col sep=comma] {plotData/dataset0-cluster-3.csv};
+%       \legend{Cluster}
+%     \end{axis}
+%     \end{tikzpicture}
+%     \caption{My firsts autogenerated plot.}
+%   \end{center}
+% \end{minipage}\hfill
+% \begin {minipage}{0.48\textwidth}
+%   \begin{center}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         width=\linewidth, % Scale the plot to \linewidth
+%         grid=major, % Display a grid
+%         grid style={dashed,gray!30}, % Set the style
+%         xlabel=X Axis, % Set the labels
+%         ylabel=Y Axis,
+%         legend style={at={(0.5,-0.3)},anchor=north} % Put the legend below the plot
+%         % x tick label style={rotate=90,anchor=east} % Display labels sideways
+%       ]
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-0.csv};
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-1.csv};
+%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-2.csv};
+%       \addplot+[mark options={scale=0.1}] table [only marks,col sep=comma] {plotData/dataset1-cluster-3.csv};
+%       \legend{Cluster}
+%     \end{axis}
+%     \end{tikzpicture}
+%     \caption{My second autogenerated plot.}
+%   \end{center}
+% \end{minipage}\hfill
 % \end{figure}

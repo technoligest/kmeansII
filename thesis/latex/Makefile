@@ -8,7 +8,8 @@ help:
 
 .PHONY: all
 
-pdf: all clean
+pdf:
+	pdflatex -shell-escape simple.tex
 
 all:
 	latex $(THESIS_NAME).tex
@@ -16,7 +17,7 @@ all:
 	bibtex $(THESIS_NAME)
 	latex $(THESIS_NAME)
 	dvips -t letter simple.dvi -o simple.ps
-	pdflatex simple.tex
+	pdflatex -shell-escape simple.tex
 
 body:
 	latex $(THESIS_NAME).tex
