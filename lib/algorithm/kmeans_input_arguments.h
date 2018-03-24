@@ -15,10 +15,10 @@ DEF_ARGUMENT_CLASS(
     KmeansArgs,
     std::string, inputFileName, "", REQUIRED, OPT_SLH(-i, --input, "What is the input file?"),
     std::string, outputFileName, "none", OPTIONAL, OPT_SLH(-o, --output, "What is the output file name?"),
-    std::string, algorithm, "kmeans", REQUIRED,
-    OPT_SLH(-a, --algorithm, "What algorithm to use? (Kmeans, Kmeans++, KmeansII)"),
-    int, k, 1, REQUIRED, OPT_SH(-k, "Number of clusters"),
-    double, l, 2, OPTIONAL, OPT_SH(-l, "oversampling factor (only for kmeansII)")
+    std::string, algorithm, "kmeans", REQUIRED, OPT_SLH(-a, --algorithm, "What algorithm to use? (kmeans, kmeans++, kmeansII)"),
+    int, k, -1, REQUIRED, OPT_SH(-k, "Number of clusters"),
+    int ,r,-1,OPTIONAL, OPT_SH(-r, "number of rounds (for kmeansII)"),
+    double, l, -1, OPTIONAL, OPT_SH(-l, "oversampling factor (only for kmeansII)")
 //bool,			decorate,	false,		OPTIONAL, OPT_SLWH(-d, --decorate, true, "decoreate the output")
 );
 

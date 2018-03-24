@@ -6,6 +6,7 @@
 #include "iteration_runners.h"
 #include "kmeans.h"
 
+
 namespace kmeans{
 const std::string NewSeedPicker::name_ = "Yaser's Seed Picker";
 const std::string KmeansppSeedPicker::name_ = "Kmeans++ Seed Picker";
@@ -13,11 +14,12 @@ const std::string RandomSeedPicker::name_ = "Random Seed Picker";
 
 
 bool NewSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, Dataset &centres) {
-
+  if(d.empty() || k < 1 || d.size() < k) {
+    return false;
+  }
 
   LloydIterationRunner iterationRunner(iterations_);
-
-  Kmeans <>instance(&iterationRunner);
+  Kmeans<> instance(&iterationRunner);
   Dataset runsCentres;
   Dataset tempCentres;
   for(ull i = 0; i < runs_; ++i) {
@@ -25,6 +27,7 @@ bool NewSeedPicker::pickSeeds(const Dataset &d, const Weights &weights, ull k, D
     instance.cluster(d, weights, k, tempCentres);
     runsCentres.insert(runsCentres.end(), tempCentres.begin(), tempCentres.end());
   }
+  std::cout << "Final run size: " << runsCentres.size() << std::endl;
   Kmeans<> instance2;
   instance2.cluster(runsCentres, Weights(runsCentres.size(), 1), k, centres);
   return true;

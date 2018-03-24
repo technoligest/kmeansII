@@ -35,6 +35,7 @@ KmeansBase::pickSeeds(const Dataset &dataset, const Weights &weights, const ull 
   ull startTime = static_cast<ull>(time(nullptr));
   assert(seedPicker_->pickSeeds(dataset, weights, k, centres));
   seed_picker_time_ = static_cast<ull>(time(nullptr)) - startTime;
+
 #ifdef DEBUG_KMEANS
   std::cout << "Finished picking seeds using " << seedPicker_->name() << std::endl;
 #endif

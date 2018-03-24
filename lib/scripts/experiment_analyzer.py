@@ -11,17 +11,20 @@ import numpy as np
 
 class Analyzer:
   def __init__(self, experiments, dataset):
+    """
+    :param experiments: the experiments run on the dataset. Assuming they are all independant
+    :param dataset: The dataset the experiments were run on.
+    """
     self.experiments = sorted(experiments, key=lambda experiment:experiment.totalDistanceToCentres)
     self.dataset = dataset
     self._NIDs = None
     self.matchings = None
-    print("Created analyzer class")
 
-  """
-  @:return list of Normalized Information Distance which corresponds to each experiment in sorted order
-  """
   @property
   def NIDs(self):
+    """
+    :return:the normalized information distances of all the experiments
+    """
     if self._NIDs == None:
       self.calcNIDs()
     return self._NIDs
@@ -39,10 +42,12 @@ class Analyzer:
     return [exp.numIterations for exp in self.experiments]
 
 
-  """
-  Information Theory entropy calculations
-  """
+
   def entropy(self, experiment):
+    """
+    :param experiment: the experiment to do the calculations on
+    :return: the entropy for that experiment
+    """
     n = len(self.dataset)
     result = 0
     for cluster in experiment.clusters:
@@ -50,10 +55,13 @@ class Analyzer:
       result += clusterSize / n * math.log((clusterSize / n), 2)
     return -1 * result
 
-  """
-  Information Theory mutual information calculation
-  """
+
   def mutualInformation(self, mat):
+    """
+    Information Theory mutual information calculation
+    :param mat:
+    :return:
+    """
     n = len(self.dataset)
     assert (n > 0)
     rowSums = [sum(row) for row in mat]
@@ -110,11 +118,12 @@ class Analyzer:
     for a in self.experiments:
       self.MI.append((self.experiments[0], a, self.calcMutualInformation(self.experiments[0].clusters, a.clusters)))
 
-  """
-  self.matchings[expId1][expId2][k] = the matching for cluster k in self.experiments[expId1] with self.experiments[expId2]
-  """
+
   @utils.printRunningTime
   def calcMatchings(self):
+    """
+    :return: self.matchings[expId1][expId2][k] = the matching for cluster k in self.experiments[expId1] with self.experiments[expId2]
+    """
     self.matchings = [[[] for _ in range(len(self.experiments))] for _ in range(len(self.experiments))]
     for i in range(len(self.experiments)):
       for j in range(i + 1, len(self.experiments)):
@@ -127,11 +136,13 @@ class Analyzer:
     print("finished calculating matchings for the analyzer")
 
 
-  """
-  normalized information distance between every experiement and the experiment with the lowest objective function i.e.
-  experiments[0]
-  """
+
   def calcNIDs(self):
+    """
+    normalized information distance between every experiement and the experiment with the lowest objective function i.e.
+  experiments[0]
+    :return:
+    """
     print("calculating NID's")
     self._NIDs = []
     exp1 = self.experiments[0]
@@ -142,6 +153,7 @@ class Analyzer:
                                      lambda c1, c2:utils.overlap(c1.pointPositions, c2.pointPositions))
       self._NIDs.append(1 - self.mutualInformation(matrix) / max([exp1Entropy, self.entropy(exp2)]))
       print(self.NIDs[len(self.NIDs) - 1])
+
   def genUniqueRandom(self, size, low, high):
     result = []
     while len(result)<size:
@@ -150,24 +162,28 @@ class Analyzer:
         temp = np.random.randint(low,high)
       result.append(temp)
     return result
-  """
-  Return the number of cliques of given size result[i] = number of cliques of size i+1 of i+1 randomly chosen experiments
-  """
+
+
   def cliques(self):
+    """
+    :return:  The number of cliques of given size result[i] = number of cliques of size i+1 of i+1 randomly chosen experiments
+
+    """
     if len(self.experiments)<2:
       return None
     result = []
     for i in range(1,len(self.experiments[0].clusters)):
       result.append(self._calcClique(self.genUniqueRandom(i+1,0,len(self.experiments[0].clusters))))
     return result
-  """
-  @:param arr, an array which includes all the experiments indices that 
-  are to be evaluated for the clique.
-  
-  @:return the number of cliques iof size len(arr) inside of the experiments
-  specified by their indices in arr 
-  """
+
+
   def _calcClique(self, arr):
+    """
+    :param arr: an array which includes all the experiments indices that
+  are to be evaluated for the clique.
+    :return: the number of cliques iof size len(arr) inside of the experiments
+  specified by their indices in arr
+    """
     if self.matchings == None:
       self.calcMatchings()
     nodesDict = dict()

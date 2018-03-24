@@ -19,7 +19,7 @@ file(GLOB bigint "lib/sidehussle/bigInt/*.cpp" "lib/sidehussle/bigInt/*.h")
 
 set(kmeansII ${algorithm} ${handlers})
 
-set(trying ${algorithm} ${handlers})
+set(trying ${algorithm} ${handlers} )
 set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h)
 
 add_executable(kmeans ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline
@@ -29,6 +29,9 @@ add_executable(experiments ${kmeansII} ${experiments} lib/runners/experiment.cc)
 
 target_link_libraries(trying ${PROJECT_SOURCE_DIR}/lib/scripts/runners/main.py)
 target_compile_options(testing PUBLIC "-Dprivate=public")
+
+
+add_executable(kmeans2 ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline
 
 
 

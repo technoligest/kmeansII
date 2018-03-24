@@ -15,10 +15,6 @@ def ncr(n, r):
 
 
 
-
-
-
-
 """
 calculate the union of 2 numerical lists
 """

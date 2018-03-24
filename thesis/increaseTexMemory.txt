@@ -1,0 +1,12 @@
+To increase sizes:
+
+go to /Library/TeX/Root/texmf.cnf
+
+add:
+main_memory = 10000000
+save_size  = 10000000
+extra_mem_top = 150000000     
+extra_mem_bot = 150000000 
+
+
+run: sudo fmtutil-sys --all

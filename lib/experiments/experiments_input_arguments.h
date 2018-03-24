@@ -16,8 +16,8 @@ DEF_ARGUMENT_CLASS(
     std::string, inputFileName, "", REQUIRED, OPT_SLH(-i, --input, "What is the input file?"),
     std::string, outputFileName, "none", OPTIONAL, OPT_SLH(-o, --output, "What is the output file name?"),
     int, k, 1, REQUIRED, OPT_SH(-k, "Number of clusters"),
-    double, l, 2, REQUIRED, OPT_SH(-l, "oversampling factor (for kmeans||)"),
-    int ,r,5,REQUIRED, OPT_SH(-r, "number of rounds (for kmeans||)"),
+    double, l, 2, REQUIRED, OPT_SH(-l, "oversampling factor (for kmeansII)"),
+    int ,r,5,REQUIRED, OPT_SH(-r, "number of rounds (for kmeansII)"),
     int , numExperiments,1, REQUIRED, OPT_LH(-numExperiments, "How many experiments?")
 );
 
