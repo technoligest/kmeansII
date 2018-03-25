@@ -27,7 +27,6 @@ def perfectMatch():
     plt.plot(x,y,marker='o', fillstyle='full', markeredgewidth=0)
 
 
-
 """
 returns an array of arrays corresponding to the point positions of every centre
 in the experiment run. These pointpositions are disjoint and are calculated based
@@ -86,3 +85,4 @@ def perfectMatchFigure():
 perfectMatchFigure();
 perfectMatch();
 plt.show()
+
