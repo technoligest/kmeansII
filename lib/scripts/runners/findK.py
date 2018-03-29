@@ -5,7 +5,7 @@ import lib.scripts.experiment_utils as utils
 from lib.scripts.experiment_perfect_matching import minimum_weight_perfect_matching, maximum_weight_perfect_matching
 import matplotlib.pyplot as plt
 import sys
-from threading import Thread
+from threading import Thread,Lock
 
 def calcPointPositions(dataset, centres):
   result = [[] for _ in range(len(centres))]
@@ -49,22 +49,37 @@ def runExperiments(inputFileName, k, executable):
     os.remove(tempFile + str(i) + ".extra")
   return centres
 
+
+
+
+
 def calcMatchings(dataset, centres):
+  threads = []
   matchings = dict()
+  lock = Lock()
+  def calcMatching(dataset, centres, centres1Id, centres2Id):
+    centres1 = centres[centres1Id]
+    centres2 = centres[centres2Id]
+    pos1 = calcPointPositions(dataset, centres1)
+    pos2 = calcPointPositions(dataset, centres2)
+    distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:utils.overlap(p1, p2));
+    matching = maximum_weight_perfect_matching(distances)
+    lock.acquire()
+    matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
+    lock.release()
   for centres1Id in range(len(centres) - 1):
     for centres2Id in range(centres1Id + 1, len(centres)):
-      centres1 = centres[centres1Id]
-      centres2 = centres[centres2Id]
-      pos1 = calcPointPositions(dataset, centres1)
-      pos2 = calcPointPositions(dataset, centres2)
-      distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:utils.overlap(p1, p2));
-      matching = maximum_weight_perfect_matching(distances)
-      matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
-      # plt.figure();
-      # for m in matching:
-      #   x, y = utils.splitIntoXY([centres2[m[0]], centres1[m[1]]])
-      #   plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
-  return matchings
+      thread = Thread(target=calcMatching,args=(dataset, centres, centres1Id, centres2Id))
+      threads.append(thread)
+      thread.start()
+  for thread in threads:
+    thread.join()
+  # plt.figure();
+  # for m in matching:
+  #   x, y = utils.splitIntoXY([centres2[m[0]], centres1[m[1]]])
+  #   plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
+  result = matchings
+  return result
 
 class Node:
   def __init__(self, name):
@@ -118,6 +133,7 @@ def group(values):
   vals = values[idx[:-1]]
   count = np.diff(idx)
   return (vals, count)
+
 def findK(executableName, maxk, inputFileName):
   res = sorted([len(cliqueSizes(inputFileName, maxk, executableName)) for _ in range(10)])
   g = group(res)
@@ -127,3 +143,10 @@ executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansI
 k = 6
 inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv"
 print("The answer is: ", findK(executableName, k, inputFileName))
+
+# centres  =[1]*6
+# i=0
+# for centres1Id in range(len(centres) - 1):
+#   for centres2Id in range(centres1Id + 1, len(centres)):
+#     i+=1
+# print(i)
