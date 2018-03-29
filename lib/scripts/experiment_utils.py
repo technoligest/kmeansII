@@ -104,7 +104,6 @@ given 2 lists and a function. Calculate the adjavency matrix between these two l
 by applying the function on every pair from the two
 -basically creating a complete bipartite graph of the 2 sets of points
 """
-@printRunningTime
 def adjacencyMatrix(l1, l2, func):
   result = []
   for i2 in l2:

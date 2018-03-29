@@ -348,11 +348,18 @@
 # """
 #
 
+#
+# ks = [10, 25, 50, 100]
+# for k in ks:
+#   print(("{0:4d}").format(k));
+# print(("{0:4s}|{1:^47s}|{2:^47s}|{3:^47s}" ).format("","Average Func","Min Func","Average Time"))
+# print(("{0:4s}|{1:^15s}|{2:^15s}|{3:^15s}|{4:^15s}|{5:^15s}|{6:^15s}|{7:^15s}|{8:^15s}|{9:^15s}" ).format("k","Kmeans","Kmeans++","KmeansNew","Kmeans","Kmeans++","KmeansNew","Kmeans","Kmeans++","KmeansNew"))
+#
+#
 
-ks = [10, 25, 50, 100]
-for k in ks:
-  print(("{0:4d}").format(k));
-print(("{0:4s}|{1:^47s}|{2:^47s}|{3:^47s}" ).format("","Average Func","Min Func","Average Time"))
-print(("{0:4s}|{1:^15s}|{2:^15s}|{3:^15s}|{4:^15s}|{5:^15s}|{6:^15s}|{7:^15s}|{8:^15s}|{9:^15s}" ).format("k","Kmeans","Kmeans++","KmeansNew","Kmeans","Kmeans++","KmeansNew","Kmeans","Kmeans++","KmeansNew"))
 
+a,b = c = (5,6)
 
+print("a: ",a)
+print("b: ",b)
+print("c: ",c)
