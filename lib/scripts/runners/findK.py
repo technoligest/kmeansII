@@ -49,6 +49,7 @@ def runExperiments(inputFileName, k, executable):
     os.remove(tempFile + str(i) + ".extra")
   return centres
 
+@utils.printRunningTime
 def calcMatchings(dataset, centres):
   matchings = dict()
   for centres1Id in range(len(centres) - 1):
