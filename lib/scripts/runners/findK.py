@@ -61,6 +61,7 @@ class FindK:
     self.lock = Lock();
     self.dataset_ = np.loadtxt(inputFileName, float, delimiter=",");
     self.centres_ = self.runExperiments(inputFileName, maxk, executable);
+    self.matchings = dict()
   @utils.printRunningTime
   def solve(self):
     res = sorted([len(self.cliqueSizes(inputFileName, self.maxk_, executableName, self.dataset_)) for _ in range(10)])
@@ -112,27 +113,26 @@ class FindK:
       os.remove(tempFile + str(i))
       os.remove(tempFile + str(i) + ".extra")
     return centres
+
+  @utils.printRunningTime
+  def calcMatching(self,dataset, centres, centres1Id, centres2Id):
+    # print("Started matching.")
+    centres1 = centres[centres1Id]
+    centres2 = centres[centres2Id]
+    pos1 = calcPointPositions(dataset, centres1)
+    pos2 = calcPointPositions(dataset, centres2)
+    distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:len(np.intersect1d(np.array(p1), np.array(p2))));
+    matching = maximum_weight_perfect_matching(distances)
+    self.lock.acquire()
+    self.matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
+    self.lock.release()
+
   @utils.printRunningTime
   def calcMatchings(self):
     threads = []
-    matchings = dict()
-    lock = Lock()
-    @utils.printRunningTime
-    def calcMatching(dataset, centres, centres1Id, centres2Id):
-      # print("Started matching.")
-      centres1 = centres[centres1Id]
-      centres2 = centres[centres2Id]
-      pos1 = calcPointPositions(dataset, centres1)
-      pos2 = calcPointPositions(dataset, centres2)
-      distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:len(np.intersect1d(np.array(p1), np.array(p2))));
-      matching = maximum_weight_perfect_matching(distances)
-      lock.acquire()
-      matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
-      lock.release()
-      # print("Ended matching.")
     for centres1Id in range(len(self.centres_) - 1):
       for centres2Id in range(centres1Id + 1, len(self.centres_)):
-        thread = Thread(target=calcMatching, args=(self.dataset_, self.centres_, centres1Id, centres2Id))
+        thread = Thread(target=self.calcMatching, args=(self.dataset_, self.centres_, centres1Id, centres2Id))
         threads.append(thread)
         thread.start()
     for thread in threads:
@@ -141,8 +141,6 @@ class FindK:
     # for m in matching:
     #   x, y = utils.splitIntoXY([centres2[m[0]], centres1[m[1]]])
     #   plt.plot(x, y, marker='o', fillstyle='full', markeredgewidth=0)
-    result = matchings
-    return result
 
   @utils.printRunningTime
   def buildGraph(self, matchings, numRuns):
@@ -170,8 +168,8 @@ class FindK:
   @utils.printRunningTime
   def cliqueSizes(self, inputFileName, k, executable, dataset):
     centres = self.runExperiments(inputFileName, k, executable)  # set of all centres over all runs
-    matchings = self.calcMatchings()
-    graph = self.buildGraph(matchings, k)
+    self.calcMatchings()
+    graph = self.buildGraph(self.matchings, k)
     cliqueSizes = [graph[subgraphName].size for subgraphName in graph if not graph[subgraphName].visited]
     print(cliqueSizes)
     return cliqueSizes
