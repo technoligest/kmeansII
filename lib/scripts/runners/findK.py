@@ -48,19 +48,25 @@ def runExperiments(inputFileName, k, executable):
     os.remove(tempFile + str(i))
     os.remove(tempFile + str(i) + ".extra")
   return centres
-
+import time
 @utils.printRunningTime
 def calcMatchings(dataset, centres):
   matchings = dict()
   for centres1Id in range(len(centres) - 1):
     for centres2Id in range(centres1Id + 1, len(centres)):
+      curr = time.time()
       centres1 = centres[centres1Id]
       centres2 = centres[centres2Id]
       pos1 = calcPointPositions(dataset, centres1)
       pos2 = calcPointPositions(dataset, centres2)
+      print("Part1: ",(time.time()-curr))
+      curr = time.time()
       distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:utils.overlap(p1, p2));
+      print("Part2: ",(time.time()-curr))
+      curr = time.time()
       matching = maximum_weight_perfect_matching(distances)
       matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
+      print("Part3: ",(time.time()-curr))
       # plt.figure();
       # for m in matching:
       #   x, y = utils.splitIntoXY([centres2[m[0]], centres1[m[1]]])
