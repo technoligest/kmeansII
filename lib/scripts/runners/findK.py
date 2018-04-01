@@ -5,6 +5,8 @@ import lib.scripts.experiment_utils as utils
 from lib.scripts.experiment_perfect_matching import minimum_weight_perfect_matching, maximum_weight_perfect_matching
 import matplotlib.pyplot as plt
 import sys
+import string
+import random
 from threading import Thread
 
 def calcPointPositions(dataset, centres):
@@ -32,24 +34,24 @@ def runExperiment(executableName, k, inputFileName, outputFileName, algorithm, l
   if p.returncode != 0:
     exit("Shit went wrong. Check what happened.")
 
-def runExperiments(inputFileName, k, executable):
-  outFiles = []
-  tempFile = "aaaaaaaatemp"
-  for i in range(k):
+def runExperiments(inputFileName, k, executable, numRuns):
+  tempFile = ''.join(random.choice(string.ascii_lowercase) for x in range(30))
+
+  for i in range(numRuns):
     runExperiment(executable, k,
                   inputFileName=inputFileName,
                   outputFileName=tempFile + str(i),
                   algorithm="kmeans++")
   centres = []
-  for i in range(k):
+  for i in range(numRuns):
     centres.append(np.loadtxt(tempFile + str(i), float, delimiter=","))
   # Deleting all the temporary files.
-  for i in range(k):
+  for i in range(numRuns):
     os.remove(tempFile + str(i))
     os.remove(tempFile + str(i) + ".extra")
   return centres
 import time
-@utils.printRunningTime
+# @utils.printRunningTime
 def calcMatchings(dataset, centres):
   matchings = dict()
   for centres1Id in range(len(centres) - 1):
@@ -59,14 +61,14 @@ def calcMatchings(dataset, centres):
       centres2 = centres[centres2Id]
       pos1 = calcPointPositions(dataset, centres1)
       pos2 = calcPointPositions(dataset, centres2)
-      print("Part1: ",(time.time()-curr))
+      # print("Part1: ",(time.time()-curr))
       curr = time.time()
       distances = utils.adjacencyMatrix(pos1, pos2, lambda p1, p2:utils.overlap(p1, p2));
-      print("Part2: ",(time.time()-curr))
+      # print("Part2: ",(time.time()-curr))
       curr = time.time()
       matching = maximum_weight_perfect_matching(distances)
       matchings[(centres1Id, centres2Id)] = [a for a, _ in matching]
-      print("Part3: ",(time.time()-curr))
+      # print("Part3: ",(time.time()-curr))
       # plt.figure();
       # for m in matching:
       #   x, y = utils.splitIntoXY([centres2[m[0]], centres1[m[1]]])
@@ -81,7 +83,8 @@ class Node:
 def buildGraph(matchings, numRuns):
   if len(matchings) == 0:
     return None
-  size = len(next(iter(matchings.values())))
+  size = len(next(iter(matchings.values()))) #size of an element in the matchings dictionary
+
   for i in matchings:
     assert (len(matchings[i]) == size)
   nodes = dict()
@@ -89,15 +92,16 @@ def buildGraph(matchings, numRuns):
     for clusterId in range(size):
       nodeId = (runId, clusterId)
       nodes[nodeId] = Node(nodeId)
-
   for matchingId in matchings:
     centres1id, centres2id = matchingId
     matching = matchings[matchingId]
-    for runId in range(numRuns):
-      node1 = nodes[(centres1id, runId)]
-      node2 = nodes[(centres2id, matching[runId])]
+    for clusterId in range(size):
+      node1 = nodes[(centres1id, clusterId)]
+      node2 = nodes[(centres2id, matching[clusterId])]
       node1.neighbours.append(node2)
       node2.neighbours.append(node1)
+  for nodeId in nodes:
+    node = nodes[nodeId]
   return nodes
 def graphSize(node):
   if node.visited:
@@ -108,11 +112,11 @@ def graphSize(node):
     size += graphSize(neighbour)
   return size
 
-def cliqueSizes(inputFileName, k, executable):
+def cliqueSizes(inputFileName, k, executable, numRuns):
   dataset = np.loadtxt(inputFileName, float, delimiter=",")
-  centres = runExperiments(inputFileName, k, executable)  # set of all centres over all runs
+  centres = runExperiments(inputFileName, k, executable, numRuns)  # set of all centres over all runs
   matchings = calcMatchings(dataset, centres)
-  graph = buildGraph(matchings, k)
+  graph = buildGraph(matchings, numRuns)
   cliqueSizes = [graphSize(graph[subgraphName]) for subgraphName in graph if not graph[subgraphName].visited]
   print(cliqueSizes)
   return cliqueSizes
@@ -125,12 +129,14 @@ def group(values):
   vals = values[idx[:-1]]
   count = np.diff(idx)
   return (vals, count)
-def findK(executableName, maxk, inputFileName):
-  res = sorted([len(cliqueSizes(inputFileName, maxk, executableName)) for _ in range(10)])
+
+def findK(executableName, maxk, inputFileName, numRuns):
+  res = sorted([len(cliqueSizes(inputFileName, maxk, executableName, numRuns)) for _ in range(10)])
   g = group(res)
   return [a for a, b in sorted(zip(g[0], g[1]), key=lambda z:z[1])][-1]
 
 executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/cmake-build-debug/kmeans"
-k = 6
-inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv"
-print("The answer is: ", findK(executableName, k, inputFileName))
+k = 7
+numRuns = 7
+inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset4.csv"
+print("for k:", k, " The answer is: ", findK(executableName, k, inputFileName, numRuns))

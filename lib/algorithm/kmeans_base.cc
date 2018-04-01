@@ -5,6 +5,7 @@
 #include "kmeans_io.h"
 #include "globals.h"
 #include <cassert>
+#include <chrono>
 
 namespace kmeans{
 /*
@@ -32,9 +33,10 @@ KmeansBase::pickSeeds(const Dataset &dataset, const Weights &weights, const ull 
 #ifdef DEBUG_KMEANS
   std::cout << "Started picking seeds using " << seedPicker_->name() << std::endl;
 #endif
-  ull startTime = static_cast<ull>(time(nullptr));
+  auto startTime = std::chrono::high_resolution_clock::now();
   assert(seedPicker_->pickSeeds(dataset, weights, k, centres));
-  seed_picker_time_ = static_cast<ull>(time(nullptr)) - startTime;
+  auto finishTime = std::chrono::high_resolution_clock::now();
+  seed_picker_time_ = std::chrono::duration_cast<std::chrono::nanoseconds>(finishTime-startTime).count();
 
 #ifdef DEBUG_KMEANS
   std::cout << "Finished picking seeds using " << seedPicker_->name() << std::endl;
@@ -48,9 +50,10 @@ void KmeansBase::runIterations(const Dataset &dataset, const Weights &weights, s
 #ifdef DEBUG_KMEANS
   std::cout << "Started running iterations using " << iterationRunner_->name() << std::endl;
 #endif
-  ull startTime = static_cast<ull>(time(nullptr));
+  auto startTime = std::chrono::high_resolution_clock::now();
   distance_squared_ = iterationRunner_->runIterations(dataset, weights, centres);
-  iteration_runner_time_ = static_cast<ull>(time(nullptr)) - startTime;
+  auto finishTime = std::chrono::high_resolution_clock::now();
+  iteration_runner_time_ = std::chrono::duration_cast<std::chrono::nanoseconds>(finishTime-startTime).count();
   num_iterations_ = iterationRunner_->numIterations();
 #ifdef DEBUG_KMEANS
   std::cout << "ended running the iterations" << iterationRunner_->name() << std::endl;

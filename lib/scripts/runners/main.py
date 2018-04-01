@@ -58,9 +58,7 @@ def perfectMatchFigure():
   dataset = np.loadtxt("/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/inputFiles/DimRedFullDataComplete.txt")
   pos1 = calcPointPositions(dataset,centres1)
   pos2 = calcPointPositions(dataset,centres2)
-
   distances = utils.adjacencyMatrix(pos1,pos2,lambda p1,p2: utils.overlap(p1,p2));
-
   matching = maximum_weight_perfect_matching(distances);
 
   plt.figure();
@@ -83,6 +81,8 @@ def perfectMatchFigure():
 # np.savetxt("/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/inputFiles/DimRedFullDataComplete.csv",dataset,delimiter=",")
 
 perfectMatchFigure();
+print("Finished 1")
 perfectMatch();
+print("Finished2")
 plt.show()
 
