@@ -156,7 +156,7 @@ This objective function is the reason why \kmeans inherently produces convex sha
 \kmeans clustering is very good at clustering well-separated convex clusters where $k$ the number of clusters is known or accurately measured in advance. However, this is very rarely the case. Another issue with \kmeans is that it fits every point into a single cluster. This means that a point has no way of belonging to different clusters at the same time. 
 
 
-\chapter{Consensus Seeding}
+\chapter{\kmeansn-Consensus Seeding}
 
 Consensus seeding is a new seeding process for \kmeansn. The basic idea is to run the randomized seeding process $T$ times, followed by a small number of iterations, $S$, which produce a set of $k$ cluster centres each. We then take these ($T*K$) centres and cluster them into $k$ clusters. The resulting cluster centres are the seeds for the iteration phase of the entire dataset.
 
@@ -191,7 +191,7 @@ We intuitively believed that consensus seeding would perform better than random 
 % TODO: Add reference for dimred.
 To analyze the performance of the algorithm we ran it on 3 different datasets. The Cloud dataset has $1025$ values in $10$ dimensions, and they represent the values for cloud cover, data extracted from pictures of clouds represented by their pixel values \citep{cloud}. The Spambase dataset consists of $4601$ values in $58$ dimensions, and it represents numerical representations for spam emails \citep{spam}. The Dimred dataset comes from a dimensionality reduced textual corpora of crash reports, it has $108,669$ values in $2$ dimensions.
 
-Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experimental results for the accuracy and running time of the \kmeans, \kmeansn++, and \kmeansn Consensus on these three datasets. They were all tested on a 2017 15-inch Apple Macbook Pro, with an 2.8 GHz Intel Core i7 and 16Gb of RAM. The iterations were set to maximum 200, and the $T$ and $m$ values were both set to $5$ for \kmeansn Consensus. Each algorithm was run 20 times for each combination of $k$-value, dataset and algorithm used, and the average and minimum of these were computed.
+Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experimental results for the accuracy and running time of the \kmeans, \kmeansn++, and \kmeansn-Consensus on these three datasets. They were all tested on a 2017 15-inch Apple Macbook Pro, with an 2.8 GHz Intel Core i7 and 16Gb of RAM. The iterations were set to maximum 200, and the $T$ and $m$ values were both set to $5$ for \kmeansn-Consensus. Each algorithm was run 20 times for each combination of $k$-value, dataset and algorithm used, and the average and minimum of these were computed.
 
 \begin{center}
   \resizebox{\textwidth}{!}{\begin{tabular}{ |p{1cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}| }
@@ -253,25 +253,23 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
 \end{center}
 
 
-%TODO: Why did we do worse
-We can clearly see that the new seeding process gave us marginally better results than \kmeans in some situations. In most cases, it did equally as bad if not worse. We also note that \kmeansn ++ did considerably better in most cases. From that we conclude that the new seeding process is no better than \kmeans.
+It is clear that the new seeding process gave us marginally better results than \kmeans in some situations. In most cases, it did equally as bad if not worse. We also note that \kmeansn++ did considerably better in most cases. From that we conclude that the new seeding process is no better than \kmeans.
 
-It is important to note here that on the dimred dataset, unlike the other datasets, all three algorithms achieve similar results. 
+It is somewhat surprising that in a lot of cases \kmeansn-Consensus did worse than \kmeans in many cases. We conclude that this is because of the nature of the randomized initialization used in both algorithms. The randomness causes each run to run into a highly optimized optimum. Running the algorithm multiple times in the case of \kmeansn-Consensus did not improve this randomness at all, and thus our conclusion that \kmeansn-Consensus does not perform better than \kmeans.
 
-
-
+In all of these examples it is clear that different values of $k$ output very different results in terms of the clusters and the objective function. For that, we looked into different ways that we can evaluate algorithms, other than merely using the objective function. Matching cluster centres from different runs seemed to be a good start to measure how unpredictable \kmeans can be in clustering. 
 
 \section{Minimum Weight Perfect Matching on Bipartite Graphs}
-In an effort to understand the robustness of the algorithms, we decided to see how consistent the results of the algorithm were were multiple consecutive runs. For that, we used the Hungarian algorithm for perfect matching introduced by\cite{kuhn}. We learned a lot about the underlying properties of the algorithm by analyzing our perfect matching results. First, we realized how perfectly matching two runs of the algorithm does not necessarily mean perfectly matching the centres based on their distances in euclidean space. Second, minimizing the total distance between pairs in the matching may not be the best way to best match the centres.
+In an effort to understand the robustness of the algorithms, we decided to see how consistent the results of the algorithm were over multiple consecutive runs. For that, we used the Hungarian algorithm for perfect matching introduced by\cite{kuhn}. We learned a lot about the underlying properties of the algorithm by analyzing our perfect matching results. We realized how perfectly matching two runs by minimizing the distance between cluster centres does not necessarily match the cluster centres effectively.
 
-Perfect matching is the problem where a graph is partitioned into pairs based on a heuristic. Minimum weight perfect matching is where the total costs of the edges connecting the pairs in the graph are minimized. The is an NP-hard problem on a general graph; however, it can be solved in $O(n^3)$. The Hungarian algorithm is one of the best known problems to solve the assignment problem, the more widely used name of the minimum weight perfect matching problem.
+A perfect matching of a graph is a pairing of the nodes, where each node is paired with another one. Minimum weight perfect matching is where the total costs of the edges connecting the pairs in the graph are minimized. Computing a minimum weight perfect matching in a general graph is NP-hard problem on; however, it can be solved in $O(n^3)$ for bipartite graph\footnote{A bipartite graph is a graph of two sets of nodes, connections can be between the two sets but no two nodes in the same set are connected.}. The Hungarian algorithm is one of the best known problems to solve the minimum weight perfect matching problem.
 
-The assignment problem is where given a set of w workers and t tasks, we are asked to find the best worker-pair pairing so that the total cost to perform all tasks is minimized.
+Minimum weight perfect matching, or the assignment problem, is where given a set of $w$ workers and $t$ tasks, we are asked to find the best worker-task pairing so that the total cost to perform all tasks is minimized. In our case both the workers are cluster centres from a run of the algorithm, and the tasks are cluster centres from a different run. Either one of the sets of cluster centres can be considered the workers and runs.  
 
 \begin{figure}[h]
   \begin{subfigure}[b]{0.5\textwidth}
     \includegraphics[width=\textwidth]{overlap}
-    \caption{Perfect matching using maximum overlap of points in centres}
+    \caption{Perfect matching using maximum overlap of points in cluster}
     \label{fig:overlap}
   \end{subfigure}
   \begin{subfigure}[b]{0.5\textwidth}
@@ -282,22 +280,13 @@ The assignment problem is where given a set of w workers and t tasks, we are ask
   \caption{Example of different cost functions for perfect matching.}
 \end{figure}
 
-The two figures are of clusters centres plotted in euclidean space. The axis are not labeled because it adds no extra information to our findings in this case. Every pairing of same-colour points on the plots come from $2$ different runs of the algorithm. We perfectly match the 100 points (50 per run), and get some interesting results.
+The figures \ref{fig:distance} and \ref{fig:overlap} are of cluster centres plotted in euclidean space. The axis are not labeled because it adds no extra information to our findings in this case. Every pairing of same-colour points on the plots come from $2$ different runs of the algorithm. We perfectly match the 100 points (50 per run), and get some interesting results.
 
-Here we can see Figures ~\ref{fig:overlap} \& ~\ref{fig:distance} are very different even though they are run on the same datasets. There is a very good explanation for this that may not be clear at first glance. Figure ~\ref{fig:distances} seems to be inaccurate as there are clear pairings of points that weren't paired together. Rather than the closest points being paired, we see how there is a chain of pairings. This is because running the minimum weight perfect matching on the points minimizes the overall distances between all the pairs, but does not take into consideration the actual underlying pairing that we are looking for.
+Here we can see Figures ~\ref{fig:overlap} \& ~\ref{fig:distance} are very different even though they are run on the same datasets. There is a very good explanation for this that may not be clear at first glance. Figure ~\ref{fig:distances} seems to be inaccurate as there are clear pairings of points that weren't paired together. Rather than the closest points being paired, we see how there is a chain of pairings. This is because running the minimum weight perfect matching on the points based on Euclidean distance minimizes the overall distances between all the pairs, but does not take into consideration the actual underlying pairing that we are looking for.
 
-Switching the objective function in Figure \ref{fig:overlap} where we compute the maximum weight perfect matching of the centres based on the number of shared points in the clusters. Here, we notice a very interesting pattern where the pairings seem to be near perfect overall with a few outliers that is far apart. While this is not exactly the expected result, it makes sense because for this dataset, we are not sure of the exact underlying number of clusters k. 
+In Figure \ref{fig:overlap}, maximum weight perfect matching of the centres is based on the number of shared points in the clusters. Here, we notice a very interesting pattern where the pairings seem to be near perfect overall with a few outliers that are far apart. While this is not exactly the expected result, it makes sense because for this dataset, we are not sure of the exact underlying number of clusters $k$. The real number of underlying clusters is likely to be lower than  $50$, the number inputted into the clustering run. The perfect matching makes that clear as some points are consistent over multiple runs while others seem to be completely random.
 
-% TODO: finish this part explaining why there are points that are very far apart that are matched
-
-
-\section{Choosing the Correct Matching Function}
-In our experiments, we were looking to perfectly match 50 centres on multiple runs of the algorithm on the
-% TODO: Add dataset name:
- dataset. To do that we initially computed the distances between every pair of cluster centres and ran the minimum-weight perfect matcher on that. We got the following result.
-%  TODO: Add picture of the centres being perfectly matched.
-
-The objective function was later changed to maximum-weight perfect matching based on the number of shared points between clusters. Here, a very interesting property was observed. Most of the points were perfectly matched while the rest were 
+Through our experiments, it was clear that using the number of overlapping points of the clusters was a lot more effective in computing the perfect matching for our purposes. This raised the question if we are able to extract the real number $k$ of the underlying algorithm through a variant of this method. In the next chapter, we discuss our findings in that regard. 
 
 \chapter{Determining the Number of Clusters $k$}
 From our experiments and research, it was clear that inputting the incorrect number of clusters $k$ into the \kmeans algorithm, substantially affects performance, and accuracy. For that, we came up with an algorithm to help approximate the right number of clusters in the underlying dataset, before running the \kmeans algorithm.
@@ -312,18 +301,20 @@ Based on our experiments on a generated dataset, shown in Figure \ref{generatedD
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{generatedDataset}
-  \caption{Heat map of the git brDimred dataset. The lighter versions of the figure are for} 
+  \caption{The generated dataset, $n=20,000 d=2$} 
   \label{fig:generatedDataset}
 \end{figure}
+
+The algorithm is still not perfect, but we believe that it can be fine-tuned with the different parameters to obtain a more accurate estimate of the number $k$. Another issue with the algorithm is running time, but that can be substantially improved with the introduction of multithreading and a few heuristics in the perfect matching step of the cluster centres. We believe this is an area of research worth more research.
 
 
 \chapter{Extendable C++ Implementation}
 
-Throughout the research for this paper, it was difficult to find modular code that is easily extendable for the \kmeans algorithm that allow us to perform testing on it. For that, we created our own implementation that is available on Github \footnote{The code is available at \url{https://github.com/technoligest/kmeansII}}.  This implementation is free to use and licenced under the MIT License, allow users to modify it as they see fit without any warranty on functionality or fitness for a particular purpose.
+Throughout the research for this paper, it was difficult to find modular code that is easily extendable for the \kmeans algorithm that allow us to perform testing on it. For that, we created our own implementation that is available on Github \footnote{The code is available at \url{https://github.com/technoligest/kmeansII}}.  This implementation is free to use and licenced under the MIT License.
 
-The algorithm is implemented in highly optimized C++ with object oriented programming at its core. This allows other developers to extend the algorithm and test different combinations of optimizations in the code. It can be used by both individuals needing to use a \kmeans implementation and ones who are looking to do research and optimize it further. 
+The algorithm is implemented in highly optimized C++ with object-oriented programming at its core. This allows other developers to extend the algorithm and test different combinations of optimizations in the code. It can be used by both individuals needing to use a \kmeans implementation and ones who are looking to do research and optimize it further. 
 
-Every \kmeans instance, contains templated instances of a SeedPicker and an IterationRunner along with a skeleton that allows analysis of the performance of each run of the algorithm. This allows us to use different IterationRunners and SeedPickers interchangeably in the algorithm depending on the algorithm at hand and the resources allowed. The analytical data being saved at each run is independent of the SeedPicker and IterationRunner, which makes it simple for developers wanting to extend the algorithm.
+Every \kmeans instance contains templated instances of a SeedPicker and an IterationRunner along with a skeleton that allows analysis of the performance of each run of the algorithm. This allows us to use different IterationRunners and SeedPickers interchangeably in the algorithm depending on the algorithm at hand and the resources allowed. The analytical data being saved at each run is independent of the SeedPicker and IterationRunner, which makes it simple for developers wanting to extend the algorithm.
 
 The modularity of the implementation also allows developers to create new SeedPicker and IterationRunner classes. To create one, all they are required to do is implement a function from their respective Base class. For example, the $kd$-tree implementation of the algorithm has be hooked into a \kmeans instance by implementing it as an IterationRunner.
 
@@ -331,7 +322,9 @@ The modularity of the implementation also allows developers to create new SeedPi
 
 \chapter{Conclusion}
 
-\kmeans is a method that has proven to be applicable to many domains and applications. It is still widely used and continues to be so. We have shown that the new \kmeansn Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm. 
+\kmeans is a method that has proven to be applicable to many domains and applications. It is still widely used. Unfortunately through rigorous testing, we have shown that the new \kmeansn-Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm.
+
+
 
 One area of research that is needed is a way to compute the real number $k$ for the algorithm. We have a method to compute that by calculating cliques in perfectly matched centres over multiple runs of the algorithm, but this needs further exploration. 
 
@@ -342,55 +335,6 @@ One area of research that is needed is a way to compute the real number $k$ for 
 \end{document}
 
 
-
-
-
-% \begin{figure}[h!]
-%   \begin{minipage}{0.48\textwidth}
-%   \begin{center}
-%     \begin{tikzpicture}
-%       \begin{axis}[
-%         width=\linewidth, % Scale the plot to \linewidth
-%         grid=major, % Display a grid
-%         grid style={dashed,gray!30}, % Set the style
-%         xlabel=X Axis, % Set the labels
-%         ylabel=Y Axis,
-%         legend style={at={(0.5,-0.3)},anchor=north} % Put the legend below the plot
-%         % x tick label style={rotate=90,anchor=east} % Display labels sideways
-%       ]
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-0.csv};
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-1.csv};
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset0-cluster-2.csv};
-%       \addplot+[mark options={scale=0.1}] table [only marks,col sep=comma] {plotData/dataset0-cluster-3.csv};
-%       \legend{Cluster}
-%     \end{axis}
-%     \end{tikzpicture}
-%     \caption{My firsts autogenerated plot.}
-%   \end{center}
-% \end{minipage}\hfill
-% \begin {minipage}{0.48\textwidth}
-%   \begin{center}
-%     \begin{tikzpicture}
-%       \begin{axis}[
-%         width=\linewidth, % Scale the plot to \linewidth
-%         grid=major, % Display a grid
-%         grid style={dashed,gray!30}, % Set the style
-%         xlabel=X Axis, % Set the labels
-%         ylabel=Y Axis,
-%         legend style={at={(0.5,-0.3)},anchor=north} % Put the legend below the plot
-%         % x tick label style={rotate=90,anchor=east} % Display labels sideways
-%       ]
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-0.csv};
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-1.csv};
-%       \addplot+[mark options={scale=0.1}] table[only marks,col sep=comma] {plotData/dataset1-cluster-2.csv};
-%       \addplot+[mark options={scale=0.1}] table [only marks,col sep=comma] {plotData/dataset1-cluster-3.csv};
-%       \legend{Cluster}
-%     \end{axis}
-%     \end{tikzpicture}
-%     \caption{My second autogenerated plot.}
-%   \end{center}
-% \end{minipage}\hfill
-% \end{figure}
 
 
 
