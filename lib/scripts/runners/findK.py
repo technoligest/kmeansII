@@ -136,7 +136,7 @@ def findK(executableName, maxk, inputFileName, numRuns):
   return [a for a, b in sorted(zip(g[0], g[1]), key=lambda z:z[1])][-1]
 
 executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/cmake-build-debug/kmeans"
-k = 7
-numRuns = 7
-inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset4.csv"
+k = 8
+numRuns = 8
+inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv"
 print("for k:", k, " The answer is: ", findK(executableName, k, inputFileName, numRuns))

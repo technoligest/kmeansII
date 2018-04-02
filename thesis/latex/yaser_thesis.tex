@@ -66,7 +66,7 @@
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
-\title{\kmeans Clustering, An Attempt At An Improved Seeding Process} %TODO: Change the title.
+\title{\kmeans Clustering, An Improved Seeding Process and Novel Method to Compute the Number of Clusters for a Dataset} %TODO: Change the title.
 \author{Yaser Alkayale}
 \bcshon  %Sets it to honours variant
 \degree{Bachelor's of Computer Science, Honours}
@@ -82,15 +82,12 @@
 \frontmatter
 
 \begin{abstract}
-  Clustering is a well-known task that has been studied and used for decades. The idea is to take a set of items and group them into a number of clusters based on a similarity measure. \kmeansn, although named differently back then, was proposed in 1957 by Stuart Lloyd and is one of the most widely used clustering algorithms and is still used today for its reasonably fast heuristic to find the clusters based on the Lloyd algorithm and more recent developments in that area. \kmeans has two main parts to clustering, the initial seeding process and the iteration process. The seeding process picks $k$ initial seeds as cluster centres, and highly affects the accuracy of the final result in the algorithm. The iteration process dominates running time to move the centres around until it converges to an optimum. In this paper, we discuss a new method of the seeding process that gives us more accurate seeds to start the algorithm. 
-  %TODO: Add this later. We also discuss a novel approach to find an approximation of the correct number of clusters for a given dataset.
-
+  Clustering is a well-known task that has been studied and used for decades. The idea is to take a set of items and group them into a number of clusters based on a similarity measure. \kmeansn, although named differently back then, was proposed in 1957 by Stuart Lloyd and is one of the most widely used clustering algorithms and is still used today as a reasonably fast heuristic to find clusters. \kmeans has two main parts to clustering, the initial seeding process and the iteration process. The seeding process picks $k$ initial seeds as cluster centres and highly affects the accuracy of the final result in the algorithm. The iteration process moves the centres around until it converges to a local optimum. The iteration process dominates the running time. In this paper, we discuss a new method of the seeding process that promises to give us more accurate seeds to start the algorithm and a novel way to extract the underlying number of clusters in a given dataset to help \kmeans converge faster and give more accurate results.
 \end{abstract}
 
 
-
 \begin{acknowledgements}
-  A sincere thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the light light of day. Thank you to my co-supervisor Dr. Vlado Keselj who made himself available when we needed to consult with him. Also big thank you to Arazoo who was with me from the beginning, and went through my ideas with me.
+  A sincere thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the light light of day. Thank you to my co-supervisor Dr. Vlado Keselj who made himself available. Also, big thank you to Arazoo who was with me from the beginning, and went through my ideas with me.
 \end{acknowledgements}
 
 \mainmatter
@@ -102,7 +99,7 @@ bioinformatics \citep{edgar2010search},
 crash report analysis \citep{soto2016machine},
 and vehicle navigation \citep{maio1996dynamic}. 
 The notion of what is a good cluster highly depends on the domain and application. Many clustering techniques like hierarchical clustering \citep{corpet1988multiple}
-and graph-based ones \citep{schaeffer2007graph}
+and graph-based clustering \citep{schaeffer2007graph}
 exist. \kmeans clustering continues to be one of the most popular clustering algorithms for it's simplicity of implementation and relative efficiency \citep{jain2010data}.
 
 Different clustering algorithms are suited for different tasks. Some of them, like \kmeansn, fit a given dataset into a given number of disjoint sets. Other algorithms allow points to belong to multiple clusters and are useful in applications such as community clustering on social media graphs \citep{epasto2017ego}. In other instances, clustering is used on datasets where the number of clusters is unknown; for example, clustering images of people using facial recognition \citep{schroff2015facenet}. The effectiveness of a given algorithm is determined by the domain it is being used in and the problem at hand.
@@ -110,7 +107,7 @@ Different clustering algorithms are suited for different tasks. Some of them, li
 Formally, \kmeans is the problem where one is given a set of $n$ points in $d$-dimensional space, $\mathbb{R}^d$, and a number $k$. The goal is to split the $n$ points into $k$ disjoint clusters (subsets), minimizing the cost function $\phi$, the sum of distances of each point to its cluster centre. A cluster centre is defined to be the mean of the points in the clusters. \kmeans does especially well, in terms of speed and accuracy, on convex shaped clusters as it minimizes the sum of distances of all points to their corresponding cluster centres. However, it struggles to perform well in terms of accuracy and running time when clusters are not convex shaped or $k$ is not the right number of actual clusters in the dataset. Solving \kmeans exactly is known to be NP-hard, and that is why heuristics like Lloyd's \citep{1056489} iterations were introduced to give us an approximation of the solution by using local search. A locally optimal solution is good enough in most cases, allowing us to have meaningful clusters in a reasonable amount of time.
 
 % TODO: Add what exactly I am doing in this paper.
-In this paper, we introduce a new way to seed the \kmeans algorithm which turned out to be no better than randomly seeding \kmeans. The ideas of the algorithm and its pseudocode are outlines below along with results. We also explain the C++ implementation of the algorithm and ways it can be used for further development and research.
+In this paper, we introduce a new way to seed the \kmeans algorithm. Preliminary experiments suggested that htis seeding method produced clusters of comparable quality as produced by advanced seeding strategies such as \kmeansn++ and \kmeansn||, while bing much simpler. Unfortunately, a more careful evaluation shawed that the clusters are not significantly better than those obtained using uniformly random seeds. The ideas of the algorithm and its pseudocode are outlined along with results. We also provide a C++ implementation of the algorithm and ways it can be used for further development and research.
 
 
 \section{The \kmeans algorithm.}
@@ -118,22 +115,18 @@ The \kmeans algorithm is simple and relatively efficient as it minimizes the obj
 Here are the steps of the algorithm \citep{arthur2007k}. The input is assumed to be the dataset $X$ and the number of clusters required $k$:
 
 \begin{enumerate}
-  \item Pick $k$ points arbitrarily at random from $X$.
+  \item Pick $k$ arbitrary points from $X$.
   \item Point $p$ in $X$ belongs to cluster $C_i$ if $p$ is closer to $c_i$ than it is to $c_j$ for all $j \neq i$, $1 \leq i,j \leq k$
   \item For $i$ in \{1...k\} compute a new cluster centre $c_i = \frac{1}{\abs{C_i}}\sum_{x \in C_i}x$
   \item Repeat steps 2 and 3 until centres do not change\footnote{In reality, the centres rarely ever stop changing, so heuristics need to be used to stop the algorithm in reasonable time.}.
 \end{enumerate}
 
-Of course, the algorithm may not always converge in a reasonable amount of time, so a stop condition is used when the centres do not change beyond a threshold at a certain point. Another heuristic that is used is to set a maximum number of iterations to run.
+Of course, the algorithm may not always converge in a reasonable amount of time, so a stop condition is used when the centres do not change beyond a threshold at a certain point or a limit on the number of iterations is reached.
 
 \section{Seeding Process}
 
-Hence, the choice of of the \kmeans algorithm is crucial to the accuracy of the output because while the iterations converge the centres to an optimum, it is localized to the regions constrained by the initial seeds \citep{arthur2007k}.
-Many new approaches to pick initial seeds like \kmeansn++ \citep{arthur2007k}, and \kmeansn|| \citep{bahmani2012scalable} have been introduced which help pick seeds that converge faster. It has been experimentally proven that having a better seeding process improves the algorithm by both lowering the objective function of the algorithm, and allowing it to converge faster with less iterations and running time \citep{arthur2007k}.
-
-Given the dataset $X$ and the number $k\leq \abs{X}$ to cluster, \kmeans picks $k$ points from the dataset uniformly at random. The Lloyd method does not specify any way of picking the initial seeds. It only required $k$ seeds to run and converge an a local optimum. The widely used method of seeding \kmeans  is to do it uniformly at random. Picking the seeds uniformly at random helps works because allows the iterations to start at some points, but doesn't help in minimizing the objective function in any meaningful way. Newer ways have been introduced that substantially improve both running time and accuracy of the algorithm.
-
-It it important to note here that we are only able to compute an optimum, not the optimal solution because the problem is NP-hard \citep{mahajan2009planar}. This means that we are unable to compute the optimal solution of any large enough instances in reasonable time. For that, a heuristic, i.e. Lloyd's iterations, are used to compute reasonably accurate centres in time.
+Lloyd's algorithm, sketched above, finds a locally optimal set of clusters but may fail fo find the globally optimal solution. The objective function of these two solutions may defer significantly. Hence, the choice of of the \kmeans algorithm is crucial to the accuracy of the output.
+Many new approaches to pick initial seeds like \kmeansn++ \citep{arthur2007k}, and \kmeansn|| \citep{bahmani2012scalable} have been introduced which help pick seeds that converge faster, and to better local optima. Given the dataset $X$ and the number $k\leq \abs{X}$ to cluster, \kmeans picks $k$ points from the dataset uniformly at random. Lloyd's method does not specify any way of picking the initial seeds. It only required $k$ seeds to run and converge an a local optimum. The widely used method of seeding \kmeans  is to do it uniformly at random. The objective functions of the clusters computed using uniformly random seeds generally have hight variance. More robust results are obtained using more sophisticated seeding strategies. It it important to note here that mo matter the choice of seeds we are only able to compute a local optimum, not the global optimum solution because the problem is NP-hard \citep{mahajan2009planar}. 
 
 \subsection{\kmeansn++: A Better Seeding Process}
 \kmeansn++ uses an intuitive way to seed the initial clusters of the algorithm by trying to pick seeds that are as far apart as possible. This is done by giving a higher probability for points that are further away from the ones already picked. The way it works is that we pick a random initial point, and then give a higher probability of picking a point proportional to its distance from the seeds already picked, until $k$ seeds are picked \citep{arthur2007k}.
@@ -147,19 +140,20 @@ From my research, \kmeansn++ seems to be the best scientifically proven way to s
 
 \section{Iterations}
 
-The iteration process of the \kmeans clustering algorithm dominates the running time of the algorithm. Running time for random seeding is $O(k)$, while the iterations run in $cO(nkd)$. Depending on how quickly the iterations converge, the $c$ constant may be very large. Even with \kmeansn++, running time for seeding is $cO(nkd)$ but $c=O(k)$, and in practice is still dominated by the iterations running time. 
-Different approaches have been used to run the iterations and converge the centres. These approaches have had high success in reducing the running time of the algorithm \cite{alsabti1997efficient}. However, the implementation of these methods are not as simple as Lloyd's iterations, making them not as widely used.  
+The iteration process of the \kmeans clustering algorithm dominates the running time of the algorithm. The running time for random seeding is $O(k)$, while the iterations run in $O(tnkd)$ time, where $t$ is the number of iterations.\footnote{Faster implementations of these iterations are possible using efficient data structures, but this is not the focus of this thesis.} Depending on how quickly the iterations converge, the number of iterations may be large. \kmeansn++ has a seeding cost of $O(nk^2d)$, but the cost of the iterations still dominates the running time of the algorithm for small $k$.
+Different approaches have been used to run the iterations and converge the centres. These approaches have had high success in reducing the running time of the algorithm \cite{alsabti1997efficient}. However, the implementation of these methods are not as simple as Lloyd's iterations, making them not as widely used. 
 
 \section{Objective Function}
-The objective function, $\phi$, of the clustering task determines based on what the points are being grouped. In most tasks, including in everything discussed in this paper, the objective function is the sum of squared euclidean distances\footnote{Note: Here squared distance is used because comparing distances and the square maintains the ordering of the points and saves a large amount of computational time as square rooting numbers is computationally costly.}
+The objective function, $\phi$, determines the set of clusters computed. The most common choice, also used in paper, is the sum of the squared Euclidean distances\footnote{Note: Here squared distance is used because comparing distances and the square maintains the ordering of the points and saves a large amount of computational time as square rooting numbers is computationally costly.}
 of all the points to their cluster centres. More formally expressed as:
 $$\phi = \sum_{x\in X} \min_{c\in C}\abs{ x-c}^2$$
 
+%TODO: Check if squared distances gives the same result as regular distances.
 This objective function is the reason why \kmeans inherently produces convex shaped clusters as it tries to minimize the distance of each point to its cluster centre. If a point is marginally closer to a centre than another, it is grouped with the closer one. Geometrically this disallows concave shapes of any cluster. This is good for datasets where clusters are geometrically convex or close to it, but poses problems where the underlying data is not convex or is not clearly separable.
 
 \section{Difficulties}
 
-\kmeans clustering is very good at clustering well-separated convex clustered where $k$ the number of clusters in known or accurately measured in advance. However, this is very rarely the case. Another issue with \kmeans is that it fits every point into a single cluster. This means that a point has no way of belonging to different clusters at the same time. 
+\kmeans clustering is very good at clustering well-separated convex clusters where $k$ the number of clusters is known or accurately measured in advance. However, this is very rarely the case. Another issue with \kmeans is that it fits every point into a single cluster. This means that a point has no way of belonging to different clusters at the same time. 
 
 
 \chapter{Consensus Seeding}
@@ -194,9 +188,10 @@ We intuitively believed that consensus seeding would perform better than random 
 
 \section{Analysis \& Datasets}
 
-To analyze the performance of the algorithm we ran it on 3 different datasets. The Cloud Data Set has $1025$ values in $10$ dimensions, and they represent the values for cloud cover \citep{cloud}. The Spambase Dataset consists of $4601$ values in $58$ dimensions, and it represents numerical representations for spam emails \citep{spam}. The Dimred dataset comes from a dimensionality reduced textual corpora of crash reports, it has $108,669$ values in $2$ dimensions.
+% TODO: Add reference for dimred.
+To analyze the performance of the algorithm we ran it on 3 different datasets. The Cloud dataset has $1025$ values in $10$ dimensions, and they represent the values for cloud cover, data extracted from pictures of clouds represented by their pixel values \citep{cloud}. The Spambase dataset consists of $4601$ values in $58$ dimensions, and it represents numerical representations for spam emails \citep{spam}. The Dimred dataset comes from a dimensionality reduced textual corpora of crash reports, it has $108,669$ values in $2$ dimensions.
 
-Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experimental results for the accuracy and running time of the algorithms. They were all tested on a 2017 15-inch Apple Macbook Pro, with an 2.8 GHz Intel Core i7 and 16Gb of RAM. The iterations were set to maximum 200, and the $T$ and $m$ values were both set to $5$ for \kmeansn Consensus. Each algorithm was run 20 times for each combination of $k$-value, dataset and algorithm used, and the average and minimum of these were computed.
+Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experimental results for the accuracy and running time of the \kmeans, \kmeansn++, and \kmeansn Consensus on these three datasets. They were all tested on a 2017 15-inch Apple Macbook Pro, with an 2.8 GHz Intel Core i7 and 16Gb of RAM. The iterations were set to maximum 200, and the $T$ and $m$ values were both set to $5$ for \kmeansn Consensus. Each algorithm was run 20 times for each combination of $k$-value, dataset and algorithm used, and the average and minimum of these were computed.
 
 \begin{center}
   \resizebox{\textwidth}{!}{\begin{tabular}{ |p{1cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}| }
@@ -214,9 +209,11 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
     50 &   2.03e06    &   1.17e06    &   2.10e06    &   1.51e06    &   1.10e06    &   1.54e06    &   1.08e01    &   2.03e01    &   1.86e01    \\
    100 &   1.06e06    &   6.55e05    &   1.16e06    &   8.15e05    &   6.30e05    &   8.73e05    &   1.07e01    &   6.08e01    &   3.15e01    \\
   \hline
+  
   \end{tabular}}
-  \end{center}
-  \begin{center}
+  \captionof{table}{Experimental results on the cloud dataset ($n$=1025, $d$=10)\\~\\} \label{table:cloud}
+\end{center}
+\begin{center}
   \resizebox{\textwidth}{!}{\begin{tabular}{ |p{1cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}| }
   \hline
   & \multicolumn{9}{c|}{spam}\\
@@ -233,8 +230,9 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
    100 &   1.27e08    &   2.41e06    &   1.18e08    &   6.66e07    &   2.20e06    &   1.99e07    &   1.84e12    &   2.17e03    &   1.55e03    \\
   \hline
   \end{tabular}}
-  \end{center}
-  \begin{center}
+  \captionof{table}{Experimental results on the spam dataset ($n$=4601, $d$=58)\\~\\} \label{table:spam} 
+\end{center}
+\begin{center}
   \resizebox{\textwidth}{!}{\begin{tabular}{ |p{1cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}| }
   \hline
   & \multicolumn{9}{c|}{dimred}\\
@@ -251,26 +249,14 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
    100 &   7.08e05    &   7.04e05    &   7.07e05    &   7.00e05    &   7.01e05    &   6.99e05    &   8.30e12    &   2.58e13    &   6.46e12    \\
   \hline
   \end{tabular}}
-  \end{center}
+  \captionof{table}{Experimental results on the dimred dataset ($n$=108,669, $d$=2)\\~\\} \label{table:dimred} 
+\end{center}
 
-Figure \ref{fig:heatmap} is a heat map of the Dimred dataset which shows the concentration of points.
 
-\begin{figure}[h]
-  \includegraphics[width=\textwidth]{heatmap}
-  \caption{Heat map of the Dimred dataset. The lighter versions of the figure are for} 
-  \label{fig:heatmap}
-\end{figure}
-
+%TODO: Why did we do worse
 We can clearly see that the new seeding process gave us marginally better results than \kmeans in some situations. In most cases, it did equally as bad if not worse. We also note that \kmeansn ++ did considerably better in most cases. From that we conclude that the new seeding process is no better than \kmeans.
 
 It is important to note here that on the dimred dataset, unlike the other datasets, all three algorithms achieve similar results. 
-
-
-
-
-
-
-
 
 
 
@@ -313,7 +299,24 @@ In our experiments, we were looking to perfectly match 50 centres on multiple ru
 
 The objective function was later changed to maximum-weight perfect matching based on the number of shared points between clusters. Here, a very interesting property was observed. Most of the points were perfectly matched while the rest were 
 
-\chapter{Determining the Number of Clusters $k$d}
+\chapter{Determining the Number of Clusters $k$}
+From our experiments and research, it was clear that inputting the incorrect number of clusters $k$ into the \kmeans algorithm, substantially affects performance, and accuracy. For that, we came up with an algorithm to help approximate the right number of clusters in the underlying dataset, before running the \kmeans algorithm.
+
+The idea of the algorithm is relatively simple relying on the assumption that the real cluster centres of the underlying dataset will be present in most random runs of the algorithm, while the rest of the cluster centres will be relatively random based on the local area obtained through the initial seeding process. 
+
+The algorithm takes a number which is the maximum number of clusters $k$ believed to be for the dataset, and the dataset. \kmeansn++ is run with the dataset $k$ times, and the centres produced are recorded. Then, we perfectly match centres from every unique pair of runs. Based on the matchings, we build a graph where every cluster centre in every run is a node that is connected to all the other nodes it was connected to by the matchings. Then we extract the number of disconnected components in the graph, and that tells us the estimated underlying number of clusters in the dataset. Because it is an estimate, running the above algorithm multiple times and taking the most frequent number is a heuristic that we found worked well.
+
+The reason we believe this method works is because cluster centres that are accurate to the underlying dataset will be consistent in all the runs even if the inputted $k$ is not accurate. However, if the inputted $k$ is higher, then we will consistently get cluster centres that are somewhat random depending on how the algorithm was seeded. For that, in our experimental tests, we consistently had components of size $k$, while others had larger sizes. We believe that the components of size $k$ are the ones that are true for the underlying dataset.
+
+Based on our experiments on a generated dataset, shown in Figure \ref{generatedDataset}, with $4$ clusters and $5,000$ per cluster, we were able to consistently get results between $3$ and $5$ for maxK input of $4$ to $9$. At maxK value of $10$, we got consistent results of $1$. This is a bit surprising, but makes sense because we can see how with a number $k$ that is higher than the real one in the underlying dataset will have a high probability of cluster centres matching to other components, grouping them all into one by the end.
+
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{generatedDataset}
+  \caption{Heat map of the git brDimred dataset. The lighter versions of the figure are for} 
+  \label{fig:generatedDataset}
+\end{figure}
+
+
 \chapter{Extendable C++ Implementation}
 
 Throughout the research for this paper, it was difficult to find modular code that is easily extendable for the \kmeans algorithm that allow us to perform testing on it. For that, we created our own implementation that is available on Github \footnote{The code is available at \url{https://github.com/technoligest/kmeansII}}.  This implementation is free to use and licenced under the MIT License, allow users to modify it as they see fit without any warranty on functionality or fitness for a particular purpose.
@@ -325,13 +328,12 @@ Every \kmeans instance, contains templated instances of a SeedPicker and an Iter
 The modularity of the implementation also allows developers to create new SeedPicker and IterationRunner classes. To create one, all they are required to do is implement a function from their respective Base class. For example, the $kd$-tree implementation of the algorithm has be hooked into a \kmeans instance by implementing it as an IterationRunner.
 
 
+
 \chapter{Conclusion}
 
-\kmeans is a problem that has proven to be applicable to many domains and applications. It is still widely used and continues to be so. We have shown that the new \kmeansn Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm. 
+\kmeans is a method that has proven to be applicable to many domains and applications. It is still widely used and continues to be so. We have shown that the new \kmeansn Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm. 
 
 One area of research that is needed is a way to compute the real number $k$ for the algorithm. We have a method to compute that by calculating cliques in perfectly matched centres over multiple runs of the algorithm, but this needs further exploration. 
-
-
 
 
 \bibliographystyle{newapa}
