@@ -16,6 +16,7 @@
 \usepackage{natbib}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{lipsum}
 
 
 \hypersetup{
@@ -33,7 +34,7 @@
 
 \newcommand*{\Value}{\frac{1}{2}x^2}
 \newcommand*{\kmeansn}{\textsc{K-Means}} %kmeans with no space
-\newcommand*{\kmeans}{\kmeansn } %kmeans with space
+\newcommand*{\kmeans}{\textsc{K-Means} } %kmeans with space
 
 \usepgfplotslibrary{external}
 \tikzexternalize{yaser_thesis}
@@ -66,7 +67,7 @@
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
-\title{\kmeans Clustering, An Improved Seeding Process and Novel Method to Compute the Number of Clusters for a Dataset} %TODO: Change the title.
+\title{\kmeans Clustering, An Improved Seeding Process \& Novel Method to Compute the Number of Clusters for a Dataset}
 \author{Yaser Alkayale}
 \bcshon  %Sets it to honours variant
 \degree{Bachelor's of Computer Science, Honours}
@@ -87,7 +88,9 @@
 
 
 \begin{acknowledgements}
-  A sincere thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the light light of day. Thank you to my co-supervisor Dr. Vlado Keselj who made himself available. Also, big thank you to Arazoo who was with me from the beginning, and went through my ideas with me.
+
+  A sincere thank you to my supervisor Dr. Norbert Zeh. Without his assistance, this project would not have seen the light of day. Thank you to my co-supervisor Dr. Vlado Keselj who made himself available. Also, big thank you to Arazoo Hoseyni who was with me from the beginning, and went through my ideas with me.
+
 \end{acknowledgements}
 
 \mainmatter
@@ -106,8 +109,7 @@ Different clustering algorithms are suited for different tasks. Some of them, li
 
 Formally, \kmeans is the problem where one is given a set of $n$ points in $d$-dimensional space, $\mathbb{R}^d$, and a number $k$. The goal is to split the $n$ points into $k$ disjoint clusters (subsets), minimizing the cost function $\phi$, the sum of distances of each point to its cluster centre. A cluster centre is defined to be the mean of the points in the clusters. \kmeans does especially well, in terms of speed and accuracy, on convex shaped clusters as it minimizes the sum of distances of all points to their corresponding cluster centres. However, it struggles to perform well in terms of accuracy and running time when clusters are not convex shaped or $k$ is not the right number of actual clusters in the dataset. Solving \kmeans exactly is known to be NP-hard, and that is why heuristics like Lloyd's \citep{1056489} iterations were introduced to give us an approximation of the solution by using local search. A locally optimal solution is good enough in most cases, allowing us to have meaningful clusters in a reasonable amount of time.
 
-% TODO: Add what exactly I am doing in this paper.
-In this paper, we introduce a new way to seed the \kmeans algorithm. Preliminary experiments suggested that htis seeding method produced clusters of comparable quality as produced by advanced seeding strategies such as \kmeansn++ and \kmeansn||, while bing much simpler. Unfortunately, a more careful evaluation shawed that the clusters are not significantly better than those obtained using uniformly random seeds. The ideas of the algorithm and its pseudocode are outlined along with results. We also provide a C++ implementation of the algorithm and ways it can be used for further development and research.
+In this paper, we introduce a new way to seed the \kmeans algorithm. Preliminary experiments suggested that this seeding method produced clusters of comparable quality as produced by advanced seeding strategies such as \kmeansn++ and \kmeansn||, while bing much simpler. Unfortunately, a more careful evaluation showed that the clusters are not significantly better than those obtained using uniformly random seeds. The ideas of the algorithm and its pseudocode are outlined along with results. We also provide a C++ implementation of the algorithm and ways it can be used for further development and research.
 
 
 \section{The \kmeans algorithm.}
@@ -143,12 +145,13 @@ From my research, \kmeansn++ seems to be the best scientifically proven way to s
 The iteration process of the \kmeans clustering algorithm dominates the running time of the algorithm. The running time for random seeding is $O(k)$, while the iterations run in $O(tnkd)$ time, where $t$ is the number of iterations.\footnote{Faster implementations of these iterations are possible using efficient data structures, but this is not the focus of this thesis.} Depending on how quickly the iterations converge, the number of iterations may be large. \kmeansn++ has a seeding cost of $O(nk^2d)$, but the cost of the iterations still dominates the running time of the algorithm for small $k$.
 Different approaches have been used to run the iterations and converge the centres. These approaches have had high success in reducing the running time of the algorithm \cite{alsabti1997efficient}. However, the implementation of these methods are not as simple as Lloyd's iterations, making them not as widely used. 
 
+
+%TODO: Check if squared distances gives the same result as regular distances. Reword properly.
 \section{Objective Function}
-The objective function, $\phi$, determines the set of clusters computed. The most common choice, also used in paper, is the sum of the squared Euclidean distances\footnote{Note: Here squared distance is used because comparing distances and the square maintains the ordering of the points and saves a large amount of computational time as square rooting numbers is computationally costly.}
+The objective function, $\phi$, determines the set of clusters computed. The most common choice, also used in paper, is the sum of the squared Euclidean distances\footnote{Note: The sum of squared distances is used because it is computationally much more efficient.}
 of all the points to their cluster centres. More formally expressed as:
 $$\phi = \sum_{x\in X} \min_{c\in C}\abs{ x-c}^2$$
 
-%TODO: Check if squared distances gives the same result as regular distances.
 This objective function is the reason why \kmeans inherently produces convex shaped clusters as it tries to minimize the distance of each point to its cluster centre. If a point is marginally closer to a centre than another, it is grouped with the closer one. Geometrically this disallows concave shapes of any cluster. This is good for datasets where clusters are geometrically convex or close to it, but poses problems where the underlying data is not convex or is not clearly separable.
 
 \section{Difficulties}
@@ -178,20 +181,23 @@ Note: kmeans.cluster is a function that takes three values: the dataset, the num
         $S$: the maximum number of iterations to use for each round}
   \Output{List of $k$ cluster centre seeds}
   runCentres $\leftarrow$ \{\}\;
-  \For{$i=0...r$}{
-    $runCentres \leftarrow runCentres \cup kmeans.cluster(dataset, k, m)$\;
+  \For{$i=0...T$}{
+    runCentres $\leftarrow$ runCentres $\cup$ kmeans.cluster($dataset, k, S$)\;
   }
   \Return kmeans.cluster(runCentres,k)
 \end{algorithm}
 
+\pagebreak
 We intuitively believed that consensus seeding would perform better than random seeding of the \kmeans algorithm because of rerunning the algorithm many times. It has been experimentally shown that running \kmeans multiple times and taking the best one of the results yields a better output \citep{arthur2007k}. Our idea was to terminate each run of the algorithm early to save on running time while using the information to better seed the algorithm. We expected this would give us similar results to \kmeansn++
 
 \section{Analysis \& Datasets}
 
-% TODO: Add reference for dimred.
-To analyze the performance of the algorithm we ran it on 3 different datasets. The Cloud dataset has $1025$ values in $10$ dimensions, and they represent the values for cloud cover, data extracted from pictures of clouds represented by their pixel values \citep{cloud}. The Spambase dataset consists of $4601$ values in $58$ dimensions, and it represents numerical representations for spam emails \citep{spam}. The Dimred dataset comes from a dimensionality reduced textual corpora of crash reports, it has $108,669$ values in $2$ dimensions.
+
+To analyze the performance of the algorithm we ran it on 3 different datasets. The Cloud dataset has $1025$ values in $10$ dimensions, and they represent the values for cloud cover, data extracted from pictures of clouds represented by their pixel values \citep{cloud}. The Spambase dataset consists of $4601$ values in $58$ dimensions, and it represents numerical representations for spam emails \citep{spam}. The Dimred dataset comes from a dimensionality reduced textual corpora of crash reports, it has $108,669$ values in $2$ dimensions \cite{soto2016machine}.
 
 Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experimental results for the accuracy and running time of the \kmeans, \kmeansn++, and \kmeansn-Consensus on these three datasets. They were all tested on a 2017 15-inch Apple Macbook Pro, with an 2.8 GHz Intel Core i7 and 16Gb of RAM. The iterations were set to maximum 200, and the $T$ and $m$ values were both set to $5$ for \kmeansn-Consensus. Each algorithm was run 20 times for each combination of $k$-value, dataset and algorithm used, and the average and minimum of these were computed.
+
+\pagebreak
 
 \begin{center}
   \resizebox{\textwidth}{!}{\begin{tabular}{ |p{1cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}|p{1.3cm}| }
@@ -200,9 +206,9 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
   \cline{2-10}
   & \multicolumn{3}{c|}{Average $\phi$} & \multicolumn{3}{c|}{Minimum $\phi$} & \multicolumn{3}{c|}{Average $T$ (milliseconds)}\\
   k
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}\\
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}\\
       \hline
     10 &   7.62e06    &   6.12e06    &   8.73e06    &   6.29e06    &   5.76e06    &   6.29e06    &   4.90e00    &   3.40e00    &   6.51e00    \\
     25 &   3.81e06    &   2.21e06    &   3.63e06    &   2.62e06    &   2.06e06    &   2.45e06    &   8.08e00    &   9.17e00    &   1.13e01    \\
@@ -220,9 +226,9 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
   \cline{2-10}
   & \multicolumn{3}{c|}{Average $\phi$} & \multicolumn{3}{c|}{Minimum $\phi$} & \multicolumn{3}{c|}{Average $T$ (milliseconds)}\\
   k
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}\\
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}\\
       \hline
     10 &   1.70e08    &   8.67e07    &   1.70e08    &   1.70e08    &   7.70e07    &   1.70e08    &   2.67e02    &   7.32e01    &   2.98e02    \\
     25 &   1.51e08    &   1.70e07    &   1.52e08    &   1.43e08    &   1.56e07    &   1.44e08    &   8.68e02    &   2.80e02    &   1.08e03    \\
@@ -239,9 +245,9 @@ Tables \ref{table:cloud}, \ref{table:spam}, and \ref{table:dimred} show experime
   \cline{2-10}
   & \multicolumn{3}{c|}{Average $\phi$} & \multicolumn{3}{c|}{Minimum $\phi$} & \multicolumn{3}{c|}{Average $T$ (milliseconds)}\\
   k
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}
-  & \multicolumn{1}{c}{kmeans} & \multicolumn{1}{c}{kmeans++} & \multicolumn{1}{c|}{kmeansNew}\\
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}
+  & \multicolumn{1}{c}{\kmeans} & \multicolumn{1}{c}{\kmeansn++} & \multicolumn{1}{c|}{Consensus}\\
       \hline
     10 &   7.02e06    &   7.03e06    &   7.02e06    &   6.99e06    &   6.99e06    &   6.99e06    &   4.38e02    &   5.60e02    &   6.24e02    \\
     25 &   2.79e06    &   2.79e06    &   2.79e06    &   2.77e06    &   2.77e06    &   2.77e06    &   1.31e03    &   1.43e03    &   1.44e03    \\
@@ -282,7 +288,7 @@ Minimum weight perfect matching, or the assignment problem, is where given a set
 
 The figures \ref{fig:distance} and \ref{fig:overlap} are of cluster centres plotted in euclidean space. The axis are not labeled because it adds no extra information to our findings in this case. Every pairing of same-colour points on the plots come from $2$ different runs of the algorithm. We perfectly match the 100 points (50 per run), and get some interesting results.
 
-Here we can see Figures ~\ref{fig:overlap} \& ~\ref{fig:distance} are very different even though they are run on the same datasets. There is a very good explanation for this that may not be clear at first glance. Figure ~\ref{fig:distances} seems to be inaccurate as there are clear pairings of points that weren't paired together. Rather than the closest points being paired, we see how there is a chain of pairings. This is because running the minimum weight perfect matching on the points based on Euclidean distance minimizes the overall distances between all the pairs, but does not take into consideration the actual underlying pairing that we are looking for.
+Here we can see Figures ~\ref{fig:overlap} \& ~\ref{fig:distance} are very different even though they are run on the same datasets. There is a very good explanation for this that may not be clear at first glance. Figure ~\ref{fig:distance} seems to be inaccurate as there are clear pairings of points that weren't paired together. Rather than the closest points being paired, we see how there is a chain of pairings. This is because running the minimum weight perfect matching on the points based on Euclidean distance minimizes the overall distances between all the pairs, but does not take into consideration the actual underlying pairing that we are looking for.
 
 In Figure \ref{fig:overlap}, maximum weight perfect matching of the centres is based on the number of shared points in the clusters. Here, we notice a very interesting pattern where the pairings seem to be near perfect overall with a few outliers that are far apart. While this is not exactly the expected result, it makes sense because for this dataset, we are not sure of the exact underlying number of clusters $k$. The real number of underlying clusters is likely to be lower than  $50$, the number inputted into the clustering run. The perfect matching makes that clear as some points are consistent over multiple runs while others seem to be completely random.
 
@@ -297,11 +303,11 @@ The algorithm takes a number which is the maximum number of clusters $k$ believe
 
 The reason we believe this method works is because cluster centres that are accurate to the underlying dataset will be consistent in all the runs even if the inputted $k$ is not accurate. However, if the inputted $k$ is higher, then we will consistently get cluster centres that are somewhat random depending on how the algorithm was seeded. For that, in our experimental tests, we consistently had components of size $k$, while others had larger sizes. We believe that the components of size $k$ are the ones that are true for the underlying dataset.
 
-Based on our experiments on a generated dataset, shown in Figure \ref{generatedDataset}, with $4$ clusters and $5,000$ per cluster, we were able to consistently get results between $3$ and $5$ for maxK input of $4$ to $9$. At maxK value of $10$, we got consistent results of $1$. This is a bit surprising, but makes sense because we can see how with a number $k$ that is higher than the real one in the underlying dataset will have a high probability of cluster centres matching to other components, grouping them all into one by the end.
+Based on our experiments on a generated dataset, shown in Figure \ref{fig:generatedDataset}, with $4$ clusters and $5,000$ per cluster, we were able to consistently get results between $3$ and $5$ for maxK input of $4$ to $9$. At maxK value of $10$, we got consistent results of $1$. This is a bit surprising, but makes sense because we can see how with a number $k$ that is higher than the real one in the underlying dataset will have a high probability of cluster centres matching to other components, grouping them all into one by the end.
 
 \begin{figure}[h]
   \includegraphics[width=\textwidth]{generatedDataset}
-  \caption{The generated dataset, $n=20,000 d=2$} 
+  \caption{The generated dataset, $n=20,000$, $d=2$} 
   \label{fig:generatedDataset}
 \end{figure}
 
@@ -310,7 +316,7 @@ The algorithm is still not perfect, but we believe that it can be fine-tuned wit
 
 \chapter{Extendable C++ Implementation}
 
-Throughout the research for this paper, it was difficult to find modular code that is easily extendable for the \kmeans algorithm that allow us to perform testing on it. For that, we created our own implementation that is available on Github \footnote{The code is available at \url{https://github.com/technoligest/kmeansII}}.  This implementation is free to use and licenced under the MIT License.
+Throughout the research for this paper, it was difficult to find modular code that is easily extendable for the \kmeans algorithm that allow us to perform testing on it. For that, we created our own implementation that is available on Github \footnote{The code is available at \url{https://github.com/technoligest/kmeansII}}.  This implementation is free to use and licened under the MIT License.
 
 The algorithm is implemented in highly optimized C++ with object-oriented programming at its core. This allows other developers to extend the algorithm and test different combinations of optimizations in the code. It can be used by both individuals needing to use a \kmeans implementation and ones who are looking to do research and optimize it further. 
 
@@ -322,12 +328,11 @@ The modularity of the implementation also allows developers to create new SeedPi
 
 \chapter{Conclusion}
 
-\kmeans is a method that has proven to be applicable to many domains and applications. It is still widely used. Unfortunately through rigorous testing, we have shown that the new \kmeansn-Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm.
+\kmeans is a method that has proven to be applicable to many domains and applications. It is still widely used. Unfortunately through rigorous testing, we have shown that the new \kmeansn-Consensus method of seeding the \kmeans algorithm is no better than randomly seeding the algorithm. We used \kmeans clustering in the consensus part of the seeding process. Other methods of unifying the runs may have different results, but we don't see any promising methods.
 
+Determining the number of real clusters $k$ is an area that needs further development theoretically and experimentally. The algorithm can be tweaked to make it more rigorous on a large range of dataset and $k$ values. One area the algorithm currently struggles is in running time. This is an area that can be improved through parallelization and more careful computations of overlaps between clusters.
 
-
-One area of research that is needed is a way to compute the real number $k$ for the algorithm. We have a method to compute that by calculating cliques in perfectly matched centres over multiple runs of the algorithm, but this needs further exploration. 
-
+On the other hand, \kmeans is a method that works relatively well and is efficient for most use cases. This begs the question if we should continue research on it or move on to different methods, perhaps more highly specialized for different needs.
 
 \bibliographystyle{newapa}
 \bibliography{yaser_thesis}

@@ -16,12 +16,14 @@ file(GLOB experiments "${PROJECT_SOURCE_DIR}/lib/experiments/*.h" "${PROJECT_SOU
 file(GLOB sideHussle "${PROJECT_SOURCE_DIR}/lib/sidehussle/*.h" "${PROJECT_SOURCE_DIR}/lib/sidehussle/*.cc")
 file(GLOB scripts "${PROJECT_SOURCE_DIR}/lib/scripts/*.py")
 file(GLOB bigint "lib/sidehussle/bigInt/*.cpp" "lib/sidehussle/bigInt/*.h")
+file(GLOB findk "lib/FindK/*.cc" "lib/FindK/*.h")
 
 set(kmeansII ${algorithm} ${handlers})
 
 set(trying ${algorithm} ${handlers} )
-set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h)
+set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h lib/FindK/FindK.cc)
 
+add_executable(findK ${kmeansII} ${findk})
 add_executable(kmeans ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline
 add_executable(trying ${trying} lib/runners/trying.cc) #this executable is temporary for development only
 add_executable(testing ${testing}) #This executable includes all the testing scripts

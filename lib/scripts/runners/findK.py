@@ -118,7 +118,7 @@ def cliqueSizes(inputFileName, k, executable, numRuns):
   matchings = calcMatchings(dataset, centres)
   graph = buildGraph(matchings, numRuns)
   cliqueSizes = [graphSize(graph[subgraphName]) for subgraphName in graph if not graph[subgraphName].visited]
-  print(cliqueSizes)
+  # print(cliqueSizes)
   return cliqueSizes
 
 def group(values):
@@ -131,12 +131,19 @@ def group(values):
   return (vals, count)
 
 def findK(executableName, maxk, inputFileName, numRuns):
-  res = sorted([len(cliqueSizes(inputFileName, maxk, executableName, numRuns)) for _ in range(10)])
-  g = group(res)
-  return [a for a, b in sorted(zip(g[0], g[1]), key=lambda z:z[1])][-1]
+  cliques = cliqueSizes(inputFileName, maxk, executableName, numRuns)
+  # res = sorted([len(cliques) for _ in range(1)])
+  # g = group(res)
+  # [a for a, b in sorted(zip(g[0], g[1]), key=lambda z:z[1])][-1]
+  return cliques
 
-executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/cmake-build-debug/kmeans"
 k = 8
-numRuns = 8
+executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/cmake-build-debug/kmeans"
 inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv"
-print("for k:", k, " The answer is: ", findK(executableName, k, inputFileName, numRuns))
+
+for i in range(2,k):
+  print("k: ",i)
+
+  print(findK(executableName, i, inputFileName, i))
+  # print("for k:", k, " The answer is: ", findK(executableName, k, inputFileName, numRuns))
+  print("\n\n")

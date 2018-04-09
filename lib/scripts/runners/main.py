@@ -10,15 +10,12 @@ import numpy as np
 import sys
 
 def perfectMatch():
-  f1 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/expr0-kmeans++.txt"
-  f2 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/expr2-kmeans++.txt"
+  f1 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/dimred/kmeans++-out49"
+  f2 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansIIperfect/lib/scripts/new results/dimred/kmeans++-out50"
   centres1 = np.loadtxt(f1, delimiter=",")
   centres2 = np.loadtxt(f2, delimiter=",")
-
   distances = utils.adjacencyMatrix(centres1,centres2,lambda p1,p2: utils.distance(p1,p2));
-
   matching = minimum_weight_perfect_matching(distances);
-
   plt.figure();
   for i in matching:
     print(centres1[i[0]]);
@@ -46,13 +43,13 @@ def calcPointPositions(dataset,centres):
   return result
 
 def perfectMatchFigure():
-  f1 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/expr0-kmeans++.txt"
-  f2 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/expr2-kmeans++.txt"
+  f1 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/dimred/kmeans++-out49"
+  f2 = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/lib/scripts/new results/dimred/kmeans++-out50"
   centres1 = np.loadtxt(f1, delimiter=",")
   centres2 = np.loadtxt(f2, delimiter=",")
   plt.figure();
   x,y = utils.splitIntoXY(centres1)
-  plt.scatter(x,y,marker="o")
+  plt.scatter(x,y,marker="o",c="red")
   x,y = utils.splitIntoXY(centres2)
   plt.scatter(x,y,marker="o")
   dataset = np.loadtxt("/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/inputFiles/DimRedFullDataComplete.txt")
@@ -79,8 +76,8 @@ def perfectMatchFigure():
 # print(len(matchings))
 # dataset = np.loadtxt("/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/inputFiles/DimRedFullDataComplete.txt")
 # np.savetxt("/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/inputFiles/DimRedFullDataComplete.csv",dataset,delimiter=",")
-
-perfectMatchFigure();
+print("started script")
+# perfectMatchFigure();
 print("Finished 1")
 perfectMatch();
 print("Finished2")
