@@ -7,19 +7,37 @@
 #include "../algorithm/kmeans.h"
 #include "hungarian.h"
 #include<thread>
+#include <mutex>
+
 using std::cout;
 using std::endl;
 using std::string;
 using kmeans::operator<<;
 using ull=unsigned long long;
 
+using std::thread;
+
+constexpr int thread_count = 9;
+
 std::vector<kmeans::Dataset> runExperiments(kmeans::Dataset &dataset, int maxK) {
-  std::vector<kmeans::Dataset> centres;
-  for(int i = 0; i < maxK; ++i) {
-    kmeans::Dataset tempCentres;
-    kmeans::Kmeanspp<> kmeanspp;
-    kmeanspp.cluster(dataset, maxK, tempCentres);
-    centres.push_back(tempCentres);
+  std::vector<kmeans::Dataset> centres(maxK);
+  std::vector<thread> threads;
+  std::mutex centres_mutex;
+  auto run = [&](ull tid) {
+    for(ull i = tid; i < maxK; i += thread_count) {
+      kmeans::Dataset tempCentres;
+      kmeans::Kmeanspp<> kmeanspp;
+      kmeanspp.cluster(dataset, maxK, tempCentres);
+      std::lock_guard<std::mutex> guard(centres_mutex);
+      centres[i] = tempCentres;
+    }
+  };
+  for(int i = 0; i < thread_count; ++i) {
+    threads.push_back(thread(run, i));
+  }
+
+  for(auto &t:threads) {
+    t.join();
   }
   return centres;
 }
@@ -45,7 +63,6 @@ std::vector<std::vector<ull>> calcPointPositions(const kmeans::Dataset &dataset,
 }
 
 ull overlap(std::vector<ull> list1, std::vector<ull> list2) {
-
   std::sort(list1.begin(), list1.end());
   std::sort(list2.begin(), list2.end());
   std::vector<int> v_intersection;
@@ -68,22 +85,43 @@ overlapMatrix(const std::vector<std::vector<ull>> &pos1, const std::vector<std::
 
 std::unordered_map<string, std::vector<ull>>
 calcMatchings(const kmeans::Dataset &dataset, const std::vector<kmeans::Dataset> &centres) {
+  std::vector<thread> threads;
   std::unordered_map<string, std::vector<ull>> matchings;
+  std::vector<std::vector<std::vector<ull>>> centrePositions;
+  std::mutex matchings_mutex;
+
+  for(ull centreId = 0; centreId < centres.size(); ++centreId) {
+    centrePositions.push_back(calcPointPositions(dataset, centres[centreId]));
+  }
+
+  std::vector<std::atomic<int>> positionsFreeCount(centres.size());
+
+
   for(ull centre1Id = 0; centre1Id < centres.size() - 1; ++centre1Id) {
     for(ull centre2Id = centre1Id + 1; centre2Id < centres.size(); ++centre2Id) {
-      auto centres1 = centres[centre1Id];
-      auto centres2 = centres[centre2Id];
-      auto pos1 = calcPointPositions(dataset, centres1);
-      auto pos2 = calcPointPositions(dataset, centres2);
-      auto overlaps = overlapMatrix(pos1, pos2);
-      auto matching = hungarian::maximumWeightPerfectMatching(overlaps);
-      std::vector<ull> currMatching;
-      for(auto match:matching) {
-        currMatching.push_back(match.first);
-      }
-      std::string id = std::to_string(centre1Id) + "_" + std::to_string(centre2Id);
-      matchings[id] = currMatching;
+      threads.push_back(thread([=, &centrePositions, &matchings, &positionsFreeCount, &matchings_mutex]() {
+        const auto &overlaps = overlapMatrix(centrePositions[centre1Id], centrePositions[centre2Id]);
+
+        ++positionsFreeCount[centre1Id];
+        ++positionsFreeCount[centre2Id];
+        if(positionsFreeCount[centre1Id] == centres.size() - 1) {
+          centrePositions[centre1Id] = {};
+        }
+        const auto &matching = hungarian::maximumWeightPerfectMatching(overlaps);
+        std::vector<ull> currMatching;
+        for(auto match:matching) {
+          currMatching.push_back(match.first);
+        }
+        std::string id = std::to_string(centre1Id) + "_" + std::to_string(centre2Id);
+        std::lock_guard<std::mutex> guard(matchings_mutex);
+        matchings[id] = currMatching;
+
+      }));
     }
+
+  }
+  for(auto &thread:threads) {
+    thread.join();
   }
   return matchings;
 };
@@ -105,20 +143,27 @@ public:
 std::ostream &operator<<(std::ostream &o, const Node &n) {
   o << "[";
   for(auto neighbour:n.neighbours) {
-    o << neighbour->name << ",";
+    o << neighbour->name << ", ";
   }
   o << "]" << endl;
   return o;
 }
 
-std::ostream &operator<<(std::ostream &o, const std::vector<ull> &v) {
+template<typename T>
+std::ostream &operator<<(std::ostream &o, const std::vector<T> &v) {
+  o << "[";
   for(auto i :v) {
-    o << i << ",";
+    o << i << ", ";
   }
+  if(!v.empty()) {
+    o << v[v.size() - 1];
+  }
+  o << "]" << endl;
   return o;
 }
 
-std::unordered_map<std::string, std::unique_ptr<Node>> buildGraph(std::unordered_map<string, std::vector<ull>> matchings, int maxK) {
+std::unordered_map<std::string, std::unique_ptr<Node>>
+buildGraph(std::unordered_map<string, std::vector<ull>> matchings, int maxK) {
   assert(!matchings.empty());
   std::unordered_map<std::string, std::unique_ptr<Node>> nodes;
   for(ull runId = 0; runId < maxK; ++runId) {
@@ -142,7 +187,8 @@ std::unordered_map<std::string, std::unique_ptr<Node>> buildGraph(std::unordered
   }
   return nodes;
 }
-ull componentSize(Node* n) {
+
+ull componentSize(Node *n) {
   if(n->visited) {
     return 0;
   }
@@ -154,7 +200,7 @@ ull componentSize(Node* n) {
   return size;
 }
 
-ull componentSize(std::unique_ptr<Node>& n) {
+ull componentSize(std::unique_ptr<Node> &n) {
   if(n->visited) {
     return 0;
   }
@@ -165,6 +211,7 @@ ull componentSize(std::unique_ptr<Node>& n) {
   }
   return size;
 }
+
 std::vector<std::vector<ull>> sizes;
 
 std::vector<ull> computeComponentSizes(std::unordered_map<std::string, std::unique_ptr<Node>> &graph) {
@@ -178,26 +225,24 @@ std::vector<ull> computeComponentSizes(std::unordered_map<std::string, std::uniq
 }
 
 ull findK(kmeans::Dataset dataset, int maxK) {
-  std::vector<std::thread> threads;
+  double totalTime = 0;
+
   for(int i = maxK; i > 1; --i) {
-    threads.push_back(std::thread());
-  }
-  for(int i = maxK; i > 1; --i) {
+    auto currTime = std::chrono::system_clock::now();
     auto centres = runExperiments(dataset, i);
-    cout << "Centres size: " << centres.size() << endl;
     auto matchings = calcMatchings(dataset, centres);
-    cout << "Matchings size: " << matchings.size() << endl;
-    for(auto match:matchings) {
-      //cout << match.first << "=>" << match.second << endl;
-    }
 
     auto graph = buildGraph(matchings, i);
 
     auto componentSizes = computeComponentSizes(graph);
 
     std::cout << "Finding k for k: " << i << endl;
-    std::cout << componentSizes << std::endl<<endl;
+    std::cout << componentSizes << std::endl;
+    std::chrono::duration<double> diff = std::chrono::system_clock::now() - currTime;
+    std::cout << "FindK ran in: " << diff.count() << endl << endl;
+    totalTime += diff.count();
   }
+  std::cout << "Total Time: " << totalTime << endl;
   return 0;
 }
 
@@ -205,10 +250,15 @@ ull findK(kmeans::Dataset dataset, int maxK) {
 int main(int argc, char **argv) {
   if(argc < 3) {
     cout << "Usage: ./findK <inputFilename> <maxK>" << endl;
-    //exit(1);
+    exit(1);
   }
-  string fileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv";
-  int k = 30;
+  string fileName = argv[1];
+  int k = std::atoi(argv[2]);
+
+
+  //string fileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv";
+  ////fileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/finalDatasets/dimred";
+  //int k = 30;
   std::ifstream file(fileName);
   kmeans::Dataset dataset = kmeans::readCSVDataset(file);
   ull newk = findK(dataset, k);

@@ -3,7 +3,7 @@ project(kmeansII)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -O3")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -O3 -pthread")
 
 find_program(MEMORYCHECK_COMMAND valgrind)
 set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
@@ -24,6 +24,7 @@ set(trying ${algorithm} ${handlers} )
 set(testing ${tests} ${algorithm} ${handlers} ${experiments} tests/test_experiment_helpers.cc lib/home.h lib/algorithm/globals.h lib/FindK/FindK.cc)
 
 add_executable(findK ${kmeansII} ${findk})
+
 add_executable(kmeans ${kmeansII}  lib/runners/kmeans.cc) #here we can run any of the algorithms from the commandline
 add_executable(trying ${trying} lib/runners/trying.cc) #this executable is temporary for development only
 add_executable(testing ${testing}) #This executable includes all the testing scripts

@@ -83,7 +83,7 @@ class Node:
 def buildGraph(matchings, numRuns):
   if len(matchings) == 0:
     return None
-  size = len(next(iter(matchings.values()))) #size of an element in the matchings dictionary
+  size = len(next(iter(matchings.values())))  # size of an element in the matchings dictionary
 
   for i in matchings:
     assert (len(matchings[i]) == size)
@@ -129,7 +129,7 @@ def group(values):
   vals = values[idx[:-1]]
   count = np.diff(idx)
   return (vals, count)
-
+# @utils.printRunningTime
 def findK(executableName, maxk, inputFileName, numRuns):
   cliques = cliqueSizes(inputFileName, maxk, executableName, numRuns)
   # res = sorted([len(cliques) for _ in range(1)])
@@ -137,13 +137,16 @@ def findK(executableName, maxk, inputFileName, numRuns):
   # [a for a, b in sorted(zip(g[0], g[1]), key=lambda z:z[1])][-1]
   return cliques
 
-k = 8
+k = 30
 executableName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/cmake-build-debug/kmeans"
 inputFileName = "/Users/yaseralkayale/Documents/classes/current/honours/kmeansII/generatedFiles/datasets/dataset0.csv"
-
-for i in range(2,k):
-  print("k: ",i)
-
+curr1 = time.time()
+for i in range(2, k):
+  print("Finding k for k:", i)
+  curr = time.time()
   print(findK(executableName, i, inputFileName, i))
   # print("for k:", k, " The answer is: ", findK(executableName, k, inputFileName, numRuns))
+  print("FindK ran in:", time.time() - curr)
   print("\n\n")
+
+print("totalTime: ", time.time() - curr1)
